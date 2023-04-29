@@ -1,0 +1,651 @@
+[
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "django.contrib.auth.models",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "Patient",
+        "importPath": "api.models.patient",
+        "description": "api.models.patient",
+        "isExtraImport": true,
+        "detail": "api.models.patient",
+        "documentation": {}
+    },
+    {
+        "label": "Disease",
+        "importPath": "api.models.disease",
+        "description": "api.models.disease",
+        "isExtraImport": true,
+        "detail": "api.models.disease",
+        "documentation": {}
+    },
+    {
+        "label": "Disease",
+        "importPath": "api.models.disease",
+        "description": "api.models.disease",
+        "isExtraImport": true,
+        "detail": "api.models.disease",
+        "documentation": {}
+    },
+    {
+        "label": "Symptom",
+        "importPath": "api.models.symptom",
+        "description": "api.models.symptom",
+        "isExtraImport": true,
+        "detail": "api.models.symptom",
+        "documentation": {}
+    },
+    {
+        "label": "load_model",
+        "importPath": "tensorflow.python.keras.models",
+        "description": "tensorflow.python.keras.models",
+        "isExtraImport": true,
+        "detail": "tensorflow.python.keras.models",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "IsAdminUser",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "views",
+        "importPath": "rest_framework.authtoken",
+        "description": "rest_framework.authtoken",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "api.migrations.0001_initial",
+        "description": "api.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Dermatologist',\n            fields=[\n                ('user_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to=settings.AUTH_USER_MODEL)),",
+        "detail": "api.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Dermatologist",
+        "kind": 6,
+        "importPath": "api.models.dermatologist",
+        "description": "api.models.dermatologist",
+        "peekOfCode": "class Dermatologist(User):\n    qualification = models.CharField(max_length=100)\n    work_email = models.EmailField()\n    phone_number_1 = models.CharField(max_length=13)\n    phone_number_2 = models.CharField(max_length=13)\n    clinic = models.CharField(max_length=100)\n    location_lat = models.FloatField()\n    location_lon = models.FloatField()\n    location_desc = models.CharField(max_length=100)",
+        "detail": "api.models.dermatologist",
+        "documentation": {}
+    },
+    {
+        "label": "Diagnosis",
+        "kind": 6,
+        "importPath": "api.models.diagnosis",
+        "description": "api.models.diagnosis",
+        "peekOfCode": "class Diagnosis(models.Model):\n    image = models.ImageField(upload_to='diagnosis/%Y/%m/%d/')\n    disease = models.ForeignKey(Disease, on_delete=models.SET_NULL, null=True)\n    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)\n    date = models.DateField()",
+        "detail": "api.models.diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "Disease",
+        "kind": 6,
+        "importPath": "api.models.disease",
+        "description": "api.models.disease",
+        "peekOfCode": "class Disease(models.Model):\n    name = models.CharField(max_length=100)\n    description = models.TextField(max_length=500)\n    symptoms = models.ManyToManyField(Symptom)",
+        "detail": "api.models.disease",
+        "documentation": {}
+    },
+    {
+        "label": "Patient",
+        "kind": 6,
+        "importPath": "api.models.patient",
+        "description": "api.models.patient",
+        "peekOfCode": "class Patient(User):\n    dob = models.DateField()\n    gender = models.CharField(max_length=1, choices=[(\"M\", \"Male\"), (\"F\", \"Female\"), (\"O\", \"Other\")])",
+        "detail": "api.models.patient",
+        "documentation": {}
+    },
+    {
+        "label": "Symptom",
+        "kind": 6,
+        "importPath": "api.models.symptom",
+        "description": "api.models.symptom",
+        "peekOfCode": "class Symptom(models.Model):\n    title = models.CharField(max_length=100)\n    description = models.TextField(max_length=500)",
+        "detail": "api.models.symptom",
+        "documentation": {}
+    },
+    {
+        "label": "Treatment",
+        "kind": 6,
+        "importPath": "api.models.treatment",
+        "description": "api.models.treatment",
+        "peekOfCode": "class Treatment(models.Model):\n    disease = models.ForeignKey(Disease, on_delete=models.CASCADE)\n    min_age = models.IntegerField()\n    max_age = models.IntegerField()\n    gender = models.CharField(max_length=1, choices=[(\"M\", \"Male\"), (\"F\", \"Female\"), (\"O\", \"Other\")])\n    description = models.TextField(max_length=500)\n    title = models.CharField(max_length=100)",
+        "detail": "api.models.treatment",
+        "documentation": {}
+    },
+    {
+        "label": "get_model",
+        "kind": 2,
+        "importPath": "api.skindisease.identify",
+        "description": "api.skindisease.identify",
+        "peekOfCode": "def get_model(part, itchy):\n    name = (\"Itchy \" if itchy else \"Non-Itchy \") + part\n    return load_model(os.path.join(os.path.dirname(__file__), \"models\", name))\n# Identifies the skin disease in the image\ndef identify(img, body_part, itchy):\n    img = Image.open(img).resize((299, 299))\n    model = get_model(body_part, itchy)\n    return model.predict(img)",
+        "detail": "api.skindisease.identify",
+        "documentation": {}
+    },
+    {
+        "label": "identify",
+        "kind": 2,
+        "importPath": "api.skindisease.identify",
+        "description": "api.skindisease.identify",
+        "peekOfCode": "def identify(img, body_part, itchy):\n    img = Image.open(img).resize((299, 299))\n    model = get_model(body_part, itchy)\n    return model.predict(img)",
+        "detail": "api.skindisease.identify",
+        "documentation": {}
+    },
+    {
+        "label": "UserRecordView",
+        "kind": 6,
+        "importPath": "api.views.user_record",
+        "description": "api.views.user_record",
+        "peekOfCode": "class UserRecordView(APIView):\n    \"\"\"\n    API View to create or get a list of all the registered\n    users. GET request returns the registered users whereas\n    a POST request allows to create a new user.\n    \"\"\"\n    # permission_classes = [IsAdminUser]\n    def get(self, format=None):\n        users = User.objects.all()\n        return JsonResponse(users)",
+        "detail": "api.views.user_record",
+        "documentation": {}
+    },
+    {
+        "label": "ApiConfig",
+        "kind": 6,
+        "importPath": "api.apps",
+        "description": "api.apps",
+        "peekOfCode": "class ApiConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'api'",
+        "detail": "api.apps",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "api.urls",
+        "description": "api.urls",
+        "peekOfCode": "app_name = 'api'\nurlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n]",
+        "detail": "api.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "api.urls",
+        "description": "api.urls",
+        "peekOfCode": "urlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n]",
+        "detail": "api.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "smartskin.asgi",
+        "description": "smartskin.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "smartskin.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'rest_framework.authtoken',\n    'api.apps.ApiConfig',",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'smartskin.urls'",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "ROOT_URLCONF = 'smartskin.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'smartskin.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# DATABASES = {",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# DATABASES = {\n#     'default': {\n#         'ENGINE': 'django.db.backends.mysql',\n#         'NAME': 'smartskin',",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "REST_FRAMEWORK",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework.authentication.TokenAuthentication',\n    ),\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.IsAuthenticated',\n    ],\n}\n# Internationalization\n# https://docs.djangoproject.com/en/4.2/topics/i18n/",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\nMEDIA_URL = '/media/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\nMEDIA_URL = '/media/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\nMEDIA_URL = '/media/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\nMEDIA_URL = '/media/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "STATIC_URL = 'static/'\nMEDIA_URL = '/media/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "MEDIA_URL = '/media/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_AUTO_FIELD",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "smartskin.urls",
+        "description": "smartskin.urls",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('api.urls', namespace='api')),\n    path('api-token-auth/', views.obtain_auth_token, name='api-token-auth'),\n]",
+        "detail": "smartskin.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "smartskin.wsgi",
+        "description": "smartskin.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "smartskin.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "manage",
+        "description": "manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'smartskin.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "manage",
+        "documentation": {}
+    }
+]

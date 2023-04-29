@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-
+from django.core import serializers
 # Create your views here.
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -19,13 +19,13 @@ class UserRecordView(APIView):
     permission_classes = []
     
     def get(self, format=None):
-        users = list(User.objects.all())
-        return JsonResponse(users, safe=False)
+        users = User.objects.all()
+        return JsonResponse(serializers.serialize("json", users), safe=False)
 
     def post(self, request):
         data = json.loads(request.body)
         user = User.objects.create_user(**data)
-        if user.is_valid(raise_exception=ValueError):
+        if user.validate_unique():
             return JsonResponse(
                 user,
                 status=status.HTTP_201_CREATED
@@ -33,7 +33,7 @@ class UserRecordView(APIView):
         return Response(
             {
                 "error": True,
-                "error_msg": user.error_messages,
+                "error_msg": user,
             },
             status=status.HTTP_400_BAD_REQUEST
         )

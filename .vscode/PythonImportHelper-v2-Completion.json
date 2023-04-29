@@ -187,6 +187,14 @@
         "documentation": {}
     },
     {
+        "label": "serializers",
+        "importPath": "django.core",
+        "description": "django.core",
+        "isExtraImport": true,
+        "detail": "django.core",
+        "documentation": {}
+    },
+    {
         "label": "APIView",
         "importPath": "rest_framework.views",
         "description": "rest_framework.views",
@@ -410,7 +418,7 @@
         "kind": 6,
         "importPath": "api.views.user_record",
         "description": "api.views.user_record",
-        "peekOfCode": "class UserRecordView(APIView):\n    \"\"\"\n    API View to create or get a list of all the registered\n    users. GET request returns the registered users whereas\n    a POST request allows to create a new user.\n    \"\"\"\n    permission_classes = []\n    def get(self, format=None):\n        users = list(User.objects.all())\n        return JsonResponse(users, safe=False)",
+        "peekOfCode": "class UserRecordView(APIView):\n    \"\"\"\n    API View to create or get a list of all the registered\n    users. GET request returns the registered users whereas\n    a POST request allows to create a new user.\n    \"\"\"\n    permission_classes = []\n    def get(self, format=None):\n        users = User.objects.all()\n        return JsonResponse(serializers.serialize(\"json\", users), safe=False)",
         "detail": "api.views.user_record",
         "documentation": {}
     },
@@ -455,7 +463,7 @@
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"192.168.42.108\"]\n# Application definition\nINSTALLED_APPS = [",
         "detail": "smartskin.settings",
         "documentation": {}
     },
@@ -464,7 +472,7 @@
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"192.168.42.108\"]\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "smartskin.settings",
         "documentation": {}
     },
@@ -473,7 +481,7 @@
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = [\"192.168.42.108\"]\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "smartskin.settings",
         "documentation": {}
     },
@@ -482,7 +490,7 @@
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
+        "peekOfCode": "ALLOWED_HOSTS = [\"192.168.42.108\"]\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
         "detail": "smartskin.settings",
         "documentation": {}
     },

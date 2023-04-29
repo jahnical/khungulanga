@@ -410,7 +410,7 @@
         "kind": 6,
         "importPath": "api.views.user_record",
         "description": "api.views.user_record",
-        "peekOfCode": "class UserRecordView(APIView):\n    \"\"\"\n    API View to create or get a list of all the registered\n    users. GET request returns the registered users whereas\n    a POST request allows to create a new user.\n    \"\"\"\n    # permission_classes = [IsAdminUser]\n    def get(self, format=None):\n        users = User.objects.all()\n        return JsonResponse(users)",
+        "peekOfCode": "class UserRecordView(APIView):\n    \"\"\"\n    API View to create or get a list of all the registered\n    users. GET request returns the registered users whereas\n    a POST request allows to create a new user.\n    \"\"\"\n    permission_classes = []\n    def get(self, format=None):\n        users = list(User.objects.all())\n        return JsonResponse(users, safe=False)",
         "detail": "api.views.user_record",
         "documentation": {}
     },

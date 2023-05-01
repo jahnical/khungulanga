@@ -42,4 +42,27 @@ class UserRepository {
     bool result = await userDao.checkUser(0);
     return result;
   }
+
+  Future<UserRegister> register(
+      {required String username,
+      required String email,
+      required String password,
+      required String firstName,
+      required String lastName,
+      required DateTime dob,
+      required String gender}) async {
+    // create a UserRegister object with the necessary fields
+    final userRegister = UserRegister(
+        username: username,
+        password: password,
+        firstName: firstName,
+        lastName: lastName,
+        dob: dob,
+        email: email,
+        gender: gender);
+
+    await registerUser(userRegister);
+    
+    return userRegister;
+  }
 }

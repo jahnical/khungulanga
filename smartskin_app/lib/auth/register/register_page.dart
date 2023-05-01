@@ -1,32 +1,30 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smartskin_app/auth/auth/bloc/auth_bloc.dart';
-import 'package:smartskin_app/auth/login/bloc/login_bloc.dart';
-import 'package:smartskin_app/auth/login/login_form.dart';
+import 'package:smartskin_app/auth/register/bloc/register_bloc.dart';
+import 'package:smartskin_app/auth/register/register_form.dart';
 import 'package:smartskin_app/repositories/user_repository.dart';
 
-
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   final UserRepository userRepository;
 
-  const LoginPage({Key? key, required this.userRepository})
+  const RegisterPage({Key? key, required this.userRepository})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text('Register'),
       ),
       body: BlocProvider(
         create: (context) {
-          return LoginBloc(
+          return RegisterBloc(
             authenticationBloc: BlocProvider.of<AuthBloc>(context),
             userRepository: userRepository,
           );
         },
-        child: LoginForm(),
+        child: RegisterForm(),
       ),
     );
   }

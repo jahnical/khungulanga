@@ -43,3 +43,33 @@ class Token{
     );
   }
 }
+
+class UserRegister {
+  String username;
+  String password;
+  String email;
+  String firstName;
+  String lastName;
+  DateTime dob;
+  String gender;
+
+  UserRegister({
+    required this.username,
+    required this.password,
+    required this.email,
+    required this.firstName,
+    required this.lastName,
+    required this.dob,
+    required this.gender,
+  });
+
+  Map<String, dynamic> toDatabaseJson() => {
+        "username": username,
+        "password": password,
+        "email": email,
+        "first_name": firstName,
+        "last_name": lastName,
+        "dob": dob.toString(),
+        "gender": gender,
+      };
+}

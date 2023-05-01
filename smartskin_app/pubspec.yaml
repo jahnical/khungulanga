@@ -36,6 +36,7 @@ dependencies:
   meta: ^1.1.6
   equatable: ^2.0.0
   sqflite: ^2.2.8
+  intl: ^0.17.0
   path_provider: ^2.0.2
   path: ^1.7.0
 

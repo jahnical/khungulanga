@@ -6,6 +6,8 @@ import 'package:smartskin_app/repositories/user_repository.dart';
 import '../register/register_page.dart';
 
 class LoginForm extends StatefulWidget {
+  const LoginForm({super.key});
+
   @override
   State<LoginForm> createState() => _LoginFormState();
 }
@@ -47,11 +49,11 @@ class _LoginFormState extends State<LoginForm> {
       },
       child: BlocBuilder<LoginBloc, LoginState>(
         builder: (context, state) {
-          return Container(
+          return SingleChildScrollView(
             child: Form(
               key: _formKey,
               child: Padding(
-                padding: EdgeInsets.all(40.0),
+                padding: const EdgeInsets.all(40.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -120,7 +122,7 @@ class _LoginFormState extends State<LoginForm> {
                     ),
                     Container(
                       child: state is LoginLoading
-                          ? CircularProgressIndicator()
+                          ? const CircularProgressIndicator()
                           : null,
                     ),
                   ],

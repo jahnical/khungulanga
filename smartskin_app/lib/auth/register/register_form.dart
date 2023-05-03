@@ -4,6 +4,8 @@ import 'package:intl/intl.dart';
 import 'package:smartskin_app/auth/register/bloc/register_bloc.dart';
 
 class RegisterForm extends StatefulWidget {
+  const RegisterForm({super.key});
+
   @override
   State<RegisterForm> createState() => _RegisterFormState();
 }
@@ -239,7 +241,7 @@ class _RegisterFormState extends State<RegisterForm> {
                     ),
                     Container(
                       child: state is RegisterLoading
-                          ? CircularProgressIndicator()
+                          ? const CircularProgressIndicator()
                           : null,
                     ),
                   ],

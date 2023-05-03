@@ -9,6 +9,8 @@ from rest_framework.permissions import IsAdminUser
 from django.contrib.auth.models import User
 import json
 
+from api.models.patient import Patient
+
 
 class UserRecordView(APIView):
     """
@@ -24,11 +26,17 @@ class UserRecordView(APIView):
 
     def post(self, request):
         data = json.loads(request.body)
+        dob = data.pop('dob')
+        gender = data.pop('gender')
+
         user = User.objects.create_user(**data)
-        if user.validate_unique():
+        patient = Patient.objects.create(user_ptr=user, dob=dob, gender=gender)
+        patient.save()
+        if user:
             return JsonResponse(
-                user,
-                status=status.HTTP_201_CREATED
+                serializers.serialize("json", [user, patient]),
+                status=status.HTTP_201_CREATED,
+                safe=False
             )
         return Response(
             {

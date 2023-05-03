@@ -4,6 +4,8 @@ from api.models.disease import Disease
 
 class Diagnosis(models.Model):
     image = models.ImageField(upload_to='diagnosis/%Y/%m/%d/')
-    disease = models.ForeignKey(Disease, on_delete=models.SET_NULL, null=True)
+    diseases = models.ManyToManyField(Disease, through='Prediction')
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    date = models.DateField()
+    body_part = models.CharField(max_length=100)
+    itchy = models.BooleanField(default=False)
+    date = models.DateField(auto_now_add=True)

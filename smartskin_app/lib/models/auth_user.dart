@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class User {
   int id;
   String username;
@@ -69,7 +71,7 @@ class UserRegister {
         "email": email,
         "first_name": firstName,
         "last_name": lastName,
-        "dob": dob.toString(),
+        "dob": dob.toIso8601String(),
         "gender": gender,
       };
 }

@@ -223,7 +223,9 @@ class _RegisterFormState extends State<RegisterForm> {
                               ),
                             ),
                           ),
-                          child: const Text(
+                          child: state is RegisterLoading
+                            ? const CircularProgressIndicator()
+                              :const Text(
                             'Register',
                             style: TextStyle(
                               fontSize: 24.0,
@@ -238,11 +240,6 @@ class _RegisterFormState extends State<RegisterForm> {
                     TextButton(
                       onPressed: _onLoginButtonPressed,
                       child: const Text('Login'),
-                    ),
-                    Container(
-                      child: state is RegisterLoading
-                          ? const CircularProgressIndicator()
-                          : null,
                     ),
                   ],
                 ),

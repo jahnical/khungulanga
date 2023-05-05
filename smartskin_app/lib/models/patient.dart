@@ -1,4 +1,3 @@
-
 class Patient {
   final int id;
   final String username;

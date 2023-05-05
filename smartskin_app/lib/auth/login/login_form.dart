@@ -50,82 +50,86 @@ class _LoginFormState extends State<LoginForm> {
       child: BlocBuilder<LoginBloc, LoginState>(
         builder: (context, state) {
           return SingleChildScrollView(
-            child: Form(
-              key: _formKey,
-              child: Padding(
-                padding: const EdgeInsets.all(40.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    TextFormField(
-                      decoration: const InputDecoration(
-                          labelText: 'Email', icon: Icon(Icons.person)),
-                      controller: _usernameController,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your email';
-                        }
-                        if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
-                          return 'Please enter a valid email';
-                        }
-                        return null;
-                      },
-                    ),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                          labelText: 'password', icon: Icon(Icons.security)),
-                      controller: _passwordController,
-                      obscureText: true,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your password';
-                        }
-                        if (value.length < 8) {
-                          return 'Password must be at least 8 characters long';
-                        }
-                        return null;
-                      },
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.85,
-                      height: MediaQuery.of(context).size.width * 0.22,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 30.0),
-                        child: ElevatedButton(
-                          onPressed: state is! LoginLoading
-                              ? _onLoginButtonPressed
-                              : null,
-                          style: ElevatedButton.styleFrom(
-                            shape: const StadiumBorder(
-                              side: BorderSide(
-                                color: Colors.black,
-                                width: 2,
+            child: Center(
+              widthFactor: 1.0,
+              heightFactor: 1.0,
+              child: Form(
+                key: _formKey,
+                child: Padding(
+                  padding: const EdgeInsets.all(40.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      TextFormField(
+                        decoration: const InputDecoration(
+                            labelText: 'Email', icon: Icon(Icons.person)),
+                        controller: _usernameController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your email';
+                          }
+                          if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
+                            return 'Please enter a valid email';
+                          }
+                          return null;
+                        },
+                      ),
+                      TextFormField(
+                        decoration: const InputDecoration(
+                            labelText: 'password', icon: Icon(Icons.security)),
+                        controller: _passwordController,
+                        obscureText: true,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your password';
+                          }
+                          if (value.length < 8) {
+                            return 'Password must be at least 8 characters long';
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.85,
+                        height: MediaQuery.of(context).size.width * 0.22,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 30.0),
+                          child: ElevatedButton(
+                              onPressed: state is! LoginLoading
+                                  ? _onLoginButtonPressed
+                                  : null,
+                              style: ElevatedButton.styleFrom(
+                                shape: const StadiumBorder(
+                                  side: BorderSide(
+                                    color: Colors.black,
+                                    width: 2,
+                                  ),
+                                ),
                               ),
-                            ),
+                              child: const Text(
+                                'Login',
+                                style: TextStyle(
+                                  fontSize: 24.0,
+                                ),
+                              )
                           ),
-                          child: const Text(
-                            'Login',
-                            style: TextStyle(
-                              fontSize: 24.0,
-                            ),
-                          )
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 20.0,
-                    ),
-                    TextButton(
-                      onPressed: _onRegisterButtonPressed,
-                      child: const Text('Register'),
-                    ),
-                    Container(
-                      child: state is LoginLoading
-                          ? const CircularProgressIndicator()
-                          : null,
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 20.0,
+                      ),
+                      TextButton(
+                        onPressed: _onRegisterButtonPressed,
+                        child: const Text('Register'),
+                      ),
+                      Container(
+                        child: state is LoginLoading
+                            ? const CircularProgressIndicator()
+                            : null,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

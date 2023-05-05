@@ -25,4 +25,15 @@ class UserDao {
       return false;
     }
   }
+
+  Future<User?> getToken(int id) async {
+    //Get token from database
+    final db = await dbProvider.database;
+    try {
+      List<Map<String, dynamic>> users = await db.query(userTable);
+      return User.fromDatabaseJson(users.first);
+    } catch (error) {
+      return null;
+    }
+  }
 }

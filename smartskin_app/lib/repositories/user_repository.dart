@@ -4,7 +4,7 @@ import 'package:smartskin_app/api_connection/auth_con.dart';
 import 'package:smartskin_app/dao/user_dao.dart';
 import 'package:smartskin_app/models/auth_user.dart';
 
-
+User? USER;
 class UserRepository {
   final userDao = UserDao();
 
@@ -32,10 +32,17 @@ class UserRepository {
     await userDao.createUser(user);
   }
 
+  Future<User?> getUserFromDB() async {
+    User? user = await userDao.getToken(0);
+    USER = user;
+    return user;
+  }
+
   Future <void> deleteToken({
     required int id
   }) async {
     await userDao.deleteUser(id);
+    USER = null;
   }
 
   Future <bool> hasToken() async {

@@ -5,6 +5,7 @@ import 'package:meta/meta.dart';
 import 'package:equatable/equatable.dart';
 import 'package:smartskin_app/models/auth_user.dart';
 import 'package:smartskin_app/repositories/user_repository.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -24,6 +25,12 @@ class AuthBloc
   ) async* {
     if (event is AppStarted) {
 
+      //For web testing
+      if (kIsWeb) {
+        yield AuthAuthenticated();
+        return;
+      }
+      userRepository.getUserFromDB();
       final bool hasToken = await userRepository.hasToken();
 
       if (hasToken) {

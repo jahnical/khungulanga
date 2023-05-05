@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:smartskin_app/models/prediction.dart';
@@ -11,7 +12,7 @@ Options options = Options(headers: <String, String>{
   'Authorization': 'Token ${USER?.token}'
 });
 
-Future<List<Prediction>> getPredictions(FormData data) async {
+Future<List> getPredictions(FormData data) async {
   final dio = Dio();
 
   log(DIAGNOSIS_URL);
@@ -22,8 +23,8 @@ Future<List<Prediction>> getPredictions(FormData data) async {
     data: data,
   );
 
-  if (response.statusCode == 201) {
-    return (response.data as List).map((e) => Prediction.fromJson(e)).toList();
+  if (response.statusCode == 200) {
+    return jsonDecode(response.data);//.map((e) => Prediction.fromJson(e)).toList();
   } else {
     log(response.data.toString());
     throw Exception(response.data.toString());

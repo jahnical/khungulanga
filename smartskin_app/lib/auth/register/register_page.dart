@@ -22,6 +22,7 @@ class RegisterPage extends StatelessWidget {
           return RegisterBloc(
             authenticationBloc: BlocProvider.of<AuthBloc>(context),
             userRepository: userRepository,
+            context: context
           );
         },
         child: RegisterForm(),

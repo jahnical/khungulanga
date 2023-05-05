@@ -12,6 +12,8 @@ import 'package:smartskin_app/repositories/user_repository.dart';
 import 'package:smartskin_app/scan/scan_page.dart';
 import 'package:smartskin_app/splash/splash_page.dart';
 
+import 'diagnosis/diagnosis_page.dart';
+
 class SimpleBlocObserver extends BlocObserver {
   @override
   void onEvent(Bloc bloc, Object? event) {
@@ -63,6 +65,10 @@ class App extends StatelessWidget {
         primarySwatch: Colors.blue,
         brightness: Brightness.dark,
       ),
+      initialRoute: '/',
+      routes: {
+        '/diagnosis-success': (context) => DiagnosisPage(),
+      },
       home: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           log(state.toString());

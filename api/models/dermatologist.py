@@ -2,7 +2,8 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-class Dermatologist(User):
+class Dermatologist(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     qualification = models.CharField(max_length=100)
     work_email = models.EmailField()
     phone_number_1 = models.CharField(max_length=13)

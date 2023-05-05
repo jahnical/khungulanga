@@ -56,21 +56,18 @@ class _LoginFormState extends State<LoginForm> {
               child: Form(
                 key: _formKey,
                 child: Padding(
-                  padding: const EdgeInsets.all(40.0),
+                  padding: const EdgeInsets.fromLTRB(40.0, 90.0, 40.0, 40.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       TextFormField(
                         decoration: const InputDecoration(
-                            labelText: 'Email', icon: Icon(Icons.person)),
+                            labelText: 'Username or Email', icon: Icon(Icons.person)),
                         controller: _usernameController,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter your email';
-                          }
-                          if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
-                            return 'Please enter a valid email';
+                            return 'Please enter your username';
                           }
                           return null;
                         },

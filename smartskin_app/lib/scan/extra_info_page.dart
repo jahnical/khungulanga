@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -39,6 +40,7 @@ class _ExtraInfoPageState extends State<ExtraInfoPage> {
         Navigator.of(context).popAndPushNamed('/diagnosis-success', arguments: predictions);
       } catch (e) {
         // Handle error
+        log("Error", error: e);
         setState(() {
           _isLoading = false;
         });

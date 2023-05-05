@@ -12,10 +12,12 @@ part 'register_state.dart';
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   final UserRepository userRepository;
   final AuthBloc authenticationBloc;
+  final BuildContext context;
 
   RegisterBloc({
     required this.userRepository,
     required this.authenticationBloc,
+    required this.context,
   }) : super(RegisterInitial());
 
   @override
@@ -43,6 +45,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
 
         authenticationBloc.add(LoggedIn(user: user));
         yield RegisterInitial();
+        Navigator.pop(context);
       } catch (error) {
         yield RegisterFailure(error: error.toString());
       }

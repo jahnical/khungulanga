@@ -1,3 +1,4 @@
+import datetime
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.core import serializers
@@ -10,7 +11,6 @@ from django.contrib.auth.models import User
 import json
 
 from api.models.patient import Patient
-
 
 class UserRecordView(APIView):
     """
@@ -27,10 +27,12 @@ class UserRecordView(APIView):
     def post(self, request):
         data = json.loads(request.body)
         dob = data.pop('dob')
+        print(dob)
+        dob = datetime.datetime.strptime(dob, '%Y-%m-%dT%H:%M:%S.%f')
         gender = data.pop('gender')
 
         user = User.objects.create_user(**data)
-        patient = Patient.objects.create(user_ptr=user, dob=dob, gender=gender)
+        patient = Patient.objects.create(user=user, dob=dob, gender=gender)
         patient.save()
         if user:
             return JsonResponse(

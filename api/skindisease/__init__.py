@@ -1,1 +1,1 @@
-from identify import predict_disease
+from .identify import predict_disease

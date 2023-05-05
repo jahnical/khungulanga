@@ -13,14 +13,14 @@ from api.models.diagnosis import Diagnosis
 from api.models.patient import Patient
 
 
-class DiagnosesView(APIView):
+class DiagnosisView(APIView):
     """
     API View to create or get a list of all the diagnoses of
     users. GET request returns the user's diagnoses whereas
     a POST request allows to create a new diagnosis.
     """
     parser_classes = [MultiPartParser, FormParser]
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     
     def get(self, request, format=None):
         diagnoses = request.user.patient.diagnosis_set.all()
@@ -29,7 +29,7 @@ class DiagnosesView(APIView):
     def post(self, request, format=None):
         image = request.data.get('image', None)
         user = request.user
-        body_part = request.data.get('part_of_body', None)
+        body_part = request.data.get('body_part', None)
         itchy = request.data.get('itchy', None)
         
         if image is None:
@@ -37,17 +37,16 @@ class DiagnosesView(APIView):
         
         predictions = predict_disease(image, body_part, itchy)
         
-        diagnosis = Diagnosis.objects.create({
-            "image": image,
-            "patient": user.patient,
-            "diseases": predictions,
-            "body_part": body_part,
-            "itchy": itchy
-        })
+        # diagnosis = Diagnosis.objects.create({
+        #     "image": image,
+        #     "patient": user.patient,
+        #     "body_part": body_part,
+        #     "itchy": itchy
+        # })
         
-        for p in predictions:
-            p.diagnosis = diagnosis
-            p.save()
+        # for p in predictions:
+        #     p.diagnosis = diagnosis
+        #     p.save()
 
         # Return a response with a success status code
-        return Response({'status': 'success'})
+        return JsonResponse(json.dumps(predictions), safe=False)

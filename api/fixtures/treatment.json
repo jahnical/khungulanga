@@ -1,0 +1,74 @@
+[
+    {
+      "model": "api.treatment",
+      "pk": 1,
+      "fields": {
+        "disease": 1,
+        "min_age": 18,
+        "max_age": 60,
+        "gender": "M",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque massa et commodo vulputate. Mauris a mauris rutrum, egestas tellus vitae, eleifend nibh.",
+        "title": "Acne Treatment for Men"
+      }
+    },
+    {
+      "model": "api.treatment",
+      "pk": 2,
+      "fields": {
+        "disease": 1,
+        "min_age": 18,
+        "max_age": 60,
+        "gender": "F",
+        "description": "Suspendisse nec ex lectus. Integer tempor, purus eget facilisis tempor, sem mi convallis felis, in mollis dolor lorem vel tellus.",
+        "title": "Acne Treatment for Women"
+      }
+    },
+    {
+      "model": "api.treatment",
+      "pk": 3,
+      "fields": {
+        "disease": 2,
+        "min_age": 12,
+        "max_age": 65,
+        "gender": "O",
+        "description": "Donec ut lorem eu turpis laoreet tincidunt. Sed sodales ante ut lorem eleifend tristique. Sed sit amet sapien non dolor vestibulum viverra non non quam.",
+        "title": "Eczema Treatment for All Genders"
+      }
+    },
+    {
+      "model": "api.treatment",
+      "pk": 4,
+      "fields": {
+        "disease": 3,
+        "min_age": 30,
+        "max_age": 75,
+        "gender": "M",
+        "description": "Mauris et fermentum risus. Sed sit amet sapien non dolor vestibulum viverra non non quam. Maecenas sed semper quam, in malesuada lorem.",
+        "title": "Rosacea Treatment for Men"
+      }
+    },
+    {
+      "model": "api.treatment",
+      "pk": 5,
+      "fields": {
+        "disease": 4,
+        "min_age": 18,
+        "max_age": 50,
+        "gender": "F",
+        "description": "Curabitur malesuada ex a felis fermentum hendrerit. Proin maximus mi ut diam maximus, eget faucibus neque volutpat. Sed euismod odio in elit euismod, sit amet pharetra lectus feugiat.",
+        "title": "Seborrheic Dermatitis Treatment for Women"
+      }
+    },
+    {
+      "model": "api.treatment",
+      "pk": 6,
+      "fields": {
+        "disease": 5,
+        "min_age": 18,
+        "max_age": 50,
+        "gender": "M",
+        "description": "Sed tincidunt diam id augue fermentum, eget lacinia velit vestibulum. Nulla facilisi. In sollicitudin eu mauris ut rutrum.",
+        "title": "Acne Vulgaris Treatment for Men"
+      }
+    }
+]

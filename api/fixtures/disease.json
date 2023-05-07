@@ -1,0 +1,74 @@
+[
+  {
+    "model": "api.disease",
+    "pk": 1,
+    "fields": {
+      "name": "acne",
+      "description": "Acne is a common skin condition that occurs when hair follicles become clogged with oil and dead skin cells. It is characterized by blackheads, whiteheads, pimples, and cysts.",
+      "severity": 1
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 2,
+    "fields": {
+      "name": "eczema",
+      "description": "Eczema is a skin condition that causes red, itchy, and inflamed patches of skin. It can be triggered by a variety of factors, including allergies, irritants, and stress.",
+      "severity": 2
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 3,
+    "fields": {
+      "name": "rosacea",
+      "description": "Rosacea is a chronic skin condition that causes redness, swelling, and bumps on the face. It can also cause burning and stinging sensations, and in severe cases, thickened skin.",
+      "severity": 2
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 4,
+    "fields": {
+      "name": "seborrheic dermatitis",
+      "description": "Seborrheic dermatitis is a common skin condition that causes flaky, itchy, and red skin. It typically affects the scalp, face, and other oily areas of the body.",
+      "severity": 1
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 5,
+    "fields": {
+      "name": "urticaria",
+      "description": "Urticaria, also known as hives, is a skin condition that causes raised, itchy, and red welts on the skin. It can be triggered by a variety of factors, including allergies, medications, and infections.",
+      "severity": 1
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 6,
+    "fields": {
+      "name": "acne vulgaris",
+      "description": "Acne vulgaris is a common skin condition that occurs when hair follicles become clogged with oil and dead skin cells. It is characterized by blackheads, whiteheads, pimples, and cysts.",
+      "severity": 1
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 7,
+    "fields": {
+      "name": "basal cell carcinoma",
+      "description": "Basal cell carcinoma is a type of skin cancer that usually develops on areas of skin that have been exposed to the sun. It typically appears as a waxy bump or a flat, scaly patch.",
+      "severity": 3
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 8,
+    "fields": {
+      "name": "squamous cell carcinoma",
+      "description": "Squamous cell carcinoma is a type of skin cancer that usually develops on areas of skin that have been exposed to the sun. It typically appears as a firm, red nodule or a flat, scaly lesion.",
+      "severity": 3
+    }
+  }
+]

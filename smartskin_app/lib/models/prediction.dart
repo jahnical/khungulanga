@@ -1,22 +1,21 @@
 
-class Prediction {
-  late int disease;
-  late double probability;
-  late int diagnosis;
+import 'disease.dart';
 
-  Prediction({required this.disease, required this.probability, required this.diagnosis});
+class Prediction {
+  late Disease disease;
+  late double probability;
+
+  Prediction({required this.disease, required this.probability});
 
   factory Prediction.fromJson(Map<String, dynamic> json) {
     return Prediction(
-      disease: json['disease'],
+      disease: Disease.fromJson(json['disease']),
       probability: json['probability'],
-      diagnosis: json['diagnosis'],
     );
   }
 
   Map<String, dynamic> toJson() => {
     'disease': disease,
     'probability': probability,
-    'diagnosis': diagnosis,
   };
 }

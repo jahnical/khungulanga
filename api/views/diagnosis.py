@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.core import serializers
 # Create your views here.
 from rest_framework.views import APIView
@@ -25,28 +25,49 @@ class DiagnosisView(APIView):
     def get(self, request, format=None):
         diagnoses = request.user.patient.diagnosis_set.all()
         return JsonResponse(serializers.serialize("json", diagnoses), safe=False)
+    
+    def _fetch_diagnosis(self, id):
+        diagnosis = get_object_or_404(Diagnosis.objects.select_related('prediction_set', 'prediction_se'), pk=id)
+        return diagnosis
 
     def post(self, request, format=None):
         image = request.data.get('image', None)
         user = request.user
         body_part = request.data.get('body_part', None)
-        itchy = request.data.get('itchy', None)
+        itchy = True if request.data.get('itchy', None) == "true" else False
         
         if image is None:
             return Response({'error': 'No image provided'}, status=status.HTTP_400_BAD_REQUEST)
         
-        predictions = predict_disease(image, body_part, itchy)
+        diagnosis = Diagnosis.objects.create(**{
+            "image": image,
+            "patient": user.patient,
+            "body_part": body_part,
+            "itchy": itchy
+        })
         
-        # diagnosis = Diagnosis.objects.create({
-        #     "image": image,
-        #     "patient": user.patient,
-        #     "body_part": body_part,
-        #     "itchy": itchy
-        # })
+        predictions = predict_disease(diagnosis)
         
-        # for p in predictions:
-        #     p.diagnosis = diagnosis
-        #     p.save()
-
-        # Return a response with a success status code
-        return JsonResponse(json.dumps(predictions), safe=False)
+        data = {
+            "image": diagnosis.image.url,
+            "body_part": diagnosis.body_part,
+            "itchy": diagnosis.itchy,
+            "date": diagnosis.date.strftime("%Y-%m-%d %H:%M:%S"),
+            "predictions": [
+                {
+                    "disease": {
+                        "name": prediction.disease.name,
+                        "description": prediction.disease.description,
+                        "severity": prediction.disease.get_severity_display(),
+                        "treatments": [
+                            {
+                                "description": treatment.description,
+                                "title": treatment.title,
+                            } for treatment in prediction.disease.treatment_set.all()], 
+                    },
+                    "probability": prediction.probability,
+                } for prediction in predictions
+            ]
+        }
+        
+        return JsonResponse(json.dumps(data), safe=False, status=status.HTTP_200_OK)

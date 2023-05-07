@@ -63,12 +63,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
       ),
-      initialRoute: '/',
-      routes: {
-        '/diagnosis-success': (context) => DiagnosisPage(),
-      },
       home: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           log(state.toString());

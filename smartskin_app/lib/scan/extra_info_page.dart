@@ -5,6 +5,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:smartskin_app/api_connection/diagnosis_con.dart';
 
+import '../diagnosis/diagnosis_page.dart';
+
 class ExtraInfoPage extends StatefulWidget {
   final String imagePath;
 
@@ -35,9 +37,15 @@ class _ExtraInfoPageState extends State<ExtraInfoPage> {
       });
 
       try {
-        final predictions = await getPredictions(formData);
+        final diagnosis = await getPredictions(formData);
         // Navigate to the success page
-        Navigator.of(context).popAndPushNamed('/diagnosis-success', arguments: predictions);
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => DiagnosisPage(
+              diagnosis: diagnosis,
+            ),
+          ),
+        );
       } catch (e) {
         // Handle error
         log("Error", error: e);

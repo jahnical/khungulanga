@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [const HistoryPage(), const ScanPage(), const DermatologistsPage(),];
+  final List<Widget> _pages = [const HistoryPage(), const ScanPage(), DermatologistsPage(),];
 
   @override
   Widget build(BuildContext context) {

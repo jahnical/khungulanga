@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:smartskin_app/api_connection/diagnosis_con.dart';
+import 'package:smartskin_app/repositories/diagnosis_repository.dart';
 
 import '../diagnosis/diagnosis_page.dart';
 
@@ -37,7 +38,10 @@ class _ExtraInfoPageState extends State<ExtraInfoPage> {
       });
 
       try {
-        final diagnosis = await getPredictions(formData);
+        final diagnosis = await DiagnosisRepository().diagnose(formData);
+        setState(() {
+          _isLoading = false;
+        });
         // Navigate to the success page
         Navigator.of(context).push(
           MaterialPageRoute(
@@ -56,7 +60,7 @@ class _ExtraInfoPageState extends State<ExtraInfoPage> {
           context: context,
           builder: (context) => AlertDialog(
             title: const Text('Error'),
-            content: Text(e.toString()),
+            content: Text(e.toString().substring(11).replaceAll(")", "")),
             actions: [
               TextButton(
                 onPressed: () => Navigator.of(context).pop(),
@@ -89,12 +93,12 @@ class _ExtraInfoPageState extends State<ExtraInfoPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(height: 16.0),
+                  const SizedBox(height: 2.0),
                   const Text(
                     'Select body part:',
                     style: TextStyle(fontSize: 16.0),
                   ),
-                  const SizedBox(height: 8.0),
+                  const SizedBox(height: 2.0),
                   DropdownButtonFormField<String>(
                     value: _selectedBodyPart,
                     items: const [
@@ -136,7 +140,7 @@ class _ExtraInfoPageState extends State<ExtraInfoPage> {
                     'Is it itchy?',
                     style: TextStyle(fontSize: 16.0),
                   ),
-                  const SizedBox(height: 2.0),
+                  const SizedBox(height: 0.0),
                   SwitchListTile(
                     value: _isItchy,
                     onChanged: (value) {
@@ -146,7 +150,7 @@ class _ExtraInfoPageState extends State<ExtraInfoPage> {
                     },
                     title: Text(_isItchy ? 'Yes' : 'No'),
                   ),
-                  const SizedBox(height: 32.0),
+                  const SizedBox(height: 24.0),
                   ElevatedButton(
                     onPressed: _isLoading ? null : _submitForm,
                     style: ButtonStyle(

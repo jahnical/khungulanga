@@ -35,6 +35,7 @@ class AuthBloc
 
       if (hasToken) {
         yield AuthAuthenticated();
+        userRepository.getUserFromDB();
       } else {
         yield AuthUnauthenticated();
       }
@@ -46,6 +47,7 @@ class AuthBloc
       await userRepository.persistToken(
         user: event.user
       );
+      userRepository.getUserFromDB();
       yield AuthAuthenticated();
     }
 

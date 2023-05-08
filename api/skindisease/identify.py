@@ -5,11 +5,15 @@ import numpy as np
 
 from api.models.disease import Disease
 from api.models.prediction import Prediction
+from api.skindisease.detect_skin import detect_skin
 
 custom_objects = {'BatchNormalization': tf.keras.layers.BatchNormalization, 'Adam': tf.keras.optimizers.Adam}
 # Returns the model for the given part and itchy
 def get_model(name):
-    return tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), "models", name + ".h5"), custom_objects=custom_objects)
+    model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), "models", name + ".h5"), custom_objects=custom_objects)
+    for layer in model.layers:
+        layer.training = False
+    return model
 
 models = {
     "Itchy Face": get_model("Itchy Face"),
@@ -35,10 +39,17 @@ def map_predictions(diagnosis, predictions, labels):
         probability=disease["probability"]) 
             for disease in disease_prob[:3]]
     
+def preprocess_image(img):
+    img = np.asarray(img.resize((299, 299)))
+    # has_skin, img = detect_skin(img)
+    # if not has_skin:
+    #     raise Exception("No skin detected")
+    img = np.array(img) / 255.0
+    img = np.expand_dims(img, axis=0)
+    return img
 # Identifies the skin disease in the image
 def predict_disease(diagnosis):
-    img = np.asarray(Image.open(diagnosis.image).resize((299, 299))) / 255.0
-    img = np.expand_dims(img, axis=0)
+    img = preprocess_image(Image.open(diagnosis.image))
     model = models[("Itchy" if diagnosis.itchy else "Non Itchy") + " " + diagnosis.body_part]
     model_labels = labels[("Itchy" if diagnosis.itchy else "Non Itchy") + " " + diagnosis.body_part]
     predictions = map_predictions(diagnosis, model.predict(img)[0].tolist(), model_labels)

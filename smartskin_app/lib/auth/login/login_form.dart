@@ -104,7 +104,9 @@ class _LoginFormState extends State<LoginForm> {
                                   ),
                                 ),
                               ),
-                              child: const Text(
+                              child: state is LoginLoading
+                                  ? const CircularProgressIndicator()
+                                  : const Text(
                                 'Login',
                                 style: TextStyle(
                                   fontSize: 24.0,

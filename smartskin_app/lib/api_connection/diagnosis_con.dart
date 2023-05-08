@@ -13,21 +13,4 @@ Options options = Options(headers: <String, String>{
   'Authorization': 'Token ${USER?.token}'
 });
 
-Future<Diagnosis> getPredictions(FormData data) async {
-  final dio = Dio();
 
-  log(DIAGNOSIS_URL);
-
-  final Response response = await dio.post(
-    DIAGNOSIS_URL,
-    options: options,
-    data: data,
-  );
-
-  if (response.statusCode == 200) {
-    return Diagnosis.fromJson(jsonDecode(response.data));
-  } else {
-    log(response.data.toString());
-    throw Exception(response.data.toString());
-  }
-}

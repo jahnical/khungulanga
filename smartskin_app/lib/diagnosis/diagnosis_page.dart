@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartskin_app/dermatologists/dermatologists_page.dart';
 import 'package:smartskin_app/models/diagnosis.dart';
 import 'package:smartskin_app/util/endpoints.dart';
 
@@ -83,7 +84,13 @@ class DiagnosisPage extends StatelessWidget {
             SizedBox(height: 16),
             ElevatedButton.icon(
               onPressed: () {
-                // handle contact dermatologist button press
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => DermatologistsPage(
+                      diagnosis: diagnosis,
+                    ),
+                  ),
+                );
               },
               icon: Icon(Icons.phone),
               label: Text('Contact a Dermatologist'),

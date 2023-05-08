@@ -27,13 +27,14 @@ class _ScanPageState extends State<ScanPage> {
 
   Future<void> _initializeCamera() async {
     _controller = CameraController(camera!, ResolutionPreset.high);
-    _controller.setFlashMode(FlashMode.off);
     _initializeControllerFuture = _controller.initialize();
     _cameraInitialized = true;
+    _controller.setFlashMode(FlashMode.off);
   }
 
   @override
   void dispose() {
+    _controller.setFlashMode(FlashMode.off);
     _controller.dispose();
     super.dispose();
   }
@@ -76,7 +77,20 @@ class _ScanPageState extends State<ScanPage> {
                     Container(
                       height: double.infinity,
                       width: double.infinity,
-                      child: CameraPreview(_controller),
+                      child: CameraPreview(
+                          _controller,
+                        child: FittedBox(
+                          fit: BoxFit.cover,
+                          child: SizedBox(
+                            width: _controller.value.previewSize!.height,
+                            height: _controller.value.previewSize!.width,
+                            child: AspectRatio(
+                              aspectRatio: _controller.value.aspectRatio,
+                              child: Container(),
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                     Positioned(
                       top: 16,

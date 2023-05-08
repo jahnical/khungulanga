@@ -8,40 +8,39 @@
         "documentation": {}
     },
     {
-        "label": "django.contrib.auth.models",
-        "kind": 6,
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
         "isExtraImport": true,
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
+        "detail": "django.conf",
         "documentation": {}
     },
     {
         "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -130,6 +129,142 @@
         "documentation": {}
     },
     {
+        "label": "Patient",
+        "importPath": "api.models.patient",
+        "description": "api.models.patient",
+        "isExtraImport": true,
+        "detail": "api.models.patient",
+        "documentation": {}
+    },
+    {
+        "label": "Patient",
+        "importPath": "api.models.patient",
+        "description": "api.models.patient",
+        "isExtraImport": true,
+        "detail": "api.models.patient",
+        "documentation": {}
+    },
+    {
+        "label": "Patient",
+        "importPath": "api.models.patient",
+        "description": "api.models.patient",
+        "isExtraImport": true,
+        "detail": "api.models.patient",
+        "documentation": {}
+    },
+    {
+        "label": "Dermatologist",
+        "importPath": "api.models.dermatologist",
+        "description": "api.models.dermatologist",
+        "isExtraImport": true,
+        "detail": "api.models.dermatologist",
+        "documentation": {}
+    },
+    {
+        "label": "Dermatologist",
+        "importPath": "api.models.dermatologist",
+        "description": "api.models.dermatologist",
+        "isExtraImport": true,
+        "detail": "api.models.dermatologist",
+        "documentation": {}
+    },
+    {
+        "label": "Appointment",
+        "importPath": "api.models.appointment",
+        "description": "api.models.appointment",
+        "isExtraImport": true,
+        "detail": "api.models.appointment",
+        "documentation": {}
+    },
+    {
+        "label": "Appointment",
+        "importPath": "api.models.appointment",
+        "description": "api.models.appointment",
+        "isExtraImport": true,
+        "detail": "api.models.appointment",
+        "documentation": {}
+    },
+    {
+        "label": "Diagnosis",
+        "importPath": "api.models.diagnosis",
+        "description": "api.models.diagnosis",
+        "isExtraImport": true,
+        "detail": "api.models.diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "Diagnosis",
+        "importPath": "api.models.diagnosis",
+        "description": "api.models.diagnosis",
+        "isExtraImport": true,
+        "detail": "api.models.diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "Diagnosis",
+        "importPath": "api.models.diagnosis",
+        "description": "api.models.diagnosis",
+        "isExtraImport": true,
+        "detail": "api.models.diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "Diagnosis",
+        "importPath": "api.models.diagnosis",
+        "description": "api.models.diagnosis",
+        "isExtraImport": true,
+        "detail": "api.models.diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "AppointmentChat",
+        "importPath": "api.models.appointment_chat",
+        "description": "api.models.appointment_chat",
+        "isExtraImport": true,
+        "detail": "api.models.appointment_chat",
+        "documentation": {}
+    },
+    {
+        "label": "Disease",
+        "importPath": "api.models.disease",
+        "description": "api.models.disease",
+        "isExtraImport": true,
+        "detail": "api.models.disease",
+        "documentation": {}
+    },
+    {
         "label": "Disease",
         "importPath": "api.models.disease",
         "description": "api.models.disease",
@@ -146,19 +281,29 @@
         "documentation": {}
     },
     {
-        "label": "Symptom",
-        "importPath": "api.models.symptom",
-        "description": "api.models.symptom",
+        "label": "Disease",
+        "importPath": "api.models.disease",
+        "description": "api.models.disease",
         "isExtraImport": true,
-        "detail": "api.models.symptom",
+        "detail": "api.models.disease",
         "documentation": {}
     },
     {
-        "label": "load_model",
-        "importPath": "tensorflow.python.keras.models",
-        "description": "tensorflow.python.keras.models",
+        "label": "cv2",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "tensorflow.python.keras.models",
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
         "documentation": {}
     },
     {
@@ -167,6 +312,23 @@
         "description": "PIL",
         "isExtraImport": true,
         "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "tensorflow",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tensorflow",
+        "description": "tensorflow",
+        "detail": "tensorflow",
         "documentation": {}
     },
     {
@@ -179,11 +341,60 @@
         "documentation": {}
     },
     {
+        "label": "api.models.prediction",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "api.models.prediction",
+        "description": "api.models.prediction",
+        "detail": "api.models.prediction",
+        "documentation": {}
+    },
+    {
+        "label": "Prediction",
+        "importPath": "api.models.prediction",
+        "description": "api.models.prediction",
+        "isExtraImport": true,
+        "detail": "api.models.prediction",
+        "documentation": {}
+    },
+    {
+        "label": "detect_skin",
+        "importPath": "api.skindisease.detect_skin",
+        "description": "api.skindisease.detect_skin",
+        "isExtraImport": true,
+        "detail": "api.skindisease.detect_skin",
+        "documentation": {}
+    },
+    {
         "label": "JsonResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
         "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
         "documentation": {}
     },
     {
@@ -203,6 +414,22 @@
         "documentation": {}
     },
     {
+        "label": "serializers",
+        "importPath": "django.core",
+        "description": "django.core",
+        "isExtraImport": true,
+        "detail": "django.core",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
         "label": "APIView",
         "importPath": "rest_framework.views",
         "description": "rest_framework.views",
@@ -219,11 +446,19 @@
         "documentation": {}
     },
     {
-        "label": "status",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
         "isExtraImport": true,
-        "detail": "rest_framework",
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "IsAuthenticated",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
         "documentation": {}
     },
     {
@@ -235,12 +470,61 @@
         "documentation": {}
     },
     {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "MultiPartParser",
+        "importPath": "rest_framework.parsers",
+        "description": "rest_framework.parsers",
+        "isExtraImport": true,
+        "detail": "rest_framework.parsers",
+        "documentation": {}
+    },
+    {
+        "label": "FormParser",
+        "importPath": "rest_framework.parsers",
+        "description": "rest_framework.parsers",
+        "isExtraImport": true,
+        "detail": "rest_framework.parsers",
+        "documentation": {}
+    },
+    {
+        "label": "predict_disease",
+        "importPath": "api.skindisease",
+        "description": "api.skindisease",
+        "isExtraImport": true,
+        "detail": "api.skindisease",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "json",
         "description": "json",
         "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
         "documentation": {}
     },
     {
@@ -308,6 +592,22 @@
         "documentation": {}
     },
     {
+        "label": "ModelBackend",
+        "importPath": "django.contrib.auth.backends",
+        "description": "django.contrib.auth.backends",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.backends",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
@@ -321,6 +621,14 @@
         "description": "rest_framework.authtoken",
         "isExtraImport": true,
         "detail": "rest_framework.authtoken",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
         "documentation": {}
     },
     {
@@ -345,8 +653,35 @@
         "kind": 6,
         "importPath": "api.migrations.0001_initial",
         "description": "api.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Dermatologist',\n            fields=[\n                ('user_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to=settings.AUTH_USER_MODEL)),",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Appointment',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "api.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Appointment",
+        "kind": 6,
+        "importPath": "api.models.appointment",
+        "description": "api.models.appointment",
+        "peekOfCode": "class Appointment(models.Model):\n    dermatologist = models.ForeignKey(Dermatologist, on_delete=models.CASCADE)\n    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)\n    book_date = models.DateField(null=True)\n    appo_date = models.DateField(null=True)\n    done = models.BooleanField(default=False)\n    duration = models.DurationField(null=True)\n    cost = models.FloatField(default=0.0)\n    patient_approved = models.BooleanField(default=False)\n    dermatologist_approved = models.BooleanField(default=False)",
+        "detail": "api.models.appointment",
+        "documentation": {}
+    },
+    {
+        "label": "AppointmentChat",
+        "kind": 6,
+        "importPath": "api.models.appointment_chat",
+        "description": "api.models.appointment_chat",
+        "peekOfCode": "class AppointmentChat(models.Model):\n    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)\n    diagnosis = models.ForeignKey(Diagnosis, on_delete=models.CASCADE)\n    dermatologist = models.ForeignKey(Dermatologist, on_delete=models.CASCADE)\n    appointment = models.ForeignKey(Appointment, on_delete=models.CASCADE)",
+        "detail": "api.models.appointment_chat",
+        "documentation": {}
+    },
+    {
+        "label": "ChatMessage",
+        "kind": 6,
+        "importPath": "api.models.chat_message",
+        "description": "api.models.chat_message",
+        "peekOfCode": "class ChatMessage(models.Model):\n    sender = models.ForeignKey(User, on_delete=models.CASCADE)\n    text = models.TextField(max_length=1000)\n    chat = models.ForeignKey(AppointmentChat, on_delete=models.CASCADE)\n    diagnosis = models.ForeignKey(Diagnosis, on_delete=models.SET_NULL, null=True)\n    appointment = models.ForeignKey(Appointment, on_delete=models.SET_NULL, null=True)\n    date = models.DateField(auto_now_add=True)\n    time = models.TimeField(auto_now_add=True)\n    seen = models.BooleanField(default=False)",
+        "detail": "api.models.chat_message",
         "documentation": {}
     },
     {
@@ -354,7 +689,7 @@
         "kind": 6,
         "importPath": "api.models.dermatologist",
         "description": "api.models.dermatologist",
-        "peekOfCode": "class Dermatologist(User):\n    qualification = models.CharField(max_length=100)\n    work_email = models.EmailField()\n    phone_number_1 = models.CharField(max_length=13)\n    phone_number_2 = models.CharField(max_length=13)\n    clinic = models.CharField(max_length=100)\n    location_lat = models.FloatField()\n    location_lon = models.FloatField()\n    location_desc = models.CharField(max_length=100)",
+        "peekOfCode": "class Dermatologist(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    qualification = models.CharField(max_length=100)\n    work_email = models.EmailField()\n    phone_number_1 = models.CharField(max_length=13)\n    phone_number_2 = models.CharField(max_length=13)\n    clinic = models.CharField(max_length=100)\n    location_lat = models.FloatField()\n    location_lon = models.FloatField()\n    location_desc = models.CharField(max_length=100)",
         "detail": "api.models.dermatologist",
         "documentation": {}
     },
@@ -363,7 +698,7 @@
         "kind": 6,
         "importPath": "api.models.diagnosis",
         "description": "api.models.diagnosis",
-        "peekOfCode": "class Diagnosis(models.Model):\n    image = models.ImageField(upload_to='diagnosis/%Y/%m/%d/')\n    disease = models.ForeignKey(Disease, on_delete=models.SET_NULL, null=True)\n    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)\n    date = models.DateField()",
+        "peekOfCode": "class Diagnosis(models.Model):\n    image = models.ImageField(upload_to='media/diagnosis/%Y/%m/%d/')\n    diseases = models.ManyToManyField(Disease, through='Prediction')\n    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)\n    body_part = models.CharField(max_length=100)\n    itchy = models.BooleanField(default=False)\n    date = models.DateField(auto_now_add=True)",
         "detail": "api.models.diagnosis",
         "documentation": {}
     },
@@ -372,7 +707,7 @@
         "kind": 6,
         "importPath": "api.models.disease",
         "description": "api.models.disease",
-        "peekOfCode": "class Disease(models.Model):\n    name = models.CharField(max_length=100)\n    description = models.TextField(max_length=500)\n    symptoms = models.ManyToManyField(Symptom)",
+        "peekOfCode": "class Disease(models.Model):\n    name = models.CharField(max_length=100)\n    description = models.TextField(max_length=500)\n    severity = models.IntegerField(choices=[(1, \"Mild\"), (2, \"Moderate\"), (3, \"Severe\")])",
         "detail": "api.models.disease",
         "documentation": {}
     },
@@ -381,17 +716,17 @@
         "kind": 6,
         "importPath": "api.models.patient",
         "description": "api.models.patient",
-        "peekOfCode": "class Patient(User):\n    dob = models.DateField()\n    gender = models.CharField(max_length=1, choices=[(\"M\", \"Male\"), (\"F\", \"Female\"), (\"O\", \"Other\")])",
+        "peekOfCode": "class Patient(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    dob = models.DateTimeField()\n    gender = models.CharField(max_length=1, choices=[(\"M\", \"Male\"), (\"F\", \"Female\"), (\"O\", \"Other\")])",
         "detail": "api.models.patient",
         "documentation": {}
     },
     {
-        "label": "Symptom",
+        "label": "Prediction",
         "kind": 6,
-        "importPath": "api.models.symptom",
-        "description": "api.models.symptom",
-        "peekOfCode": "class Symptom(models.Model):\n    title = models.CharField(max_length=100)\n    description = models.TextField(max_length=500)",
-        "detail": "api.models.symptom",
+        "importPath": "api.models.prediction",
+        "description": "api.models.prediction",
+        "peekOfCode": "class Prediction(models.Model):\n    disease = models.ForeignKey(Disease, on_delete=models.CASCADE, null=True)\n    diagnosis = models.ForeignKey(Diagnosis, on_delete=models.CASCADE)\n    probability = models.FloatField(default=0.0)",
+        "detail": "api.models.prediction",
         "documentation": {}
     },
     {
@@ -404,21 +739,102 @@
         "documentation": {}
     },
     {
+        "label": "center_skin",
+        "kind": 2,
+        "importPath": "api.skindisease.detect_skin",
+        "description": "api.skindisease.detect_skin",
+        "peekOfCode": "def center_skin(skin, image):\n    # Find the bounding box of the skin region\n    contours, _ = cv2.findContours(skin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\n    # Find the contour with the largest area\n    largest_contour = None\n    largest_area = 0\n    for contour in contours:\n        area = cv2.contourArea(contour)\n        if area > largest_area:\n            largest_area = area",
+        "detail": "api.skindisease.detect_skin",
+        "documentation": {}
+    },
+    {
+        "label": "detect_skin",
+        "kind": 2,
+        "importPath": "api.skindisease.detect_skin",
+        "description": "api.skindisease.detect_skin",
+        "peekOfCode": "def detect_skin(image):\n    # Load the image\n    # image = cv2.imread(\"D:/Xool/4/2/2/smartskin/media/media/diagnosis/2023/05/08/angioedema_of_lips.jpg\")\n    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)\n    # Convert the image to YCbCr color space\n    ycbcr = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)\n    # Define range of skin color in YCbCr\n    lower_skin = np.array([0, 135, 85], dtype=np.uint8)\n    upper_skin = np.array([255, 180, 135], dtype=np.uint8)\n    # Create a mask of skin pixels using YCbCr color space",
+        "detail": "api.skindisease.detect_skin",
+        "documentation": {}
+    },
+    {
         "label": "get_model",
         "kind": 2,
         "importPath": "api.skindisease.identify",
         "description": "api.skindisease.identify",
-        "peekOfCode": "def get_model(part, itchy):\n    name = (\"Itchy \" if itchy else \"Non-Itchy \") + part\n    return load_model(os.path.join(os.path.dirname(__file__), \"models\", name))\n# Identifies the skin disease in the image\ndef identify(img, body_part, itchy):\n    img = Image.open(img).resize((299, 299))\n    model = get_model(body_part, itchy)\n    return model.predict(img)",
+        "peekOfCode": "def get_model(name):\n    model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), \"models\", name + \".h5\"), custom_objects=custom_objects)\n    for layer in model.layers:\n        layer.training = False\n    return model\nmodels = {\n    \"Itchy Face\": get_model(\"Itchy Face\"),\n    \"Non Itchy Face\": get_model(\"Non Itchy Face\"),\n    \"Itchy Cranium\": get_model(\"Itchy Cranium\"),\n}",
         "detail": "api.skindisease.identify",
         "documentation": {}
     },
     {
-        "label": "identify",
+        "label": "map_predictions",
         "kind": 2,
         "importPath": "api.skindisease.identify",
         "description": "api.skindisease.identify",
-        "peekOfCode": "def identify(img, body_part, itchy):\n    img = Image.open(img).resize((299, 299))\n    model = get_model(body_part, itchy)\n    return model.predict(img)",
+        "peekOfCode": "def map_predictions(diagnosis, predictions, labels):\n    disease_prob = [{\"disease\": disease, \"probability\": predictions[labels[disease]]} for disease in labels]\n    disease_prob.sort(key=lambda x: x[\"probability\"], reverse=True)\n    return [Prediction.objects.create(\n        disease=diseases.get(name=disease[\"disease\"]), \n        diagnosis=diagnosis, \n        probability=disease[\"probability\"]) \n            for disease in disease_prob[:3]]\ndef preprocess_image(img):\n    img = np.asarray(img.resize((299, 299)))",
         "detail": "api.skindisease.identify",
+        "documentation": {}
+    },
+    {
+        "label": "preprocess_image",
+        "kind": 2,
+        "importPath": "api.skindisease.identify",
+        "description": "api.skindisease.identify",
+        "peekOfCode": "def preprocess_image(img):\n    img = np.asarray(img.resize((299, 299)))\n    # has_skin, img = detect_skin(img)\n    # if not has_skin:\n    #     raise Exception(\"No skin detected\")\n    img = np.array(img) / 255.0\n    img = np.expand_dims(img, axis=0)\n    return img\n# Identifies the skin disease in the image\ndef predict_disease(diagnosis):",
+        "detail": "api.skindisease.identify",
+        "documentation": {}
+    },
+    {
+        "label": "predict_disease",
+        "kind": 2,
+        "importPath": "api.skindisease.identify",
+        "description": "api.skindisease.identify",
+        "peekOfCode": "def predict_disease(diagnosis):\n    img = preprocess_image(Image.open(diagnosis.image))\n    model = models[(\"Itchy\" if diagnosis.itchy else \"Non Itchy\") + \" \" + diagnosis.body_part]\n    model_labels = labels[(\"Itchy\" if diagnosis.itchy else \"Non Itchy\") + \" \" + diagnosis.body_part]\n    predictions = map_predictions(diagnosis, model.predict(img)[0].tolist(), model_labels)\n    return predictions",
+        "detail": "api.skindisease.identify",
+        "documentation": {}
+    },
+    {
+        "label": "custom_objects",
+        "kind": 5,
+        "importPath": "api.skindisease.identify",
+        "description": "api.skindisease.identify",
+        "peekOfCode": "custom_objects = {'BatchNormalization': tf.keras.layers.BatchNormalization, 'Adam': tf.keras.optimizers.Adam}\n# Returns the model for the given part and itchy\ndef get_model(name):\n    model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), \"models\", name + \".h5\"), custom_objects=custom_objects)\n    for layer in model.layers:\n        layer.training = False\n    return model\nmodels = {\n    \"Itchy Face\": get_model(\"Itchy Face\"),\n    \"Non Itchy Face\": get_model(\"Non Itchy Face\"),",
+        "detail": "api.skindisease.identify",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "kind": 5,
+        "importPath": "api.skindisease.identify",
+        "description": "api.skindisease.identify",
+        "peekOfCode": "models = {\n    \"Itchy Face\": get_model(\"Itchy Face\"),\n    \"Non Itchy Face\": get_model(\"Non Itchy Face\"),\n    \"Itchy Cranium\": get_model(\"Itchy Cranium\"),\n}\nlabels = {\n    \"Itchy Face\": {'acne': 0, 'eczema': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'urticaria': 4},\n    \"Non Itchy Face\": {'acne vulgaris': 0, 'basal cell carcinoma': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'squamous cell carcinoma': 4},\n    \"Itchy Cranium\": {'eczema': 0, 'folliculitis': 1, 'lichen planus': 2, 'psoriasis': 3, 'rosacea': 4, 'seborrheic dermatitis': 5}\n}",
+        "detail": "api.skindisease.identify",
+        "documentation": {}
+    },
+    {
+        "label": "labels",
+        "kind": 5,
+        "importPath": "api.skindisease.identify",
+        "description": "api.skindisease.identify",
+        "peekOfCode": "labels = {\n    \"Itchy Face\": {'acne': 0, 'eczema': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'urticaria': 4},\n    \"Non Itchy Face\": {'acne vulgaris': 0, 'basal cell carcinoma': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'squamous cell carcinoma': 4},\n    \"Itchy Cranium\": {'eczema': 0, 'folliculitis': 1, 'lichen planus': 2, 'psoriasis': 3, 'rosacea': 4, 'seborrheic dermatitis': 5}\n}\ndiseases = Disease.objects.all()\ndef map_predictions(diagnosis, predictions, labels):\n    disease_prob = [{\"disease\": disease, \"probability\": predictions[labels[disease]]} for disease in labels]\n    disease_prob.sort(key=lambda x: x[\"probability\"], reverse=True)\n    return [Prediction.objects.create(",
+        "detail": "api.skindisease.identify",
+        "documentation": {}
+    },
+    {
+        "label": "diseases",
+        "kind": 5,
+        "importPath": "api.skindisease.identify",
+        "description": "api.skindisease.identify",
+        "peekOfCode": "diseases = Disease.objects.all()\ndef map_predictions(diagnosis, predictions, labels):\n    disease_prob = [{\"disease\": disease, \"probability\": predictions[labels[disease]]} for disease in labels]\n    disease_prob.sort(key=lambda x: x[\"probability\"], reverse=True)\n    return [Prediction.objects.create(\n        disease=diseases.get(name=disease[\"disease\"]), \n        diagnosis=diagnosis, \n        probability=disease[\"probability\"]) \n            for disease in disease_prob[:3]]\ndef preprocess_image(img):",
+        "detail": "api.skindisease.identify",
+        "documentation": {}
+    },
+    {
+        "label": "DiagnosisView",
+        "kind": 6,
+        "importPath": "api.views.diagnosis",
+        "description": "api.views.diagnosis",
+        "peekOfCode": "class DiagnosisView(APIView):\n    \"\"\"\n    API View to create or get a list of all the diagnoses of\n    users. GET request returns the user's diagnoses whereas\n    a POST request allows to create a new diagnosis.\n    \"\"\"\n    parser_classes = [MultiPartParser, FormParser]\n    #permission_classes = [IsAuthenticated]\n    def get(self, request, format=None):\n        diagnoses = request.user.patient.diagnosis_set.all()",
+        "detail": "api.views.diagnosis",
         "documentation": {}
     },
     {
@@ -444,7 +860,7 @@
         "kind": 5,
         "importPath": "api.urls",
         "description": "api.urls",
-        "peekOfCode": "app_name = 'api'\nurlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n    path('users/register/', UserRecordView.as_view(), name='register')\n]",
+        "peekOfCode": "app_name = 'api'\nurlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n    path('users/register/', UserRecordView.as_view(), name='register'),\n    path('diagnosis/', DiagnosisView.as_view(), name='diagnosis'),\n]",
         "detail": "api.urls",
         "documentation": {}
     },
@@ -453,7 +869,7 @@
         "kind": 5,
         "importPath": "api.urls",
         "description": "api.urls",
-        "peekOfCode": "urlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n    path('users/register/', UserRecordView.as_view(), name='register')\n]",
+        "peekOfCode": "urlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n    path('users/register/', UserRecordView.as_view(), name='register'),\n    path('diagnosis/', DiagnosisView.as_view(), name='diagnosis'),\n]",
         "detail": "api.urls",
         "documentation": {}
     },
@@ -467,11 +883,29 @@
         "documentation": {}
     },
     {
+        "label": "EmailBackend",
+        "kind": 6,
+        "importPath": "smartskin.backends",
+        "description": "smartskin.backends",
+        "peekOfCode": "class EmailBackend(ModelBackend):\n    def authenticate(self, request, email=None, password=None, **kwargs):\n        UserModel = get_user_model()\n        try:\n            user = UserModel.objects.get(email=email)\n        except UserModel.DoesNotExist:\n            return None\n        else:\n            if user.check_password(password):\n                return user",
+        "detail": "smartskin.backends",
+        "documentation": {}
+    },
+    {
         "label": "BASE_DIR",
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nMEDIA_ROOT = BASE_DIR / 'media'\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.42.146', 'localhost']\n# Application definition",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "MEDIA_ROOT = BASE_DIR / 'media'\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.42.146', 'localhost']\n# Application definition\nINSTALLED_APPS = [",
         "detail": "smartskin.settings",
         "documentation": {}
     },
@@ -480,7 +914,7 @@
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.42.146', 'localhost']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "smartskin.settings",
         "documentation": {}
     },
@@ -489,7 +923,7 @@
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = ['192.168.42.146', 'localhost']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "smartskin.settings",
         "documentation": {}
     },
@@ -498,7 +932,7 @@
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
+        "peekOfCode": "ALLOWED_HOSTS = ['192.168.42.146', 'localhost']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
         "detail": "smartskin.settings",
         "documentation": {}
     },
@@ -570,7 +1004,16 @@
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework.authentication.TokenAuthentication',\n    ),\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.IsAuthenticated',\n    ],\n}\n# Internationalization\n# https://docs.djangoproject.com/en/4.2/topics/i18n/",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework.authentication.TokenAuthentication',\n    ),\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.IsAuthenticated',\n    ],\n}\nAUTHENTICATION_BACKENDS = [\n    'smartskin.backends.EmailBackend',",
+        "detail": "smartskin.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTHENTICATION_BACKENDS",
+        "kind": 5,
+        "importPath": "smartskin.settings",
+        "description": "smartskin.settings",
+        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    'smartskin.backends.EmailBackend',\n    'django.contrib.auth.backends.ModelBackend',\n]\n# Internationalization\n# https://docs.djangoproject.com/en/4.2/topics/i18n/\nLANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True",
         "detail": "smartskin.settings",
         "documentation": {}
     },
@@ -642,7 +1085,7 @@
         "kind": 5,
         "importPath": "smartskin.urls",
         "description": "smartskin.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('api.urls', namespace='api')),\n    path('api-token-auth/', views.obtain_auth_token, name='api-token-auth'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('api.urls', namespace='api')),\n    path('api/api-token-auth/', views.obtain_auth_token, name='api-token-auth'),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "smartskin.urls",
         "documentation": {}
     },

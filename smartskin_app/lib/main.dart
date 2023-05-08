@@ -12,7 +12,6 @@ import 'package:smartskin_app/repositories/user_repository.dart';
 import 'package:smartskin_app/scan/scan_page.dart';
 import 'package:smartskin_app/splash/splash_page.dart';
 
-import 'diagnosis/diagnosis_page.dart';
 
 class SimpleBlocObserver extends BlocObserver {
   @override
@@ -35,9 +34,7 @@ class SimpleBlocObserver extends BlocObserver {
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final cameras = await availableCameras();
-  final firstCamera = cameras.first;
-  camera = firstCamera;
+  initCamera();
   Bloc.observer = SimpleBlocObserver();
   final userRepository = UserRepository();
 
@@ -51,6 +48,12 @@ Future<void> main() async {
       child: App(userRepository: userRepository),
     )
   );
+}
+
+Future<void> initCamera() async {
+  final cameras = await availableCameras();
+  final firstCamera = cameras.first;
+  camera = firstCamera;
 }
 
 class App extends StatelessWidget {

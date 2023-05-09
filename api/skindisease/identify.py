@@ -10,8 +10,11 @@ from api.skindisease.detect_skin import detect_skin
 custom_objects = {'BatchNormalization': tf.keras.layers.BatchNormalization, 'Adam': tf.keras.optimizers.Adam}
 # Returns the model for the given part and itchy
 def get_model(name):
+    tf.keras.backend.clear_session()
     model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), "models", name + ".h5"), custom_objects=custom_objects)
     for layer in model.layers:
+        if isinstance(layer, tf.keras.layers.Dropout):
+            layer.rate = 0.0
         layer.training = False
     return model
 

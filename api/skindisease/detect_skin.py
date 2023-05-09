@@ -72,18 +72,18 @@ def detect_skin(image):
     skin_pixels = cv2.countNonZero(skin_mask)
     skin_percentage = skin_pixels / total_pixels
     
-    has_skin = skin_percentage > 0.5
+    has_skin = skin_percentage > 0.4
     print(f"Has skin: {has_skin}")
-    # Apply the mask to the original image
-    img_skin = cv2.bitwise_and(image, image, mask=skin_mask)
+    # # Apply the mask to the original image
+    # img_skin = cv2.bitwise_and(image, image, mask=skin_mask)
     
-    centered_skin = center_skin(skin_mask, img_skin)
-    img_skin = cv2.cvtColor(centered_skin, cv2.COLOR_RGB2BGR)
-    # Show the skin pixels in the original image
-    cv2.imshow('Skin Detection', img_skin)
-    cv2.waitKey(0)
+    # centered_skin = center_skin(skin_mask, img_skin)
+    # img_skin = cv2.cvtColor(centered_skin, cv2.COLOR_RGB2BGR)
+    # # Show the skin pixels in the original image
+    # cv2.imshow('Skin Detection', img_skin)
+    # cv2.waitKey(0)
     # Return the skin mask
-    return has_skin, img_skin
+    return has_skin #, img_skin
 
 
 #detect_skin(np.asarray(Image.open("D:/Xool/4/2/2/smartskin/media/media/diagnosis/2023/05/08/angioedema_of_lips.jpg").resize((299, 299))))

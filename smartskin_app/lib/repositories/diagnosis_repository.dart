@@ -5,14 +5,14 @@ import 'package:dio/dio.dart';
 import 'package:smartskin_app/models/diagnosis.dart';
 import 'package:smartskin_app/util/endpoints.dart';
 
-import '../api_connection/diagnosis_con.dart';
+import '../api_connection/con.dart';
 
 class DiagnosisRepository {
   final Dio _dio = Dio();
 
   Future<List<Diagnosis>> fetchDiagnoses() async {
     try {
-      final response = await _dio.get('https://your-api.com/diagnoses');
+      final response = await _dio.get(DIAGNOSES_URL, options: getOptions());
       final data = response.data as List<dynamic>;
       final diagnoses = data.map((e) => Diagnosis.fromJson(e)).toList();
       return diagnoses;
@@ -29,11 +29,11 @@ class DiagnosisRepository {
     try {
       final Response response = await dio.post(
         DIAGNOSIS_URL,
-        options: options,
+        options: postOptions(),
         data: data,
       );
       if (response.statusCode == 200) {
-        return Diagnosis.fromJson(jsonDecode(response.data));
+        return Diagnosis.fromJson(response.data);
       } else {
         log(response.data.toString());
         throw Exception(response.data.toString());
@@ -41,7 +41,7 @@ class DiagnosisRepository {
     } on DioError catch (e) {
       log(e.toString());
       if (e.response?.statusCode == 400) {
-        throw Exception("No skin detected, make sure the image is clear and the skin covers at least half it.");
+        throw Exception("No skin detected, make sure the image is clear and the skin covers at least half of it.");
       }
       rethrow;
     }

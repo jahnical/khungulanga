@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:smartskin_app/api_connection/diagnosis_con.dart';
+import 'package:smartskin_app/api_connection/con.dart';
 import 'package:smartskin_app/repositories/diagnosis_repository.dart';
 
 import '../diagnosis/diagnosis_page.dart';
@@ -96,7 +96,7 @@ class _ExtraInfoPageState extends State<ExtraInfoPage> {
                   const SizedBox(height: 2.0),
                   const Text(
                     'Select body part:',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400),
                   ),
                   const SizedBox(height: 2.0),
                   DropdownButtonFormField<String>(
@@ -138,7 +138,7 @@ class _ExtraInfoPageState extends State<ExtraInfoPage> {
                   const SizedBox(height: 16.0),
                   const Text(
                     'Is it itchy?',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400),
                   ),
                   const SizedBox(height: 0.0),
                   SwitchListTile(

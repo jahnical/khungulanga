@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smartskin_app/auth/auth/bloc/auth_bloc.dart';
+import 'package:smartskin_app/dermatologists/dermatologists_list.dart';
 
 import '../dermatologists/dermatologists_page.dart';
 import '../history/history_page.dart';
@@ -15,14 +16,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
+  final List<String> _titles = ['History', 'Scan', 'Dermatologists'];
 
-  final List<Widget> _pages = [const HistoryPage(), const ScanPage(), DermatologistsPage(),];
+  final List<Widget> _pages = [const HistoryPage(), const ScanPage(), DermatologistList(userLocation: [0.0, 0.0],),];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('KhunguLanga'),
+        title: Text(_titles[_currentIndex]),
       ),
       drawer: Drawer(
         child: ListView(

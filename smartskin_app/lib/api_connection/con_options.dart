@@ -8,9 +8,17 @@ import 'package:smartskin_app/util/endpoints.dart';
 
 import '../repositories/user_repository.dart';
 
-Options options = Options(headers: <String, String>{
-  'Content-Type': 'application/json; charset=UTF-8',
-  'Authorization': 'Token ${USER?.token}'
-});
+Options postOptions() {
+  return Options(headers: <String, String>{
+    'Content-Type': 'application/json; charset=UTF-8',
+    'Authorization': 'Token ${USER?.token}'
+  });
+}
+
+Options getOptions() {
+  return Options(headers: <String, String> {
+    "Authorization": 'Token ${USER?.token}'
+  });
+}
 
 

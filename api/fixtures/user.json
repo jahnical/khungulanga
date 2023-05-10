@@ -1,0 +1,53 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 11,
+        "fields": {
+            "username": "drjane",
+            "first_name": "Jane",
+            "last_name": "Doe",
+            "email": "drjane@example.com",
+            "password": "pbkdf2_sha256$180000$YlYymRx7h60w$SNmW8Bt/ajn5C/Pe5W8XvM5xPzN/04NLMfDd8Nvco/o=",
+            "is_superuser": false,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-05-10T07:14:14.927Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "username": "drjohn",
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "drjohn@example.com",
+            "password": "pbkdf2_sha256$180000$jVKu6raZU6mZ$f6UXpx1V2cHnGyT6Tbw49mTzd1OQnbGReRgoB9fOgYo=",
+            "is_superuser": false,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-05-10T07:14:14.927Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 10,
+        "fields": {
+            "username": "drjane2",
+            "first_name": "Jane",
+            "last_name": "Doe",
+            "email": "drjane2@example.com",
+            "password": "pbkdf2_sha256$180000$U/HBZ33W8lUz$6sckmPLXKs+oW8JvSKHxDplf/kAPoLZIzFK2D3q1T0Y=",
+            "is_superuser": false,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-05-10T07:14:14.927Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

@@ -1,0 +1,48 @@
+[
+    {
+      "model": "api.dermatologist",
+      "pk": 1,
+      "fields": {
+        "user": 11,
+        "qualification": "Dermatology Specialist",
+        "work_email": "drjane@example.com",
+        "phone_number_1": "1234567890",
+        "phone_number_2": "0987654321",
+        "clinic": "ABC Dermatology Clinic",
+        "location_lat": 37.7749,
+        "location_lon": -122.4194,
+        "location_desc": "San Francisco, CA"
+      }
+    },
+    {
+      "model": "api.dermatologist",
+      "pk": 12,
+      "fields": {
+        "user": 2,
+        "qualification": "Cosmetic Dermatologist",
+        "work_email": "drjohn@example.com",
+        "phone_number_1": "1112223333",
+        "phone_number_2": "4445556666",
+        "clinic": "XYZ Skin Care Clinic",
+        "location_lat": 40.7128,
+        "location_lon": -74.0060,
+        "location_desc": "New York, NY"
+      }
+    },
+    {
+        "model": "api.dermatologist",
+        "pk": 2,
+        "fields": {
+          "user": 10,
+          "qualification": "Cosmetic Dermatologist",
+          "work_email": "drjohn@example.com",
+          "phone_number_1": "1112223333",
+          "phone_number_2": "4445556666",
+          "clinic": "XYZ Skin Care Clinic",
+          "location_lat": 40.7128,
+          "location_lon": -74.0060,
+          "location_desc": "New York, NY"
+        }
+      }
+  ]
+  

@@ -20,7 +20,7 @@ class DiagnosisSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Diagnosis
-        fields = ('image', 'body_part', 'itchy', 'date', 'predictions')
+        fields = ('id', 'image', 'body_part', 'itchy', 'date', 'predictions')
         
     def get_queryset(self):
         queryset = super().get_queryset()

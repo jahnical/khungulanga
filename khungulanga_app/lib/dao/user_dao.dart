@@ -4,7 +4,7 @@ import 'package:khungulanga_app/models/auth_user.dart';
 class UserDao {
   final dbProvider = DatabaseProvider.dbProvider;
 
-  Future<int> createUser(User user) async {
+  Future<int> createUser(AuthUser user) async {
     final db = await dbProvider.database;
     var result = db.insert(userTable, user.toDatabaseJson());
     return result;
@@ -26,12 +26,12 @@ class UserDao {
     }
   }
 
-  Future<User?> getToken(int id) async {
+  Future<AuthUser?> getToken(int id) async {
     //Get token from database
     final db = await dbProvider.database;
     try {
       List<Map<String, dynamic>> users = await db.query(userTable);
-      return User.fromDatabaseJson(users.first);
+      return AuthUser.fromDatabaseJson(users.first);
     } catch (error) {
       return null;
     }

@@ -7,8 +7,6 @@ from api.models.dermatologist import Dermatologist, DermatologistSerializer
 
 class DermatologistView(APIView):
     
-    
-    
     def get(self, request):
         dermatologists = Dermatologist.objects.all()
         serializer = DermatologistSerializer(dermatologists, many=True)
@@ -20,7 +18,6 @@ class DermatologistView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
 class DermatologistDetail(APIView):
     def get_object(self, pk):

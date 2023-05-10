@@ -1,3 +1,4 @@
+import 'user.dart';
 
 class Dermatologist {
   int id;
@@ -9,6 +10,7 @@ class Dermatologist {
   double locationLat;
   double locationLon;
   String locationDesc;
+  User user;
 
   Dermatologist({
     required this.id,
@@ -20,6 +22,7 @@ class Dermatologist {
     required this.locationLat,
     required this.locationLon,
     required this.locationDesc,
+    required this.user,
   });
 
   factory Dermatologist.fromJson(Map<String, dynamic> json) {
@@ -33,6 +36,7 @@ class Dermatologist {
       locationLat: json['location_lat'].toDouble(),
       locationLon: json['location_lon'].toDouble(),
       locationDesc: json['location_desc'],
+      user: User.fromJson(json['user']),
     );
   }
 }

@@ -4,11 +4,11 @@ import 'package:khungulanga_app/api_connection/auth_con.dart';
 import 'package:khungulanga_app/dao/user_dao.dart';
 import 'package:khungulanga_app/models/auth_user.dart';
 
-User? USER;
+AuthUser? USER;
 class UserRepository {
   final userDao = UserDao();
 
-  Future<User> authenticate ({
+  Future<AuthUser> authenticate ({
     required String username,
     required String password,
   }) async {
@@ -17,7 +17,7 @@ class UserRepository {
         password: password
     );
     Token token = await getToken(userLogin);
-    User user = User(
+    AuthUser user = AuthUser(
       id: 0,
       username: username,
       token: token.token,
@@ -26,14 +26,14 @@ class UserRepository {
   }
 
   Future<void> persistToken ({
-    required User user
+    required AuthUser user
   }) async {
     // write token with the user to the database
     await userDao.createUser(user);
   }
 
-  Future<User?> getUserFromDB() async {
-    User? user = await userDao.getToken(0);
+  Future<AuthUser?> getUserFromDB() async {
+    AuthUser? user = await userDao.getToken(0);
     USER = user;
     return user;
   }

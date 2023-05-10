@@ -9,6 +9,7 @@ urlpatterns = [
     path('user/', UserRecordView.as_view(), name='users'),
     path('users/register/', UserRecordView.as_view(), name='register'),
     path('diagnosis/', DiagnosisView.as_view(), name='diagnosis'),
+    path('diagnosis/<int:pk>', DiagnosisView.as_view(), name='diagnosis.delete'),
     path('dermatologists/nearby', DermatologistView.as_view(), name='dermatologist'),
     path("dermatologists/<int:pk>/", DermatologistView.as_view(), name="dermatologist_detail"),
 ]

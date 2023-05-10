@@ -14,7 +14,7 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
-  final _usernameController = TextEditingController();
+  final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
   _onRegisterButtonPressed() {
@@ -28,7 +28,7 @@ class _LoginFormState extends State<LoginForm> {
     if (_formKey.currentState!.validate()) {
       BlocProvider.of<LoginBloc>(context).add(
         LoginButtonPressed(
-          username: _usernameController.text,
+          username: _emailController.text.split("@")[0].trim(),
           password: _passwordController.text,
         ),
       );
@@ -63,11 +63,15 @@ class _LoginFormState extends State<LoginForm> {
                     children: <Widget>[
                       TextFormField(
                         decoration: const InputDecoration(
-                            labelText: 'Username or Email', icon: Icon(Icons.person)),
-                        controller: _usernameController,
+                            labelText: 'Email address', icon: Icon(Icons.person)),
+                        controller: _emailController,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter your username';
+                            return 'Please enter your email address';
+                          }
+                          //Check if email is valid using email regex
+                          else if (!RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(value) ) {
+                            return 'Please enter a valid email address';
                           }
                           return null;
                         },
@@ -121,11 +125,6 @@ class _LoginFormState extends State<LoginForm> {
                       TextButton(
                         onPressed: _onRegisterButtonPressed,
                         child: const Text('Register'),
-                      ),
-                      Container(
-                        child: state is LoginLoading
-                            ? const CircularProgressIndicator()
-                            : null,
                       ),
                     ],
                   ),

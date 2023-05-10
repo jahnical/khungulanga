@@ -12,7 +12,7 @@ class DiagnosisRepository {
 
   Future<List<Diagnosis>> fetchDiagnoses() async {
     try {
-      final response = await _dio.get(DIAGNOSES_URL, options: getOptions());
+      final response = await _dio.get("$DIAGNOSIS_URL/", options: getOptions());
       final data = response.data as List<dynamic>;
       final diagnoses = data.map((e) => Diagnosis.fromJson(e)).toList();
       return diagnoses;
@@ -28,7 +28,7 @@ class DiagnosisRepository {
 
     try {
       final Response response = await dio.post(
-        DIAGNOSIS_URL,
+        "$DIAGNOSIS_URL/",
         options: postOptions(),
         data: data,
       );
@@ -44,6 +44,15 @@ class DiagnosisRepository {
         throw Exception("No skin detected, make sure the image is clear and the skin covers at least half of it.");
       }
       rethrow;
+    }
+  }
+
+  Future<bool> delete(id) async {
+    try {
+      await _dio.delete("$DIAGNOSIS_URL/$id", options: getOptions());
+      return true;
+    } on DioError catch (e) {
+      throw Exception(e.message);
     }
   }
 }

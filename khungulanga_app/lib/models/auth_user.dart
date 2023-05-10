@@ -1,15 +1,15 @@
 import 'package:intl/intl.dart';
 
-class User {
+class AuthUser {
   int id;
   String username;
   String token;
 
-  User({required this.id,
+  AuthUser({required this.id,
       required this.username,
       required this.token});
 
-  factory User.fromDatabaseJson(Map<String, dynamic> data) => User(
+  factory AuthUser.fromDatabaseJson(Map<String, dynamic> data) => AuthUser(
       id: data['id'],
       username: data['username'],
       token: data['token'],

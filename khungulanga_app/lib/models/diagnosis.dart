@@ -7,11 +7,13 @@ class Diagnosis {
   final bool itchy;
   final DateTime date;
   final List<Prediction> predictions;
+  final int id;
 
-  Diagnosis({required this.imageUrl, required this.bodyPart, required this.itchy, required this.date, required this.predictions});
+  Diagnosis(this.id, {required this.imageUrl, required this.bodyPart, required this.itchy, required this.date, required this.predictions});
 
   factory Diagnosis.fromJson(Map<String, dynamic> json) {
     return Diagnosis(
+      json['id'],
       imageUrl: json['image'],
       bodyPart: json['body_part'],
       itchy: json['itchy'],

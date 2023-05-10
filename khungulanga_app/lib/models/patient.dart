@@ -1,3 +1,5 @@
+import 'package:khungulanga_app/models/user.dart';
+
 class Patient {
   final int id;
   final String username;
@@ -11,6 +13,7 @@ class Patient {
   bool? isActive = false;
   DateTime? lastLogin;
   DateTime? dateJoined;
+  User? user;
 
   Patient({
     required this.id,

@@ -8,7 +8,7 @@ class DermatologistRepository {
   final Dio _dio = Dio();
 
   Future<List<Dermatologist>> getDermatologists() async {
-    final response = await _dio.get(DERMATOLOGISTS_URL);
+    final response = await _dio.get('$DERMATOLOGISTS_URL/', options: getOptions());
     final dermatologistsJson = response.data as List<dynamic>;
     final dermatologists = dermatologistsJson
         .map((json) => Dermatologist.fromJson(json as Map<String, dynamic>))
@@ -17,7 +17,7 @@ class DermatologistRepository {
   }
 
   Future<Dermatologist> getDermatologistById(int id) async {
-    final response = await _dio.get('$DERMATOLOGISTS_URL/$id');
+    final response = await _dio.get('$DERMATOLOGISTS_URL/$id/', options: getOptions());
     final dermatologistJson = response.data as Map<String, dynamic>;
     final dermatologist = Dermatologist.fromJson(dermatologistJson);
     return dermatologist;

@@ -25,7 +25,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     LoginEvent event,
   ) async* {
     if (event is LoginButtonPressed) {
-      yield LoginInitial();
+      yield LoginLoading();
 
       try {
         final user = await userRepository.authenticate(

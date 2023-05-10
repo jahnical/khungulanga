@@ -26,11 +26,14 @@ class DiagnosisView(APIView):
     #permission_classes = [IsAuthenticated]
     
     def get(self, request, format=None):
-        if request.user:
+        if not request.user == None and request.user.is_staff:
+            diagnoses = request.user.patient.diagnosis_set.all()
+            return JsonResponse(DiagnosisSerializer(diagnoses, many=True), safe=False)
+        if not request.user == None:
             diagnoses = request.user.patient.diagnosis_set.all()
             return JsonResponse(DiagnosisSerializer(diagnoses, many=True).data, safe=False)
-        diagnoses = request.user.patient.diagnosis_set.all()
-        return JsonResponse(DiagnosisSerializer(diagnoses, many=True), safe=False)
+        return Response({'error': 'Not authorized'}, status=status.HTTP_401_UNAUTHORIZED)
+        
     
     def _fetch_diagnosis(self, id):
         diagnosis = get_object_or_404(Diagnosis.objects.select_related('prediction_set', 'prediction_se'), pk=id)
@@ -63,3 +66,8 @@ class DiagnosisView(APIView):
         except Exception as e:
             print(e)
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+    def delete(self, request, pk):
+        diagnosis = Diagnosis.objects.get(pk=pk)
+        diagnosis.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

@@ -12,7 +12,6 @@ class RegisterForm extends StatefulWidget {
 
 class _RegisterFormState extends State<RegisterForm> {
   final _formKey = GlobalKey<FormState>();
-  final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
   final _dobController = TextEditingController();
@@ -28,7 +27,7 @@ class _RegisterFormState extends State<RegisterForm> {
   _onRegisterButtonPressed() {
     if (_formKey.currentState?.validate() == true) {
       BlocProvider.of<RegisterBloc>(context).add(RegisterButtonPressed(
-        username: _usernameController.text,
+        username: _emailController.text.split("@")[0].trim(),
         password: _passwordController.text,
         confirmPassword: _confirmPasswordController.text,
         firstName: _firstNameController.text,
@@ -63,19 +62,6 @@ class _RegisterFormState extends State<RegisterForm> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        labelText: 'Username',
-                        icon: Icon(Icons.person),
-                      ),
-                      controller: _usernameController,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your username';
-                        }
-                        return null;
-                      },
-                    ),
                     TextFormField(
                       decoration: const InputDecoration(
                         labelText: 'Email',

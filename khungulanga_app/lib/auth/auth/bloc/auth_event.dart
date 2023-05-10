@@ -11,7 +11,7 @@ abstract class AuthEvent extends Equatable {
 class AppStarted extends AuthEvent {}
 
 class LoggedIn extends AuthEvent {
-  final User user;
+  final AuthUser user;
 
   const LoggedIn({required this.user});
 

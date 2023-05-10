@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:khungulanga_app/auth/auth/bloc/auth_bloc.dart';
 import 'package:khungulanga_app/dermatologists/dermatologists_list.dart';
 
-import '../dermatologists/dermatologists_page.dart';
 import '../history/history_page.dart';
 import '../scan/scan_page.dart';
 
@@ -31,16 +30,39 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              child: Text('KhunguLanga'),
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
               ),
+              child: const Center(
+                child: Text(
+                    'KhunguLanga',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    )
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text('Profile'),
+              leading: Icon(Icons.person),
+              onTap: () {
+                // Navigate to the profile screen
+              },
+            ),
+            ListTile(
+              title: Text('Diseases'),
+              leading: Icon(Icons.local_hospital),
+              onTap: () {
+                // Navigate to the diseases screen
+              },
             ),
             ListTile(
               title: Text('About'),
               leading: Icon(Icons.info),
               onTap: () {
-                //BlocProvider.of<AuthBloc>(context).add(LoggedOut());
+                // Show the about dialog
               },
             ),
             ListTile(

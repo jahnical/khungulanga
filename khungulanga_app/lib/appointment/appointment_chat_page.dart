@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 // Replace these with the appropriate models for your project
 import '../models/appointment_chat.dart';
@@ -73,39 +74,93 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
     });
   }
 
+  bool _isExpanded = false;
   Widget _buildAppointmentCard() {
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      margin: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              'Appointment Details',
-              style: Theme.of(context).textTheme.headline6,
+            InkWell(
+              onTap: () {
+                setState(() {
+                  _isExpanded = !_isExpanded;
+                });
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Appointment Details',
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                  Icon(
+                    _isExpanded ? Icons.expand_less : Icons.expand_more,
+                  ),
+                ],
+              ),
             ),
-            SizedBox(height: 16.0),
-            Text('Dermatologist: ${_appointment.dermatologist.user.firstName} ${_appointment.dermatologist.user.lastName}'),
-            Text('Date: ${_appointment.appoDate.toString()}'),
-            Text('Time: ${_appointment.appoDate.toString()}'),
-            Text('Duration: ${_appointment.duration.inHours} hours'),
-            Text('Cost: ${_appointment.cost}'),
-            SizedBox(height: 16.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: null,//() => _onAppointmentChange(_appointment.copyWith(patient_approved: true)),
-                  child: Text('Approve'),
-                ),
-                SizedBox(width: 16.0),
-                ElevatedButton(
-                  onPressed: null,//() => _onAppointmentChange(_appointment.copyWith(patient_approved: false)),
-                  child: Text('Reject'),
-                ),
-              ],
-            ),
+            if (_isExpanded)
+              Column(
+                children: [
+                  SizedBox(height: 8.0),
+                  TextFormField(
+                    initialValue:
+                    '${_appointment.dermatologist.user.firstName} ${_appointment.dermatologist.user.lastName}',
+                    decoration: InputDecoration(labelText: 'Dermatologist'),
+                    enabled: false,
+                  ),
+                  TextFormField(
+                    initialValue:
+                    DateFormat('dd/MM/yyyy hh:mm').format(_appointment.appoDate),
+                    decoration: InputDecoration(labelText: 'Time'),
+                    onChanged: (value) {
+                      // Update the appointment object with the new time value
+                      // _appointment.appoTime = value;
+                    },
+                  ),
+                  TextFormField(
+                    initialValue:
+                    _appointment.duration.inHours.toString(),
+                    decoration: InputDecoration(labelText: 'Duration (hours)'),
+                    onChanged: (value) {
+                      // Update the appointment object with the new duration value
+                      // _appointment.duration = value;
+                    },
+                  ),
+                  TextFormField(
+                    initialValue: _appointment.cost.toString(),
+                    decoration: InputDecoration(labelText: 'Cost'),
+                    onChanged: (value) {
+                      // Update the appointment object with the new cost value
+                      // _appointment.cost = value;
+                    },
+                  ),
+                  SizedBox(height: 16.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          // Save the updated appointment
+                          // _onAppointmentChange(_appointment.copyWith(patient_approved: true));
+                        },
+                        child: Text('Approve'),
+                      ),
+                      SizedBox(width: 16.0),
+                      ElevatedButton(
+                        onPressed: () {
+                          // Save the updated appointment
+                          // _onAppointmentChange(_appointment.copyWith(patient_approved: false));
+                        },
+                        child: Text('Reject'),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
           ],
         ),
       ),
@@ -130,28 +185,40 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
   }
 
   Widget _buildMessageInput() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: TextField(
-              controller: _messageController,
-              decoration: InputDecoration(
-                hintText: 'Type your message',
+    return Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: TextField(
+                controller: _messageController,
+                decoration: InputDecoration(
+                  hintText: 'Type your message',
+                  filled: true,
+                  fillColor: Colors.grey.shade200,
+                  contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25.0),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
               ),
             ),
           ),
-        ),
-        ElevatedButton(
-          onPressed: _sendMessage,
-          child: Text('Send'),
-        ),
-      ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: ElevatedButton(
+              onPressed: _sendMessage,
+              child: Text('Send'),
+            ),
+          )
+        ],
+      ),
     );
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

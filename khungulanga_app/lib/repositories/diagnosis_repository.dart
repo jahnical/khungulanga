@@ -6,6 +6,7 @@ import 'package:khungulanga_app/models/diagnosis.dart';
 import 'package:khungulanga_app/util/endpoints.dart';
 
 import '../api_connection/con_options.dart';
+import '../util/common.dart';
 
 class DiagnosisRepository {
   final Dio _dio = Dio();
@@ -34,6 +35,8 @@ class DiagnosisRepository {
       );
       if (response.statusCode == 200) {
         return Diagnosis.fromJson(response.data);
+      } if (response.statusCode == 206) {
+        throw AppException("No skin detected, make sure the image is clear and the skin covers at least half of it.", "206");
       } else {
         log(response.data.toString());
         throw Exception(response.data.toString());
@@ -41,7 +44,9 @@ class DiagnosisRepository {
     } on DioError catch (e) {
       log(e.toString());
       if (e.response?.statusCode == 400) {
-        throw Exception("No skin detected, make sure the image is clear and the skin covers at least half of it.");
+        throw AppException("Unable to diagnose, please try again.", "400");
+      } else {
+        throw Exception(e.message);
       }
       rethrow;
     }

@@ -15,6 +15,8 @@ class ScanPage extends StatefulWidget {
 class _ScanPageState extends State<ScanPage> {
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
+  late double _zoomLevel;
+  double _maxZoomLevel = 5.0;
   bool _flashOn = false;
   bool _cameraInitialized = false;
   XFile? _pickedImage;
@@ -27,9 +29,12 @@ class _ScanPageState extends State<ScanPage> {
 
   Future<void> _initializeCamera() async {
     _controller = CameraController(camera!, ResolutionPreset.high);
+    _zoomLevel = 1.0;
     _initializeControllerFuture = _controller.initialize();
     _cameraInitialized = true;
     _controller.setFlashMode(FlashMode.off);
+    _controller.setFocusMode(FocusMode.auto);
+    _maxZoomLevel = await _controller.getMaxZoomLevel();
   }
 
   @override
@@ -78,7 +83,7 @@ class _ScanPageState extends State<ScanPage> {
                       height: double.infinity,
                       width: double.infinity,
                       child: CameraPreview(
-                          _controller,
+                        _controller,
                         child: FittedBox(
                           fit: BoxFit.cover,
                           child: SizedBox(
@@ -111,8 +116,8 @@ class _ScanPageState extends State<ScanPage> {
                     ),
                     Positioned(
                       bottom: 16,
-                      left: 80,
-                      right: 0,
+                      left: 16,
+                      right: 16,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -130,9 +135,27 @@ class _ScanPageState extends State<ScanPage> {
                             },
                             child: const Icon(Icons.camera_alt),
                           ),
-                          SizedBox(width: 32),
+                          SizedBox(width: 16.0),
+                          Icon(Icons.remove, color: Colors.white),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 2.0),
+                            child: Slider(
+                              value: _zoomLevel,
+                              min: 1.0,
+                              max: _maxZoomLevel,
+                              onChanged: (value) async {
+                                await _controller.setZoomLevel(value);
+                                setState(() {
+                                  _zoomLevel = value;
+                                });
+                              },
+                            ),
+                          ),
+                          Icon(Icons.add, color: Colors.white),
+                          SizedBox(width: 16.0),
                           FloatingActionButton(
                             onPressed: _pickImage,
+                            backgroundColor: Colors.blue.withOpacity(0.3),
                             child: const Icon(Icons.photo_library),
                           ),
                         ],

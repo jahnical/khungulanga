@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:khungulanga_app/repositories/diagnosis_repository.dart';
+import 'package:khungulanga_app/util/common.dart';
 
 import '../diagnosis/diagnosis_page.dart';
 
@@ -22,7 +23,7 @@ class _ExtraInfoPageState extends State<ExtraInfoPage> {
   bool _isItchy = false;
   bool _isLoading = false;
 
-  void _submitForm() async {
+  void _submitForm({bool ignore_skin = false}) async {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
 
@@ -33,6 +34,7 @@ class _ExtraInfoPageState extends State<ExtraInfoPage> {
       final formData = FormData.fromMap({
         'body_part': _selectedBodyPart,
         'itchy': _isItchy,
+        'ignore_skin': ignore_skin,
         'image': await MultipartFile.fromFile(widget.imagePath),
       });
 
@@ -49,27 +51,60 @@ class _ExtraInfoPageState extends State<ExtraInfoPage> {
             ),
           ),
         );
+      } on AppException
+      catch (e) {
+        log("Error ${e.code}", error: e);
+        setState(() {
+          _isLoading = false;
+        });
+        if (e.code == "206") {
+          _showAlertDialog(
+            "Warning",
+            e.toString(),
+            [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text('Cancel'),
+              ),
+              TextButton(
+                onPressed: () => {
+                  Navigator.of(context).pop(),
+                  _submitForm(ignore_skin: true),
+                },
+                child: const Text('Diagnose anyway'),
+              ),
+            ],);
+        }
       } catch (e) {
         // Handle error
         log("Error", error: e);
         setState(() {
           _isLoading = false;
         });
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: const Text('Error'),
-            content: Text(e.toString().substring(11).replaceAll(")", "")),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.of(context).pop(),
-                child: const Text('OK'),
-              ),
-            ],
-          ),
-        );
+        _showAlertDialog(
+          "Error",
+          e.toString().startsWith("Exception")? e.toString().substring(11) : e.toString(),
+          [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('OK'),
+            ),
+          ],);
       }
     }
+  }
+
+  void _showAlertDialog(String title, String content, List<TextButton> actions) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(title),
+            content: Text(content),
+            actions: actions,
+          );
+        }
+    );
   }
 
   @override

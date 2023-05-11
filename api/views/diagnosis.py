@@ -50,8 +50,8 @@ class DiagnosisView(APIView):
         
         image = np.asarray(Image.open(image_path))
         has_skin = detect_skin(image=image)
-        if not has_skin:
-             return Response({'error': "No skin detected"}, status=status.HTTP_400_BAD_REQUEST)
+        if not has_skin and request.data.get('ignore_skin', "false") == "false":
+             return Response({'error': "No skin detected"}, status=status.HTTP_206_PARTIAL_CONTENT)
         
         try: 
             diagnosis = Diagnosis.objects.create(**{

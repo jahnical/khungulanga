@@ -6,11 +6,13 @@ class Disease {
   final String description;
   final String severity;
   final List<Treatment> treatments;
+  final int id;
 
-  Disease({required this.name, required this.description, required this.severity, required this.treatments});
+  Disease({required this.id, required this.name, required this.description, required this.severity, required this.treatments});
 
   factory Disease.fromJson(Map<String, dynamic> json) {
     return Disease(
+      id: json['id'],
       name: json['name'],
       description: json['description'],
       severity: json['severity'],

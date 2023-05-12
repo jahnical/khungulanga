@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'appointment.dart';
+import 'chat_message.dart';
 import 'dermatologist.dart';
 import 'diagnosis.dart';
 import 'patient.dart';
@@ -11,12 +12,14 @@ class AppointmentChat {
   final Diagnosis? diagnosis;
   final Dermatologist dermatologist;
   final Appointment appointment;
+  final List<ChatMessage> messages;
 
   AppointmentChat({
     required this.patient,
     required this.diagnosis,
     required this.dermatologist,
     required this.appointment,
+    required this.messages
   });
 
   factory AppointmentChat.fromJson(Map<String, dynamic> json) {
@@ -25,6 +28,7 @@ class AppointmentChat {
       diagnosis: Diagnosis.fromJson(json['diagnosis']),
       dermatologist: Dermatologist.fromJson(json['dermatologist']),
       appointment: Appointment.fromJson(json['appointment']),
+      messages: json['messages'].map((e) => ChatMessage.fromJson(e)).toList().cast<ChatMessage>()
     );
   }
 

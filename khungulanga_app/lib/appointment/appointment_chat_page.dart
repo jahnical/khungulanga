@@ -62,6 +62,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
         diagnosis: null,
         dermatologist: widget.dermatologist,
         appointment: _appointment,
+        messages: []
       ),
       date: DateTime.now(),
       time: DateTime.now(),

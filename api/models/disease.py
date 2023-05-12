@@ -14,7 +14,7 @@ class DiseaseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Disease
-        fields = ('name', 'description', 'severity', 'treatments')
+        fields = ('id', 'name', 'description', 'severity', 'treatments')
         
     def get_queryset(self):
         queryset = super().get_queryset()

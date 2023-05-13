@@ -1,23 +1,24 @@
-import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:khungulanga_app/models/diagnosis.dart';
-import 'package:khungulanga_app/util/endpoints.dart';
+import 'package:khungulanga_app/api_connection/endpoints.dart';
 
 import '../api_connection/con_options.dart';
 import '../util/common.dart';
 
 class DiagnosisRepository {
   final Dio _dio = Dio();
+  List<Diagnosis> diagnoses = [];
 
   Future<List<Diagnosis>> fetchDiagnoses() async {
     try {
       final response = await _dio.get("$DIAGNOSIS_URL/", options: getOptions());
       final data = response.data as List<dynamic>;
-      final diagnoses = data.map((e) => Diagnosis.fromJson(e)).toList();
+      diagnoses = data.map((e) => Diagnosis.fromJson(e)).toList();
       return diagnoses;
     } on DioError catch (e) {
+      log(e.toString());
       throw Exception(e.message);
     }
   }
@@ -52,9 +53,10 @@ class DiagnosisRepository {
     }
   }
 
-  Future<bool> delete(id) async {
+  Future<bool> delete(Diagnosis diagnosis) async {
     try {
-      await _dio.delete("$DIAGNOSIS_URL/$id", options: getOptions());
+      await _dio.delete("$DIAGNOSIS_URL/${diagnosis.id}", options: getOptions());
+      diagnoses.remove(diagnosis);
       return true;
     } on DioError catch (e) {
       throw Exception(e.message);

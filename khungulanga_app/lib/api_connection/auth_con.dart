@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:khungulanga_app/models/auth_user.dart';
-import 'package:khungulanga_app/util/endpoints.dart';
+import 'package:khungulanga_app/api_connection/endpoints.dart';
 
 
 Future<Token> getToken(UserLogin userLogin) async {

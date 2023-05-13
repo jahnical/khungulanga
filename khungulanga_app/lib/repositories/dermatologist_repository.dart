@@ -1,7 +1,7 @@
 
 import 'package:dio/dio.dart';
 import 'package:khungulanga_app/models/dermatologist.dart';
-import 'package:khungulanga_app/util/endpoints.dart';
+import 'package:khungulanga_app/api_connection/endpoints.dart';
 import 'package:khungulanga_app/api_connection/con_options.dart';
 
 class DermatologistRepository {

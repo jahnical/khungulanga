@@ -1,17 +1,18 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:khungulanga_app/models/chat_message.dart';
+import 'package:khungulanga_app/repositories/appointment_chat_repository.dart';
+import 'package:khungulanga_app/widgets/common/common.dart';
 
-import '../../models/appointment.dart';
-import '../../models/appointment_chat.dart';
+import '../../blocs/appointment_bloc/appointment_chat_bloc.dart';
 import '../../models/dermatologist.dart';
 import '../../models/diagnosis.dart';
-import '../../models/patient.dart';
 
 
 class AppointmentChatPage extends StatefulWidget {
   final Dermatologist dermatologist;
-  final Patient? patient = null;
   Diagnosis? diagnosis;
 
   AppointmentChatPage({
@@ -24,63 +25,39 @@ class AppointmentChatPage extends StatefulWidget {
 }
 
 class _AppointmentChatPageState extends State<AppointmentChatPage> {
-  late Appointment _appointment;
+  //late Appointment _appointment;
   late TextEditingController _messageController;
-  List<ChatMessage> _messages = [];
+  //List<ChatMessage> _messages = [];
 
   @override
   void initState() {
     super.initState();
-    _appointment = Appointment(
-      dermatologist: widget.dermatologist,
-      patient: widget.patient,
-      bookDate: DateTime.now(),
-      appoDate: DateTime.now().add(Duration(days: 7)),
-      duration: Duration(hours: 1),
-      cost: 100.0,
-      patientApproved: false,
-      dermatologistApproved: false,
-    );
     _messageController = TextEditingController();
   }
 
-  void _onAppointmentChange(Appointment newAppointment) {
-    setState(() {
-      _appointment = newAppointment;
-    });
-  }
-
-  void _sendMessage() {
+  void _sendMessage(AppointmentChatBloc bloc) {
     if (_messageController.text.trim().isEmpty) return;
 
     final newMessage = ChatMessage(
-      sender: widget.patient!.user!,
+      sender: bloc.chat!.patient.user!,
       text: _messageController.text.trim(),
-      chat: AppointmentChat(
-        patient: widget.patient!,
-        diagnosis: null,
-        dermatologist: widget.dermatologist,
-        appointment: _appointment,
-        messages: []
-      ),
-      date: DateTime.now(),
+      chat: bloc.chat!,
       time: DateTime.now(),
       seen: false,
     );
 
-    setState(() {
-      _messages.add(newMessage);
-      _messageController.clear();
-    });
+    final data = FormData.fromMap(newMessage.toJsonMap());
+
+    bloc.add(SendMessage(data));
   }
 
   bool _isExpanded = false;
-  Widget _buildAppointmentCard() {
+  Widget _buildAppointmentCard(AppointmentChatBloc appointmentChatBloc) {
     return Card(
       margin: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
       child: Padding(
         padding: EdgeInsets.all(8.0),
-        child: Column(
+        child: appointmentChatBloc.state is UpdatingAppointment? LoadingIndicator() : Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             InkWell(
@@ -108,13 +85,13 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
                   SizedBox(height: 8.0),
                   TextFormField(
                     initialValue:
-                    '${_appointment.dermatologist.user.firstName} ${_appointment.dermatologist.user.lastName}',
+                    '${appointmentChatBloc.chat!.appointment.dermatologist.user.firstName} ${appointmentChatBloc.chat!.appointment.dermatologist.user.lastName}',
                     decoration: InputDecoration(labelText: 'Dermatologist'),
                     enabled: false,
                   ),
                   TextFormField(
                     initialValue:
-                    DateFormat('dd/MM/yyyy hh:mm').format(_appointment.appoDate),
+                    DateFormat('dd/MM/yyyy hh:mm').format(appointmentChatBloc.chat!.appointment.appoDate ?? DateTime.now()),
                     decoration: InputDecoration(labelText: 'Time'),
                     onChanged: (value) {
                       // Update the appointment object with the new time value
@@ -123,7 +100,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
                   ),
                   TextFormField(
                     initialValue:
-                    _appointment.duration.inHours.toString(),
+                    appointmentChatBloc.chat!.appointment.duration?.inHours.toString(),
                     decoration: InputDecoration(labelText: 'Duration (hours)'),
                     onChanged: (value) {
                       // Update the appointment object with the new duration value
@@ -131,7 +108,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
                     },
                   ),
                   TextFormField(
-                    initialValue: _appointment.cost.toString(),
+                    initialValue: appointmentChatBloc.chat!.appointment.cost.toString(),
                     decoration: InputDecoration(labelText: 'Cost'),
                     onChanged: (value) {
                       // Update the appointment object with the new cost value
@@ -167,11 +144,11 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
     );
   }
 
-  Widget _buildMessageList() {
+  Widget _buildMessageList(AppointmentChatBloc appointmentChatBloc) {
     return ListView.builder(
-      itemCount: _messages.length,
+      itemCount: appointmentChatBloc.chat!.messages.length,
       itemBuilder: (context, index) {
-        final message = _messages[index];
+        final message = appointmentChatBloc.chat!.messages[index];
         return ListTile(
           title: Text(message.sender.firstName),
           subtitle: Text(message.text),
@@ -184,7 +161,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
     );
   }
 
-  Widget _buildMessageInput() {
+  Widget _buildMessageInput(AppointmentChatBloc appointmentChatBloc) {
     return Padding(
       padding: EdgeInsets.all(8.0),
       child: Row(
@@ -211,8 +188,8 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: ElevatedButton(
-              onPressed: _sendMessage,
-              child: Text('Send'),
+              onPressed: () => {_sendMessage(appointmentChatBloc)},
+              child: appointmentChatBloc.state is AppointmentChatMessageSending? const LoadingIndicator() : const Icon(Icons.send),
             ),
           )
         ],
@@ -221,22 +198,30 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Appointment Chat'),
-      ),
-      body: Material(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _buildAppointmentCard(),
-            Expanded(
-              child: _buildMessageList(),
+    return BlocBuilder<AppointmentChatBloc, AppointmentChatState>(
+      bloc: AppointmentChatBloc(RepositoryProvider.of<AppointmentChatRepository>(context)),
+      builder: (context, state) {
+        if (state is AppointmentChatInitial || state is AppointmentChatLoading) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        } else {
+          return Scaffold(
+            appBar: AppBar(
+              title: Text('${BlocProvider.of<AppointmentChatBloc>(context).chat!.dermatologist.user.firstName} ${BlocProvider.of<AppointmentChatBloc>(context).chat!.dermatologist.user.lastName}'),
             ),
-            _buildMessageInput(),
-          ],
-        ),
-      ),
+            body: Column(
+              children: [
+                _buildAppointmentCard(BlocProvider.of<AppointmentChatBloc>(context)),
+                Expanded(
+                  child: _buildMessageList(BlocProvider.of<AppointmentChatBloc>(context)),
+                ),
+                _buildMessageInput(BlocProvider.of<AppointmentChatBloc>(context)),
+              ],
+            ),
+          );
+        }
+      },
     );
   }
 }

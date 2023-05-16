@@ -7,25 +7,30 @@ class Appointment {
   final int? id;
   final Dermatologist dermatologist;
   final Patient? patient;
-  final DateTime bookDate;
-  final DateTime appoDate;
+  DateTime? bookDate;
+  DateTime? appoDate;
   bool done = false;
-  final Duration duration;
-  final double cost;
-  final bool patientApproved;
-  final bool dermatologistApproved;
+  Duration? duration = const Duration(hours: 1);
+  double? cost = 0.0;
+  DateTime? patientApproved;
+  DateTime? dermatologistApproved;
+  DateTime? patientRejected;
+  DateTime? dermatologistRejected;
+
 
   Appointment({
     this.id,
     this.done = false,
     required this.dermatologist,
     required this.patient,
-    required this.bookDate,
-    required this.appoDate,
-    required this.duration,
-    required this.cost,
-    required this.patientApproved,
-    required this.dermatologistApproved,
+    this.bookDate,
+    this.appoDate,
+    this.duration,
+    this.cost,
+    this.patientApproved,
+    this.dermatologistApproved,
+    this.patientRejected,
+    this.dermatologistRejected,
   });
 
   factory Appointment.fromJson(Map<String, dynamic> json) {
@@ -43,18 +48,20 @@ class Appointment {
     );
   }
 
-  /*Map<String, dynamic> toJson() {
+  Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'dermatologist': dermatologist.toJson(),
-      'patient': patient.toJson(),
-      'book_date': bookDate.toIso8601String(),
-      'appo_date': appoDate.toIso8601String(),
+      'dermatologist_id': dermatologist.id,
+      'patient_id': patient?.id,
+      'book_date': bookDate?.toIso8601String(),
+      'appo_date': appoDate?.toIso8601String(),
       'done': done,
-      'duration': duration.inMilliseconds,
+      'duration': duration?.inMilliseconds,
       'cost': cost,
       'patient_approved': patientApproved,
       'dermatologist_approved': dermatologistApproved,
+      'patient_rejected': patientRejected,
+      'dermatologist_rejected': dermatologistRejected,
     };
-  }*/
+  }
 }

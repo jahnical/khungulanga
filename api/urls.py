@@ -1,7 +1,9 @@
 from django.urls import path
+from api.views.appointment_chat import AppointmentChatDetail, AppointmentChatView
 
 from api.views.dermatologist import DermatologistView
 from api.views.disease import DiseaseDetail, DiseaseView
+from api.views.patient import PatientDetail, PatientView
 from .views.user_record import UserRecordView
 from .views.diagnosis import DiagnosisView
 
@@ -18,4 +20,10 @@ urlpatterns = [
     
     path('diseases/', DiseaseView.as_view(), name='diseases'),   
     path("diseases/<int:pk>/", DiseaseDetail.as_view(), name="disease_detail"),
+    
+    path('patients/', PatientView.as_view(), name='patients'),   
+    path("patients/<username>/", PatientDetail.as_view(), name="patient_detail"),
+    
+    path('appointment_chats/', AppointmentChatView.as_view(), name='appointment_chats'),   
+    path("appointment_chats/<username>/", AppointmentChatDetail.as_view(), name="appointment_chat_detail"),
 ]

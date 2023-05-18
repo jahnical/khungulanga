@@ -1,9 +1,10 @@
 from django.db import models
+from rest_framework import serializers
 from django.contrib.auth.models import User
-from api.models.appointment import Appointment
-from api.models.appointment_chat import AppointmentChat
+from api.models.appointment import Appointment, AppointmentSerializer
+from api.models.appointment_chat import AppointmentChat, AppointmentChatSerializer
 
-from api.models.diagnosis import Diagnosis
+from api.models.diagnosis import Diagnosis, DiagnosisSerializer
 
 
 class ChatMessage(models.Model):
@@ -15,3 +16,13 @@ class ChatMessage(models.Model):
     date = models.DateField(auto_now_add=True)
     time = models.TimeField(auto_now_add=True)
     seen = models.BooleanField(default=False)
+
+class ChatMessageSerializer(serializers.ModelSerializer):
+    sender = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
+    chat = AppointmentChatSerializer()
+    diagnosis = DiagnosisSerializer(allow_null=True)
+    appointment = AppointmentSerializer(allow_null=True)
+
+    class Meta:
+        model = ChatMessage
+        fields = ['id', 'sender', 'text', 'chat', 'diagnosis', 'appointment', 'date', 'time', 'seen']

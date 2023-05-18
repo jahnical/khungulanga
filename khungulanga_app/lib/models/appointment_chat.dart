@@ -28,10 +28,10 @@ class AppointmentChat {
     return AppointmentChat(
       id: json['id'],
       patient: Patient.fromJson(json['patient']),
-      diagnosis: Diagnosis.fromJson(json['diagnosis']),
+      diagnosis: json['diagnosis'] == null? null : Diagnosis.fromJson(json['diagnosis']),
       dermatologist: Dermatologist.fromJson(json['dermatologist']),
       appointment: Appointment.fromJson(json['appointment']),
-      messages: json['messages'].map((e) => ChatMessage.fromJson(e)).toList().cast<ChatMessage>()
+      messages: json['messages'] == null? null : json['messages'].map((e) => ChatMessage.fromJson(e)).toList().cast<ChatMessage>()
     );
   }
 
@@ -41,8 +41,8 @@ class AppointmentChat {
       'patient_id': patient.id,
       'diagnosis_id': diagnosis?.id,
       'dermatologist_id': dermatologist.id,
-      'appointment_id': appointment.id,
-      'messages': []//messages.map((message) => message.toJsonMap()).toList(),
+      //'appointment_id': appointment.id,
+      //'messages': []//messages.map((message) => message.toJsonMap()).toList(),
     };
   }
 }

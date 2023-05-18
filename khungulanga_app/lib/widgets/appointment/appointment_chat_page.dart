@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:khungulanga_app/models/chat_message.dart';
 import 'package:khungulanga_app/repositories/appointment_chat_repository.dart';
+import 'package:khungulanga_app/repositories/user_repository.dart';
 import 'package:khungulanga_app/widgets/common/common.dart';
 
 import '../../blocs/appointment_bloc/appointment_chat_bloc.dart';
@@ -199,7 +200,10 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AppointmentChatBloc, AppointmentChatState>(
-      bloc: AppointmentChatBloc(RepositoryProvider.of<AppointmentChatRepository>(context)),
+      bloc: AppointmentChatBloc(
+          RepositoryProvider.of<AppointmentChatRepository>(context),
+          RepositoryProvider.of<UserRepository>(context)
+      )..add(FetchAppointmentChat(null, widget.dermatologist, null, context)),
       builder: (context, state) {
         if (state is AppointmentChatInitial || state is AppointmentChatLoading) {
           return const Center(

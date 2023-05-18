@@ -1,10 +1,12 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:khungulanga_app/models/appointment.dart';
 import 'package:khungulanga_app/repositories/appointment_chat_repository.dart';
+import 'package:khungulanga_app/repositories/user_repository.dart';
 import 'package:meta/meta.dart';
 
 import '../../models/appointment_chat.dart';
@@ -17,24 +19,26 @@ part 'appointment_chat_state.dart';
 
 class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatState> {
   final AppointmentChatRepository _appointmentChatRepository;
+  final UserRepository _userRepository;
 
   AppointmentChat? chat;
 
-  AppointmentChatBloc(this._appointmentChatRepository) : super(AppointmentChatInitial()) {
+  AppointmentChatBloc(this._appointmentChatRepository, this._userRepository) : super(AppointmentChatInitial()) {
     on<AppointmentChatEvent>((event, emit) {
       // TODO: implement event handler
     });
   }
 
-  AppointmentChat _createAppointmentChat(FetchAppointmentChat event) {
+  Future<AppointmentChat> _createAppointmentChat(FetchAppointmentChat event) async {
+    final patient = await _userRepository.fetchPatient(USER!.username);
     return AppointmentChat(
-      patient: event.patient!,
+      patient: patient,
       diagnosis: null,
       dermatologist: event.dermatologist!,
       messages: [],
       appointment: Appointment(
         dermatologist: event.dermatologist!,
-        patient: event.patient!,
+        patient: patient,
       ),
     );
   }
@@ -43,9 +47,10 @@ class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatStat
   Stream<AppointmentChatState> mapEventToState(
     AppointmentChatEvent event,
   ) async* {
+    log(event.toString());
     if (event is FetchAppointmentChat) {
       if (event.appointmentChatId == null) {
-        final chat = _createAppointmentChat(event);
+        final chat = await _createAppointmentChat(event);
         this.chat = await _appointmentChatRepository.saveAppointmentChat(chat);
         yield AppointmentChatLoaded(chat);
       } else {

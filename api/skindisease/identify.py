@@ -19,9 +19,9 @@ def get_model(name):
     return model
 
 models = {
-    "Itchy Face": get_model("Itchy Face"),
-    "Non Itchy Face": get_model("Non Itchy Face"),
-    "Itchy Cranium": get_model("Itchy Cranium"),
+    #"Itchy Face": get_model("Itchy Face"),
+    #"Non Itchy Face": get_model("Non Itchy Face"),
+    #"Itchy Cranium": get_model("Itchy Cranium"),
 }
 
 labels = {

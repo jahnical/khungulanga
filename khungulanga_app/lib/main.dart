@@ -93,7 +93,7 @@ class App extends StatelessWidget {
             home: BlocBuilder<AuthBloc, AuthState>(
               builder: (context, state) {
                 log(state.toString());
-                if (state is AuthUnintialized) {
+                if (state is AuthUninitialized) {
                   return const SplashPage();
                 }
                 if (state is AuthUnauthenticated) {

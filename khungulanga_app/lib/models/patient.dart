@@ -2,11 +2,11 @@ import 'package:khungulanga_app/models/user.dart';
 
 class Patient {
   final int id;
-  final String username;
-  final String password;
-  final String firstName;
-  final String lastName;
-  final String email;
+  final String? username;
+  final String? password;
+  final String? firstName;
+  final String? lastName;
+  final String ?email;
   final DateTime dob;
   final String gender;
   bool? isStaff =false;
@@ -17,33 +17,26 @@ class Patient {
 
   Patient({
     required this.id,
-    required this.username,
-    required this.password,
-    required this.firstName,
-    required this.lastName,
-    required this.email,
+    this.username,
+    this.password,
+    this.firstName,
+    this.lastName,
+    this.email,
     required this.dob,
     required this.gender,
     this.isStaff,
     this.isActive,
     this.lastLogin,
     this.dateJoined,
+    this.user
   });
 
   factory Patient.fromJson(Map<String, dynamic> json) {
     return Patient(
       id: json['id'],
-      username: json['username'],
-      password: json['password'],
-      firstName: json['first_name'],
-      lastName: json['last_name'],
-      email: json['email'],
-      isStaff: json['is_staff'],
-      isActive: json['is_active'],
-      lastLogin: DateTime.parse(json['last_login']),
-      dateJoined: DateTime.parse(json['date_joined']),
       dob: DateTime.parse(json['dob']),
       gender: json['gender'],
+      user: User.fromJson(json['user']),
     );
   }
 

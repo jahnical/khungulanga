@@ -1,12 +1,20 @@
 import 'dart:async';
+import 'package:dio/dio.dart';
+import 'package:khungulanga_app/models/patient.dart';
+import 'package:khungulanga_app/models/user.dart';
 import 'package:meta/meta.dart';
 import 'package:khungulanga_app/api_connection/auth_con.dart';
 import 'package:khungulanga_app/dao/user_dao.dart';
 import 'package:khungulanga_app/models/auth_user.dart';
 
+import '../api_connection/con_options.dart';
+import '../api_connection/endpoints.dart';
+
 AuthUser? USER;
 class UserRepository {
   final userDao = UserDao();
+  Patient? patient;
+  final _dio = Dio();
 
   Future<AuthUser> authenticate ({
     required String username,
@@ -22,7 +30,17 @@ class UserRepository {
       username: username,
       token: token.token,
     );
+    fetchPatient(user.username);
     return user;
+  }
+
+  Future<Patient> fetchPatient(String username) async {
+    if (this.patient != null) return this.patient!;
+    final response = await _dio.get('$PATIENTS_URL/$username/', options: getOptions());
+    final patientJson = response.data as Map<String, dynamic>;
+    final patient = Patient.fromJson(patientJson);
+    this.patient = patient;
+    return patient;
   }
 
   Future<void> persistToken ({
@@ -35,6 +53,9 @@ class UserRepository {
   Future<AuthUser?> getUserFromDB() async {
     AuthUser? user = await userDao.getToken(0);
     USER = user;
+    if (user != null) {
+      fetchPatient(user.username);
+    }
     return user;
   }
 
@@ -43,6 +64,7 @@ class UserRepository {
   }) async {
     await userDao.deleteUser(id);
     USER = null;
+    this.patient = null;
   }
 
   Future <bool> hasToken() async {

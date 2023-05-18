@@ -14,10 +14,10 @@ class AuthBloc
     extends Bloc<AuthEvent, AuthState> {
   final UserRepository userRepository;
 
-  AuthBloc({required this.userRepository}) : super(AuthUnintialized());
+  AuthBloc({required this.userRepository}) : super(AuthUninitialized());
 
   @override
-  AuthState get initialState => AuthUnintialized();
+  AuthState get initialState => AuthUninitialized();
 
   @override
   Stream<AuthState> mapEventToState(
@@ -27,15 +27,14 @@ class AuthBloc
 
       //For web testing
       if (kIsWeb) {
-        yield AuthAuthenticated();
+        yield AuthAuthenticated(null);
         return;
       }
       userRepository.getUserFromDB();
       final bool hasToken = await userRepository.hasToken();
 
       if (hasToken) {
-        yield AuthAuthenticated();
-        userRepository.getUserFromDB();
+        yield AuthAuthenticated(await userRepository.getUserFromDB());
       } else {
         yield AuthUnauthenticated();
       }
@@ -47,8 +46,7 @@ class AuthBloc
       await userRepository.persistToken(
         user: event.user
       );
-      userRepository.getUserFromDB();
-      yield AuthAuthenticated();
+      yield AuthAuthenticated(await userRepository.getUserFromDB());
     }
 
     if (event is LoggedOut) {

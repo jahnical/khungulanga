@@ -25,7 +25,7 @@ class DermatologistsBloc extends Bloc<DermatologistsEvent, DermatologistsState> 
         final dermatologists = await DermatologistRepository().getNearbyDermatologists(userLocation[0], userLocation[1]);
         yield DermatologistsLoadedState(dermatologists: dermatologists);
       } catch (e) {
-        yield DermatologistsErrorState(errorMessage: 'Failed to load dermatologists');
+        yield DermatologistsErrorState(errorMessage: 'Failed to load dermatologists $e');
       }
     }
   }

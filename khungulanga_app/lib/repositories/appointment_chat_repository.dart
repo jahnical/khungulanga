@@ -25,7 +25,7 @@ class AppointmentChatRepository {
   Future<AppointmentChat> saveAppointmentChat(AppointmentChat chat) async {
     final response = await _dio.post('$APPOINTMENT_CHAT_URL/', options: postOptions(), data: chat.toJsonMap());
 
-    if (response.statusCode != 201) {
+    if (response.statusCode != 201 && response.statusCode != 200) {
       throw Exception('Failed to create appointment chat');
     } else {
       final chatJson = response.data as Map<String, dynamic>;

@@ -2,7 +2,8 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from api.models.disease import Disease, DiseaseSerializer
+from api.models.disease import Disease
+from api.serializers.disease import DiseaseSerializer
 
 
 class DiseaseView(APIView):

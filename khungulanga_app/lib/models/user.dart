@@ -6,6 +6,7 @@ class User {
   bool isStaff;
   String firstName;
   String lastName;
+  int id;
 
   User({
     required this.username,
@@ -13,10 +14,12 @@ class User {
     required this.isStaff,
     required this.firstName,
     required this.lastName,
+    required this.id,
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
+      id: json['id'],
       username: json['username'],
       email: json['email'],
       isStaff: json['is_staff'],

@@ -7,7 +7,7 @@ class ChatMessage {
   final int? id;
   final User sender;
   final String text;
-  final AppointmentChat chat;
+  final int chatId;
   final Diagnosis? diagnosis;
   final Appointment? appointment;
   final DateTime time;
@@ -17,7 +17,7 @@ class ChatMessage {
     this.id,
     required this.sender,
     required this.text,
-    required this.chat,
+    required this.chatId,
     this.diagnosis,
     this.appointment,
     required this.time,
@@ -29,7 +29,7 @@ class ChatMessage {
       id: json['id'],
       sender: User.fromJson(json['sender']),
       text: json['text'],
-      chat: AppointmentChat.fromJson(json['chat']),
+      chatId: json['chat_id'],
       diagnosis: json['diagnosis'] != null ? Diagnosis.fromJson(json['diagnosis']) : null,
       appointment: json['appointment'] != null ? Appointment.fromJson(json['appointment']) : null,
       time: DateTime.parse(json['time']),
@@ -40,11 +40,11 @@ class ChatMessage {
   Map<String, dynamic> toJsonMap() {
     return {
       'id': id,
-      'sender': sender.toJson(),
+      'sender_id': sender.id,
       'text': text,
-      'chat': chat.id,
-      'diagnosis': diagnosis?.id,
-      'appointment': appointment?.id,
+      'chat_id': chatId,
+      'diagnosis_id': diagnosis?.id,
+      'appointment_id': appointment?.id,
       'time': time.toIso8601String(),
       'seen': seen,
     };

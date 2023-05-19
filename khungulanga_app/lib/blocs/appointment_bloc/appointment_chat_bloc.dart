@@ -23,11 +23,7 @@ class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatStat
 
   AppointmentChat? chat;
 
-  AppointmentChatBloc(this._appointmentChatRepository, this._userRepository) : super(AppointmentChatInitial()) {
-    on<AppointmentChatEvent>((event, emit) {
-      // TODO: implement event handler
-    });
-  }
+  AppointmentChatBloc(this._appointmentChatRepository, this._userRepository) : super(AppointmentChatInitial()) {}
 
   Future<AppointmentChat> _createAppointmentChat(FetchAppointmentChat event) async {
     final patient = await _userRepository.fetchPatient(USER!.username);
@@ -72,7 +68,7 @@ class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatStat
         chat!.messages.add(message);
         yield AppointmentChatLoaded(chat!);
       } on DioError catch (e) {
-        yield AppointmentChatError(message: e.response!.data['message']);
+        yield AppointmentChatError(message: e.response?.toString() ?? "Error Sending Message");
       }
     }
 

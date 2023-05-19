@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:khungulanga_app/models/appointment.dart';
 import 'package:khungulanga_app/models/chat_message.dart';
@@ -29,13 +31,14 @@ class AppointmentChatRepository {
       throw Exception('Failed to create appointment chat');
     } else {
       final chatJson = response.data as Map<String, dynamic>;
+      log(chatJson.toString());
       final createdChat = AppointmentChat.fromJson(chatJson);
       return createdChat;
     }
   }
 
   Future<ChatMessage> sendMessage(FormData data) async {
-    final response = await _dio.post('$APPOINTMENT_CHAT_URL/send_message/', options: postOptions(), data: data);
+    final response = await _dio.post('$CHAT_MESSAGES_URL/', options: postOptions(), data: data);
 
     if (response.statusCode != 201) {
       throw Exception('Failed to send message');

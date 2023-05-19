@@ -28,37 +28,43 @@ class AppointmentChatPage extends StatefulWidget {
 class _AppointmentChatPageState extends State<AppointmentChatPage> {
   //late Appointment _appointment;
   late TextEditingController _messageController;
+  late AppointmentChatBloc _bloc;
   //List<ChatMessage> _messages = [];
 
   @override
   void initState() {
     super.initState();
+    _bloc = AppointmentChatBloc(
+        RepositoryProvider.of<AppointmentChatRepository>(context),
+        RepositoryProvider.of<UserRepository>(context)
+    )..add(FetchAppointmentChat(null, widget.dermatologist, null, context));
     _messageController = TextEditingController();
   }
 
-  void _sendMessage(AppointmentChatBloc bloc) {
+  void _sendMessage() {
     if (_messageController.text.trim().isEmpty) return;
 
     final newMessage = ChatMessage(
-      sender: bloc.chat!.patient.user!,
+      sender: _bloc.chat!.patient.user!,
       text: _messageController.text.trim(),
-      chat: bloc.chat!,
+      chatId: _bloc.chat!.id!,
       time: DateTime.now(),
       seen: false,
     );
 
     final data = FormData.fromMap(newMessage.toJsonMap());
 
-    bloc.add(SendMessage(data));
+
+    _bloc.add(SendMessage(data));
   }
 
   bool _isExpanded = false;
-  Widget _buildAppointmentCard(AppointmentChatBloc appointmentChatBloc) {
+  Widget _buildAppointmentCard() {
     return Card(
       margin: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
       child: Padding(
         padding: EdgeInsets.all(8.0),
-        child: appointmentChatBloc.state is UpdatingAppointment? LoadingIndicator() : Column(
+        child: _bloc.state is UpdatingAppointment? LoadingIndicator() : Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             InkWell(
@@ -86,13 +92,13 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
                   SizedBox(height: 8.0),
                   TextFormField(
                     initialValue:
-                    '${appointmentChatBloc.chat!.appointment.dermatologist.user.firstName} ${appointmentChatBloc.chat!.appointment.dermatologist.user.lastName}',
+                    '${_bloc.chat!.appointment.dermatologist.user.firstName} ${_bloc.chat!.appointment.dermatologist.user.lastName}',
                     decoration: InputDecoration(labelText: 'Dermatologist'),
                     enabled: false,
                   ),
                   TextFormField(
                     initialValue:
-                    DateFormat('dd/MM/yyyy hh:mm').format(appointmentChatBloc.chat!.appointment.appoDate ?? DateTime.now()),
+                    DateFormat('dd/MM/yyyy hh:mm').format(_bloc.chat!.appointment.appoDate ?? DateTime.now()),
                     decoration: InputDecoration(labelText: 'Time'),
                     onChanged: (value) {
                       // Update the appointment object with the new time value
@@ -101,7 +107,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
                   ),
                   TextFormField(
                     initialValue:
-                    appointmentChatBloc.chat!.appointment.duration?.inHours.toString(),
+                    _bloc.chat!.appointment.duration?.inHours.toString(),
                     decoration: InputDecoration(labelText: 'Duration (hours)'),
                     onChanged: (value) {
                       // Update the appointment object with the new duration value
@@ -109,7 +115,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
                     },
                   ),
                   TextFormField(
-                    initialValue: appointmentChatBloc.chat!.appointment.cost.toString(),
+                    initialValue: _bloc.chat!.appointment.cost.toString(),
                     decoration: InputDecoration(labelText: 'Cost'),
                     onChanged: (value) {
                       // Update the appointment object with the new cost value
@@ -145,11 +151,11 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
     );
   }
 
-  Widget _buildMessageList(AppointmentChatBloc appointmentChatBloc) {
+  Widget _buildMessageList() {
     return ListView.builder(
-      itemCount: appointmentChatBloc.chat!.messages.length,
+      itemCount: _bloc.chat!.messages.length,
       itemBuilder: (context, index) {
-        final message = appointmentChatBloc.chat!.messages[index];
+        final message = _bloc.chat!.messages[index];
         return ListTile(
           title: Text(message.sender.firstName),
           subtitle: Text(message.text),
@@ -162,7 +168,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
     );
   }
 
-  Widget _buildMessageInput(AppointmentChatBloc appointmentChatBloc) {
+  Widget _buildMessageInput() {
     return Padding(
       padding: EdgeInsets.all(8.0),
       child: Row(
@@ -189,8 +195,8 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: ElevatedButton(
-              onPressed: () => {_sendMessage(appointmentChatBloc)},
-              child: appointmentChatBloc.state is AppointmentChatMessageSending? const LoadingIndicator() : const Icon(Icons.send),
+              onPressed: () => {_sendMessage()},
+              child: _bloc.state is AppointmentChatMessageSending? const LoadingIndicator() : const Icon(Icons.send),
             ),
           )
         ],
@@ -200,10 +206,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AppointmentChatBloc, AppointmentChatState>(
-      bloc: AppointmentChatBloc(
-          RepositoryProvider.of<AppointmentChatRepository>(context),
-          RepositoryProvider.of<UserRepository>(context)
-      )..add(FetchAppointmentChat(null, widget.dermatologist, null, context)),
+      bloc: _bloc,
       builder: (context, state) {
         if (state is AppointmentChatInitial || state is AppointmentChatLoading) {
           return const Center(
@@ -212,15 +215,15 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
         } else {
           return Scaffold(
             appBar: AppBar(
-              title: Text('${BlocProvider.of<AppointmentChatBloc>(context).chat!.dermatologist.user.firstName} ${BlocProvider.of<AppointmentChatBloc>(context).chat!.dermatologist.user.lastName}'),
+              title: Text('${_bloc.chat!.dermatologist.user.firstName} ${_bloc.chat!.dermatologist.user.lastName}'),
             ),
             body: Column(
               children: [
-                _buildAppointmentCard(BlocProvider.of<AppointmentChatBloc>(context)),
+                _buildAppointmentCard(),
                 Expanded(
-                  child: _buildMessageList(BlocProvider.of<AppointmentChatBloc>(context)),
+                  child: _buildMessageList(),
                 ),
-                _buildMessageInput(BlocProvider.of<AppointmentChatBloc>(context)),
+                _buildMessageInput(),
               ],
             ),
           );

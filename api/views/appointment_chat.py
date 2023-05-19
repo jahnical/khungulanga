@@ -4,7 +4,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from api.models.appointment import Appointment
 
-from api.models.appointment_chat import AppointmentChat, AppointmentChatSerializer
+from api.models.appointment_chat import AppointmentChat
+from api.serializers.appointment_chat import AppointmentChatSerializer
 
 class AppointmentChatView(APIView):
     def get(self, request):

@@ -1,5 +1,6 @@
 from django.urls import path
 from api.views.appointment_chat import AppointmentChatDetail, AppointmentChatView
+from api.views.chat_message import ChatMessageView
 
 from api.views.dermatologist import DermatologistView
 from api.views.disease import DiseaseDetail, DiseaseView
@@ -26,4 +27,6 @@ urlpatterns = [
     
     path('appointment_chats/', AppointmentChatView.as_view(), name='appointment_chats'),   
     path("appointment_chats/<username>/", AppointmentChatDetail.as_view(), name="appointment_chat_detail"),
+    
+    path('chat_messages/', ChatMessageView.as_view(), name='chat_messages'),    
 ]

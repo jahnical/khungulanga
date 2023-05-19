@@ -2,14 +2,12 @@ import datetime
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.core import serializers
-# Create your views here.
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAdminUser
 from django.contrib.auth.models import User
 import json
-
 from api.models.patient import Patient
 
 class UserRecordView(APIView):

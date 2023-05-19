@@ -9,9 +9,10 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from rest_framework.parsers import MultiPartParser, FormParser
+from api.serializers.diagnosis import DiagnosisSerializer
 from api.skindisease import detect_skin, predict_disease
 import json
-from api.models.diagnosis import Diagnosis, DiagnosisSerializer
+from api.models.diagnosis import Diagnosis
 from PIL import Image
 
 

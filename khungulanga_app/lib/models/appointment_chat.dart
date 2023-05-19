@@ -13,7 +13,7 @@ class AppointmentChat {
   final Diagnosis? diagnosis;
   final Dermatologist dermatologist;
   Appointment appointment;
-  List<ChatMessage> messages;
+  List<ChatMessage> messages = [];
 
   AppointmentChat({
     this.id,
@@ -31,7 +31,7 @@ class AppointmentChat {
       diagnosis: json['diagnosis'] == null? null : Diagnosis.fromJson(json['diagnosis']),
       dermatologist: Dermatologist.fromJson(json['dermatologist']),
       appointment: Appointment.fromJson(json['appointment']),
-      messages: json['messages'] == null? null : json['messages'].map((e) => ChatMessage.fromJson(e)).toList().cast<ChatMessage>()
+      messages: json['messages'] == null? [] : json['messages'].map((e) => ChatMessage.fromJson(e)).toList().cast<ChatMessage>()
     );
   }
 

@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:khungulanga_app/models/appointment_chat.dart';
 import 'package:khungulanga_app/repositories/appointment_chat_repository.dart';
 
+import 'appointment_chat_page.dart';
+
 
 class AppointmentChatsList extends StatelessWidget {
   final AppointmentChatRepository appointmentChatRepository =
   AppointmentChatRepository();
 
+  AppointmentChatsList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Appointment Chats')),
+      appBar: AppBar(title: const Text('Appointment Chats')),
       body: FutureBuilder<List<AppointmentChat>>(
         future: appointmentChatRepository.getAppointmentChats(),
         builder: (context, snapshot) {
@@ -26,9 +30,9 @@ class AppointmentChatsList extends StatelessWidget {
                     : 'No messages yet';
 
                 return ListTile(
-                  leading: CircleAvatar(
-                    child: Icon(Icons.person),
+                  leading: const CircleAvatar(
                     backgroundColor: Colors.grey,
+                    child: Icon(Icons.person),
                   ),
                   title: Text(chat.dermatologist.user.firstName),
                   subtitle: Text(lastMessage),
@@ -44,6 +48,9 @@ class AppointmentChatsList extends StatelessWidget {
                       : null,
                   onTap: () {
                     // Navigate to the appointment chat page
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => AppointmentChatPage(dermatologist: chat.dermatologist,))
+                    ); 
                   },
                 );
               },
@@ -51,7 +58,7 @@ class AppointmentChatsList extends StatelessWidget {
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),

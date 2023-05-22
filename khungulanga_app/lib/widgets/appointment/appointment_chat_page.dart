@@ -1,5 +1,9 @@
+import 'dart:developer';
+import 'dart:ffi';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:khungulanga_app/models/chat_message.dart';
@@ -26,10 +30,15 @@ class AppointmentChatPage extends StatefulWidget {
 }
 
 class _AppointmentChatPageState extends State<AppointmentChatPage> {
-  //late Appointment _appointment;
   late TextEditingController _messageController;
   late AppointmentChatBloc _bloc;
-  //List<ChatMessage> _messages = [];
+
+  late TextEditingController durationController;
+  late TextEditingController costController;
+  late TextEditingController extraInfoController;
+  late TextEditingController dateController;
+  bool isDirty = false;
+
 
   @override
   void initState() {
@@ -39,6 +48,25 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
         RepositoryProvider.of<UserRepository>(context)
     )..add(FetchAppointmentChat(null, widget.dermatologist, null, context));
     _messageController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _messageController.dispose();
+    durationController.dispose();
+    costController.dispose();
+    extraInfoController.dispose();
+    super.dispose();
+  }
+
+  void fieldChanged() {
+    _bloc.chatAppointmentIsDirty = _bloc.chat?.appointment.appoDate.toString() != dateController.text
+        || _bloc.chat!.appointment.cost.toString() != costController.text
+        || _bloc.chat!.appointment.duration?.inHours.toString() != durationController.text
+        || _bloc.chat!.appointment.extraInfo != extraInfoController.text;
+    setState(() {
+      isDirty = _bloc.chatAppointmentIsDirty;
+    });
   }
 
   void _sendMessage() {
@@ -59,12 +87,21 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
   }
 
   bool _isExpanded = false;
+  bool initialized = false;
   Widget _buildAppointmentCard() {
+    if (!initialized) {
+      durationController = TextEditingController(text: _bloc.chat!.appointment.duration?.inHours.toString());
+      costController = TextEditingController(text: _bloc.chat!.appointment.cost.toString());
+      extraInfoController = TextEditingController(text: _bloc.chat!.appointment.extraInfo);
+      dateController = TextEditingController(text: _bloc.chat!.appointment.appoDate?.toString());
+      initialized = true;
+    }
+
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
+      margin: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
       child: Padding(
-        padding: EdgeInsets.all(8.0),
-        child: _bloc.state is UpdatingAppointment? LoadingIndicator() : Column(
+        padding: const EdgeInsets.all(8.0),
+        child: _bloc.state is UpdatingAppointment ? const LoadingIndicator() : Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             InkWell(
@@ -87,59 +124,69 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
               ),
             ),
             if (_isExpanded)
-              Column(
+              _bloc.state is UpdatingAppointment? const LoadingIndicator() : Column(
                 children: [
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   TextFormField(
-                    initialValue:
-                    '${_bloc.chat!.appointment.dermatologist.user.firstName} ${_bloc.chat!.appointment.dermatologist.user.lastName}',
-                    decoration: InputDecoration(labelText: 'Dermatologist'),
+                    initialValue: '${_bloc.chat!.appointment.dermatologist.user.firstName} ${_bloc.chat!.appointment.dermatologist.user.lastName}',
+                    decoration: const InputDecoration(labelText: 'Dermatologist'),
                     enabled: false,
+                    readOnly: true,
                   ),
                   TextFormField(
-                    initialValue:
-                    DateFormat('dd/MM/yyyy hh:mm').format(_bloc.chat!.appointment.appoDate ?? DateTime.now()),
-                    decoration: InputDecoration(labelText: 'Time'),
-                    onChanged: (value) {
-                      // Update the appointment object with the new time value
-                      // _appointment.appoTime = value;
+                    controller: dateController,
+                    decoration: InputDecoration(
+                      labelText: 'Select Time',
+                      suffixIcon: IconButton(
+                        onPressed: () => _showDateTimePicker(),
+                        icon: const Icon(Icons.calendar_today),
+                      ),
+                    ),
+                    onTap: () {
+                      _showDateTimePicker();
                     },
+                    readOnly: true,
                   ),
                   TextFormField(
-                    initialValue:
-                    _bloc.chat!.appointment.duration?.inHours.toString(),
-                    decoration: InputDecoration(labelText: 'Duration (hours)'),
-                    onChanged: (value) {
-                      // Update the appointment object with the new duration value
-                      // _appointment.duration = value;
-                    },
+                    controller: durationController..addListener(fieldChanged),
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    decoration: const InputDecoration(labelText: 'Duration (hours)'),
+                    keyboardType: const TextInputType.numberWithOptions(),
                   ),
                   TextFormField(
-                    initialValue: _bloc.chat!.appointment.cost.toString(),
-                    decoration: InputDecoration(labelText: 'Cost'),
-                    onChanged: (value) {
-                      // Update the appointment object with the new cost value
-                      // _appointment.cost = value;
-                    },
+                    controller: costController..addListener(fieldChanged),
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    decoration: const InputDecoration(labelText: 'Cost'),
+                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
                   ),
-                  SizedBox(height: 16.0),
+                  TextFormField(
+                    controller: extraInfoController..addListener(fieldChanged),
+                    decoration: const InputDecoration(labelText: 'Extra Information'),
+                  ),
+                  const SizedBox(height: 16.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                        onPressed: () {
-                          // Save the updated appointment
-                          // _onAppointmentChange(_appointment.copyWith(patient_approved: true));
+                        onPressed: !_bloc.chatAppointmentIsDirty? null : !isDirty ? null : () {
+                          updateAppointment();
                         },
-                        child: Text('Approve'),
+                        child: const Text('Update'),
                       ),
-                      SizedBox(width: 16.0),
+                      const Expanded(child: SizedBox(),),
                       ElevatedButton(
-                        onPressed: () {
-                          // Save the updated appointment
-                          // _onAppointmentChange(_appointment.copyWith(patient_approved: false));
+                        onPressed: _bloc.chat!.appointment.patientApproved != null? null :  () {
+                          _bloc.add(ApproveAppointment());
                         },
-                        child: Text('Reject'),
+                        child: const Text('Approve'),
+                      ),
+                      const SizedBox(width: 16.0,),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(backgroundColor: Colors.redAccent),
+                        onPressed: _bloc.chat!.appointment.patientRejected != null? null : () {
+                          _bloc.add(RejectAppointment());
+                        },
+                        child: const Text('Reject'),
                       ),
                     ],
                   ),
@@ -150,6 +197,35 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
       ),
     );
   }
+
+  void _showDateTimePicker() {
+    showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime.now(),
+      lastDate: DateTime(DateTime.now().year + 1),
+    ).then((selectedDate) {
+      if (selectedDate != null) {
+        showTimePicker(
+          context: context,
+          initialTime: TimeOfDay.now(),
+        ).then((selectedTime) {
+          if (selectedTime != null) {
+            final DateTime selectedDateTime = DateTime(
+              selectedDate.year,
+              selectedDate.month,
+              selectedDate.day,
+              selectedTime.hour,
+              selectedTime.minute,
+            );
+            dateController.text = selectedDateTime.toString();
+            fieldChanged();
+          }
+        });
+      }
+    });
+  }
+
 
   Widget _buildMessageList() {
     return ListView.builder(
@@ -170,7 +246,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
 
   Widget _buildMessageInput() {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -230,5 +306,16 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
         }
       },
     );
+  }
+
+  void updateAppointment() {
+    final appointment = _bloc.chat!.appointment.copyWith(
+        extraInfo: extraInfoController.text,
+        cost: double.tryParse(costController.text),
+        duration: Duration(hours: int.tryParse(durationController.text) ?? 0),
+        appoDate: DateTime.parse(dateController.text)
+    );
+    _bloc.add(UpdateAppointment(appointment));
+    fieldChanged();
   }
 }

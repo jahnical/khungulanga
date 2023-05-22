@@ -17,28 +17,15 @@ class SendMessage extends AppointmentChatEvent {
   SendMessage(this.data);
 }
 
-class ApproveAppointment extends AppointmentChatEvent {
-  final int appointmentChatId;
+class ApproveAppointment extends AppointmentChatEvent {}
 
-  ApproveAppointment(this.appointmentChatId);
-}
+class RejectAppointment extends AppointmentChatEvent {}
 
-class RejectAppointment extends AppointmentChatEvent {
-  final int appointmentChatId;
+class CancelAppointment extends AppointmentChatEvent {}
 
-  RejectAppointment(this.appointmentChatId);
-}
-
-class CancelAppointment extends AppointmentChatEvent {
-  final int appointmentChatId;
-
-  CancelAppointment(this.appointmentChatId);
-}
-
-class CompleteAppointment extends AppointmentChatEvent {
-  final int appointmentChatId;
-
-  CompleteAppointment(this.appointmentChatId);
+class UpdateAppointment extends AppointmentChatEvent {
+  late Appointment appointment;
+  UpdateAppointment(this.appointment);
 }
 
 class FetchAppointmentChatMessages extends AppointmentChatEvent {

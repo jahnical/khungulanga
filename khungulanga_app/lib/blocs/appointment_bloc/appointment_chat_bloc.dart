@@ -22,6 +22,7 @@ class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatStat
   final UserRepository _userRepository;
 
   AppointmentChat? chat;
+  bool chatAppointmentIsDirty = false;
 
   AppointmentChatBloc(this._appointmentChatRepository, this._userRepository) : super(AppointmentChatInitial()) {}
 
@@ -56,7 +57,7 @@ class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatStat
           this.chat = chat;
           yield AppointmentChatLoaded(chat);
         } on DioError catch (e) {
-          yield AppointmentChatError(message: e.response!.data['message']);
+          yield AppointmentChatError(message: e.response!.toString());
         }
       }
     }
@@ -72,6 +73,18 @@ class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatStat
       }
     }
 
+    else if (event is UpdateAppointment) {
+      yield UpdatingAppointment();
+      try {
+        final appointment = await _appointmentChatRepository.updateAppointment(event.appointment);
+        chat?.appointment = appointment;
+        yield AppointmentUpdated(chat!);
+        chatAppointmentIsDirty = false;
+      } on DioError catch (e) {
+        yield AppointmentUpdateError(message: e.response!.toString());
+      }
+    }
+
     else if (event is ApproveAppointment) {
       yield UpdatingAppointment();
       try {
@@ -79,7 +92,7 @@ class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatStat
         await _appointmentChatRepository.updateAppointment(chat!.appointment);
         yield AppointmentUpdated(chat!);
       } on DioError catch (e) {
-        yield AppointmentChatError(message: e.response!.data['message']);
+        yield AppointmentUpdateError(message: e.response!.toString());
       }
     }
 
@@ -90,7 +103,7 @@ class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatStat
         await _appointmentChatRepository.updateAppointment(chat!.appointment);
         yield AppointmentUpdated(chat!);
       } on DioError catch (e) {
-        yield AppointmentChatError(message: e.response!.data['message']);
+        yield AppointmentUpdateError(message: e.response!.toString());
       }
     }
 
@@ -101,7 +114,7 @@ class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatStat
         chat!.messages = messages;
         yield AppointmentChatLoaded(chat!);
       } on DioError catch (e) {
-        yield AppointmentChatError(message: e.response!.data['message']);
+        yield AppointmentChatError(message: e.response!.toString());
       }
     }
   }

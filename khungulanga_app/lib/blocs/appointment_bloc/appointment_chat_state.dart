@@ -39,3 +39,8 @@ class AppointmentUpdated extends AppointmentChatState {
 
 class UpdatingAppointment extends AppointmentChatState {}
 
+class AppointmentUpdateError extends AppointmentChatState {
+  final String message;
+  AppointmentUpdateError({required this.message});
+}
+

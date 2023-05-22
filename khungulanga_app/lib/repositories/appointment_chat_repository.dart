@@ -12,9 +12,10 @@ class AppointmentChatRepository {
   final Dio _dio = Dio();
   // This could be replaced with an API call or database query
   Future<List<AppointmentChat>> getAppointmentChats() async {
-    return await [
-
-    ];
+    final response = await _dio.get('$APPOINTMENT_CHAT_URL/', options: getOptions());
+    final chatsJson = response.data as List<dynamic>;
+    final chats = chatsJson.map((chatJson) => AppointmentChat.fromJson(chatJson)).toList();
+    return chats;
   }
 
   Future<AppointmentChat> getAppointmentChat(int id) async {
@@ -62,7 +63,8 @@ class AppointmentChatRepository {
   }
 
   Future<Appointment> updateAppointment(Appointment appointment) async {
-    final response = await _dio.patch('$APPOINTMENTS_URL/${appointment.id}/', options: patchOptions(), data: appointment.toJson());
+    log(appointment.extraInfo);
+    final response = await _dio.put('$APPOINTMENTS_URL/${appointment.id}/', options: putOptions(), data: appointment.toJson());
 
     if (response.statusCode != 200) {
       throw Exception('Failed to update appointment');

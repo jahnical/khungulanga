@@ -4,11 +4,12 @@ import 'package:dio/dio.dart';
 import 'package:khungulanga_app/models/diagnosis.dart';
 import 'package:khungulanga_app/api_connection/endpoints.dart';
 
+import '../api_connection/api_client.dart';
 import '../api_connection/con_options.dart';
 import '../util/common.dart';
 
 class DiagnosisRepository {
-  final Dio _dio = Dio();
+  final Dio _dio = APIClient.dio;
   List<Diagnosis> diagnoses = [];
 
   Future<List<Diagnosis>> fetchDiagnoses() async {

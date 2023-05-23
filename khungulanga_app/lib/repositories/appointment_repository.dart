@@ -3,19 +3,27 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:khungulanga_app/models/appointment.dart';
 import 'package:khungulanga_app/models/chat_message.dart';
+import '../api_connection/api_client.dart';
 import '../api_connection/con_options.dart';
 import '../api_connection/endpoints.dart';
 import '../models/appointment_chat.dart';
 
 
-class AppointmentChatRepository {
-  final Dio _dio = Dio();
+class AppointmentRepository {
+  final Dio _dio = APIClient.dio;
   // This could be replaced with an API call or database query
   Future<List<AppointmentChat>> getAppointmentChats() async {
     final response = await _dio.get('$APPOINTMENT_CHAT_URL/', options: getOptions());
     final chatsJson = response.data as List<dynamic>;
     final chats = chatsJson.map((chatJson) => AppointmentChat.fromJson(chatJson)).toList();
     return chats;
+  }
+
+  Future<List<Appointment>> getAppointments(bool completed) async {
+    final response = await _dio.get('$APPOINTMENTS_URL/?done=$completed', options: getOptions());
+    final appointmentsJson = response.data as List<dynamic>;
+    final appointments = appointmentsJson.map((appointmentJson) => Appointment.fromJson(appointmentJson)).toList();
+    return appointments;
   }
 
   Future<AppointmentChat> getAppointmentChat(int id) async {

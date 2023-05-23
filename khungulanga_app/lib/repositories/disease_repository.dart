@@ -3,8 +3,10 @@ import 'package:khungulanga_app/models/disease.dart';
 import 'package:khungulanga_app/api_connection/endpoints.dart';
 import 'package:khungulanga_app/api_connection/con_options.dart';
 
+import '../api_connection/api_client.dart';
+
 class DiseaseRepository {
-  final Dio _dio = Dio();
+  final Dio _dio = APIClient.dio;
 
   Future<List<Disease>> getDiseases() async {
     final response = await _dio.get('$DISEASES_URL/', options: getOptions());

@@ -7,6 +7,7 @@ import 'package:khungulanga_app/api_connection/auth_con.dart';
 import 'package:khungulanga_app/dao/user_dao.dart';
 import 'package:khungulanga_app/models/auth_user.dart';
 
+import '../api_connection/api_client.dart';
 import '../api_connection/con_options.dart';
 import '../api_connection/endpoints.dart';
 
@@ -14,7 +15,7 @@ AuthUser? USER;
 class UserRepository {
   final userDao = UserDao();
   Patient? patient;
-  final _dio = Dio();
+  final _dio = APIClient.dio;
 
   Future<AuthUser> authenticate ({
     required String username,

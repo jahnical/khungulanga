@@ -10,7 +10,7 @@ class Appointment {
   final Dermatologist dermatologist;
   final Patient? patient;
   DateTime? bookDate;
-  DateTime? appoDate;
+  DateTime? appoTime;
   bool done;
   Duration? duration;
   double? cost;
@@ -25,7 +25,7 @@ class Appointment {
     required this.dermatologist,
     this.patient,
     this.bookDate,
-    this.appoDate,
+    this.appoTime,
     this.done = false,
     this.duration = const Duration(hours: 1),
     this.cost = 0.0,
@@ -42,7 +42,7 @@ class Appointment {
       dermatologist: Dermatologist.fromJson(json['dermatologist']),
       patient: json['patient'] != null ? Patient.fromJson(json['patient']) : null,
       bookDate: json['book_date'] != null ? DateTime.parse(json['book_date']) : null,
-      appoDate: json['appo_date'] != null ? DateTime.parse(json['appo_date']) : null,
+      appoTime: json['appo_date'] != null ? DateTime.parse(json['appo_date']) : null,
       done: json['done'] ?? false,
       duration: json['duration'] != null ? Duration(minutes: json['duration'] ?? 0) : null,
       cost: json['cost']?.toDouble() ?? 0.0,
@@ -60,7 +60,7 @@ class Appointment {
       'dermatologist_id': dermatologist.id,
       'patient_id': patient?.id,
       'book_date': bookDate?.toIso8601String(),
-      'appo_date': appoDate?.toIso8601String(),
+      'appo_date': appoTime?.toIso8601String(),
       'done': done,
       'duration': duration?.inMinutes,
       'cost': cost,
@@ -92,7 +92,7 @@ class Appointment {
       dermatologist: dermatologist ?? this.dermatologist,
       patient: patient ?? this.patient,
       bookDate: bookDate ?? this.bookDate,
-      appoDate: appoDate ?? this.appoDate,
+      appoTime: appoDate ?? this.appoTime,
       done: done ?? this.done,
       duration: duration ?? this.duration,
       cost: cost ?? this.cost,

@@ -6,7 +6,7 @@ import 'package:khungulanga_app/blocs/auth_bloc/auth_bloc.dart';
 import 'package:khungulanga_app/blocs/dermatologists_bloc/dermatologists_bloc.dart';
 import 'package:khungulanga_app/blocs/diagnosis_bloc/diagnosis_bloc.dart';
 import 'package:khungulanga_app/blocs/home_navigation_bloc/home_navigation_bloc.dart';
-import 'package:khungulanga_app/repositories/appointment_chat_repository.dart';
+import 'package:khungulanga_app/repositories/appointment_repository.dart';
 import 'package:khungulanga_app/repositories/diagnosis_repository.dart';
 import 'package:khungulanga_app/repositories/disease_repository.dart';
 import 'package:khungulanga_app/repositories/user_repository.dart';
@@ -14,6 +14,7 @@ import 'package:khungulanga_app/widgets/auth/login/login_page.dart';
 import 'package:khungulanga_app/widgets/common/loading_indicator.dart';
 import 'package:khungulanga_app/widgets/home/home_page.dart';
 import 'package:khungulanga_app/widgets/splash/splash_page.dart';
+import 'api_connection/api_client.dart';
 import 'widgets/scan/scan_page.dart';
 
 
@@ -39,6 +40,7 @@ class SimpleBlocObserver extends BlocObserver {
 main() {
   WidgetsFlutterBinding.ensureInitialized();
   initCamera();
+  APIClient.setupCacheInterceptor();
   Bloc.observer = SimpleBlocObserver();
   final userRepository = UserRepository();
 
@@ -73,7 +75,7 @@ class App extends StatelessWidget {
         RepositoryProvider(create: (context) => DiagnosisRepository()),
         RepositoryProvider(create: (context) => UserRepository()),
         RepositoryProvider(create: (context) => DiseaseRepository()),
-        RepositoryProvider(create: (context) => AppointmentChatRepository()),
+        RepositoryProvider(create: (context) => AppointmentRepository()),
       ],
       child: MultiBlocProvider(
           providers: [

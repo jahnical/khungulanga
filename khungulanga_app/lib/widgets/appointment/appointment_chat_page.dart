@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:khungulanga_app/models/chat_message.dart';
-import 'package:khungulanga_app/repositories/appointment_chat_repository.dart';
+import 'package:khungulanga_app/repositories/appointment_repository.dart';
 import 'package:khungulanga_app/repositories/user_repository.dart';
 import 'package:khungulanga_app/widgets/common/common.dart';
 
@@ -44,7 +44,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
   void initState() {
     super.initState();
     _bloc = AppointmentChatBloc(
-        RepositoryProvider.of<AppointmentChatRepository>(context),
+        RepositoryProvider.of<AppointmentRepository>(context),
         RepositoryProvider.of<UserRepository>(context)
     )..add(FetchAppointmentChat(null, widget.dermatologist, null, context));
     _messageController = TextEditingController();
@@ -60,7 +60,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
   }
 
   void fieldChanged() {
-    _bloc.chatAppointmentIsDirty = _bloc.chat?.appointment.appoDate.toString() != dateController.text
+    _bloc.chatAppointmentIsDirty = _bloc.chat?.appointment.appoTime.toString() != dateController.text
         || _bloc.chat!.appointment.cost.toString() != costController.text
         || _bloc.chat!.appointment.duration?.inHours.toString() != durationController.text
         || _bloc.chat!.appointment.extraInfo != extraInfoController.text;
@@ -93,7 +93,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
       durationController = TextEditingController(text: _bloc.chat!.appointment.duration?.inHours.toString());
       costController = TextEditingController(text: _bloc.chat!.appointment.cost.toString());
       extraInfoController = TextEditingController(text: _bloc.chat!.appointment.extraInfo);
-      dateController = TextEditingController(text: _bloc.chat!.appointment.appoDate?.toString());
+      dateController = TextEditingController(text: _bloc.chat!.appointment.appoTime?.toString());
       initialized = true;
     }
 

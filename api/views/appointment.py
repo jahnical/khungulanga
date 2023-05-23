@@ -9,7 +9,10 @@ from api.serializers.patient import PatientSerializer
 
 class AppointmentView(APIView):
     def get(self, request):
-        appointments = Appointment.objects.all()
+        appointments = Appointment.objects.exclude(
+            patient_approved=None).exclude(
+                dermatologist_approved=None).filter(
+            done= True if request.GET.get('done', False) == 'true' else False)
         serializer = AppointmentSerializer(appointments, many=True)
         return Response(serializer.data)
     

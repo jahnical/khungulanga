@@ -4,8 +4,10 @@ import 'package:khungulanga_app/models/dermatologist.dart';
 import 'package:khungulanga_app/api_connection/endpoints.dart';
 import 'package:khungulanga_app/api_connection/con_options.dart';
 
+import '../api_connection/api_client.dart';
+
 class DermatologistRepository {
-  final Dio _dio = Dio();
+  final Dio _dio = APIClient.dio;
 
   Future<List<Dermatologist>> getDermatologists() async {
     final response = await _dio.get('$DERMATOLOGISTS_URL/', options: getOptions());

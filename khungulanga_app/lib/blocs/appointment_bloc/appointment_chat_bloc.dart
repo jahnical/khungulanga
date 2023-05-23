@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:khungulanga_app/models/appointment.dart';
-import 'package:khungulanga_app/repositories/appointment_chat_repository.dart';
+import 'package:khungulanga_app/repositories/appointment_repository.dart';
 import 'package:khungulanga_app/repositories/user_repository.dart';
 import 'package:meta/meta.dart';
 
@@ -18,7 +18,7 @@ part 'appointment_chat_event.dart';
 part 'appointment_chat_state.dart';
 
 class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatState> {
-  final AppointmentChatRepository _appointmentChatRepository;
+  final AppointmentRepository _appointmentChatRepository;
   final UserRepository _userRepository;
 
   AppointmentChat? chat;
@@ -88,8 +88,10 @@ class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatStat
     else if (event is ApproveAppointment) {
       yield UpdatingAppointment();
       try {
-        chat!.appointment.patientApproved = DateTime.now();
-        await _appointmentChatRepository.updateAppointment(chat!.appointment);
+        final appointment = chat!.appointment.copyWith();
+        appointment.patientApproved = DateTime.now();
+        appointment.patientRejected = null;
+        chat?.appointment = await _appointmentChatRepository.updateAppointment(appointment);
         yield AppointmentUpdated(chat!);
       } on DioError catch (e) {
         yield AppointmentUpdateError(message: e.response!.toString());
@@ -99,8 +101,10 @@ class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatStat
     else if (event is RejectAppointment) {
       yield UpdatingAppointment();
       try {
-        chat!.appointment.patientRejected = DateTime.now();
-        await _appointmentChatRepository.updateAppointment(chat!.appointment);
+        final appointment = chat!.appointment.copyWith();
+        appointment.patientRejected = DateTime.now();
+        appointment.patientApproved = null;
+        chat?.appointment = await _appointmentChatRepository.updateAppointment(appointment);
         yield AppointmentUpdated(chat!);
       } on DioError catch (e) {
         yield AppointmentUpdateError(message: e.response!.toString());

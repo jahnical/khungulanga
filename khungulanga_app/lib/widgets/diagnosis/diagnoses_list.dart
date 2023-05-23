@@ -8,7 +8,6 @@ import 'package:khungulanga_app/util/common.dart';
 import 'package:khungulanga_app/api_connection/endpoints.dart';
 import 'package:khungulanga_app/widgets/diagnosis/diagnosis_page.dart';
 
-
 class DiagnosesList extends StatelessWidget {
   final List<Diagnosis> diagnoses;
 
@@ -16,132 +15,88 @@ class DiagnosesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<DiagnosisBloc, DiagnosisState>(
-      listener: (context, state) {
-        log(state.toString());
-        if (state is DiagnosisDeletingError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('An error occurred while deleting the diagnosis.'),
-            ),
-          );
-        } else if (state is ConfirmingDiagnosisDelete) {
-          _confirmDelete(state.diagnosis, context, context.read<DiagnosisBloc>());
-        }
-      },
-      child: BlocBuilder<DiagnosisBloc, DiagnosisState>(
-          builder: (context, state) {
-            return ListView.builder(
-              itemCount: diagnoses.length,
-              itemBuilder: (context, index) {
-                final diagnosis = diagnoses[index];
-                return Card(
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => DiagnosisPage(diagnosis: diagnosis),
-                      ));
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 72,
-                            width: 72,
-                            child: Image.network(
-                              BASE_URL + diagnosis.imageUrl,
-                              fit: BoxFit.cover,
+    return BlocBuilder<DiagnosisBloc, DiagnosisState>(
+      builder: (context, state) {
+        return ListView.builder(
+          itemCount: diagnoses.length,
+          itemBuilder: (context, index) {
+            final diagnosis = diagnoses[index];
+            return InkWell(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => DiagnosisPage(diagnosis: diagnosis),
+                ));
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(0.0),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Container(
+                        height: 64,
+                        width: 64,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.2),
+                              offset: Offset(0.0, 1.0),
+                              blurRadius: 2.0,
                             ),
+                          ],
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.grey[200]!,
+                              Colors.grey[300]!,
+                            ],
                           ),
-                          SizedBox(width: 16),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    toTitleCase(diagnosis.predictions[0].disease.name),
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    '${(diagnosis.predictions[0].probability * 100).toInt()}% probability',
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    diagnosis.date.toString(),
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 12,
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.network(
+                            BASE_URL + diagnosis.imageUrl,
+                            fit: BoxFit.cover,
                           ),
-                          Container(
-                            child: state is DiagnosisDeleting && state.diagnosis.id == diagnosis.id? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(),)
-                                : IconButton(
-                              icon: const Icon(
-                                Icons.delete,
-                                color: Colors.redAccent,
-                              ),
-                              onPressed: () {
-                                context.read<DiagnosisBloc>().add(DeleteDiagnosisPressed(diagnosis));
-                              },
-                            ),
-                          )
-                        ],
+                        ),
+                      ),
+                      title: Text(
+                        toTitleCase(diagnosis.predictions[0].disease.name),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      subtitle: Text(
+                        diagnosis.date.toString(),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      trailing: Text(
+                        '${(diagnosis.predictions[0].probability * 100).toInt()}%',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                        ),
                       ),
                     ),
-                  ),
-                );
-              },
+                    const Divider(
+                      height: 8,
+                      thickness: 1,
+                    ),
+                  ],
+                ),
+              ),
             );
           },
-        ),
+        );
+      },
     );
-  }
-
-  void _confirmDelete(Diagnosis diagnosis, BuildContext context, DiagnosisBloc bloc) async {
-    final confirmed = await showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Delete Diagnosis'),
-        content: const Text('Are you sure you want to delete this diagnosis?'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(false),
-            child: const Text('CANCEL'),
-          ),
-          ElevatedButton(
-            onPressed: () => Navigator.of(context).pop(true),
-            style: ElevatedButton.styleFrom(
-              primary: Theme.of(context).errorColor,
-            ),
-            child: const Text('DELETE'),
-          ),
-        ],
-      ),
-    );
-
-    if (confirmed != null && confirmed) {
-      bloc.add(DeleteDiagnosis(diagnosis));
-    }
   }
 }
-
-

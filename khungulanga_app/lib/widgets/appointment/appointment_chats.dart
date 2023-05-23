@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:khungulanga_app/models/appointment_chat.dart';
-import 'package:khungulanga_app/repositories/appointment_chat_repository.dart';
-
+import 'package:khungulanga_app/repositories/appointment_repository.dart';
 import 'appointment_chat_page.dart';
 
 
 class AppointmentChatsList extends StatelessWidget {
-  final AppointmentChatRepository appointmentChatRepository =
-  AppointmentChatRepository();
+  final AppointmentRepository appointmentChatRepository =
+  AppointmentRepository();
 
   AppointmentChatsList({super.key});
 

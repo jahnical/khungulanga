@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:khungulanga_app/blocs/auth_bloc/auth_bloc.dart';
 import 'package:khungulanga_app/blocs/home_navigation_bloc/home_navigation_bloc.dart';
 import 'package:khungulanga_app/widgets/appointment/appointment_chats.dart';
+import 'package:khungulanga_app/widgets/appointment/appointments_page.dart';
 import 'package:khungulanga_app/widgets/dermatologists/dermatologists_list.dart';
 import 'package:khungulanga_app/widgets/diseases/diseases_page.dart';
 import 'package:khungulanga_app/widgets/history/history_page.dart';
@@ -72,6 +73,30 @@ class _HomePageState extends State<HomePage> {
             onTap: () {
               // Navigate to the profile screen
             },
+          ),
+          ExpansionTile(
+            title: Text('Appointments'),
+            leading: Icon(Icons.calendar_today),
+            children: [
+              ListTile(
+                title: Text('Scheduled Appointments'),
+                leading: Icon(Icons.schedule),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => AppointmentsPage(completed: false),
+                  ));
+                },
+              ),
+              ListTile(
+                title: Text('Completed Appointments'),
+                leading: Icon(Icons.check_circle),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => AppointmentsPage(completed: true),
+                  ));
+                },
+              ),
+            ],
           ),
           ListTile(
             title: Text('Diseases'),

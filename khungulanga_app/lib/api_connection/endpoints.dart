@@ -1,5 +1,5 @@
 
-const BASE_URL = "https://781c-137-115-0-22.ngrok-free.app/";
+const BASE_URL = "https://72c6-105-234-166-6.ngrok-free.app/";
 const API_BASE_URL = "${BASE_URL}api";
 const TOKEN_URL = "$API_BASE_URL/api-token-auth/";
 const REGISTER_URL = "$API_BASE_URL/users/register/";

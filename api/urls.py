@@ -31,5 +31,6 @@ urlpatterns = [
     
     path('chat_messages/', ChatMessageView.as_view(), name='chat_messages'),  
     
-    path('appointments/<int:pk>/', AppointmentView.as_view(), name='appointments')
+    path('appointments/<int:pk>/', AppointmentView.as_view(), name='appointments'),
+    path('appointments/', AppointmentView.as_view(), name='appointments')
 ]

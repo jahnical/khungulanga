@@ -15,7 +15,7 @@ Make sure you have [Python](https://www.python.org/downloads/), [Tensorflow](htt
 
 ### 2. Run App
   1. In smartskin run the django development server `python manage.py runserver`
-     > You can test the api with postman or run it with port `python manage.py runserver 0.0.0.0:8000` and add host IP address to smartskin_app/lib/api_connection `baseURL` to test it with the flutter app.  
+     > You can test the api with postman or run it with port `python manage.py runserver 0.0.0.0:8000` and add host IP address to smartskin_app/lib/api_connection/endpoints `baseURL` to test it with the flutter app.  
      
   2. In smartskin_app run flutter app by `flutter run`
      > Recommended to run it on mobile phone or local machine.

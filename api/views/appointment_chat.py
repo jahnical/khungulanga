@@ -5,11 +5,13 @@ from rest_framework import status
 from api.models.appointment import Appointment
 
 from api.models.appointment_chat import AppointmentChat
+from api.models.patient import Patient
 from api.serializers.appointment_chat import AppointmentChatSerializer
 
 class AppointmentChatView(APIView):
     def get(self, request):
-        appointment_chats = AppointmentChat.objects.all()
+        is_patient = Patient.objects.all().filter(user=request.user).count() > 0
+        appointment_chats = AppointmentChat.objects.all().filter(patient_id=request.user.id) if is_patient else AppointmentChat.objects.all().filter(dermatologist_id=request.user.id) 
         serializer = AppointmentChatSerializer(appointment_chats, many=True)
         return Response(serializer.data)
 

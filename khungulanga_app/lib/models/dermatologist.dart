@@ -3,9 +3,8 @@ import 'user.dart';
 class Dermatologist {
   int id;
   String qualification;
-  String workEmail;
-  String phoneNumber1;
-  String phoneNumber2;
+  String email;
+  String phoneNumber;
   String clinic;
   double locationLat;
   double locationLon;
@@ -15,9 +14,8 @@ class Dermatologist {
   Dermatologist({
     required this.id,
     required this.qualification,
-    required this.workEmail,
-    required this.phoneNumber1,
-    required this.phoneNumber2,
+    required this.email,
+    required this.phoneNumber,
     required this.clinic,
     required this.locationLat,
     required this.locationLon,
@@ -29,9 +27,8 @@ class Dermatologist {
     return Dermatologist(
       id: json['id'],
       qualification: json['qualification'],
-      workEmail: json['work_email'],
-      phoneNumber1: json['phone_number_1'],
-      phoneNumber2: json['phone_number_2'],
+      email: json['email'],
+      phoneNumber: json['phone_number'],
       clinic: json['clinic'],
       locationLat: json['location_lat'].toDouble(),
       locationLon: json['location_lon'].toDouble(),

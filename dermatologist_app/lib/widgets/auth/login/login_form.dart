@@ -31,7 +31,7 @@ class _LoginFormState extends State<LoginForm> {
     if (_formKey.currentState!.validate()) {
       BlocProvider.of<LoginBloc>(context).add(
         LoginButtonPressed(
-          username: _emailController.text.split("@")[0].trim(),
+          username: _emailController.text,
           password: _passwordController.text,
         ),
       );

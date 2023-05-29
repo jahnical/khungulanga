@@ -71,17 +71,27 @@ class UserRepository {
       required String password,
       required String firstName,
       required String lastName,
-      required DateTime dob,
-      required String gender}) async {
+        required String phoneNumber,
+        required String qualification,
+        required String clinic,
+        required double locationLat,
+        required double locationLon,
+        required String locationDesc,
+      }) async {
     // create a UserRegister object with the necessary fields
     final userRegister = UserRegister(
         username: username,
         password: password,
         firstName: firstName,
         lastName: lastName,
-        dob: dob,
         email: email,
-        gender: gender);
+        phoneNumber:   phoneNumber,
+        qualification: qualification,
+        clinic:        clinic,
+        locationLat:   locationLat,
+        locationLon:   locationLon,
+        locationDesc:  locationDesc,
+    );
 
     await registerUser(userRegister);
 

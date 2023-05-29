@@ -9,11 +9,11 @@ part 'home_navigation_state.dart';
 class HomeNavigationBloc extends Bloc<HomeNavigationEvent, HomeNavigationState> {
   HomeNavigationBloc() : super(HomeNavigationAppointments()) {
     on<HomeNavigationEvent>((event, emit) {
-      if (event is NavigateToHistory) {
+      if (event is NavigateToAppointments) {
         emit(HomeNavigationAppointments());
       } else if (event is NavigateToScan) {
         emit(HomeNavigationScan());
-      } else if (event is NavigateToDermatologists) {
+      } else if (event is NavigateToChats) {
         emit(HomeNavigationDermatologists());
       }
     });

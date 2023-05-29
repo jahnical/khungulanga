@@ -1,3 +1,4 @@
+import 'package:dermatologist_app/widgets/appointment/appointments_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dermatologist_app/blocs/auth_bloc/auth_bloc.dart';
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   final List<String> _titles = ['Appointments', 'Chats'];
 
   final List<Widget> _pages = [
-    AppointmentsPage(completed: false),
+    AppointmentList(completed: false),
     AppointmentChatsList(),
   ];
 
@@ -27,16 +28,6 @@ class _HomePageState extends State<HomePage> {
       return Scaffold(
         appBar: AppBar(
           title: Text(_titles[_getCurrentIndex()]),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.message),
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => AppointmentChatsList(),
-                ));
-              },
-            ),
-          ],
         ),
         drawer: _buildDrawer(),
         body: _pages[_getCurrentIndex()],
@@ -162,9 +153,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   final events = [
-    NavigateToHistory(),
-    NavigateToScan(),
-    NavigateToDermatologists()
+    NavigateToAppointments(),
+    NavigateToChats()
   ];
   _buildBottomNavigation() {
     return BottomNavigationBar(

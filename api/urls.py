@@ -14,6 +14,8 @@ urlpatterns = [
     path('user/', UserRecordView.as_view(), name='users'),
     path('users/register/', UserRecordView.as_view(), name='register'),
     
+    path('users/dermatologist/register/', DermatologistView.as_view(), name='derm.register'),
+    
     path('diagnosis/', DiagnosisView.as_view(), name='diagnosis'),
     path('diagnosis/<int:pk>', DiagnosisView.as_view(), name='diagnosis.delete'),
     

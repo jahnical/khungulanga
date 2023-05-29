@@ -4,21 +4,26 @@ import 'package:intl/intl.dart';
 import 'package:dermatologist_app/blocs/register_bloc/register_bloc.dart';
 
 class RegisterForm extends StatefulWidget {
-  const RegisterForm({super.key});
+  const RegisterForm({Key? key}) : super(key: key);
 
   @override
-  State<RegisterForm> createState() => _RegisterFormState();
+  State<RegisterForm> createState() =>
+      _RegisterFormState();
 }
 
 class _RegisterFormState extends State<RegisterForm> {
   final _formKey = GlobalKey<FormState>();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
-  final _dobController = TextEditingController();
+  final _qualificationController = TextEditingController();
   final _emailController = TextEditingController();
   final _firstNameController = TextEditingController();
+  final _phoneNumber2Controller = TextEditingController();
+  final _clinicController = TextEditingController();
+  final _locationLatController = TextEditingController();
+  final _locationLonController = TextEditingController();
+  final _locationDescController = TextEditingController();
   final _lastNameController = TextEditingController();
-  String? _selectedGender = "M";
 
   _onLoginButtonPressed() {
     Navigator.pop(context);
@@ -27,14 +32,18 @@ class _RegisterFormState extends State<RegisterForm> {
   _onRegisterButtonPressed() {
     if (_formKey.currentState?.validate() == true) {
       BlocProvider.of<RegisterBloc>(context).add(RegisterButtonPressed(
-        username: _emailController.text.split("@")[0].trim(),
+        username: _emailController.text,
         password: _passwordController.text,
         confirmPassword: _confirmPasswordController.text,
+        qualification: _qualificationController.text,
+        email: _emailController.text,
         firstName: _firstNameController.text,
         lastName: _lastNameController.text,
-        dateOfBirth: DateTime.parse(_dobController.text),
-        gender: _selectedGender ?? "M",
-        email: _emailController.text,
+        phoneNumber: _phoneNumber2Controller.text,
+        clinic: _clinicController.text,
+        locationLat: double.parse(_locationLatController.text),
+        locationLon: double.parse(_locationLonController.text),
+        locationDesc: _locationDescController.text,
       ));
     }
   }
@@ -63,20 +72,7 @@ class _RegisterFormState extends State<RegisterForm> {
                   children: <Widget>[
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Email',
-                        icon: Icon(Icons.email),
-                      ),
-                      controller: _emailController,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your email';
-                        }
-                        return null;
-                      },
-                    ),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        labelText: 'Firstname',
+                        labelText: 'First Name',
                         icon: Icon(Icons.person),
                       ),
                       controller: _firstNameController,
@@ -89,7 +85,7 @@ class _RegisterFormState extends State<RegisterForm> {
                     ),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Lastname',
+                        labelText: 'Last Name',
                         icon: Icon(Icons.person),
                       ),
                       controller: _lastNameController,
@@ -102,65 +98,90 @@ class _RegisterFormState extends State<RegisterForm> {
                     ),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Date of birth',
-                        icon: Icon(Icons.calendar_today),
+                        labelText: 'Qualification',
+                        icon: Icon(Icons.school),
                       ),
-                      controller: _dobController,
-                      onTap: () async {
-                        DateTime? date = await showDatePicker(
-                          context: context,
-                          initialDate: DateTime.now(),
-                          firstDate: DateTime(1900),
-                          lastDate: DateTime.now(),
-                        );
-                        if (date != null) {
-                          _dobController.text =
-                              DateFormat('yyyy-MM-dd').format(date);
+                      controller: _qualificationController,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your qualification';
                         }
+                        return null;
                       },
-                      readOnly: true,
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 16.0),
-                          child: Text(
-                            'Gender',
-                            style: TextStyle(fontSize: 16.0),
-                          ),
-                        ),
-                        RadioListTile<String>(
-                          title: const Text('Female'),
-                          value: 'F',
-                          groupValue: _selectedGender,
-                          onChanged: (value) {
-                            setState(() {
-                              _selectedGender = value;
-                            });
-                          },
-                        ),
-                        RadioListTile<String>(
-                          title: const Text('Male'),
-                          value: 'M',
-                          groupValue: _selectedGender,
-                          onChanged: (value) {
-                            setState(() {
-                              _selectedGender = value;
-                            });
-                          },
-                        ),
-                        RadioListTile<String>(
-                          title: const Text('Other'),
-                          value: 'O',
-                          groupValue: _selectedGender,
-                          onChanged: (value) {
-                            setState(() {
-                              _selectedGender = value;
-                            });
-                          },
-                        ),
-                      ],
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'Email',
+                        icon: Icon(Icons.email),
+                      ),
+                      controller: _emailController,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your work email';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'Phone Number',
+                        icon: Icon(Icons.phone),
+                      ),
+                      controller: _phoneNumber2Controller,
+                    ),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'Clinic',
+                        icon: Icon(Icons.home),
+                      ),
+                      controller: _clinicController,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your clinic';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'Location Latitude',
+                        icon: Icon(Icons.location_on),
+                      ),
+                      controller: _locationLatController,
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter the location latitude';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'Location Longitude',
+                        icon: Icon(Icons.location_on),
+                      ),
+                      controller: _locationLonController,
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter the location longitude';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'Location Description',
+                        icon: Icon(Icons.location_on),
+                      ),
+                      controller: _locationDescController,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter the location description';
+                        }
+                        return null;
+                      },
                     ),
                     TextFormField(
                       decoration: const InputDecoration(
@@ -216,11 +237,11 @@ class _RegisterFormState extends State<RegisterForm> {
                           child: state is RegisterLoading
                               ? const CircularProgressIndicator()
                               : const Text(
-                                  'Register',
-                                  style: TextStyle(
-                                    fontSize: 24.0,
-                                  ),
-                                ),
+                            'Register',
+                            style: TextStyle(
+                              fontSize: 24.0,
+                            ),
+                          ),
                         ),
                       ),
                     ),

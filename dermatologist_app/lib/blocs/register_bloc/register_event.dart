@@ -14,8 +14,12 @@ class RegisterButtonPressed extends RegisterEvent {
   final String email;
   final String password;
   final String confirmPassword;
-  final DateTime dateOfBirth;
-  final String gender;
+  final String phoneNumber;
+  final String qualification;
+  final String clinic;
+  final double locationLat;
+  final double locationLon;
+  final String locationDesc;
 
   const RegisterButtonPressed({
     required this.firstName,
@@ -24,8 +28,12 @@ class RegisterButtonPressed extends RegisterEvent {
     required this.password,
     required this.confirmPassword,
     required this.email,
-    required this.dateOfBirth,
-    required this.gender,
+    required this.qualification,
+    required this.phoneNumber,
+    required this.clinic,
+    required this.locationLat,
+    required this.locationLon,
+    required this.locationDesc,
   });
 
   @override
@@ -35,11 +43,15 @@ class RegisterButtonPressed extends RegisterEvent {
     username,
     password,
     confirmPassword,
-    dateOfBirth,
-    gender,
+    phoneNumber,
+    qualification,
     email,
+    clinic,
+    locationLat,
+    locationLon,
+    locationDesc
   ];
 
   @override
-  String toString() => 'RegisterButtonPressed { firstName: $firstName, lastName: $lastName, username: $username, password: $password, confirmPassword: $confirmPassword, dateOfBirth: $dateOfBirth, gender: $gender, email: $email }';
+  String toString() => 'RegisterButtonPressed { firstName: $firstName, lastName: $lastName, username: $username, password: $password, confirmPassword: $confirmPassword, email: $email }';
 }

@@ -33,10 +33,14 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
           username: event.username,
           email: event.email,
           password: event.password,
-          dob: event.dateOfBirth,
+          phoneNumber: event.phoneNumber,
           firstName: event.firstName,
           lastName: event.lastName,
-          gender: event.gender,
+          qualification: event.qualification,
+          clinic: event.clinic,
+          locationLat: event.locationLat,
+          locationLon: event.locationLon,
+          locationDesc: event.locationDesc,
         );
 
         final user = await userRepository.authenticate(

@@ -12,7 +12,7 @@ class AppointmentChatsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Appointment Chats')),
+      //appBar: AppBar(title: const Text('Appointment Chats')),
       body: FutureBuilder<List<AppointmentChat>>(
         future: appointmentChatRepository.getAppointmentChats(),
         builder: (context, snapshot) {

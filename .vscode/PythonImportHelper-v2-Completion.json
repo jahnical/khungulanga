@@ -32,6 +32,86 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -153,6 +233,30 @@
         "documentation": {}
     },
     {
+        "label": "Patient",
+        "importPath": "api.models.patient",
+        "description": "api.models.patient",
+        "isExtraImport": true,
+        "detail": "api.models.patient",
+        "documentation": {}
+    },
+    {
+        "label": "Dermatologist",
+        "importPath": "api.models.dermatologist",
+        "description": "api.models.dermatologist",
+        "isExtraImport": true,
+        "detail": "api.models.dermatologist",
+        "documentation": {}
+    },
+    {
+        "label": "Dermatologist",
+        "importPath": "api.models.dermatologist",
+        "description": "api.models.dermatologist",
+        "isExtraImport": true,
+        "detail": "api.models.dermatologist",
+        "documentation": {}
+    },
+    {
         "label": "Dermatologist",
         "importPath": "api.models.dermatologist",
         "description": "api.models.dermatologist",
@@ -185,11 +289,27 @@
         "documentation": {}
     },
     {
-        "label": "Diagnosis",
-        "importPath": "api.models.diagnosis",
-        "description": "api.models.diagnosis",
+        "label": "Appointment",
+        "importPath": "api.models.appointment",
+        "description": "api.models.appointment",
         "isExtraImport": true,
-        "detail": "api.models.diagnosis",
+        "detail": "api.models.appointment",
+        "documentation": {}
+    },
+    {
+        "label": "Appointment",
+        "importPath": "api.models.appointment",
+        "description": "api.models.appointment",
+        "isExtraImport": true,
+        "detail": "api.models.appointment",
+        "documentation": {}
+    },
+    {
+        "label": "Appointment",
+        "importPath": "api.models.appointment",
+        "description": "api.models.appointment",
+        "isExtraImport": true,
+        "detail": "api.models.appointment",
         "documentation": {}
     },
     {
@@ -214,6 +334,38 @@
         "description": "api.models.diagnosis",
         "isExtraImport": true,
         "detail": "api.models.diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "Diagnosis",
+        "importPath": "api.models.diagnosis",
+        "description": "api.models.diagnosis",
+        "isExtraImport": true,
+        "detail": "api.models.diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
         "documentation": {}
     },
     {
@@ -257,11 +409,339 @@
         "documentation": {}
     },
     {
-        "label": "Disease",
-        "importPath": "api.models.disease",
-        "description": "api.models.disease",
+        "label": "AppointmentChat",
+        "importPath": "api.models.appointment_chat",
+        "description": "api.models.appointment_chat",
         "isExtraImport": true,
-        "detail": "api.models.disease",
+        "detail": "api.models.appointment_chat",
+        "documentation": {}
+    },
+    {
+        "label": "AppointmentChat",
+        "importPath": "api.models.appointment_chat",
+        "description": "api.models.appointment_chat",
+        "isExtraImport": true,
+        "detail": "api.models.appointment_chat",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "DermatologistSerializer",
+        "importPath": "api.serializers.dermatologist",
+        "description": "api.serializers.dermatologist",
+        "isExtraImport": true,
+        "detail": "api.serializers.dermatologist",
+        "documentation": {}
+    },
+    {
+        "label": "DermatologistSerializer",
+        "importPath": "api.serializers.dermatologist",
+        "description": "api.serializers.dermatologist",
+        "isExtraImport": true,
+        "detail": "api.serializers.dermatologist",
+        "documentation": {}
+    },
+    {
+        "label": "DermatologistSerializer",
+        "importPath": "api.serializers.dermatologist",
+        "description": "api.serializers.dermatologist",
+        "isExtraImport": true,
+        "detail": "api.serializers.dermatologist",
+        "documentation": {}
+    },
+    {
+        "label": "DermatologistSerializer",
+        "importPath": "api.serializers.dermatologist",
+        "description": "api.serializers.dermatologist",
+        "isExtraImport": true,
+        "detail": "api.serializers.dermatologist",
+        "documentation": {}
+    },
+    {
+        "label": "PatientSerializer",
+        "importPath": "api.serializers.patient",
+        "description": "api.serializers.patient",
+        "isExtraImport": true,
+        "detail": "api.serializers.patient",
+        "documentation": {}
+    },
+    {
+        "label": "PatientSerializer",
+        "importPath": "api.serializers.patient",
+        "description": "api.serializers.patient",
+        "isExtraImport": true,
+        "detail": "api.serializers.patient",
+        "documentation": {}
+    },
+    {
+        "label": "PatientSerializer",
+        "importPath": "api.serializers.patient",
+        "description": "api.serializers.patient",
+        "isExtraImport": true,
+        "detail": "api.serializers.patient",
+        "documentation": {}
+    },
+    {
+        "label": "PatientSerializer",
+        "importPath": "api.serializers.patient",
+        "description": "api.serializers.patient",
+        "isExtraImport": true,
+        "detail": "api.serializers.patient",
+        "documentation": {}
+    },
+    {
+        "label": "AppointmentSerializer",
+        "importPath": "api.serializers.appointment",
+        "description": "api.serializers.appointment",
+        "isExtraImport": true,
+        "detail": "api.serializers.appointment",
+        "documentation": {}
+    },
+    {
+        "label": "AppointmentSerializer",
+        "importPath": "api.serializers.appointment",
+        "description": "api.serializers.appointment",
+        "isExtraImport": true,
+        "detail": "api.serializers.appointment",
+        "documentation": {}
+    },
+    {
+        "label": "AppointmentSerializer",
+        "importPath": "api.serializers.appointment",
+        "description": "api.serializers.appointment",
+        "isExtraImport": true,
+        "detail": "api.serializers.appointment",
+        "documentation": {}
+    },
+    {
+        "label": "ChatMessageSerializer",
+        "importPath": "api.serializers.chat_message",
+        "description": "api.serializers.chat_message",
+        "isExtraImport": true,
+        "detail": "api.serializers.chat_message",
+        "documentation": {}
+    },
+    {
+        "label": "ChatMessageSerializer",
+        "importPath": "api.serializers.chat_message",
+        "description": "api.serializers.chat_message",
+        "isExtraImport": true,
+        "detail": "api.serializers.chat_message",
+        "documentation": {}
+    },
+    {
+        "label": "DiagnosisSerializer",
+        "importPath": "api.serializers.diagnosis",
+        "description": "api.serializers.diagnosis",
+        "isExtraImport": true,
+        "detail": "api.serializers.diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "DiagnosisSerializer",
+        "importPath": "api.serializers.diagnosis",
+        "description": "api.serializers.diagnosis",
+        "isExtraImport": true,
+        "detail": "api.serializers.diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "DiagnosisSerializer",
+        "importPath": "api.serializers.diagnosis",
+        "description": "api.serializers.diagnosis",
+        "isExtraImport": true,
+        "detail": "api.serializers.diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "ChatMessage",
+        "importPath": "api.models.chat_message",
+        "description": "api.models.chat_message",
+        "isExtraImport": true,
+        "detail": "api.models.chat_message",
+        "documentation": {}
+    },
+    {
+        "label": "ChatMessage",
+        "importPath": "api.models.chat_message",
+        "description": "api.models.chat_message",
+        "isExtraImport": true,
+        "detail": "api.models.chat_message",
+        "documentation": {}
+    },
+    {
+        "label": "UserSerializer",
+        "importPath": "api.serializers.user",
+        "description": "api.serializers.user",
+        "isExtraImport": true,
+        "detail": "api.serializers.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserSerializer",
+        "importPath": "api.serializers.user",
+        "description": "api.serializers.user",
+        "isExtraImport": true,
+        "detail": "api.serializers.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserSerializer",
+        "importPath": "api.serializers.user",
+        "description": "api.serializers.user",
+        "isExtraImport": true,
+        "detail": "api.serializers.user",
+        "documentation": {}
+    },
+    {
+        "label": "PredictionSerializer",
+        "importPath": "api.serializers.prediction",
+        "description": "api.serializers.prediction",
+        "isExtraImport": true,
+        "detail": "api.serializers.prediction",
         "documentation": {}
     },
     {
@@ -286,6 +766,63 @@
         "description": "api.models.disease",
         "isExtraImport": true,
         "detail": "api.models.disease",
+        "documentation": {}
+    },
+    {
+        "label": "TreatmentSerializer",
+        "importPath": "api.serializers.treatment",
+        "description": "api.serializers.treatment",
+        "isExtraImport": true,
+        "detail": "api.serializers.treatment",
+        "documentation": {}
+    },
+    {
+        "label": "api.models.prediction",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "api.models.prediction",
+        "description": "api.models.prediction",
+        "detail": "api.models.prediction",
+        "documentation": {}
+    },
+    {
+        "label": "Prediction",
+        "importPath": "api.models.prediction",
+        "description": "api.models.prediction",
+        "isExtraImport": true,
+        "detail": "api.models.prediction",
+        "documentation": {}
+    },
+    {
+        "label": "Prediction",
+        "importPath": "api.models.prediction",
+        "description": "api.models.prediction",
+        "isExtraImport": true,
+        "detail": "api.models.prediction",
+        "documentation": {}
+    },
+    {
+        "label": "DiseaseSerializer",
+        "importPath": "api.serializers.disease",
+        "description": "api.serializers.disease",
+        "isExtraImport": true,
+        "detail": "api.serializers.disease",
+        "documentation": {}
+    },
+    {
+        "label": "DiseaseSerializer",
+        "importPath": "api.serializers.disease",
+        "description": "api.serializers.disease",
+        "isExtraImport": true,
+        "detail": "api.serializers.disease",
+        "documentation": {}
+    },
+    {
+        "label": "Treatment",
+        "importPath": "api.models.treatment",
+        "description": "api.models.treatment",
+        "isExtraImport": true,
+        "detail": "api.models.treatment",
         "documentation": {}
     },
     {
@@ -323,6 +860,14 @@
         "documentation": {}
     },
     {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
         "label": "tensorflow",
         "kind": 6,
         "isExtraImport": true,
@@ -341,23 +886,6 @@
         "documentation": {}
     },
     {
-        "label": "api.models.prediction",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "api.models.prediction",
-        "description": "api.models.prediction",
-        "detail": "api.models.prediction",
-        "documentation": {}
-    },
-    {
-        "label": "Prediction",
-        "importPath": "api.models.prediction",
-        "description": "api.models.prediction",
-        "isExtraImport": true,
-        "detail": "api.models.prediction",
-        "documentation": {}
-    },
-    {
         "label": "detect_skin",
         "importPath": "api.skindisease.detect_skin",
         "description": "api.skindisease.detect_skin",
@@ -366,7 +894,151 @@
         "documentation": {}
     },
     {
-        "label": "JsonResponse",
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Http404",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "Http404",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "Http404",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -379,6 +1051,38 @@
         "description": "django.http",
         "isExtraImport": true,
         "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "Http404",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "Http404",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "AppointmentChatSerializer",
+        "importPath": "api.serializers.appointment_chat",
+        "description": "api.serializers.appointment_chat",
+        "isExtraImport": true,
+        "detail": "api.serializers.appointment_chat",
         "documentation": {}
     },
     {
@@ -422,38 +1126,6 @@
         "documentation": {}
     },
     {
-        "label": "APIView",
-        "importPath": "rest_framework.views",
-        "description": "rest_framework.views",
-        "isExtraImport": true,
-        "detail": "rest_framework.views",
-        "documentation": {}
-    },
-    {
-        "label": "APIView",
-        "importPath": "rest_framework.views",
-        "description": "rest_framework.views",
-        "isExtraImport": true,
-        "detail": "rest_framework.views",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
         "label": "IsAuthenticated",
         "importPath": "rest_framework.permissions",
         "description": "rest_framework.permissions",
@@ -470,22 +1142,6 @@
         "documentation": {}
     },
     {
-        "label": "status",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
-        "label": "status",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
         "label": "MultiPartParser",
         "importPath": "rest_framework.parsers",
         "description": "rest_framework.parsers",
@@ -499,6 +1155,14 @@
         "description": "rest_framework.parsers",
         "isExtraImport": true,
         "detail": "rest_framework.parsers",
+        "documentation": {}
+    },
+    {
+        "label": "detect_skin",
+        "importPath": "api.skindisease",
+        "description": "api.skindisease",
+        "isExtraImport": true,
+        "detail": "api.skindisease",
         "documentation": {}
     },
     {
@@ -584,6 +1248,78 @@
         "documentation": {}
     },
     {
+        "label": "AppointmentView",
+        "importPath": "api.views.appointment",
+        "description": "api.views.appointment",
+        "isExtraImport": true,
+        "detail": "api.views.appointment",
+        "documentation": {}
+    },
+    {
+        "label": "AppointmentChatDetail",
+        "importPath": "api.views.appointment_chat",
+        "description": "api.views.appointment_chat",
+        "isExtraImport": true,
+        "detail": "api.views.appointment_chat",
+        "documentation": {}
+    },
+    {
+        "label": "AppointmentChatView",
+        "importPath": "api.views.appointment_chat",
+        "description": "api.views.appointment_chat",
+        "isExtraImport": true,
+        "detail": "api.views.appointment_chat",
+        "documentation": {}
+    },
+    {
+        "label": "ChatMessageView",
+        "importPath": "api.views.chat_message",
+        "description": "api.views.chat_message",
+        "isExtraImport": true,
+        "detail": "api.views.chat_message",
+        "documentation": {}
+    },
+    {
+        "label": "DermatologistView",
+        "importPath": "api.views.dermatologist",
+        "description": "api.views.dermatologist",
+        "isExtraImport": true,
+        "detail": "api.views.dermatologist",
+        "documentation": {}
+    },
+    {
+        "label": "DiseaseDetail",
+        "importPath": "api.views.disease",
+        "description": "api.views.disease",
+        "isExtraImport": true,
+        "detail": "api.views.disease",
+        "documentation": {}
+    },
+    {
+        "label": "DiseaseView",
+        "importPath": "api.views.disease",
+        "description": "api.views.disease",
+        "isExtraImport": true,
+        "detail": "api.views.disease",
+        "documentation": {}
+    },
+    {
+        "label": "PatientDetail",
+        "importPath": "api.views.patient",
+        "description": "api.views.patient",
+        "isExtraImport": true,
+        "detail": "api.views.patient",
+        "documentation": {}
+    },
+    {
+        "label": "PatientView",
+        "importPath": "api.views.patient",
+        "description": "api.views.patient",
+        "isExtraImport": true,
+        "detail": "api.views.patient",
+        "documentation": {}
+    },
+    {
         "label": "get_asgi_application",
         "importPath": "django.core.asgi",
         "description": "django.core.asgi",
@@ -658,11 +1394,56 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "api.migrations.0002_alter_appointmentchat_diagnosis",
+        "description": "api.migrations.0002_alter_appointmentchat_diagnosis",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('api', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='appointmentchat',\n            name='diagnosis',\n            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='api.diagnosis'),\n        ),",
+        "detail": "api.migrations.0002_alter_appointmentchat_diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "api.migrations.0003_appointment_dermatologist_rejected_and_more",
+        "description": "api.migrations.0003_appointment_dermatologist_rejected_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('api', '0002_alter_appointmentchat_diagnosis'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='appointment',\n            name='dermatologist_rejected',\n            field=models.DateTimeField(null=True),\n        ),",
+        "detail": "api.migrations.0003_appointment_dermatologist_rejected_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "api.migrations.0004_remove_chatmessage_date_alter_chatmessage_time",
+        "description": "api.migrations.0004_remove_chatmessage_date_alter_chatmessage_time",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('api', '0003_appointment_dermatologist_rejected_and_more'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='chatmessage',\n            name='date',\n        ),\n        migrations.AlterField(",
+        "detail": "api.migrations.0004_remove_chatmessage_date_alter_chatmessage_time",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "api.migrations.0005_appointment_extra_info_alter_appointment_appo_date",
+        "description": "api.migrations.0005_appointment_extra_info_alter_appointment_appo_date",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('api', '0004_remove_chatmessage_date_alter_chatmessage_time'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='appointment',\n            name='extra_info',\n            field=models.TextField(max_length=1000, null=True),\n        ),",
+        "detail": "api.migrations.0005_appointment_extra_info_alter_appointment_appo_date",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "api.migrations.0006_alter_appointment_duration",
+        "description": "api.migrations.0006_alter_appointment_duration",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('api', '0005_appointment_extra_info_alter_appointment_appo_date'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='appointment',\n            name='duration',\n            field=models.IntegerField(null=True),\n        ),",
+        "detail": "api.migrations.0006_alter_appointment_duration",
+        "documentation": {}
+    },
+    {
         "label": "Appointment",
         "kind": 6,
         "importPath": "api.models.appointment",
         "description": "api.models.appointment",
-        "peekOfCode": "class Appointment(models.Model):\n    dermatologist = models.ForeignKey(Dermatologist, on_delete=models.CASCADE)\n    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)\n    book_date = models.DateField(null=True)\n    appo_date = models.DateField(null=True)\n    done = models.BooleanField(default=False)\n    duration = models.DurationField(null=True)\n    cost = models.FloatField(default=0.0)\n    patient_approved = models.BooleanField(default=False)\n    dermatologist_approved = models.BooleanField(default=False)",
+        "peekOfCode": "class Appointment(models.Model):\n    dermatologist = models.ForeignKey(Dermatologist, on_delete=models.CASCADE)\n    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)\n    book_date = models.DateField(null=True)\n    appo_date = models.DateTimeField(null=True)\n    done = models.BooleanField(default=False)\n    duration = models.IntegerField(null=True)\n    cost = models.FloatField(default=0.0)\n    extra_info = models.TextField(max_length=1000, null=True)\n    patient_approved = models.DateTimeField(null=True)",
         "detail": "api.models.appointment",
         "documentation": {}
     },
@@ -671,7 +1452,7 @@
         "kind": 6,
         "importPath": "api.models.appointment_chat",
         "description": "api.models.appointment_chat",
-        "peekOfCode": "class AppointmentChat(models.Model):\n    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)\n    diagnosis = models.ForeignKey(Diagnosis, on_delete=models.CASCADE)\n    dermatologist = models.ForeignKey(Dermatologist, on_delete=models.CASCADE)\n    appointment = models.ForeignKey(Appointment, on_delete=models.CASCADE)",
+        "peekOfCode": "class AppointmentChat(models.Model):\n    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)\n    diagnosis = models.ForeignKey(Diagnosis, on_delete=models.SET_NULL, null=True)\n    dermatologist = models.ForeignKey(Dermatologist, on_delete=models.CASCADE)\n    appointment = models.ForeignKey(Appointment, on_delete=models.CASCADE)",
         "detail": "api.models.appointment_chat",
         "documentation": {}
     },
@@ -680,7 +1461,7 @@
         "kind": 6,
         "importPath": "api.models.chat_message",
         "description": "api.models.chat_message",
-        "peekOfCode": "class ChatMessage(models.Model):\n    sender = models.ForeignKey(User, on_delete=models.CASCADE)\n    text = models.TextField(max_length=1000)\n    chat = models.ForeignKey(AppointmentChat, on_delete=models.CASCADE)\n    diagnosis = models.ForeignKey(Diagnosis, on_delete=models.SET_NULL, null=True)\n    appointment = models.ForeignKey(Appointment, on_delete=models.SET_NULL, null=True)\n    date = models.DateField(auto_now_add=True)\n    time = models.TimeField(auto_now_add=True)\n    seen = models.BooleanField(default=False)",
+        "peekOfCode": "class ChatMessage(models.Model):\n    sender = models.ForeignKey(User, on_delete=models.CASCADE)\n    text = models.TextField(max_length=1000)\n    chat = models.ForeignKey(AppointmentChat, on_delete=models.CASCADE)\n    diagnosis = models.ForeignKey(Diagnosis, on_delete=models.SET_NULL, null=True)\n    appointment = models.ForeignKey(Appointment, on_delete=models.SET_NULL, null=True)\n    time = models.DateTimeField(auto_now_add=True)\n    seen = models.BooleanField(default=False)",
         "detail": "api.models.chat_message",
         "documentation": {}
     },
@@ -698,7 +1479,7 @@
         "kind": 6,
         "importPath": "api.models.diagnosis",
         "description": "api.models.diagnosis",
-        "peekOfCode": "class Diagnosis(models.Model):\n    image = models.ImageField(upload_to='media/diagnosis/%Y/%m/%d/')\n    diseases = models.ManyToManyField(Disease, through='Prediction')\n    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)\n    body_part = models.CharField(max_length=100)\n    itchy = models.BooleanField(default=False)\n    date = models.DateField(auto_now_add=True)",
+        "peekOfCode": "class Diagnosis(models.Model):\n    image = models.ImageField(upload_to='media/diagnosis/%Y/%m/%d/')\n    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)\n    body_part = models.CharField(max_length=100)\n    itchy = models.BooleanField(default=False)\n    date = models.DateTimeField(auto_now_add=True)",
         "detail": "api.models.diagnosis",
         "documentation": {}
     },
@@ -725,7 +1506,7 @@
         "kind": 6,
         "importPath": "api.models.prediction",
         "description": "api.models.prediction",
-        "peekOfCode": "class Prediction(models.Model):\n    disease = models.ForeignKey(Disease, on_delete=models.CASCADE, null=True)\n    diagnosis = models.ForeignKey(Diagnosis, on_delete=models.CASCADE)\n    probability = models.FloatField(default=0.0)",
+        "peekOfCode": "class Prediction(models.Model):\n    disease = models.ForeignKey('Disease', on_delete=models.CASCADE, null=True)\n    diagnosis = models.ForeignKey('Diagnosis', on_delete=models.CASCADE)\n    probability = models.FloatField(default=0.0)",
         "detail": "api.models.prediction",
         "documentation": {}
     },
@@ -734,8 +1515,98 @@
         "kind": 6,
         "importPath": "api.models.treatment",
         "description": "api.models.treatment",
-        "peekOfCode": "class Treatment(models.Model):\n    disease = models.ForeignKey(Disease, on_delete=models.CASCADE)\n    min_age = models.IntegerField()\n    max_age = models.IntegerField()\n    gender = models.CharField(max_length=1, choices=[(\"M\", \"Male\"), (\"F\", \"Female\"), (\"O\", \"Other\")])\n    description = models.TextField(max_length=500)\n    title = models.CharField(max_length=100)",
+        "peekOfCode": "class Treatment(models.Model):\n    disease = models.ForeignKey('Disease', on_delete=models.CASCADE)\n    min_age = models.IntegerField()\n    max_age = models.IntegerField()\n    gender = models.CharField(max_length=1, choices=[(\"M\", \"Male\"), (\"F\", \"Female\"), (\"O\", \"Other\")])\n    description = models.TextField(max_length=500)\n    title = models.CharField(max_length=100)",
         "detail": "api.models.treatment",
+        "documentation": {}
+    },
+    {
+        "label": "AppointmentSerializer",
+        "kind": 6,
+        "importPath": "api.serializers.appointment",
+        "description": "api.serializers.appointment",
+        "peekOfCode": "class AppointmentSerializer(serializers.ModelSerializer):\n    dermatologist = DermatologistSerializer(read_only=True)\n    patient = PatientSerializer(read_only=True)\n    class Meta:\n        model = Appointment\n        fields = ['id', 'dermatologist', 'patient', 'book_date', 'appo_date', 'done', 'extra_info', 'duration', 'cost', 'patient_approved', 'dermatologist_approved', 'patient_rejected', 'dermatologist_rejected']",
+        "detail": "api.serializers.appointment",
+        "documentation": {}
+    },
+    {
+        "label": "AppointmentChatSerializer",
+        "kind": 6,
+        "importPath": "api.serializers.appointment_chat",
+        "description": "api.serializers.appointment_chat",
+        "peekOfCode": "class AppointmentChatSerializer(serializers.ModelSerializer):\n    patient = PatientSerializer()\n    diagnosis = DiagnosisSerializer()\n    dermatologist = DermatologistSerializer()\n    appointment = AppointmentSerializer()\n    messages = ChatMessageSerializer(many=True, read_only=True, source=\"chatmessage_set\")\n    class Meta:\n        model = AppointmentChat\n        fields = ['id', 'patient', 'diagnosis', 'dermatologist', 'appointment', 'messages']\n    def get_queryset(self):",
+        "detail": "api.serializers.appointment_chat",
+        "documentation": {}
+    },
+    {
+        "label": "ChatMessageSerializer",
+        "kind": 6,
+        "importPath": "api.serializers.chat_message",
+        "description": "api.serializers.chat_message",
+        "peekOfCode": "class ChatMessageSerializer(serializers.ModelSerializer):\n    sender = UserSerializer(read_only=True)\n    diagnosis = DiagnosisSerializer(allow_null=True)\n    appointment = AppointmentSerializer(allow_null=True)\n    class Meta:\n        model = ChatMessage\n        fields = ['id', 'sender', 'text', 'chat_id', 'diagnosis', 'appointment', 'time', 'seen']",
+        "detail": "api.serializers.chat_message",
+        "documentation": {}
+    },
+    {
+        "label": "DermatologistSerializer",
+        "kind": 6,
+        "importPath": "api.serializers.dermatologist",
+        "description": "api.serializers.dermatologist",
+        "peekOfCode": "class DermatologistSerializer(serializers.ModelSerializer):\n    user = UserSerializer(read_only=True)\n    class Meta:\n        model = Dermatologist\n        fields = ['id', 'qualification', 'work_email', 'phone_number_1', 'phone_number_2', 'clinic', 'location_lat', 'location_lon', 'location_desc', 'user']\n    def get_queryset(self):\n        queryset = super().get_queryset()\n        return queryset.select_related('user')",
+        "detail": "api.serializers.dermatologist",
+        "documentation": {}
+    },
+    {
+        "label": "DiagnosisSerializer",
+        "kind": 6,
+        "importPath": "api.serializers.diagnosis",
+        "description": "api.serializers.diagnosis",
+        "peekOfCode": "class DiagnosisSerializer(serializers.ModelSerializer):\n    predictions = PredictionSerializer(many=True, read_only=True, source='prediction_set')\n    date = serializers.DateTimeField(format=\"%Y-%m-%d %H:%M:%S\")\n    class Meta:\n        model = Diagnosis\n        fields = ('id', 'image', 'body_part', 'itchy', 'date', 'predictions')\n    def get_queryset(self):\n        queryset = super().get_queryset()\n        return queryset.select_related('prediction_set')",
+        "detail": "api.serializers.diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "DiseaseSerializer",
+        "kind": 6,
+        "importPath": "api.serializers.disease",
+        "description": "api.serializers.disease",
+        "peekOfCode": "class DiseaseSerializer(serializers.ModelSerializer):\n    treatments = TreatmentSerializer(many=True, read_only=True, source='treatment_set')\n    class Meta:\n        model = Disease\n        fields = ('id', 'name', 'description', 'severity', 'treatments')\n    def get_queryset(self):\n        queryset = super().get_queryset()\n        return queryset.select_related('treatment_set')\n    def get_severity_display(self, obj):\n        return obj.get_severity_display()",
+        "detail": "api.serializers.disease",
+        "documentation": {}
+    },
+    {
+        "label": "PatientSerializer",
+        "kind": 6,
+        "importPath": "api.serializers.patient",
+        "description": "api.serializers.patient",
+        "peekOfCode": "class PatientSerializer(serializers.ModelSerializer):\n    user = UserSerializer(read_only=True)\n    dob = serializers.DateTimeField(format=\"%Y-%m-%d %H:%M:%S\")\n    class Meta:\n        model = Patient\n        fields = ['id', 'dob', 'gender', 'user']\n    def get_queryset(self):\n        queryset = super().get_queryset()\n        return queryset.select_related('user')\n    def get_gender_display(self, obj):",
+        "detail": "api.serializers.patient",
+        "documentation": {}
+    },
+    {
+        "label": "PredictionSerializer",
+        "kind": 6,
+        "importPath": "api.serializers.prediction",
+        "description": "api.serializers.prediction",
+        "peekOfCode": "class PredictionSerializer(serializers.ModelSerializer):\n    disease = DiseaseSerializer()\n    class Meta:\n        model = Prediction\n        fields = ('disease', 'probability')\n    def get_queryset(self):\n        queryset = super().get_queryset()\n        return queryset.select_related('disease')",
+        "detail": "api.serializers.prediction",
+        "documentation": {}
+    },
+    {
+        "label": "TreatmentSerializer",
+        "kind": 6,
+        "importPath": "api.serializers.treatment",
+        "description": "api.serializers.treatment",
+        "peekOfCode": "class TreatmentSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Treatment\n        fields = ('title', 'description', 'min_age', 'max_age', 'gender')",
+        "detail": "api.serializers.treatment",
+        "documentation": {}
+    },
+    {
+        "label": "UserSerializer",
+        "kind": 6,
+        "importPath": "api.serializers.user",
+        "description": "api.serializers.user",
+        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ('id', 'username', 'email', 'first_name', 'last_name', 'is_staff', 'is_active')",
+        "detail": "api.serializers.user",
         "documentation": {}
     },
     {
@@ -761,7 +1632,7 @@
         "kind": 2,
         "importPath": "api.skindisease.identify",
         "description": "api.skindisease.identify",
-        "peekOfCode": "def get_model(name):\n    model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), \"models\", name + \".h5\"), custom_objects=custom_objects)\n    for layer in model.layers:\n        layer.training = False\n    return model\nmodels = {\n    \"Itchy Face\": get_model(\"Itchy Face\"),\n    \"Non Itchy Face\": get_model(\"Non Itchy Face\"),\n    \"Itchy Cranium\": get_model(\"Itchy Cranium\"),\n}",
+        "peekOfCode": "def get_model(name):\n    tf.keras.backend.clear_session()\n    model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), \"models\", name + \".h5\"), custom_objects=custom_objects)\n    for layer in model.layers:\n        if isinstance(layer, tf.keras.layers.Dropout):\n            layer.rate = 0.0\n        layer.training = False\n    return model\nmodels = {\n    #\"Itchy Face\": get_model(\"Itchy Face\"),",
         "detail": "api.skindisease.identify",
         "documentation": {}
     },
@@ -797,7 +1668,7 @@
         "kind": 5,
         "importPath": "api.skindisease.identify",
         "description": "api.skindisease.identify",
-        "peekOfCode": "custom_objects = {'BatchNormalization': tf.keras.layers.BatchNormalization, 'Adam': tf.keras.optimizers.Adam}\n# Returns the model for the given part and itchy\ndef get_model(name):\n    model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), \"models\", name + \".h5\"), custom_objects=custom_objects)\n    for layer in model.layers:\n        layer.training = False\n    return model\nmodels = {\n    \"Itchy Face\": get_model(\"Itchy Face\"),\n    \"Non Itchy Face\": get_model(\"Non Itchy Face\"),",
+        "peekOfCode": "custom_objects = {'BatchNormalization': tf.keras.layers.BatchNormalization, 'Adam': tf.keras.optimizers.Adam}\n# Returns the model for the given part and itchy\ndef get_model(name):\n    tf.keras.backend.clear_session()\n    model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), \"models\", name + \".h5\"), custom_objects=custom_objects)\n    for layer in model.layers:\n        if isinstance(layer, tf.keras.layers.Dropout):\n            layer.rate = 0.0\n        layer.training = False\n    return model",
         "detail": "api.skindisease.identify",
         "documentation": {}
     },
@@ -806,7 +1677,7 @@
         "kind": 5,
         "importPath": "api.skindisease.identify",
         "description": "api.skindisease.identify",
-        "peekOfCode": "models = {\n    \"Itchy Face\": get_model(\"Itchy Face\"),\n    \"Non Itchy Face\": get_model(\"Non Itchy Face\"),\n    \"Itchy Cranium\": get_model(\"Itchy Cranium\"),\n}\nlabels = {\n    \"Itchy Face\": {'acne': 0, 'eczema': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'urticaria': 4},\n    \"Non Itchy Face\": {'acne vulgaris': 0, 'basal cell carcinoma': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'squamous cell carcinoma': 4},\n    \"Itchy Cranium\": {'eczema': 0, 'folliculitis': 1, 'lichen planus': 2, 'psoriasis': 3, 'rosacea': 4, 'seborrheic dermatitis': 5}\n}",
+        "peekOfCode": "models = {\n    #\"Itchy Face\": get_model(\"Itchy Face\"),\n    #\"Non Itchy Face\": get_model(\"Non Itchy Face\"),\n    #\"Itchy Cranium\": get_model(\"Itchy Cranium\"),\n}\nlabels = {\n    \"Itchy Face\": {'acne': 0, 'eczema': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'urticaria': 4},\n    \"Non Itchy Face\": {'acne vulgaris': 0, 'basal cell carcinoma': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'squamous cell carcinoma': 4},\n    \"Itchy Cranium\": {'eczema': 0, 'folliculitis': 1, 'lichen planus': 2, 'psoriasis': 3, 'rosacea': 4, 'seborrheic dermatitis': 5}\n}",
         "detail": "api.skindisease.identify",
         "documentation": {}
     },
@@ -829,12 +1700,102 @@
         "documentation": {}
     },
     {
+        "label": "AppointmentView",
+        "kind": 6,
+        "importPath": "api.views.appointment",
+        "description": "api.views.appointment",
+        "peekOfCode": "class AppointmentView(APIView):\n    def get(self, request):\n        appointments = Appointment.objects.exclude(\n            patient_approved=None).exclude(\n                dermatologist_approved=None).filter(\n            done= True if request.GET.get('done', False) == 'true' else False)\n        serializer = AppointmentSerializer(appointments, many=True)\n        return Response(serializer.data)\n    def post(self, request):\n        serializer = AppointmentSerializer(data=request.data)",
+        "detail": "api.views.appointment",
+        "documentation": {}
+    },
+    {
+        "label": "AppointmentChatView",
+        "kind": 6,
+        "importPath": "api.views.appointment_chat",
+        "description": "api.views.appointment_chat",
+        "peekOfCode": "class AppointmentChatView(APIView):\n    def get(self, request):\n        appointment_chats = AppointmentChat.objects.all()\n        serializer = AppointmentChatSerializer(appointment_chats, many=True)\n        return Response(serializer.data)\n    def post(self, request):\n        try:\n            data = {**request.data}\n            data.pop('id')\n            data.pop('diagnosis_id')",
+        "detail": "api.views.appointment_chat",
+        "documentation": {}
+    },
+    {
+        "label": "AppointmentChatDetail",
+        "kind": 6,
+        "importPath": "api.views.appointment_chat",
+        "description": "api.views.appointment_chat",
+        "peekOfCode": "class AppointmentChatDetail(APIView):\n    def get_object(self, pk):\n        try:\n            return AppointmentChat.objects.get(pk=pk)\n        except AppointmentChat.DoesNotExist:\n            raise Http404\n    def get(self, request, pk):\n        appointment_chat = self.get_object(pk)\n        serializer = AppointmentChatSerializer(appointment_chat)\n        return Response(serializer.data)",
+        "detail": "api.views.appointment_chat",
+        "documentation": {}
+    },
+    {
+        "label": "ChatMessageView",
+        "kind": 6,
+        "importPath": "api.views.chat_message",
+        "description": "api.views.chat_message",
+        "peekOfCode": "class ChatMessageView(APIView):\n    def get_object(self, pk):\n        try:\n            return ChatMessage.objects.get(pk=pk)\n        except ChatMessage.DoesNotExist:\n            raise Http404\n    def get(self, request, pk):\n        chat_message = self.get_object(pk)\n        serializer = ChatMessageSerializer(chat_message)\n        return Response(serializer.data)",
+        "detail": "api.views.chat_message",
+        "documentation": {}
+    },
+    {
+        "label": "DermatologistView",
+        "kind": 6,
+        "importPath": "api.views.dermatologist",
+        "description": "api.views.dermatologist",
+        "peekOfCode": "class DermatologistView(APIView):\n    def get(self, request):\n        dermatologists = Dermatologist.objects.all()\n        serializer = DermatologistSerializer(dermatologists, many=True)\n        return Response(serializer.data)\n    def post(self, request):\n        serializer = DermatologistSerializer(data=request.data)\n        if serializer.is_valid():\n            serializer.save()\n            return Response(serializer.data, status=status.HTTP_201_CREATED)",
+        "detail": "api.views.dermatologist",
+        "documentation": {}
+    },
+    {
+        "label": "DermatologistDetail",
+        "kind": 6,
+        "importPath": "api.views.dermatologist",
+        "description": "api.views.dermatologist",
+        "peekOfCode": "class DermatologistDetail(APIView):\n    def get_object(self, pk):\n        try:\n            return Dermatologist.objects.get(pk=pk)\n        except Dermatologist.DoesNotExist:\n            raise Http404\n    def get(self, request, pk):\n        dermatologist = self.get_object(pk)\n        serializer = DermatologistSerializer(dermatologist)\n        return Response(serializer.data)",
+        "detail": "api.views.dermatologist",
+        "documentation": {}
+    },
+    {
         "label": "DiagnosisView",
         "kind": 6,
         "importPath": "api.views.diagnosis",
         "description": "api.views.diagnosis",
-        "peekOfCode": "class DiagnosisView(APIView):\n    \"\"\"\n    API View to create or get a list of all the diagnoses of\n    users. GET request returns the user's diagnoses whereas\n    a POST request allows to create a new diagnosis.\n    \"\"\"\n    parser_classes = [MultiPartParser, FormParser]\n    #permission_classes = [IsAuthenticated]\n    def get(self, request, format=None):\n        diagnoses = request.user.patient.diagnosis_set.all()",
+        "peekOfCode": "class DiagnosisView(APIView):\n    \"\"\"\n    API View to create or get a list of all the diagnoses of\n    users. GET request returns the user's diagnoses whereas\n    a POST request allows to create a new diagnosis.\n    \"\"\"\n    parser_classes = [MultiPartParser, FormParser]\n    #permission_classes = [IsAuthenticated]\n    def get(self, request, format=None):\n        if not request.user == None and request.user.is_staff:",
         "detail": "api.views.diagnosis",
+        "documentation": {}
+    },
+    {
+        "label": "DiseaseView",
+        "kind": 6,
+        "importPath": "api.views.disease",
+        "description": "api.views.disease",
+        "peekOfCode": "class DiseaseView(APIView):\n    def get(self, request):\n        diseases = Disease.objects.all()\n        serializer = DiseaseSerializer(diseases, many=True)\n        return Response(serializer.data)\n    def post(self, request):\n        serializer = DiseaseSerializer(data=request.data)\n        if serializer.is_valid():\n            serializer.save()\n            return Response(serializer.data, status=status.HTTP_201_CREATED)",
+        "detail": "api.views.disease",
+        "documentation": {}
+    },
+    {
+        "label": "DiseaseDetail",
+        "kind": 6,
+        "importPath": "api.views.disease",
+        "description": "api.views.disease",
+        "peekOfCode": "class DiseaseDetail(APIView):\n    def get_object(self, pk):\n        try:\n            return Disease.objects.get(pk=pk)\n        except Disease.DoesNotExist:\n            raise Http404\n    def get(self, request, pk):\n        disease = self.get_object(pk)\n        serializer = DiseaseSerializer(disease)\n        return Response(serializer.data)",
+        "detail": "api.views.disease",
+        "documentation": {}
+    },
+    {
+        "label": "PatientView",
+        "kind": 6,
+        "importPath": "api.views.patient",
+        "description": "api.views.patient",
+        "peekOfCode": "class PatientView(APIView):\n    def get(self, request):\n        patients = Patient.objects.all()\n        serializer = PatientSerializer(patients, many=True)\n        return Response(serializer.data)\n    def post(self, request):\n        serializer = PatientSerializer(data=request.data)\n        if serializer.is_valid():\n            serializer.save()\n            return Response(serializer.data, status=status.HTTP_201_CREATED)",
+        "detail": "api.views.patient",
+        "documentation": {}
+    },
+    {
+        "label": "PatientDetail",
+        "kind": 6,
+        "importPath": "api.views.patient",
+        "description": "api.views.patient",
+        "peekOfCode": "class PatientDetail(APIView):\n    def get_object(self, username):\n        try:\n            user = User.objects.get(username=username)\n            return Patient.objects.get(user=user)\n        except Patient.DoesNotExist:\n            raise Http404\n    def get(self, request, username):\n        patient = self.get_object(username)\n        serializer = PatientSerializer(patient)",
+        "detail": "api.views.patient",
         "documentation": {}
     },
     {
@@ -860,7 +1821,7 @@
         "kind": 5,
         "importPath": "api.urls",
         "description": "api.urls",
-        "peekOfCode": "app_name = 'api'\nurlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n    path('users/register/', UserRecordView.as_view(), name='register'),\n    path('diagnosis/', DiagnosisView.as_view(), name='diagnosis'),\n]",
+        "peekOfCode": "app_name = 'api'\nurlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n    path('users/register/', UserRecordView.as_view(), name='register'),\n    path('diagnosis/', DiagnosisView.as_view(), name='diagnosis'),\n    path('diagnosis/<int:pk>', DiagnosisView.as_view(), name='diagnosis.delete'),\n    path('dermatologists/nearby', DermatologistView.as_view(), name='dermatologist'),\n    path(\"dermatologists/<int:pk>/\", DermatologistView.as_view(), name=\"dermatologist_detail\"),\n    path('diseases/', DiseaseView.as_view(), name='diseases'),   \n    path(\"diseases/<int:pk>/\", DiseaseDetail.as_view(), name=\"disease_detail\"),",
         "detail": "api.urls",
         "documentation": {}
     },
@@ -869,7 +1830,7 @@
         "kind": 5,
         "importPath": "api.urls",
         "description": "api.urls",
-        "peekOfCode": "urlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n    path('users/register/', UserRecordView.as_view(), name='register'),\n    path('diagnosis/', DiagnosisView.as_view(), name='diagnosis'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n    path('users/register/', UserRecordView.as_view(), name='register'),\n    path('diagnosis/', DiagnosisView.as_view(), name='diagnosis'),\n    path('diagnosis/<int:pk>', DiagnosisView.as_view(), name='diagnosis.delete'),\n    path('dermatologists/nearby', DermatologistView.as_view(), name='dermatologist'),\n    path(\"dermatologists/<int:pk>/\", DermatologistView.as_view(), name=\"dermatologist_detail\"),\n    path('diseases/', DiseaseView.as_view(), name='diseases'),   \n    path(\"diseases/<int:pk>/\", DiseaseDetail.as_view(), name=\"disease_detail\"),\n    path('patients/', PatientView.as_view(), name='patients'),   ",
         "detail": "api.urls",
         "documentation": {}
     },
@@ -896,7 +1857,7 @@
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nMEDIA_ROOT = BASE_DIR / 'media'\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.42.146', 'localhost']\n# Application definition",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nMEDIA_ROOT = BASE_DIR / 'media'\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition",
         "detail": "smartskin.settings",
         "documentation": {}
     },
@@ -905,7 +1866,7 @@
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "MEDIA_ROOT = BASE_DIR / 'media'\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.42.146', 'localhost']\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "MEDIA_ROOT = BASE_DIR / 'media'\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [",
         "detail": "smartskin.settings",
         "documentation": {}
     },
@@ -914,7 +1875,7 @@
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['192.168.42.146', 'localhost']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-@2^%3r(s4#y#q8ac9a0(fdk&s@u)()tid#$dzez7v$(+x-b5@9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "smartskin.settings",
         "documentation": {}
     },
@@ -923,7 +1884,7 @@
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = ['192.168.42.146', 'localhost']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "smartskin.settings",
         "documentation": {}
     },
@@ -932,7 +1893,7 @@
         "kind": 5,
         "importPath": "smartskin.settings",
         "description": "smartskin.settings",
-        "peekOfCode": "ALLOWED_HOSTS = ['192.168.42.146', 'localhost']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
+        "peekOfCode": "ALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
         "detail": "smartskin.settings",
         "documentation": {}
     },

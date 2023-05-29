@@ -52,8 +52,13 @@ class UserRegister {
   String email;
   String firstName;
   String lastName;
-  DateTime dob;
-  String gender;
+  final String phoneNumber;
+  final String qualification;
+  final String clinic;
+  final double locationLat;
+  final double locationLon;
+  final String locationDesc;
+
 
   UserRegister({
     required this.username,
@@ -61,8 +66,12 @@ class UserRegister {
     required this.email,
     required this.firstName,
     required this.lastName,
-    required this.dob,
-    required this.gender,
+    required this.qualification,
+    required this.phoneNumber,
+    required this.clinic,
+    required this.locationLat,
+    required this.locationLon,
+    required this.locationDesc,
   });
 
   Map<String, dynamic> toDatabaseJson() => {
@@ -71,7 +80,11 @@ class UserRegister {
         "email": email,
         "first_name": firstName,
         "last_name": lastName,
-        "dob": dob.toIso8601String(),
-        "gender": gender,
+        "qualification": qualification,
+        "phone_number": phoneNumber,
+        "clinic": clinic,
+        "location_lat": locationLat,
+        "location_lon": locationLon,
+        "location_desc": locationDesc
       };
 }

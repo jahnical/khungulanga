@@ -6,7 +6,8 @@ class Dermatologist(models.Model):
     qualification = models.CharField(max_length=100)
     email = models.EmailField()
     phone_number = models.CharField(max_length=13)
-    clinic = models.CharField(max_length=100)
+    clinic = models.CharField(max_length=200)
     location_lat = models.FloatField()
     location_lon = models.FloatField()
     location_desc = models.CharField(max_length=100)
+    

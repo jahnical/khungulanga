@@ -55,8 +55,11 @@ def detect_skin(image):
     ycbcr = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
     
     # Define range of skin color in YCbCr
-    lower_skin = np.array([0, 135, 85], dtype=np.uint8)
-    upper_skin = np.array([255, 180, 135], dtype=np.uint8)
+    # lower_skin = np.array([0, 135, 85], dtype=np.uint8)
+    # upper_skin = np.array([255, 180, 135], dtype=np.uint8)
+    # Define range of skin color in YCbCr
+    lower_skin = np.array([0, 129, 85], dtype=np.uint8)
+    upper_skin = np.array([255, 190, 135], dtype=np.uint8) # np.array([255, 180, 135], dtype=np.uint8)
     
     # Create a mask of skin pixels using YCbCr color space
     skin_mask = cv2.inRange(ycbcr, lower_skin, upper_skin)

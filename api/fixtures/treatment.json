@@ -1,74 +1,326 @@
 [
-    {
-      "model": "api.treatment",
-      "pk": 1,
-      "fields": {
-        "disease": 1,
-        "min_age": 18,
-        "max_age": 60,
-        "gender": "M",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque massa et commodo vulputate. Mauris a mauris rutrum, egestas tellus vitae, eleifend nibh.",
-        "title": "Acne Treatment for Men"
-      }
-    },
-    {
-      "model": "api.treatment",
-      "pk": 2,
-      "fields": {
-        "disease": 1,
-        "min_age": 18,
-        "max_age": 60,
-        "gender": "F",
-        "description": "Suspendisse nec ex lectus. Integer tempor, purus eget facilisis tempor, sem mi convallis felis, in mollis dolor lorem vel tellus.",
-        "title": "Acne Treatment for Women"
-      }
-    },
-    {
-      "model": "api.treatment",
-      "pk": 3,
-      "fields": {
-        "disease": 2,
-        "min_age": 12,
-        "max_age": 65,
-        "gender": "O",
-        "description": "Donec ut lorem eu turpis laoreet tincidunt. Sed sodales ante ut lorem eleifend tristique. Sed sit amet sapien non dolor vestibulum viverra non non quam.",
-        "title": "Eczema Treatment for All Genders"
-      }
-    },
-    {
-      "model": "api.treatment",
-      "pk": 4,
-      "fields": {
-        "disease": 3,
-        "min_age": 30,
-        "max_age": 75,
-        "gender": "M",
-        "description": "Mauris et fermentum risus. Sed sit amet sapien non dolor vestibulum viverra non non quam. Maecenas sed semper quam, in malesuada lorem.",
-        "title": "Rosacea Treatment for Men"
-      }
-    },
-    {
-      "model": "api.treatment",
-      "pk": 5,
-      "fields": {
-        "disease": 4,
-        "min_age": 18,
-        "max_age": 50,
-        "gender": "F",
-        "description": "Curabitur malesuada ex a felis fermentum hendrerit. Proin maximus mi ut diam maximus, eget faucibus neque volutpat. Sed euismod odio in elit euismod, sit amet pharetra lectus feugiat.",
-        "title": "Seborrheic Dermatitis Treatment for Women"
-      }
-    },
-    {
-      "model": "api.treatment",
-      "pk": 6,
-      "fields": {
-        "disease": 5,
-        "min_age": 18,
-        "max_age": 50,
-        "gender": "M",
-        "description": "Sed tincidunt diam id augue fermentum, eget lacinia velit vestibulum. Nulla facilisi. In sollicitudin eu mauris ut rutrum.",
-        "title": "Acne Vulgaris Treatment for Men"
-      }
+  {
+    "model": "api.treatment",
+    "pk": 1,
+    "fields": {
+      "disease": 1,
+      "description": "Dyshidrotic eczema treatment involves the use of topical corticosteroids, antihistamines, moisturizers, and avoiding triggers such as allergens and irritants.",
+      "title": "Dyshidrotic Eczema Treatment 1"
     }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 2,
+    "fields": {
+      "disease": 1,
+      "description": "Another approach for dyshidrotic eczema treatment is the use of phototherapy, which involves exposing the affected skin to controlled amounts of ultraviolet (UV) light.",
+      "title": "Dyshidrotic Eczema Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 3,
+    "fields": {
+      "disease": 2,
+      "description": "Lichen planus treatment includes the use of topical corticosteroids, oral medications, antihistamines, and lifestyle changes to manage symptoms and promote healing.",
+      "title": "Lichen Planus Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 4,
+    "fields": {
+      "disease": 2,
+      "description": "In some cases, lichen planus treatment may involve the use of phototherapy or laser therapy to target and reduce the affected areas of the skin.",
+      "title": "Lichen Planus Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 5,
+    "fields": {
+      "disease": 3,
+      "description": "Stasis edema treatment focuses on managing the underlying cause, such as venous insufficiency, through lifestyle changes, compression therapy, and medication.",
+      "title": "Stasis Edema Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 6,
+    "fields": {
+      "disease": 3,
+      "description": "Surgical intervention, such as venous ablation or vein bypass, may be recommended for severe cases of stasis edema that do not respond to conservative treatments.",
+      "title": "Stasis Edema Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 7,
+    "fields": {
+      "disease": 4,
+      "description": "Basal cell carcinoma treatment options include Mohs surgery, surgical excision, cryotherapy, topical medications, and photodynamic therapy, depending on the size and location of the tumor.",
+      "title": "Basal Cell Carcinoma Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 8,
+    "fields": {
+      "disease": 4,
+      "description": "In some cases, targeted therapy or immunotherapy may be recommended for advanced or metastatic basal cell carcinoma that cannot be treated with surgery or radiation.",
+      "title": "Basal Cell Carcinoma Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 9,
+    "fields": {
+      "disease": 5,
+      "description": "Eczema treatment involves the use of moisturizers, topical corticosteroids, immunomodulators, and antihistamines, along with identifying and avoiding triggers that worsen the condition.",
+      "title": "Eczema Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 10,
+    "fields": {
+      "disease": 5,
+      "description": "For severe cases of eczema, systemic medications such as oral corticosteroids or immunosuppressants may be prescribed to control inflammation and reduce symptoms.",
+      "title": "Eczema Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 11,
+    "fields": {
+      "disease": 6,
+      "description": "Melanoma treatment options include surgery, radiation therapy, immunotherapy, targeted therapy, and chemotherapy, depending on the stage and spread of the cancer.",
+      "title": "Melanoma Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 12,
+    "fields": {
+      "disease": 6,
+      "description": "In some cases, clinical trials or adjuvant therapies may be considered as part of melanoma treatment to further improve outcomes and reduce the risk of recurrence.",
+      "title": "Melanoma Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 13,
+    "fields": {
+      "disease": 7,
+      "description": "Acne vulgaris treatment involves the use of topical medications (such as retinoids and benzoyl peroxide), oral medications (such as antibiotics and hormonal therapies), and lifestyle modifications.",
+      "title": "Acne Vulgaris Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 14,
+    "fields": {
+      "disease": 7,
+      "description": "In cases of severe or resistant acne vulgaris, procedures like chemical peels, laser therapy, or photodynamic therapy may be recommended to improve skin condition.",
+      "title": "Acne Vulgaris Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 15,
+    "fields": {
+      "disease": 8,
+      "description": "Allergic contact dermatitis treatment involves identifying and avoiding the allergen, using topical corticosteroids, applying wet dressings, and taking oral antihistamines to alleviate symptoms.",
+      "title": "Allergic Contact Dermatitis Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 16,
+    "fields": {
+      "disease": 8,
+      "description": "For severe cases of allergic contact dermatitis, systemic corticosteroids or immunosuppressants may be prescribed for a short duration to control inflammation and promote healing.",
+      "title": "Allergic Contact Dermatitis Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 17,
+    "fields": {
+      "disease": 9,
+      "description": "Squamous cell carcinoma treatment options include surgery, radiation therapy, topical medications, cryotherapy, and photodynamic therapy, depending on the size and location of the tumor.",
+      "title": "Squamous Cell Carcinoma Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 18,
+    "fields": {
+      "disease": 9,
+      "description": "In cases where squamous cell carcinoma has spread or cannot be treated with local therapies, systemic treatments like immunotherapy or targeted therapy may be considered.",
+      "title": "Squamous Cell Carcinoma Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 19,
+    "fields": {
+      "disease": 10,
+      "description": "Seborrheic dermatitis treatment involves the use of medicated shampoos, topical corticosteroids, antifungal creams, and lifestyle modifications such as gentle cleansing and avoiding triggers.",
+      "title": "Seborrheic Dermatitis Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 20,
+    "fields": {
+      "disease": 10,
+      "description": "In severe or persistent cases of seborrheic dermatitis, a dermatologist may prescribe stronger topical medications or oral antifungal agents to control the condition.",
+      "title": "Seborrheic Dermatitis Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 21,
+    "fields": {
+      "disease": 11,
+      "description": "Actinic keratosis treatment options include cryotherapy, topical medications (such as imiquimod and fluorouracil), chemical peels, photodynamic therapy, and surgical removal.",
+      "title": "Actinic Keratosis Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 22,
+    "fields": {
+      "disease": 11,
+      "description": "Regular follow-up and skin monitoring are important after actinic keratosis treatment to detect any recurrence or development of new lesions.",
+      "title": "Actinic Keratosis Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 23,
+    "fields": {
+      "disease": 12,
+      "description": "Rosacea treatment involves lifestyle modifications, gentle skin care, topical medications (such as metronidazole and azelaic acid), oral antibiotics, and laser therapy.",
+      "title": "Rosacea Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 24,
+    "fields": {
+      "disease": 12,
+      "description": "In some cases, isotretinoin may be prescribed for severe or resistant rosacea that does not respond to other treatments.",
+      "title": "Rosacea Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 25,
+    "fields": {
+      "disease": 13,
+      "description": "Vitiligo treatment includes topical corticosteroids, calcineurin inhibitors, phototherapy, excimer laser, and in some cases, surgical techniques like skin grafting or melanocyte transplantation.",
+      "title": "Vitiligo Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 26,
+    "fields": {
+      "disease": 13,
+      "description": "Camouflage techniques, such as the use of cosmetic cover-ups or tattoos, may also be employed to help conceal areas of depigmented skin in vitiligo.",
+      "title": "Vitiligo Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 27,
+    "fields": {
+      "disease": 14,
+      "description": "Folliculitis treatment involves good hygiene practices, warm compresses, topical antiseptics, topical or oral antibiotics, and avoiding shaving or irritating the affected area.",
+      "title": "Folliculitis Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 28,
+    "fields": {
+      "disease": 14,
+      "description": "For chronic or recurrent folliculitis, your doctor may recommend a longer course of antibiotics or other medications to suppress the underlying infection or inflammation.",
+      "title": "Folliculitis Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 29,
+    "fields": {
+      "disease": 15,
+      "description": "Urticaria treatment involves identifying and avoiding triggers, taking antihistamines, using corticosteroids for severe episodes, and, in some cases, immunosuppressants or omalizumab.",
+      "title": "Urticaria Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 30,
+    "fields": {
+      "disease": 15,
+      "description": "In rare cases of chronic urticaria that do not respond to conventional treatments, your doctor may suggest therapies like phototherapy, cyclosporine, or other biologic medications.",
+      "title": "Urticaria Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 31,
+    "fields": {
+      "disease": 16,
+      "description": "Scabies treatment involves the use of scabicide medications, such as permethrin or ivermectin, along with washing or dry cleaning infested clothing and bedding.",
+      "title": "Scabies Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 32,
+    "fields": {
+      "disease": 16,
+      "description": "To prevent reinfestation and spread of scabies, it's important to treat all close contacts, wash or vacuum items that may harbor mites, and avoid prolonged skin-to-skin contact.",
+      "title": "Scabies Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 33,
+    "fields": {
+      "disease": 17,
+      "description": "Acne treatment options include topical medications (such as retinoids and benzoyl peroxide), oral medications (such as antibiotics and hormonal therapies), and procedures like chemical peels or light therapy.",
+      "title": "Acne Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 34,
+    "fields": {
+      "disease": 17,
+      "description": "In cases of severe or persistent acne, isotretinoin may be prescribed as a powerful oral medication to treat acne and prevent future scarring.",
+      "title": "Acne Treatment 2"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 35,
+    "fields": {
+      "disease": 18,
+      "description": "Psoriasis treatment includes topical corticosteroids, vitamin D analogs, retinoids, immunomodulators, phototherapy, systemic medications, and biologic therapies, depending on the severity and extent of the condition.",
+      "title": "Psoriasis Treatment 1"
+    }
+  },
+  {
+    "model": "api.treatment",
+    "pk": 36,
+    "fields": {
+      "disease": 18,
+      "description": "In severe cases of psoriasis that do not respond to other treatments, oral medications like methotrexate or cyclosporine may be prescribed to suppress the immune system and reduce inflammation.",
+      "title": "Psoriasis Treatment 2"
+    }
+  }
 ]

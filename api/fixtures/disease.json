@@ -3,17 +3,17 @@
     "model": "api.disease",
     "pk": 1,
     "fields": {
-      "name": "acne",
-      "description": "Acne is a common skin condition that occurs when hair follicles become clogged with oil and dead skin cells. It is characterized by blackheads, whiteheads, pimples, and cysts.",
-      "severity": 1
+      "name": "dyshidrotic eczema",
+      "description": "Dyshidrotic eczema, also known as pompholyx, is a type of eczema that primarily affects the hands and feet. It is characterized by small, itchy blisters that may be filled with fluid. The exact cause of dyshidrotic eczema is unknown, but it is believed to be associated with allergies, stress, and exposure to certain irritants.",
+      "severity": 2
     }
   },
   {
     "model": "api.disease",
     "pk": 2,
     "fields": {
-      "name": "eczema",
-      "description": "Eczema is a skin condition that causes red, itchy, and inflamed patches of skin. It can be triggered by a variety of factors, including allergies, irritants, and stress.",
+      "name": "lichen planus",
+      "description": "Lichen planus is a chronic inflammatory condition that affects the skin, mucous membranes, hair, and nails. It presents as small, flat-topped, itchy papules that may be reddish-purple in color. Lichen planus can affect various parts of the body, including the wrists, ankles, mouth, and genital area.",
       "severity": 2
     }
   },
@@ -21,54 +21,146 @@
     "model": "api.disease",
     "pk": 3,
     "fields": {
-      "name": "rosacea",
-      "description": "Rosacea is a chronic skin condition that causes redness, swelling, and bumps on the face. It can also cause burning and stinging sensations, and in severe cases, thickened skin.",
-      "severity": 2
+      "name": "stasis edema",
+      "description": "Stasis edema, also known as venous stasis dermatitis, is a skin condition that occurs due to poor circulation in the legs. It results in swelling, redness, and inflammation of the lower legs and ankles. Stasis edema is commonly associated with underlying venous insufficiency or venous reflux.",
+      "severity": 1
     }
   },
   {
     "model": "api.disease",
     "pk": 4,
     "fields": {
-      "name": "seborrheic dermatitis",
-      "description": "Seborrheic dermatitis is a common skin condition that causes flaky, itchy, and red skin. It typically affects the scalp, face, and other oily areas of the body.",
-      "severity": 1
+      "name": "basal cell carcinoma",
+      "description": "Basal cell carcinoma is the most common type of skin cancer. It typically appears as a slow-growing, flesh-colored or pinkish bump on the skin. Basal cell carcinoma is usually caused by long-term exposure to ultraviolet (UV) radiation from the sun or tanning beds. It rarely metastasizes but can cause local tissue destruction if left untreated.",
+      "severity": 3
     }
   },
   {
     "model": "api.disease",
     "pk": 5,
     "fields": {
-      "name": "urticaria",
-      "description": "Urticaria, also known as hives, is a skin condition that causes raised, itchy, and red welts on the skin. It can be triggered by a variety of factors, including allergies, medications, and infections.",
-      "severity": 1
+      "name": "eczema",
+      "description": "Eczema, also known as atopic dermatitis, is a chronic inflammatory skin condition. It is characterized by dry, itchy, and inflamed patches of skin. Eczema can occur in different parts of the body and is often triggered by environmental factors, irritants, allergens, or stress.",
+      "severity": 2
     }
   },
   {
     "model": "api.disease",
     "pk": 6,
     "fields": {
-      "name": "acne vulgaris",
-      "description": "Acne vulgaris is a common skin condition that occurs when hair follicles become clogged with oil and dead skin cells. It is characterized by blackheads, whiteheads, pimples, and cysts.",
-      "severity": 1
+      "name": "melanoma",
+      "description": "Melanoma is a type of skin cancer that develops from melanocytes, the cells that produce melanin. It typically appears as an irregularly shaped mole or dark spot on the skin. Melanoma can metastasize and spread to other parts of the body, making early detection and treatment crucial.",
+      "severity": 3
     }
   },
   {
     "model": "api.disease",
     "pk": 7,
     "fields": {
-      "name": "basal cell carcinoma",
-      "description": "Basal cell carcinoma is a type of skin cancer that usually develops on areas of skin that have been exposed to the sun. It typically appears as a waxy bump or a flat, scaly patch.",
-      "severity": 3
+      "name": "acne vulgaris",
+      "description": "Acne vulgaris is a common skin condition that occurs when hair follicles become clogged with oil and dead skin cells. It is characterized by blackheads, whiteheads, pimples, and cysts. Acne vulgaris can occur on the face, chest, back, and other areas of the body and is influenced by hormonal changes and genetic factors.",
+      "severity": 2
     }
   },
   {
     "model": "api.disease",
     "pk": 8,
     "fields": {
+      "name": "allergic contact dermatitis",
+      "description": "Allergic contact dermatitis is a skin reaction that occurs when the skin comes into contact with a substance to which it is allergic. It results in redness, itching, and inflammation of the skin. Common triggers of allergic contact dermatitis include certain metals, fragrances, cosmetics, and plants.",
+      "severity": 2
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 9,
+    "fields": {
       "name": "squamous cell carcinoma",
-      "description": "Squamous cell carcinoma is a type of skin cancer that usually develops on areas of skin that have been exposed to the sun. It typically appears as a firm, red nodule or a flat, scaly lesion.",
+      "description": "Squamous cell carcinoma is a type of skin cancer that usually develops on areas of the skin that have been exposed to the sun. It typically appears as a firm, red nodule or a flat, scaly lesion. Squamous cell carcinoma can metastasize and may require surgical removal or other treatments.",
       "severity": 3
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 10,
+    "fields": {
+      "name": "seborrheic dermatitis",
+      "description": "Seborrheic dermatitis is a common skin condition that causes flaky, itchy, and red skin. It typically affects areas with a high concentration of oil glands, such as the scalp, face, and upper chest. Seborrheic dermatitis can be chronic and is often characterized by periods of flare-ups and remission.",
+      "severity": 1
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 11,
+    "fields": {
+      "name": "actinic keratosis",
+      "description": "Actinic keratosis, also known as solar keratosis, is a precancerous skin condition caused by long-term sun exposure. It appears as rough, scaly patches on the skin, typically on areas that are frequently exposed to the sun, such as the face, scalp, and hands. Actinic keratosis should be monitored and treated to prevent progression to squamous cell carcinoma.",
+      "severity": 2
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 12,
+    "fields": {
+      "name": "rosacea",
+      "description": "Rosacea is a chronic skin condition that primarily affects the face. It is characterized by redness, flushing, visible blood vessels, and sometimes the development of small, pus-filled bumps. Rosacea can cause discomfort and can be triggered by factors such as sun exposure, certain foods, alcohol, and stress.",
+      "severity": 2
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 13,
+    "fields": {
+      "name": "vitiligo",
+      "description": "Vitiligo is a long-term skin condition characterized by the loss of pigment in patches of the skin. It occurs when melanocytes, the cells that produce melanin, are destroyed. Vitiligo can affect any part of the body and is often associated with autoimmune disorders. There is currently no cure for vitiligo, but treatment options are available to help manage the condition.",
+      "severity": 2
+    }
+  },
+
+
+  {
+    "model": "api.disease",
+    "pk": 14,
+    "fields": {
+      "name": "folliculitis",
+      "description": "Folliculitis is a common skin condition characterized by the inflammation of hair follicles. It can be caused by bacteria, fungi, viruses, or other factors. Folliculitis usually appears as small, red bumps or pustules around hair follicles and can be itchy or painful. Treatment options include topical or oral medications, depending on the severity and cause of the condition.",
+      "severity": 1
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 15,
+    "fields": {
+      "name": "urticaria",
+      "description": "Urticaria, also known as hives, is a skin condition characterized by raised, itchy, and often red welts on the skin. It can be triggered by various factors, including allergies, medications, infections, and exposure to heat or cold. Urticaria can range in severity and duration, with acute cases typically resolving within a few hours or days.",
+      "severity": 1
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 16,
+    "fields": {
+      "name": "scabies",
+      "description": "Scabies is a contagious skin infestation caused by microscopic mites. It results in intense itching and a rash characterized by small, red bumps or blisters. Scabies is often transmitted through close physical contact and can affect various parts of the body. Treatment involves the use of prescription medications to kill the mites and relieve symptoms.",
+      "severity": 2
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 17,
+    "fields": {
+      "name": "acne",
+      "description": "Acne is a common skin condition that occurs when hair follicles become clogged with oil and dead skin cells. It is characterized by blackheads, whiteheads, pimples, and cysts. Acne can be influenced by hormonal changes, genetics, and environmental factors.",
+      "severity": 1
+    }
+  },
+  {
+    "model": "api.disease",
+    "pk": 18,
+    "fields": {
+      "name": "psoriasis",
+      "description": "Psoriasis is a chronic autoimmune skin condition that speeds up the life cycle of skin cells. It results in the rapid buildup of cells on the surface of the skin, leading to thick, red patches covered with silvery scales. Psoriasis can cause itching, discomfort, and joint pain in some cases.",
+      "severity": 2
     }
   }
 ]

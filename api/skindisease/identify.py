@@ -19,15 +19,19 @@ def get_model(name):
     return model
 
 models = {
-    #"Itchy Face": get_model("Itchy Face"),
-    #"Non Itchy Face": get_model("Non Itchy Face"),
-    #"Itchy Cranium": get_model("Itchy Cranium"),
+    "Itchy Face": get_model("Itchy Face"),
+    "Non Itchy Face": get_model("Non Itchy Face"),
+    "Itchy Cranium": get_model("Itchy Cranium"),
+    "Itchy Arms Hands": get_model("Itchy Arms Hands"),
+    "Itchy Upper Body": get_model("Itchy Arms Hands"),
 }
 
 labels = {
     "Itchy Face": {'acne': 0, 'eczema': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'urticaria': 4},
     "Non Itchy Face": {'acne vulgaris': 0, 'basal cell carcinoma': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'squamous cell carcinoma': 4},
-    "Itchy Cranium": {'eczema': 0, 'folliculitis': 1, 'lichen planus': 2, 'psoriasis': 3, 'rosacea': 4, 'seborrheic dermatitis': 5}
+    "Itchy Cranium": {'eczema': 0, 'folliculitis': 1, 'lichen planus': 2, 'psoriasis': 3, 'rosacea': 4, 'seborrheic dermatitis': 5},
+    "Itchy Upper Body": {'eczema': 0, 'folliculitis': 1, 'lichen planus': 2, 'psoriasis': 3, 'rosacea': 4, 'seborrheic dermatitis': 5},
+    "Itchy Arms Hands": {'allergic contact dermatitis': 0, 'dyshidrotic eczema': 1, 'lichen planus': 2, 'psoriasis': 3, 'scabies': 4, 'urticaria': 5}
 }
 
 diseases = Disease.objects.all()

@@ -28,21 +28,6 @@ class AppointmentChatBloc
   AppointmentChatBloc(this._appointmentChatRepository, this._userRepository)
       : super(AppointmentChatInitial()) {}
 
-  Future<AppointmentChat> _createAppointmentChat(
-      FetchAppointmentChat event) async {
-    final patient = await _userRepository.fetchPatient(USER!.username);
-    return AppointmentChat(
-      patient: patient,
-      diagnosis: null,
-      dermatologist: event.dermatologist!,
-      messages: [],
-      appointment: Appointment(
-        dermatologist: event.dermatologist!,
-        patient: patient,
-      ),
-    );
-  }
-
   @override
   Stream<AppointmentChatState> mapEventToState(
     AppointmentChatEvent event,
@@ -50,9 +35,7 @@ class AppointmentChatBloc
     log(event.toString());
     if (event is FetchAppointmentChat) {
       if (event.appointmentChatId == null) {
-        final chat = await _createAppointmentChat(event);
-        this.chat = await _appointmentChatRepository.saveAppointmentChat(chat);
-        yield AppointmentChatLoaded(chat);
+        yield AppointmentChatError(message: "No Appointment Chat Id");
       } else {
         yield AppointmentChatLoading();
         try {
@@ -90,8 +73,8 @@ class AppointmentChatBloc
       yield UpdatingAppointment();
       try {
         final appointment = chat!.appointment.copyWith();
-        appointment.patientApproved = DateTime.now();
-        appointment.patientRejected = null;
+        appointment.dermatologistApproved = DateTime.now();
+        appointment.dermatologistRejected = null;
         chat?.appointment =
             await _appointmentChatRepository.updateAppointment(appointment);
         yield AppointmentUpdated(chat!);
@@ -102,8 +85,8 @@ class AppointmentChatBloc
       yield UpdatingAppointment();
       try {
         final appointment = chat!.appointment.copyWith();
-        appointment.patientRejected = DateTime.now();
-        appointment.patientApproved = null;
+        appointment.dermatologistRejected = DateTime.now();
+        appointment.dermatologistApproved = null;
         chat?.appointment =
             await _appointmentChatRepository.updateAppointment(appointment);
         yield AppointmentUpdated(chat!);

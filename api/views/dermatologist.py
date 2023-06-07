@@ -55,14 +55,15 @@ class DermatologistView(APIView):
         )
 
 class DermatologistDetail(APIView):
-    def get_object(self, pk):
+    def get_object(self, username):
         try:
-            return Dermatologist.objects.get(pk=pk)
+            user = User.objects.get(username=username)
+            return Dermatologist.objects.get(user=user)
         except Dermatologist.DoesNotExist:
             raise Http404
 
-    def get(self, request, pk):
-        dermatologist = self.get_object(pk)
+    def get(self, request, username):
+        dermatologist = self.get_object(username)
         serializer = DermatologistSerializer(dermatologist)
         return Response(serializer.data)
 

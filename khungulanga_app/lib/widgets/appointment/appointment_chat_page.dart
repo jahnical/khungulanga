@@ -14,6 +14,8 @@ import 'package:khungulanga_app/widgets/common/common.dart';
 import '../../blocs/appointment_bloc/appointment_chat_bloc.dart';
 import '../../models/dermatologist.dart';
 import '../../models/diagnosis.dart';
+import 'package:timeago/timeago.dart' as timeago;
+
 
 
 class AppointmentChatPage extends StatefulWidget {
@@ -232,13 +234,36 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
       itemCount: _bloc.chat!.messages.length,
       itemBuilder: (context, index) {
         final message = _bloc.chat!.messages[index];
-        return ListTile(
-          title: Text(message.sender.firstName),
-          subtitle: Text(message.text),
-          trailing: Icon(
-            message.seen ? Icons.check_circle : Icons.check_circle_outline,
-            color: message.seen ? Colors.green : Colors.grey,
-          ),
+        return Row(
+          mainAxisAlignment: message.sender.username == USER?.username ? MainAxisAlignment.end : MainAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+              padding: EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                color: message.sender.username == USER?.username ? Colors.blue : Colors.grey,
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    message.text,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(height: 5.0),
+                  Text(
+                    timeago.format(message.time), // Assuming 'time' is the property representing the message time
+                    style: TextStyle(color: Colors.white, fontSize: 12.0),
+                  ),
+                ],
+              ),
+            ),
+            Icon(
+              message.seen ? Icons.check_circle : Icons.check_circle_outline,
+              color: message.seen ? Colors.green : Colors.grey,
+            ),
+          ],
         );
       },
     );

@@ -1,20 +1,40 @@
+import 'package:dermatologist_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:dermatologist_app/models/appointment_chat.dart';
 import 'package:dermatologist_app/repositories/appointment_repository.dart';
 import 'appointment_chat_page.dart';
 
-class AppointmentChatsList extends StatelessWidget {
-  final AppointmentRepository appointmentChatRepository =
-      AppointmentRepository();
-
-  AppointmentChatsList({super.key});
+class AppointmentChats extends StatefulWidget {
+  AppointmentChats({Key? key}) : super(key: key);
 
   @override
+  AppointmentChatsState createState() => AppointmentChatsState();
+}
+
+
+class AppointmentChatsState extends State<AppointmentChats> {
+  final AppointmentRepository appointmentChatRepository =
+      AppointmentRepository();
+  Future<List<AppointmentChat>> _chatsFuture = Future.value([]);
+
+  void _loadChats() {
+    setState(() {
+      _chatsFuture = appointmentChatRepository.getAppointmentChats();
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _loadChats();
+  }
+  @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       //appBar: AppBar(title: const Text('Appointment Chats')),
       body: FutureBuilder<List<AppointmentChat>>(
-        future: appointmentChatRepository.getAppointmentChats(),
+        future: _chatsFuture,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             final appointmentChats = snapshot.data!;
@@ -32,7 +52,7 @@ class AppointmentChatsList extends StatelessWidget {
                     backgroundColor: Colors.grey,
                     child: Icon(Icons.person),
                   ),
-                  title: Text(chat.dermatologist.user.firstName),
+                  title: Text('${chat.patient.user?.firstName} ${chat.patient.user?.lastName}'),
                   subtitle: Text(lastMessage),
                   trailing: chat.messages.isNotEmpty
                       ? Icon(
@@ -47,15 +67,23 @@ class AppointmentChatsList extends StatelessWidget {
                   onTap: () {
                     // Navigate to the appointment chat page
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => AppointmentChatPage(
-                              dermatologist: chat.dermatologist,
-                            )));
+                        builder: (context) => AppointmentChatPage(chat: chat)));
                   },
                 );
               },
             );
           } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Error: ${snapshot.error}'),
+                SizedBox(height: 16),
+                ElevatedButton(
+                  onPressed: _loadChats,
+                  child: Text('Retry'),
+                ),
+              ],
+            );
           } else {
             return const Center(child: CircularProgressIndicator());
           }

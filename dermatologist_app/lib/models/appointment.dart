@@ -33,7 +33,7 @@ class Appointment {
     this.dermatologistApproved,
     this.patientRejected,
     this.dermatologistRejected,
-    this.extraInfo = "",
+    this.extraInfo = "Extra Info",
   });
 
   factory Appointment.fromJson(Map<String, dynamic> json) {

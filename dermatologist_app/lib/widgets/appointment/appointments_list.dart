@@ -80,17 +80,17 @@ class _AppointmentListState extends State<AppointmentList> {
               return Column(
                 children: [
                   ListTile(
-                    leading: const Icon(Icons.calendar_today_outlined),
+                    leading: const Icon(Icons.calendar_today_outlined, color: Colors.green,),
                     tileColor: Colors.grey[50],
                     title: Text(
-                      'Dermatologist: ${appointment.dermatologist.user.firstName} ${appointment.dermatologist.user.lastName}',
+                      'Patient: ${appointment.patient?.user?.firstName} ${appointment.patient?.user?.lastName}',
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
                       ),
                     ),
                     subtitle: Text(
-                      'Appointment Time: ${appointment.appoTime}',
+                      'Time: ${appointment.appoTime}',
                       style: TextStyle(
                         fontSize: 14,
                       ),

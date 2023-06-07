@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:ffi';
 
+import 'package:dermatologist_app/models/appointment_chat.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -14,14 +15,15 @@ import 'package:dermatologist_app/widgets/common/common.dart';
 import '../../blocs/appointment_bloc/appointment_chat_bloc.dart';
 import '../../models/dermatologist.dart';
 import '../../models/diagnosis.dart';
+import '../../models/patient.dart';
+import 'package:timeago/timeago.dart' as timeago;
+
 
 class AppointmentChatPage extends StatefulWidget {
-  final Dermatologist dermatologist;
-  Diagnosis? diagnosis;
+  final AppointmentChat chat;
 
   AppointmentChatPage({
-    required this.dermatologist,
-    this.diagnosis,
+    required this.chat,
   });
 
   @override
@@ -44,7 +46,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
     _bloc = AppointmentChatBloc(
         RepositoryProvider.of<AppointmentRepository>(context),
         RepositoryProvider.of<UserRepository>(context))
-      ..add(FetchAppointmentChat(null, widget.dermatologist, null, context));
+      ..add(FetchAppointmentChat(widget.chat.id, widget.chat.dermatologist, widget.chat.patient, context));
     _messageController = TextEditingController();
   }
 
@@ -73,7 +75,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
     if (_messageController.text.trim().isEmpty) return;
 
     final newMessage = ChatMessage(
-      sender: _bloc.chat!.patient.user!,
+      sender: _bloc.chat!.dermatologist.user!,
       text: _messageController.text.trim(),
       chatId: _bloc.chat!.id!,
       time: DateTime.now(),
@@ -204,7 +206,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
                                   ),
                                   ElevatedButton(
                                     onPressed: _bloc.chat!.appointment
-                                                .patientApproved !=
+                                                .dermatologistApproved !=
                                             null
                                         ? null
                                         : () {
@@ -219,7 +221,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
                                     style: ElevatedButton.styleFrom(
                                         backgroundColor: Colors.redAccent),
                                     onPressed: _bloc.chat!.appointment
-                                                .patientRejected !=
+                                                .dermatologistRejected !=
                                             null
                                         ? null
                                         : () {
@@ -270,17 +272,42 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
       itemCount: _bloc.chat!.messages.length,
       itemBuilder: (context, index) {
         final message = _bloc.chat!.messages[index];
-        return ListTile(
-          title: Text(message.sender.firstName),
-          subtitle: Text(message.text),
-          trailing: Icon(
-            message.seen ? Icons.check_circle : Icons.check_circle_outline,
-            color: message.seen ? Colors.green : Colors.grey,
-          ),
+        return Row(
+          mainAxisAlignment: message.sender.username == USER?.username ? MainAxisAlignment.end : MainAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+              padding: EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                color: message.sender.username == USER?.username ? Colors.blue : Colors.grey,
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    message.text,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(height: 5.0),
+                  Text(
+                      timeago.format(message.time), // Assuming 'time' is the property representing the message time
+                    style: TextStyle(color: Colors.white, fontSize: 12.0),
+                  ),
+                ],
+              ),
+            ),
+            Icon(
+              message.seen ? Icons.check_circle : Icons.check_circle_outline,
+              color: message.seen ? Colors.green : Colors.grey,
+            ),
+          ],
         );
       },
     );
   }
+
+
 
   Widget _buildMessageInput() {
     return Padding(
@@ -335,7 +362,7 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
           return Scaffold(
             appBar: AppBar(
               title: Text(
-                  '${_bloc.chat!.dermatologist.user.firstName} ${_bloc.chat!.dermatologist.user.lastName}'),
+                  '${_bloc.chat!.patient.user?.firstName} ${_bloc.chat!.patient.user?.lastName}'),
             ),
             body: Column(
               children: [

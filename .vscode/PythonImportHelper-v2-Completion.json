@@ -297,6 +297,14 @@
         "documentation": {}
     },
     {
+        "label": "Dermatologist",
+        "importPath": "api.models.dermatologist",
+        "description": "api.models.dermatologist",
+        "isExtraImport": true,
+        "detail": "api.models.dermatologist",
+        "documentation": {}
+    },
+    {
         "label": "Appointment",
         "importPath": "api.models.appointment",
         "description": "api.models.appointment",
@@ -1328,6 +1336,14 @@
         "documentation": {}
     },
     {
+        "label": "DermatologistDetail",
+        "importPath": "api.views.dermatologist",
+        "description": "api.views.dermatologist",
+        "isExtraImport": true,
+        "detail": "api.views.dermatologist",
+        "documentation": {}
+    },
+    {
         "label": "DermatologistView",
         "importPath": "api.views.dermatologist",
         "description": "api.views.dermatologist",
@@ -1698,7 +1714,7 @@
         "kind": 2,
         "importPath": "api.skindisease.identify",
         "description": "api.skindisease.identify",
-        "peekOfCode": "def get_model(name):\n    tf.keras.backend.clear_session()\n    model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), \"models\", name + \".h5\"), custom_objects=custom_objects)\n    for layer in model.layers:\n        if isinstance(layer, tf.keras.layers.Dropout):\n            layer.rate = 0.0\n        layer.training = False\n    return model\nmodels = {\n    \"Itchy Face\": get_model(\"Itchy Face\"),",
+        "peekOfCode": "def get_model(name):\n    tf.keras.backend.clear_session()\n    model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), \"models\", name + \".h5\"), custom_objects=custom_objects)\n    for layer in model.layers:\n        if isinstance(layer, tf.keras.layers.Dropout):\n            layer.rate = 0.0\n        layer.training = False\n    return model\nmodels = {\n    # \"Itchy Face\": get_model(\"Itchy Face\"),",
         "detail": "api.skindisease.identify",
         "documentation": {}
     },
@@ -1743,7 +1759,7 @@
         "kind": 5,
         "importPath": "api.skindisease.identify",
         "description": "api.skindisease.identify",
-        "peekOfCode": "models = {\n    \"Itchy Face\": get_model(\"Itchy Face\"),\n    \"Non Itchy Face\": get_model(\"Non Itchy Face\"),\n    \"Itchy Cranium\": get_model(\"Itchy Cranium\"),\n    \"Itchy Arms Hands\": get_model(\"Itchy Arms Hands\"),\n    \"Itchy Upper Body\": get_model(\"Itchy Arms Hands\"),\n}\nlabels = {\n    \"Itchy Face\": {'acne': 0, 'eczema': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'urticaria': 4},\n    \"Non Itchy Face\": {'acne vulgaris': 0, 'basal cell carcinoma': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'squamous cell carcinoma': 4},",
+        "peekOfCode": "models = {\n    # \"Itchy Face\": get_model(\"Itchy Face\"),\n    # \"Non Itchy Face\": get_model(\"Non Itchy Face\"),\n    # \"Itchy Cranium\": get_model(\"Itchy Cranium\"),\n    # \"Itchy Arms Hands\": get_model(\"Itchy Arms Hands\"),\n    # \"Itchy Upper Body\": get_model(\"Itchy Arms Hands\"),\n}\nlabels = {\n    \"Itchy Face\": {'acne': 0, 'eczema': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'urticaria': 4},\n    \"Non Itchy Face\": {'acne vulgaris': 0, 'basal cell carcinoma': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'squamous cell carcinoma': 4},",
         "detail": "api.skindisease.identify",
         "documentation": {}
     },
@@ -1779,7 +1795,7 @@
         "kind": 6,
         "importPath": "api.views.appointment_chat",
         "description": "api.views.appointment_chat",
-        "peekOfCode": "class AppointmentChatView(APIView):\n    def get(self, request):\n        is_patient = Patient.objects.all().filter(user=request.user).count() > 0\n        appointment_chats = AppointmentChat.objects.all().filter(patient_id=request.user.id) if is_patient else AppointmentChat.objects.all().filter(dermatologist_id=request.user.id) \n        serializer = AppointmentChatSerializer(appointment_chats, many=True)\n        return Response(serializer.data)\n    def post(self, request):\n        try:\n            data = {**request.data}\n            data.pop('id')",
+        "peekOfCode": "class AppointmentChatView(APIView):\n    def get(self, request):\n        print(request.user)\n        is_patient = Patient.objects.all().filter(user=request.user).count() > 0\n        appointment_chats = AppointmentChat.objects.all().filter(patient_id=request.user.patient.id) if is_patient else AppointmentChat.objects.all().filter(dermatologist_id=request.user.dermatologist.id) \n        print(request.user, is_patient, appointment_chats) \n        serializer = AppointmentChatSerializer(appointment_chats, many=True)\n        return Response(serializer.data)\n    def post(self, request):\n        try:",
         "detail": "api.views.appointment_chat",
         "documentation": {}
     },
@@ -1815,7 +1831,7 @@
         "kind": 6,
         "importPath": "api.views.dermatologist",
         "description": "api.views.dermatologist",
-        "peekOfCode": "class DermatologistDetail(APIView):\n    def get_object(self, pk):\n        try:\n            return Dermatologist.objects.get(pk=pk)\n        except Dermatologist.DoesNotExist:\n            raise Http404\n    def get(self, request, pk):\n        dermatologist = self.get_object(pk)\n        serializer = DermatologistSerializer(dermatologist)\n        return Response(serializer.data)",
+        "peekOfCode": "class DermatologistDetail(APIView):\n    def get_object(self, username):\n        try:\n            user = User.objects.get(username=username)\n            return Dermatologist.objects.get(user=user)\n        except Dermatologist.DoesNotExist:\n            raise Http404\n    def get(self, request, username):\n        dermatologist = self.get_object(username)\n        serializer = DermatologistSerializer(dermatologist)",
         "detail": "api.views.dermatologist",
         "documentation": {}
     },
@@ -1887,7 +1903,7 @@
         "kind": 5,
         "importPath": "api.urls",
         "description": "api.urls",
-        "peekOfCode": "app_name = 'api'\nurlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n    path('users/register/', UserRecordView.as_view(), name='register'),\n    path('users/dermatologist/register/', DermatologistView.as_view(), name='derm.register'),\n    path('diagnosis/', DiagnosisView.as_view(), name='diagnosis'),\n    path('diagnosis/<int:pk>', DiagnosisView.as_view(), name='diagnosis.delete'),\n    path('dermatologists/nearby', DermatologistView.as_view(), name='dermatologist'),\n    path(\"dermatologists/<int:pk>/\", DermatologistView.as_view(), name=\"dermatologist_detail\"),\n    path('diseases/', DiseaseView.as_view(), name='diseases'),   ",
+        "peekOfCode": "app_name = 'api'\nurlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n    path('users/register/', UserRecordView.as_view(), name='register'),\n    path('users/dermatologist/register/', DermatologistView.as_view(), name='derm.register'),\n    path('diagnosis/', DiagnosisView.as_view(), name='diagnosis'),\n    path('diagnosis/<int:pk>', DiagnosisView.as_view(), name='diagnosis.delete'),\n    path('dermatologists/nearby', DermatologistView.as_view(), name='dermatologist'),\n    path(\"dermatologists/<username>/\", DermatologistDetail.as_view(), name=\"dermatologist_detail\"),\n    path('diseases/', DiseaseView.as_view(), name='diseases'),   ",
         "detail": "api.urls",
         "documentation": {}
     },
@@ -1896,7 +1912,7 @@
         "kind": 5,
         "importPath": "api.urls",
         "description": "api.urls",
-        "peekOfCode": "urlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n    path('users/register/', UserRecordView.as_view(), name='register'),\n    path('users/dermatologist/register/', DermatologistView.as_view(), name='derm.register'),\n    path('diagnosis/', DiagnosisView.as_view(), name='diagnosis'),\n    path('diagnosis/<int:pk>', DiagnosisView.as_view(), name='diagnosis.delete'),\n    path('dermatologists/nearby', DermatologistView.as_view(), name='dermatologist'),\n    path(\"dermatologists/<int:pk>/\", DermatologistView.as_view(), name=\"dermatologist_detail\"),\n    path('diseases/', DiseaseView.as_view(), name='diseases'),   \n    path(\"diseases/<int:pk>/\", DiseaseDetail.as_view(), name=\"disease_detail\"),",
+        "peekOfCode": "urlpatterns = [\n    path('user/', UserRecordView.as_view(), name='users'),\n    path('users/register/', UserRecordView.as_view(), name='register'),\n    path('users/dermatologist/register/', DermatologistView.as_view(), name='derm.register'),\n    path('diagnosis/', DiagnosisView.as_view(), name='diagnosis'),\n    path('diagnosis/<int:pk>', DiagnosisView.as_view(), name='diagnosis.delete'),\n    path('dermatologists/nearby', DermatologistView.as_view(), name='dermatologist'),\n    path(\"dermatologists/<username>/\", DermatologistDetail.as_view(), name=\"dermatologist_detail\"),\n    path('diseases/', DiseaseView.as_view(), name='diseases'),   \n    path(\"diseases/<int:pk>/\", DiseaseDetail.as_view(), name=\"disease_detail\"),",
         "detail": "api.urls",
         "documentation": {}
     },

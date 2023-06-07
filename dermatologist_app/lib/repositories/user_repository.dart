@@ -7,12 +7,13 @@ import 'package:dermatologist_app/models/auth_user.dart';
 import '../api_connection/api_client.dart';
 import '../api_connection/con_options.dart';
 import '../api_connection/endpoints.dart';
+import '../models/dermatologist.dart';
 
 AuthUser? USER;
 
 class UserRepository {
   final userDao = UserDao();
-  Patient? patient;
+  Dermatologist? dermatologist;
   final _dio = APIClient.dio;
 
   Future<AuthUser> authenticate({
@@ -26,18 +27,18 @@ class UserRepository {
       username: username,
       token: token.token,
     );
-    fetchPatient(user.username);
+    fetchDermatologist(user.username);
     return user;
   }
 
-  Future<Patient> fetchPatient(String username) async {
-    if (this.patient != null) return this.patient!;
+  Future<Dermatologist> fetchDermatologist(String username) async {
+    if (this.dermatologist != null) return this.dermatologist!;
     final response =
-        await _dio.get('$PATIENTS_URL/$username/', options: getOptions());
-    final patientJson = response.data as Map<String, dynamic>;
-    final patient = Patient.fromJson(patientJson);
-    this.patient = patient;
-    return patient;
+        await _dio.get('$DERMATOLOGISTS_URL/$username/', options: getOptions());
+    final dermatologistJson = response.data as Map<String, dynamic>;
+    final dermatologist = Dermatologist.fromJson(dermatologistJson);
+    this.dermatologist = dermatologist;
+    return dermatologist;
   }
 
   Future<void> persistToken({required AuthUser user}) async {
@@ -49,7 +50,7 @@ class UserRepository {
     AuthUser? user = await userDao.getToken(0);
     USER = user;
     if (user != null) {
-      fetchPatient(user.username);
+      fetchDermatologist(user.username);
     }
     return user;
   }
@@ -57,7 +58,7 @@ class UserRepository {
   Future<void> deleteToken({required int id}) async {
     await userDao.deleteUser(id);
     USER = null;
-    this.patient = null;
+    this.dermatologist = null;
   }
 
   Future<bool> hasToken() async {

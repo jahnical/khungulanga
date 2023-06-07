@@ -1536,7 +1536,7 @@
         "kind": 6,
         "importPath": "api.models.dermatologist",
         "description": "api.models.dermatologist",
-        "peekOfCode": "class Dermatologist(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    qualification = models.CharField(max_length=100)\n    email = models.EmailField()\n    phone_number = models.CharField(max_length=13)\n    clinic = models.CharField(max_length=100)\n    location_lat = models.FloatField()\n    location_lon = models.FloatField()\n    location_desc = models.CharField(max_length=100)",
+        "peekOfCode": "class Dermatologist(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    qualification = models.CharField(max_length=100)\n    email = models.EmailField()\n    phone_number = models.CharField(max_length=13)\n    clinic = models.CharField(max_length=200)\n    location_lat = models.FloatField()\n    location_lon = models.FloatField()\n    location_desc = models.CharField(max_length=100)",
         "detail": "api.models.dermatologist",
         "documentation": {}
     },

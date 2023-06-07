@@ -1714,7 +1714,7 @@
         "kind": 2,
         "importPath": "api.skindisease.identify",
         "description": "api.skindisease.identify",
-        "peekOfCode": "def get_model(name):\n    tf.keras.backend.clear_session()\n    model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), \"models\", name + \".h5\"), custom_objects=custom_objects)\n    for layer in model.layers:\n        if isinstance(layer, tf.keras.layers.Dropout):\n            layer.rate = 0.0\n        layer.training = False\n    return model\nmodels = {\n    # \"Itchy Face\": get_model(\"Itchy Face\"),",
+        "peekOfCode": "def get_model(name):\n    tf.keras.backend.clear_session()\n    model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), \"models\", name + \".h5\"), custom_objects=custom_objects)\n    for layer in model.layers:\n        if isinstance(layer, tf.keras.layers.Dropout):\n            layer.rate = 0.0\n        layer.training = False\n    return model\nmodels = {\n    \"Itchy Face\": get_model(\"Itchy Face\"),",
         "detail": "api.skindisease.identify",
         "documentation": {}
     },
@@ -1759,7 +1759,7 @@
         "kind": 5,
         "importPath": "api.skindisease.identify",
         "description": "api.skindisease.identify",
-        "peekOfCode": "models = {\n    # \"Itchy Face\": get_model(\"Itchy Face\"),\n    # \"Non Itchy Face\": get_model(\"Non Itchy Face\"),\n    # \"Itchy Cranium\": get_model(\"Itchy Cranium\"),\n    # \"Itchy Arms Hands\": get_model(\"Itchy Arms Hands\"),\n    # \"Itchy Upper Body\": get_model(\"Itchy Arms Hands\"),\n}\nlabels = {\n    \"Itchy Face\": {'acne': 0, 'eczema': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'urticaria': 4},\n    \"Non Itchy Face\": {'acne vulgaris': 0, 'basal cell carcinoma': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'squamous cell carcinoma': 4},",
+        "peekOfCode": "models = {\n    \"Itchy Face\": get_model(\"Itchy Face\"),\n    \"Non Itchy Face\": get_model(\"Non Itchy Face\"),\n    \"Itchy Cranium\": get_model(\"Itchy Cranium\"),\n    \"Itchy Arms Hands\": get_model(\"Itchy Arms Hands\"),\n    \"Itchy Upper Body\": get_model(\"Itchy Arms Hands\"),\n}\nlabels = {\n    \"Itchy Face\": {'acne': 0, 'eczema': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'urticaria': 4},\n    \"Non Itchy Face\": {'acne vulgaris': 0, 'basal cell carcinoma': 1, 'rosacea': 2, 'seborrheic dermatitis': 3, 'squamous cell carcinoma': 4},",
         "detail": "api.skindisease.identify",
         "documentation": {}
     },

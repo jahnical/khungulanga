@@ -9,14 +9,13 @@ from api.serializers.patient import PatientSerializer
 
 class AppointmentChatSerializer(serializers.ModelSerializer):
     patient = PatientSerializer()
-    diagnosis = DiagnosisSerializer()
     dermatologist = DermatologistSerializer()
     appointment = AppointmentSerializer()
     messages = ChatMessageSerializer(many=True, read_only=True, source="chatmessage_set")
 
     class Meta:
         model = AppointmentChat
-        fields = ['id', 'patient', 'diagnosis', 'dermatologist', 'appointment', 'messages']
+        fields = ['id', 'patient', 'dermatologist', 'appointment', 'messages']
         
     def get_queryset(self):
         queryset = super().get_queryset()

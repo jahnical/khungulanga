@@ -1,4 +1,5 @@
 from django.db import models
+from api.models.diagnosis import Diagnosis
 
 from api.models.patient import Patient
 from api.models.dermatologist import Dermatologist
@@ -16,3 +17,4 @@ class Appointment(models.Model):
     dermatologist_approved = models.DateTimeField(null=True)
     patient_rejected = models.DateTimeField(null=True)
     dermatologist_rejected = models.DateTimeField(null=True)
+    diagnosis = models.ForeignKey(Diagnosis, on_delete=models.SET_NULL, null=True)

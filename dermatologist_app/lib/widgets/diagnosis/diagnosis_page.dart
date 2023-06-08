@@ -35,7 +35,7 @@ class DiagnosisPage extends StatelessWidget {
                     ],
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(0.0),
                     child: Image.network(
                       BASE_URL + diagnosis.imageUrl,
                       fit: BoxFit.cover,

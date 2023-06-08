@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/foundation.dart';
 
 import 'dermatologist.dart';
+import 'diagnosis.dart';
 import 'patient.dart';
 
 class Appointment {
@@ -19,6 +20,7 @@ class Appointment {
   DateTime? patientRejected;
   DateTime? dermatologistRejected;
   String extraInfo;
+  Diagnosis? diagnosis;
 
   Appointment({
     this.id,
@@ -33,6 +35,7 @@ class Appointment {
     this.dermatologistApproved,
     this.patientRejected,
     this.dermatologistRejected,
+    this.diagnosis,
     this.extraInfo = "Extra Info",
   });
 
@@ -51,6 +54,7 @@ class Appointment {
       patientRejected: json['patient_rejected'] != null ? DateTime.parse(json['patient_rejected']) : null,
       dermatologistRejected: json['dermatologist_rejected'] != null ? DateTime.parse(json['dermatologist_rejected']) : null,
       extraInfo: json['extra_info'] ?? "",
+      diagnosis: json['diagnosis'] != null ? Diagnosis.fromJson(json['diagnosis']) : null,
     );
   }
 
@@ -69,6 +73,7 @@ class Appointment {
       'dermatologist_approved': dermatologistApproved?.toIso8601String(),
       'patient_rejected': patientRejected?.toIso8601String(),
       'dermatologist_rejected': dermatologistRejected?.toIso8601String(),
+      'diagnosis_id': diagnosis?.id,
     };
   }
 
@@ -86,6 +91,7 @@ class Appointment {
     DateTime? patientRejected,
     DateTime? dermatologistRejected,
     String? extraInfo,
+    Diagnosis? diagnosis,
   }) {
     return Appointment(
       id: id ?? this.id,
@@ -101,6 +107,7 @@ class Appointment {
       patientRejected: patientRejected ?? this.patientRejected,
       dermatologistRejected: dermatologistRejected ?? this.dermatologistRejected,
       extraInfo: extraInfo ?? this.extraInfo,
+      diagnosis: diagnosis ?? this.diagnosis,
     );
   }
 }

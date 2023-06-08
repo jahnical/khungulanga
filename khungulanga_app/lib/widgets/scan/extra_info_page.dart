@@ -58,7 +58,7 @@ class _ExtraInfoPageState extends State<ExtraInfoPage> {
         if (state is DiagnosingError206) {
           _showAlertDialog(
             "Warning",
-            state.message,
+            state.message + "\n\nThe diagnosis may not be accurate. Do you want to continue?",
             [TextButton(
                 onPressed: () => Navigator.of(context).pop(),
                 child: const Text('Cancel'),

@@ -8,7 +8,9 @@ class FetchAppointmentChat extends AppointmentChatEvent {
   final Dermatologist? dermatologist;
   final Patient? patient;
   final BuildContext? context;
-  FetchAppointmentChat(this.appointmentChatId, this.dermatologist, this.patient, this.context);
+  final Diagnosis? diagnosis;
+
+  FetchAppointmentChat(this.appointmentChatId, this.dermatologist, this.patient, this.context, this.diagnosis);
 }
 
 class SendMessage extends AppointmentChatEvent {

@@ -9,8 +9,9 @@ import '../../blocs/diagnosis_bloc/diagnosis_bloc.dart';
 
 class DiagnosisPage extends StatelessWidget {
   final Diagnosis diagnosis;
+  final bool fromAppointment;
 
-  const DiagnosisPage({Key? key, required this.diagnosis}) : super(key: key);
+  const DiagnosisPage({Key? key, required this.diagnosis, this.fromAppointment = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +62,7 @@ class DiagnosisPage extends StatelessWidget {
                     ],
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(0.0),
                     child: Image.network(
                       BASE_URL + diagnosis.imageUrl,
                       fit: BoxFit.cover,
@@ -141,7 +142,7 @@ class DiagnosisPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 16),
-                ElevatedButton.icon(
+                fromAppointment? const SizedBox() : ElevatedButton.icon(
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(

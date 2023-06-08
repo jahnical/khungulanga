@@ -18,6 +18,8 @@ import '../../models/diagnosis.dart';
 import '../../models/patient.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
+import '../diagnosis/diagnosis_page.dart';
+
 
 class AppointmentChatPage extends StatefulWidget {
   final AppointmentChat chat;
@@ -137,12 +139,16 @@ class _AppointmentChatPageState extends State<AppointmentChatPage> {
                             children: [
                               const SizedBox(height: 8.0),
                               TextFormField(
-                                initialValue:
-                                    '${_bloc.chat!.appointment.dermatologist.user.firstName} ${_bloc.chat!.appointment.dermatologist.user.lastName}',
+                                initialValue: '${_bloc.chat!.appointment.diagnosis?.predictions.first.disease.name ?? "No Diagnosis"} ${_bloc.chat!.appointment.diagnosis != null? '${DateFormat('dd/MM/yyyy').format(_bloc.chat!.appointment.diagnosis!.date)})' : ""}',
                                 decoration: const InputDecoration(
-                                    labelText: 'Dermatologist'),
+                                    labelText: 'Diagnosis'),
                                 enabled: false,
                                 readOnly: true,
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => DiagnosisPage(diagnosis: _bloc.chat!.appointment.diagnosis!),
+                                  ));
+                                },
                               ),
                               TextFormField(
                                 controller: dateController,

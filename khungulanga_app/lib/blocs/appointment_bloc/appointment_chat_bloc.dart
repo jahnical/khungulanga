@@ -12,6 +12,7 @@ import 'package:meta/meta.dart';
 import '../../models/appointment_chat.dart';
 import '../../models/chat_message.dart';
 import '../../models/dermatologist.dart';
+import '../../models/diagnosis.dart';
 import '../../models/patient.dart';
 
 part 'appointment_chat_event.dart';
@@ -36,6 +37,7 @@ class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatStat
       appointment: Appointment(
         dermatologist: event.dermatologist!,
         patient: patient,
+        diagnosis: event.diagnosis,
       ),
     );
   }
@@ -54,6 +56,12 @@ class AppointmentChatBloc extends Bloc<AppointmentChatEvent, AppointmentChatStat
         yield AppointmentChatLoading();
         try {
           final chat = await _appointmentChatRepository.getAppointmentChat(event.appointmentChatId!);
+          log(event.diagnosis?.imageUrl ?? "No Image");
+          chat.appointment = await _appointmentChatRepository.updateAppointment(chat.appointment);
+          if (event.diagnosis != null) {
+            chat.appointment.diagnosis = event.diagnosis;
+            chat.appointment = await _appointmentChatRepository.updateAppointment(chat.appointment);
+          }
           this.chat = chat;
           yield AppointmentChatLoaded(chat);
         } on DioError catch (e) {

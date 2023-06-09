@@ -8,7 +8,7 @@ from api.serializers.patient import PatientSerializer
 class AppointmentSerializer(serializers.ModelSerializer):
     dermatologist = DermatologistSerializer(read_only=True)
     patient = PatientSerializer(read_only=True)
-    diagnosis = DiagnosisSerializer()
+    diagnosis = DiagnosisSerializer(allow_null=True)
 
     class Meta:
         model = Appointment

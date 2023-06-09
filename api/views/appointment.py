@@ -32,8 +32,9 @@ class AppointmentView(APIView):
         request.data['patient'] = PatientSerializer(appointment.patient).data
         request.data['patient']['gender'] = {"Male": "M",  "Female": "F", "Other": "O"}[request.data['patient']['gender']]
         request.data['dermatologist'] = DermatologistSerializer(appointment.dermatologist).data
-        app_id = request.data['diagnosis_id'] if request.data['diagnosis_id'] else appointment.diagnosis.id
-        request.data['diagnosis'] = DiagnosisSerializer(Diagnosis.objects.get(pk=app_id)).data if app_id else None
+        app_id = request.data['diagnosis_id']
+        sd = DiagnosisSerializer(appointment.diagnosis).data if appointment.diagnosis else None
+        request.data['diagnosis'] = DiagnosisSerializer(Diagnosis.objects.get(pk=app_id)).data if app_id else sd
         serializer = AppointmentSerializer(appointment, data=request.data)
         print(request.data)
         if serializer.is_valid():

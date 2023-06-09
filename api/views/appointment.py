@@ -3,8 +3,10 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from api.models.appointment import Appointment
+from api.models.diagnosis import Diagnosis
 from api.serializers.appointment import AppointmentSerializer
 from api.serializers.dermatologist import DermatologistSerializer
+from api.serializers.diagnosis import DiagnosisSerializer
 from api.serializers.patient import PatientSerializer
 
 class AppointmentView(APIView):
@@ -30,6 +32,8 @@ class AppointmentView(APIView):
         request.data['patient'] = PatientSerializer(appointment.patient).data
         request.data['patient']['gender'] = {"Male": "M",  "Female": "F", "Other": "O"}[request.data['patient']['gender']]
         request.data['dermatologist'] = DermatologistSerializer(appointment.dermatologist).data
+        app_id = request.data['diagnosis_id'] if request.data['diagnosis_id'] else appointment.diagnosis.id
+        request.data['diagnosis'] = DiagnosisSerializer(Diagnosis.objects.get(pk=app_id)).data if app_id else None
         serializer = AppointmentSerializer(appointment, data=request.data)
         print(request.data)
         if serializer.is_valid():

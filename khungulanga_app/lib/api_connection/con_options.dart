@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:khungulanga_app/repositories/user_repository.dart';
 
@@ -9,6 +11,7 @@ Options postOptions() {
 }
 
 Options getOptions() {
+  log(USER?.token ?? "No Token");
   return Options(headers: <String, String> {
     "Authorization": 'Token ${USER?.token}'
   });

@@ -4,11 +4,11 @@ import 'package:khungulanga_app/repositories/appointment_repository.dart';
 import 'appointment_chat_page.dart';
 
 
-class AppointmentChatsList extends StatelessWidget {
+class AppointmentChats extends StatelessWidget {
   final AppointmentRepository appointmentChatRepository =
   AppointmentRepository();
 
-  AppointmentChatsList({super.key});
+  AppointmentChats({super.key});
 
   @override
   Widget build(BuildContext context) {

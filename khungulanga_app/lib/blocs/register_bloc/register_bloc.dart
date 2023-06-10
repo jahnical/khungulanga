@@ -51,5 +51,35 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         yield RegisterFailure(error: error.toString());
       }
     }
+    else if (event is RegisterButtonPressedDerm) {
+      yield RegisterLoading();
+
+      try {
+        await userRepository.dermRegister(
+          username: event.username,
+          email: event.email,
+          password: event.password,
+          phoneNumber: event.phoneNumber,
+          firstName: event.firstName,
+          lastName: event.lastName,
+          qualification: event.qualification,
+          clinic: event.clinic,
+          locationLat: event.locationLat,
+          locationLon: event.locationLon,
+          locationDesc: event.locationDesc,
+        );
+
+        final user = await userRepository.authenticate(
+          username: event.username,
+          password: event.password,
+        );
+
+        authenticationBloc.add(LoggedIn(user: user));
+        yield RegisterInitial();
+        Navigator.pop(context);
+      } catch (error) {
+        yield RegisterFailure(error: error.toString());
+      }
+    }
   }
 }

@@ -12,6 +12,7 @@ import 'package:khungulanga_app/repositories/disease_repository.dart';
 import 'package:khungulanga_app/repositories/user_repository.dart';
 import 'package:khungulanga_app/widgets/auth/login/login_page.dart';
 import 'package:khungulanga_app/widgets/common/loading_indicator.dart';
+import 'package:khungulanga_app/widgets/home/derm_home_page.dart';
 import 'package:khungulanga_app/widgets/home/home_page.dart';
 import 'package:khungulanga_app/widgets/splash/splash_page.dart';
 import 'api_connection/api_client.dart';
@@ -73,7 +74,7 @@ class App extends StatelessWidget {
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider(create: (context) => DiagnosisRepository()),
-        RepositoryProvider(create: (context) => UserRepository()),
+        RepositoryProvider(create: (context) => userRepository),
         RepositoryProvider(create: (context) => DiseaseRepository()),
         RepositoryProvider(create: (context) => AppointmentRepository()),
       ],
@@ -103,6 +104,9 @@ class App extends StatelessWidget {
                 }
                 if (state is AuthLoading) {
                   return const LoadingIndicator();
+                }
+                if (state is AuthAuthenticatedDermatologist) {
+                  return const DermHomePage();
                 }
                 return const HomePage();
               },

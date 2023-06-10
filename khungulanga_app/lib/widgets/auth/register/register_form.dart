@@ -27,7 +27,7 @@ class _RegisterFormState extends State<RegisterForm> {
   _onRegisterButtonPressed() {
     if (_formKey.currentState?.validate() == true) {
       BlocProvider.of<RegisterBloc>(context).add(RegisterButtonPressed(
-        username: _emailController.text.split("@")[0].trim(),
+        username: _emailController.text,
         password: _passwordController.text,
         confirmPassword: _confirmPasswordController.text,
         firstName: _firstNameController.text,

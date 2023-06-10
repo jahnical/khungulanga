@@ -15,6 +15,10 @@ class HomeNavigationBloc extends Bloc<HomeNavigationEvent, HomeNavigationState> 
         emit(HomeNavigationScan());
       } else if (event is NavigateToDermatologists) {
         emit(HomeNavigationDermatologists());
+      } else if (event is NavigateToAppointments) {
+        emit(HomeNavigationAppointments());
+      } else if (event is NavigateToSlots) {
+        emit(HomeNavigationSlots());
       }
     });
   }

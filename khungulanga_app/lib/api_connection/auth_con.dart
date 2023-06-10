@@ -47,3 +47,25 @@ Future<void> registerUser(UserRegister userRegister) async {
     throw Exception(response.data.toString());
   }
 }
+
+Future<void> registerDermUser(DermUserRegister userRegister) async {
+  final dio = Dio();
+
+  log(DERM_REGISTER_URL);
+
+  final Response response = await dio.post(
+    DERM_REGISTER_URL,
+    options: Options(headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    }),
+    data: jsonEncode(userRegister.toDatabaseJson()),
+  );
+
+  if (response.statusCode == 201) {
+    log("User created successfully");
+  } else {
+    log(response.data.toString());
+    throw Exception(response.data.toString());
+  }
+}
+

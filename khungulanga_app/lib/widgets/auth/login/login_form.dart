@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:khungulanga_app/blocs/login_bloc/login_bloc.dart';
 import 'package:khungulanga_app/repositories/user_repository.dart';
 
+import '../register/derm_register_page.dart';
 import '../register/register_page.dart';
 
 class LoginForm extends StatefulWidget {
@@ -24,11 +25,18 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
+  _onDermRegisterButtonPressed() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => RegisterDermPage(userRepository: UserRepository(),)),
+    );
+  }
+
   _onLoginButtonPressed() {
     if (_formKey.currentState!.validate()) {
       BlocProvider.of<LoginBloc>(context).add(
         LoginButtonPressed(
-          username: _emailController.text.split("@")[0].trim(),
+          username: _emailController.text,
           password: _passwordController.text,
         ),
       );
@@ -124,7 +132,14 @@ class _LoginFormState extends State<LoginForm> {
                       ),
                       TextButton(
                         onPressed: _onRegisterButtonPressed,
-                        child: const Text('Register'),
+                        child: const Text('Register As Patient'),
+                      ),
+                      const SizedBox(
+                        height: 16.0,
+                      ),
+                      TextButton(
+                        onPressed: _onDermRegisterButtonPressed,
+                        child: const Text('Register As Dermatologist'),
                       ),
                     ],
                   ),

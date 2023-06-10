@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:khungulanga_app/models/patient.dart';
 import 'package:khungulanga_app/models/user.dart';
@@ -10,11 +11,13 @@ import 'package:khungulanga_app/models/auth_user.dart';
 import '../api_connection/api_client.dart';
 import '../api_connection/con_options.dart';
 import '../api_connection/endpoints.dart';
+import '../models/dermatologist.dart';
 
 AuthUser? USER;
 class UserRepository {
   final userDao = UserDao();
   Patient? patient;
+  Dermatologist? dermatologist;
   final _dio = APIClient.dio;
 
   Future<AuthUser> authenticate ({
@@ -31,7 +34,16 @@ class UserRepository {
       username: username,
       token: token.token,
     );
-    fetchPatient(user.username);
+    try {
+      await fetchPatient(user.username);
+    } catch (dioe) {
+      log(dioe.toString());
+    }
+    try {
+      await fetchDermatologist(user.username);
+    } catch (dioe) {
+      log(dioe.toString());
+    }
     return user;
   }
 
@@ -55,7 +67,16 @@ class UserRepository {
     AuthUser? user = await userDao.getToken(0);
     USER = user;
     if (user != null) {
-      fetchPatient(user.username);
+      try {
+        await fetchPatient(user.username);
+      } catch (dioe) {
+        log(dioe.toString());
+      }
+      try {
+        await fetchDermatologist(user.username);
+      } catch (dioe) {
+        log(dioe.toString());
+      }
     }
     return user;
   }
@@ -93,6 +114,49 @@ class UserRepository {
 
     await registerUser(userRegister);
     
+    return userRegister;
+  }
+
+  Future<Dermatologist> fetchDermatologist(String username) async {
+    if (this.dermatologist != null) return this.dermatologist!;
+    final response =
+    await _dio.get('$DERMATOLOGISTS_URL/$username/', options: getOptions());
+    final dermatologistJson = response.data as Map<String, dynamic>;
+    final dermatologist = Dermatologist.fromJson(dermatologistJson);
+    this.dermatologist = dermatologist;
+    return dermatologist;
+  }
+
+  Future<DermUserRegister> dermRegister(
+      {required String username,
+        required String email,
+        required String password,
+        required String firstName,
+        required String lastName,
+        required String phoneNumber,
+        required String qualification,
+        required String clinic,
+        required double locationLat,
+        required double locationLon,
+        required String locationDesc,
+      }) async {
+    // create a UserRegister object with the necessary fields
+    final userRegister = DermUserRegister(
+      username: username,
+      password: password,
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phoneNumber:   phoneNumber,
+      qualification: qualification,
+      clinic:        clinic,
+      locationLat:   locationLat,
+      locationLon:   locationLon,
+      locationDesc:  locationDesc,
+    );
+
+    await registerDermUser(userRegister);
+
     return userRegister;
   }
 }

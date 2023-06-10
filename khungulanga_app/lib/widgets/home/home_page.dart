@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(Icons.message),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => AppointmentChatsList(),
+                      builder: (context) => AppointmentChats(),
                     ));
                   },
                 ),

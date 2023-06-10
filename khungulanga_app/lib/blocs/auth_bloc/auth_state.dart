@@ -8,9 +8,14 @@ abstract class AuthState extends Equatable {
 
 class AuthUninitialized extends AuthState {}
 
-class AuthAuthenticated extends AuthState {
+class AuthAuthenticatedPatient extends AuthState {
   final AuthUser? authUser;
-  AuthAuthenticated(this.authUser);
+  AuthAuthenticatedPatient(this.authUser);
+}
+
+class AuthAuthenticatedDermatologist extends AuthState {
+  final AuthUser? authUser;
+  AuthAuthenticatedDermatologist(this.authUser);
 }
 
 class AuthUnauthenticated extends AuthState {}

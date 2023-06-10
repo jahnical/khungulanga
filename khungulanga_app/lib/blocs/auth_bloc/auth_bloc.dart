@@ -27,14 +27,18 @@ class AuthBloc
 
       //For web testing
       if (kIsWeb) {
-        yield AuthAuthenticated(null);
+        yield AuthAuthenticatedPatient(null);
         return;
       }
-      userRepository.getUserFromDB();
+      final user = await userRepository.getUserFromDB();
       final bool hasToken = await userRepository.hasToken();
 
       if (hasToken) {
-        yield AuthAuthenticated(await userRepository.getUserFromDB());
+        if (userRepository.patient != null) {
+          yield AuthAuthenticatedPatient(user);
+        } else if (userRepository.dermatologist != null) {
+          yield AuthAuthenticatedDermatologist(user);
+        }
       } else {
         yield AuthUnauthenticated();
       }
@@ -46,7 +50,12 @@ class AuthBloc
       await userRepository.persistToken(
         user: event.user
       );
-      yield AuthAuthenticated(await userRepository.getUserFromDB());
+      final user = await userRepository.getUserFromDB();
+      if (userRepository.patient != null) {
+        yield AuthAuthenticatedPatient(user);
+      } else if (userRepository.dermatologist != null) {
+        yield AuthAuthenticatedDermatologist(user);
+      }
     }
 
     if (event is LoggedOut) {

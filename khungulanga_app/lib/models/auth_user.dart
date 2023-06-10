@@ -75,3 +75,46 @@ class UserRegister {
         "gender": gender,
       };
 }
+
+class DermUserRegister {
+  String username;
+  String password;
+  String email;
+  String firstName;
+  String lastName;
+  final String phoneNumber;
+  final String qualification;
+  final String clinic;
+  final double locationLat;
+  final double locationLon;
+  final String locationDesc;
+
+
+  DermUserRegister({
+    required this.username,
+    required this.password,
+    required this.email,
+    required this.firstName,
+    required this.lastName,
+    required this.qualification,
+    required this.phoneNumber,
+    required this.clinic,
+    required this.locationLat,
+    required this.locationLon,
+    required this.locationDesc,
+  });
+
+  Map<String, dynamic> toDatabaseJson() => {
+    "username": username,
+    "password": password,
+    "email": email,
+    "first_name": firstName,
+    "last_name": lastName,
+    "qualification": qualification,
+    "phone_number": phoneNumber,
+    "clinic": clinic,
+    "location_lat": locationLat,
+    "location_lon": locationLon,
+    "location_desc": locationDesc
+  };
+}

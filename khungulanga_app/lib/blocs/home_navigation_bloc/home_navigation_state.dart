@@ -8,3 +8,7 @@ class HomeNavigationHistory extends HomeNavigationState {}
 class HomeNavigationScan extends HomeNavigationState {}
 
 class HomeNavigationDermatologists extends HomeNavigationState {}
+
+class HomeNavigationAppointments extends HomeNavigationState {}
+
+class HomeNavigationSlots extends HomeNavigationState {}

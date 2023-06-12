@@ -4,6 +4,9 @@ import 'package:khungulanga_app/blocs/dermatologists_bloc/dermatologists_bloc.da
 import 'package:khungulanga_app/models/dermatologist.dart';
 import 'package:khungulanga_app/models/diagnosis.dart';
 import 'package:khungulanga_app/widgets/appointment/appointment_chat_page.dart';
+import 'package:khungulanga_app/widgets/profile/derm_profile.dart';
+import 'package:khungulanga_app/widgets/slots/book_slot.dart';
+import 'package:khungulanga_app/widgets/slots/derm_slots.dart';
 
 class DermatologistList extends StatelessWidget {
   final List<double> userLocation;
@@ -39,7 +42,7 @@ class DermatologistList extends StatelessWidget {
   void _bookAppointment(BuildContext context, Dermatologist dermatologist) {
     // Code to navigate to appointment chat screen
     Navigator.push(context, MaterialPageRoute(builder: (_) {
-      return AppointmentChatPage(
+      return BookSlotPage(
         dermatologist: dermatologist,
         diagnosis: diagnosis,
       );
@@ -47,7 +50,9 @@ class DermatologistList extends StatelessWidget {
   }
 
   void _viewDetails(BuildContext context, Dermatologist dermatologist) {
-    // Code to show dermatologist details
+    Navigator.push(context, MaterialPageRoute(builder: (_) {
+      return DermatologistProfilePage(dermatologist: dermatologist,);
+    }));
   }
 
   @override
@@ -76,7 +81,7 @@ class DermatologistList extends StatelessWidget {
           children: [
             SizedBox(height: 8.0),
             ListTile(
-              leading: const Icon(Icons.person_outline),
+              leading: Text('\$${dermatologist.hourlyRate}', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
               title: Text(
                 '${dermatologist.user.firstName} ${dermatologist.user.lastName}',
                 style: const TextStyle(
@@ -88,9 +93,9 @@ class DermatologistList extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: 4.0),
-                  Text(dermatologist.qualification),
+                  Text(dermatologist.specialization),
                   SizedBox(height: 4.0),
-                  Text(dermatologist.clinic),
+                  Text(dermatologist.clinic.name),
                 ],
               ),
               trailing: IconButton(

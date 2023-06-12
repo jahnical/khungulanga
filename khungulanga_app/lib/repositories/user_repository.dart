@@ -11,6 +11,7 @@ import 'package:khungulanga_app/models/auth_user.dart';
 import '../api_connection/api_client.dart';
 import '../api_connection/con_options.dart';
 import '../api_connection/endpoints.dart';
+import '../models/clinic.dart';
 import '../models/dermatologist.dart';
 
 AuthUser? USER;
@@ -135,10 +136,9 @@ class UserRepository {
         required String lastName,
         required String phoneNumber,
         required String qualification,
-        required String clinic,
-        required double locationLat,
-        required double locationLon,
-        required String locationDesc,
+        required Clinic clinic,
+        required String specialization,
+        required  double hourlyRate
       }) async {
     // create a UserRegister object with the necessary fields
     final userRegister = DermUserRegister(
@@ -150,9 +150,8 @@ class UserRepository {
       phoneNumber:   phoneNumber,
       qualification: qualification,
       clinic:        clinic,
-      locationLat:   locationLat,
-      locationLon:   locationLon,
-      locationDesc:  locationDesc,
+      specialization: specialization,
+      hourlyRate: hourlyRate
     );
 
     await registerDermUser(userRegister);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class DermatologistSlotsPage extends StatelessWidget {
   final List<String> slots = [
     'Slot 1: 9:00 AM - 10:00 AM',

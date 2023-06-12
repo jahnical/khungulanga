@@ -1,5 +1,7 @@
 import 'package:intl/intl.dart';
 
+import 'clinic.dart';
+
 class AuthUser {
   int id;
   String username;
@@ -84,10 +86,9 @@ class DermUserRegister {
   String lastName;
   final String phoneNumber;
   final String qualification;
-  final String clinic;
-  final double locationLat;
-  final double locationLon;
-  final String locationDesc;
+  final Clinic clinic;
+  String specialization;
+  double hourlyRate;
 
 
   DermUserRegister({
@@ -99,9 +100,8 @@ class DermUserRegister {
     required this.qualification,
     required this.phoneNumber,
     required this.clinic,
-    required this.locationLat,
-    required this.locationLon,
-    required this.locationDesc,
+    required this.specialization,
+    required this.hourlyRate,
   });
 
   Map<String, dynamic> toDatabaseJson() => {
@@ -112,9 +112,8 @@ class DermUserRegister {
     "last_name": lastName,
     "qualification": qualification,
     "phone_number": phoneNumber,
-    "clinic": clinic,
-    "location_lat": locationLat,
-    "location_lon": locationLon,
-    "location_desc": locationDesc
+    "clinic": clinic.toJson(),
+    "specialization": specialization,
+    'hourly_rate': hourlyRate
   };
 }

@@ -3,6 +3,7 @@ from api.models.diagnosis import Diagnosis
 
 from api.models.patient import Patient
 from api.models.dermatologist import Dermatologist
+from api.models.slot import Slot
 
 class Appointment(models.Model):
     dermatologist = models.ForeignKey(Dermatologist, on_delete=models.CASCADE)
@@ -18,3 +19,4 @@ class Appointment(models.Model):
     patient_rejected = models.DateTimeField(null=True)
     dermatologist_rejected = models.DateTimeField(null=True)
     diagnosis = models.ForeignKey(Diagnosis, on_delete=models.SET_NULL, null=True)
+    slot = models.ForeignKey(Slot, on_delete=models.CASCADE)

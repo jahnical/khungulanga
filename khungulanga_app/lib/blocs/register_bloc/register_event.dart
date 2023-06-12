@@ -53,10 +53,9 @@ class RegisterButtonPressedDerm extends RegisterEvent {
   final String confirmPassword;
   final String phoneNumber;
   final String qualification;
-  final String clinic;
-  final double locationLat;
-  final double locationLon;
-  final String locationDesc;
+  final Clinic clinic;
+  final String specialization;
+  final double hourlyRate;
 
   const RegisterButtonPressedDerm({
     required this.firstName,
@@ -68,9 +67,8 @@ class RegisterButtonPressedDerm extends RegisterEvent {
     required this.qualification,
     required this.phoneNumber,
     required this.clinic,
-    required this.locationLat,
-    required this.locationLon,
-    required this.locationDesc,
+    required this.specialization,
+    required this.hourlyRate
   });
 
   @override
@@ -84,9 +82,7 @@ class RegisterButtonPressedDerm extends RegisterEvent {
     qualification,
     email,
     clinic,
-    locationLat,
-    locationLon,
-    locationDesc
+    specialization
   ];
 
   @override

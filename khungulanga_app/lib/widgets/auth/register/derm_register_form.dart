@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:khungulanga_app/blocs/register_bloc/register_bloc.dart';
+import 'package:khungulanga_app/models/dermatologist.dart';
+import 'package:khungulanga_app/repositories/clinic_repository.dart';
+
+import '../../../models/clinic.dart';
 
 class RegisterDermForm extends StatefulWidget {
   const RegisterDermForm({Key? key}) : super(key: key);
@@ -15,37 +20,57 @@ class _RegisterDermFormState extends State<RegisterDermForm> {
   final _formKey = GlobalKey<FormState>();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
-  final _qualificationController = TextEditingController();
+  final _hourlyRateController = TextEditingController();
   final _emailController = TextEditingController();
   final _firstNameController = TextEditingController();
   final _phoneNumber2Controller = TextEditingController();
-  final _clinicController = TextEditingController();
-  final _locationLatController = TextEditingController();
-  final _locationLonController = TextEditingController();
-  final _locationDescController = TextEditingController();
   final _lastNameController = TextEditingController();
+  String? selectedSpecialization;
+  List specializations = Dermatologist.specializations;
+  List<Clinic> clinics = [];
+  Clinic? _selectedClinic;
+  XFile? _pickedImage;
 
   _onLoginButtonPressed() {
     Navigator.pop(context);
   }
 
+  void _pickImage() async {
+    final pickedImage = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    if (pickedImage != null) {
+      setState(() {
+        _pickedImage = XFile(pickedImage.path);
+      });
+    }
+  }
+
   _onRegisterButtonPressed() {
-    if (_formKey.currentState?.validate() == true) {
+    if (_formKey.currentState?.validate() == true && _pickedImage != null) {
       BlocProvider.of<RegisterBloc>(context).add(RegisterButtonPressedDerm(
         username: _emailController.text,
         password: _passwordController.text,
         confirmPassword: _confirmPasswordController.text,
-        qualification: _qualificationController.text,
+        qualification: _pickedImage!.path,
         email: _emailController.text,
         firstName: _firstNameController.text,
         lastName: _lastNameController.text,
         phoneNumber: _phoneNumber2Controller.text,
-        clinic: _clinicController.text,
-        locationLat: double.parse(_locationLatController.text),
-        locationLon: double.parse(_locationLonController.text),
-        locationDesc: _locationDescController.text,
+        clinic: _selectedClinic!,
+        hourlyRate: double.parse(_hourlyRateController.text),
+        specialization: selectedSpecialization!,
       ));
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    ClinicRepository().fetchClinics().then((clinicList) {
+      setState(() {
+        clinics = clinicList;
+      });
+    });
   }
 
   @override
@@ -98,19 +123,6 @@ class _RegisterDermFormState extends State<RegisterDermForm> {
                     ),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Qualification',
-                        icon: Icon(Icons.school),
-                      ),
-                      controller: _qualificationController,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your qualification';
-                        }
-                        return null;
-                      },
-                    ),
-                    TextFormField(
-                      decoration: const InputDecoration(
                         labelText: 'Email',
                         icon: Icon(Icons.email),
                       ),
@@ -129,60 +141,81 @@ class _RegisterDermFormState extends State<RegisterDermForm> {
                       ),
                       controller: _phoneNumber2Controller,
                     ),
-                    TextFormField(
+                    DropdownButtonFormField(
                       decoration: const InputDecoration(
                         labelText: 'Clinic',
                         icon: Icon(Icons.home),
                       ),
-                      controller: _clinicController,
+                      value: _selectedClinic,
+                      onChanged: (newValue) {
+                        setState(() {
+                          _selectedClinic = newValue;
+                        });
+                      },
+                      items: clinics.map((clinic) {
+                        return DropdownMenuItem(
+                          value: clinic,
+                          child: Text(clinic.name),
+                        );
+                      }).toList(),
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your clinic';
+                        if (value == null) {
+                          return 'Please select a clinic';
                         }
                         return null;
                       },
                     ),
                     TextFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Location Latitude',
-                        icon: Icon(Icons.location_on),
+                        labelText: 'Hourly Rate',
+                        icon: Icon(Icons.money),
                       ),
-                      controller: _locationLatController,
-                      keyboardType: TextInputType.number,
+                      controller: _hourlyRateController,
+                      keyboardType: const TextInputType.numberWithOptions(signed: true, decimal: true),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter the location latitude';
+                          return 'Please enter your hourly rate';
                         }
                         return null;
                       },
                     ),
-                    TextFormField(
+                    DropdownButtonFormField(
                       decoration: const InputDecoration(
-                        labelText: 'Location Longitude',
-                        icon: Icon(Icons.location_on),
+                        labelText: 'Specialization',
+                        icon: Icon(Icons.home),
                       ),
-                      controller: _locationLonController,
-                      keyboardType: TextInputType.number,
+                      value: selectedSpecialization,
+                      onChanged: (newValue) {
+                        setState(() {
+                          selectedSpecialization = newValue.toString();
+                        });
+                      },
+                      items: specializations.map((sp) {
+                        return DropdownMenuItem(
+                          value: sp["id"],
+                          child: Text(sp["name"]),
+                        );
+                      }).toList(),
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter the location longitude';
+                        if (value == null) {
+                          return 'Please select specialization';
                         }
                         return null;
                       },
                     ),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        labelText: 'Location Description',
-                        icon: Icon(Icons.location_on),
-                      ),
-                      controller: _locationDescController,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter the location description';
-                        }
-                        return null;
-                      },
+                    SizedBox(height: 16,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ElevatedButton(
+                          onPressed: _pickImage,
+                          child: const Text('Pick Qualification Image'),
+                        ),
+                        if (_pickedImage != null)
+                          Text(_pickedImage?.name ?? ""),
+                      ],
                     ),
+                    SizedBox(height: 16,),
                     TextFormField(
                       decoration: const InputDecoration(
                         labelText: 'Password',

@@ -1,3 +1,6 @@
+import 'package:khungulanga_app/models/slot.dart';
+
+import 'clinic.dart';
 import 'user.dart';
 
 class Dermatologist {
@@ -5,11 +8,11 @@ class Dermatologist {
   String qualification;
   String email;
   String phoneNumber;
-  String clinic;
-  double locationLat;
-  double locationLon;
-  String locationDesc;
+  Clinic clinic;
+  String specialization;
   User user;
+  double hourlyRate;
+  List<Slot> slots;
 
   Dermatologist({
     required this.id,
@@ -17,10 +20,10 @@ class Dermatologist {
     required this.email,
     required this.phoneNumber,
     required this.clinic,
-    required this.locationLat,
-    required this.locationLon,
-    required this.locationDesc,
     required this.user,
+    required this.specialization,
+    required this.hourlyRate,
+    required this.slots
   });
 
   factory Dermatologist.fromJson(Map<String, dynamic> json) {
@@ -29,11 +32,42 @@ class Dermatologist {
       qualification: json['qualification'],
       email: json['email'],
       phoneNumber: json['phone_number'],
-      clinic: json['clinic'],
-      locationLat: json['location_lat'].toDouble(),
-      locationLon: json['location_lon'].toDouble(),
-      locationDesc: json['location_desc'],
+      clinic: Clinic.fromJson(json['clinic']),
       user: User.fromJson(json['user']),
+      specialization: json['specialization'],
+      hourlyRate: json['hourly_rate'],
+      slots: json['slots'] == null? [] : json['slots'].map((e) => Slot.fromJson(e)).toList().cast<Slot>()
     );
   }
+
+  static List<Map<String, String>> specializations = [
+    {
+      "id": "COSMETIC",
+      "name": "Cosmetic Dermatologist"
+    },
+    {
+      "id": "DERMATOPATHOLOGIST",
+      "name": "Dermatopathologist"
+    },
+    {
+      "id": "DERMATOSURGEON",
+      "name": "Dermatosurgeon"
+    },
+    {
+      "id": "IMMUNODERMATOLOGIST",
+      "name": "Immunodermatologist"
+    },
+    {
+      "id": "MOHS_SURGEON",
+      "name": "Mohs Surgeon"
+    },
+    {
+      "id": "PAEDIATRIC",
+      "name": "Paediatric Dermatologist"
+    },
+    {
+      "id": "TELEDERMATOLOGIST",
+      "name": "Teledermatologist"
+    },
+  ];
 }

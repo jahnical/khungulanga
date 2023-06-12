@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
+from api.models.clinic import Clinic
 from api.models.dermatologist import Dermatologist
 from api.serializers.dermatologist import DermatologistSerializer
 from django.core import serializers
@@ -18,25 +19,38 @@ class DermatologistView(APIView):
         return Response(serializer.data)
 
     def post(self, request):
-        data = json.loads(request.body)
-        qualification = data.pop('qualification')
-        email = data.pop('email')
-        phone_number = data.pop('phone_number')
-        clinic = data.pop('clinic')
-        location_lat = data.pop('location_lat')
-        location_lon = data.pop('location_lon')
-        location_desc = data.pop('location_desc')
+        data = request.data
+        qualification = data.get('qualification', None)
+        email = data.get('email', None)
+        phone_number = data.get('phone_number', None)
+        clinic_name = data.get('clinic[name]', None)
+        clinic_lat = data.get('clinic[latitude]', None)
+        clinic_lon = data.get('clinic[longitude]', None)
+        specialization = data.get('specialization', None)
+        hourly_rate = data.get('hourly_rate', None)
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
 
-        user = User.objects.create_user(**data)
+        # Create the user object
+        user = User.objects.create_user(
+            username=username,
+            email=email,
+            password=password,
+            first_name=first_name,
+            last_name=last_name
+        )
+        
         dermatologist = Dermatologist.objects.create(
             user=user,
             qualification=qualification,
             email=email,
             phone_number=phone_number,
-            clinic=clinic,
-            location_lat=location_lat,
-            location_lon=location_lon,
-            location_desc=location_desc
+            clinic=Clinic.objects.create(name=clinic_name, latitude=clinic_lat, longitude=clinic_lon),
+            specialization=specialization,
+            hourly_rate=hourly_rate
         )
         dermatologist.save()
 

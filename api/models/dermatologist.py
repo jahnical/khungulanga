@@ -1,13 +1,14 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+from api.models.clinic import Clinic
+
 class Dermatologist(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    qualification = models.CharField(max_length=100)
+    qualification = models.ImageField(upload_to='media/qualification/%Y/%m/%d/')
+    specialization = models.CharField(max_length=100, default="DERMATOPATHOLOGIST", choices=[("COSMETIC", "Cosmetic Dermatologist"), ("DERMATOPATHOLOGIST", "Dermatopathologist"), ("DERMATOSURGEON", "Dermatosurgeon"), ("IMMUNODERMATOLOGIST", "Immunodermatologist"), ("MOHS_SURGEON", "Mohs Surgeon"), ("PAEDIATRIC", "Paediatric Dermatologist"), ("TELEDERMATOLOGIST", "Teledermatologist")])
     email = models.EmailField()
     phone_number = models.CharField(max_length=13)
-    clinic = models.CharField(max_length=200)
-    location_lat = models.FloatField()
-    location_lon = models.FloatField()
-    location_desc = models.CharField(max_length=100)
+    clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE)
+    hourly_rate = models.FloatField()
     

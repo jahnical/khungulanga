@@ -52,13 +52,14 @@ Future<void> registerDermUser(DermUserRegister userRegister) async {
   final dio = Dio();
 
   log(DERM_REGISTER_URL);
-
+  final dermJson = userRegister.toDatabaseJson();
+  dermJson["qualification"] = await MultipartFile.fromFile(dermJson["qualification"]);
   final Response response = await dio.post(
     DERM_REGISTER_URL,
     options: Options(headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     }),
-    data: jsonEncode(userRegister.toDatabaseJson()),
+    data: FormData.fromMap(dermJson, ListFormat.multiCompatible),
   );
 
   if (response.statusCode == 201) {

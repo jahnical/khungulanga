@@ -5,6 +5,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:khungulanga_app/repositories/user_repository.dart';
 
+import '../../models/clinic.dart';
 import '../auth_bloc/auth_bloc.dart';
 
 part 'register_event.dart';
@@ -64,9 +65,8 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
           lastName: event.lastName,
           qualification: event.qualification,
           clinic: event.clinic,
-          locationLat: event.locationLat,
-          locationLon: event.locationLon,
-          locationDesc: event.locationDesc,
+          specialization: event.specialization,
+          hourlyRate: event.hourlyRate
         );
 
         final user = await userRepository.authenticate(

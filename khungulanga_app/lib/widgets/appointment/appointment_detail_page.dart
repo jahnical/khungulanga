@@ -59,10 +59,11 @@ class AppointmentDetailPage extends StatelessWidget {
             SizedBox(height: 16.0),
             AppointmentDetailCard(
               onTap: () {
-                if (appointment.diagnosis != null)
+                if (appointment.diagnosis != null) {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => DiagnosisPage(diagnosis: appointment.diagnosis!),
+                    builder: (context) => DiagnosisPage(diagnosis: appointment.diagnosis!, fromAppointment: true,),
                   ));
+                }
               },
               title: 'Diagnosis',
               icon: Icons.local_hospital,

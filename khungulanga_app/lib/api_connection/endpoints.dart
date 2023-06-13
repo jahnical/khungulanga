@@ -13,3 +13,4 @@ const APPOINTMENTS_URL = "$API_BASE_URL/appointments";
 const USERS_URL = "$API_BASE_URL/users";
 const PATIENTS_URL = "$API_BASE_URL/patients";
 const CHAT_MESSAGES_URL = "$API_BASE_URL/chat_messages";
+const SLOTS_URL = "$API_BASE_URL/slots";

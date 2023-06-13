@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
+import 'package:khungulanga_app/models/slot.dart';
 
 import 'dermatologist.dart';
 import 'diagnosis.dart';
@@ -10,7 +11,7 @@ class Appointment {
   final int? id;
   final Dermatologist dermatologist;
   final Patient? patient;
-  DateTime? bookDate;
+  DateTime? bookDate = DateTime.now();
   DateTime? appoTime;
   bool done;
   Duration? duration;
@@ -21,6 +22,7 @@ class Appointment {
   DateTime? dermatologistRejected;
   String extraInfo;
   Diagnosis? diagnosis;
+  Slot? slot;
 
   Appointment({
     this.id,
@@ -37,6 +39,7 @@ class Appointment {
     this.dermatologistRejected,
     this.diagnosis,
     this.extraInfo = "Extra Info",
+    this.slot
   });
 
   factory Appointment.fromJson(Map<String, dynamic> json) {
@@ -55,6 +58,7 @@ class Appointment {
       dermatologistRejected: json['dermatologist_rejected'] != null ? DateTime.parse(json['dermatologist_rejected']) : null,
       extraInfo: json['extra_info'] ?? "",
       diagnosis: json['diagnosis'] != null ? Diagnosis.fromJson(json['diagnosis']) : null,
+      slot: json['slot'] != null ? Slot.fromJson(json['slot']) : null,
     );
   }
 
@@ -74,6 +78,7 @@ class Appointment {
       'patient_rejected': patientRejected?.toIso8601String(),
       'dermatologist_rejected': dermatologistRejected?.toIso8601String(),
       'diagnosis_id': diagnosis?.id,
+      'slot_id': slot?.id,
     };
   }
 
@@ -92,6 +97,7 @@ class Appointment {
     DateTime? dermatologistRejected,
     String? extraInfo,
     Diagnosis? diagnosis,
+    Slot? slot,
   }) {
     return Appointment(
       id: id ?? this.id,
@@ -108,6 +114,7 @@ class Appointment {
       dermatologistRejected: dermatologistRejected ?? this.dermatologistRejected,
       extraInfo: extraInfo ?? this.extraInfo,
       diagnosis: diagnosis ?? this.diagnosis,
+      slot: slot ?? this.slot,
     );
   }
 }

@@ -30,3 +30,10 @@ Options putOptions() {
     "Authorization": 'Token ${USER?.token}'
   });
 }
+
+Options deleteOptions() {
+  return Options(headers: <String, String> {
+    'Content-Type': 'application/json; charset=UTF-8',
+    "Authorization": 'Token ${USER?.token}'
+  });
+}

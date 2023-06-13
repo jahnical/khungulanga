@@ -51,7 +51,7 @@ class DermatologistList extends StatelessWidget {
 
   void _viewDetails(BuildContext context, Dermatologist dermatologist) {
     Navigator.push(context, MaterialPageRoute(builder: (_) {
-      return DermatologistProfilePage(dermatologist: dermatologist,);
+      return DermatologistProfilePage(dermatologist: dermatologist, diagnosis: diagnosis,);
     }));
   }
 

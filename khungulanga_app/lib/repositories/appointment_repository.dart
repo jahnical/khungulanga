@@ -82,4 +82,16 @@ class AppointmentRepository {
       return updatedAppointment;
     }
   }
+
+  Future<Appointment> bookAppointment(Appointment appointment) async {
+    final response = await _dio.post('$APPOINTMENTS_URL/', options: postOptions(), data: appointment.toJson());
+
+    if (response.statusCode != 201) {
+      throw Exception('Failed to book appointment');
+    } else {
+      final appointmentJson = response.data as Map<String, dynamic>;
+      final bookedAppointment = Appointment.fromJson(appointmentJson);
+      return bookedAppointment;
+    }
+  }
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:khungulanga_app/models/appointment.dart';
+
+import '../diagnosis/diagnosis_page.dart';
 
 class AppointmentDetailPage extends StatelessWidget {
   final Appointment appointment;
@@ -33,7 +36,9 @@ class AppointmentDetailPage extends StatelessWidget {
             AppointmentDetailCard(
               title: 'Appointment Date',
               icon: Icons.calendar_today,
-              content: '${appointment.appoTime ?? 'N/A'}',
+                content: appointment.appoTime != null
+                    ? DateFormat('MMM d, yyyy h:mm').format(appointment.appoTime!)
+                    : 'N/A'
             ),
             SizedBox(height: 16.0),
             AppointmentStatusCard(
@@ -49,13 +54,19 @@ class AppointmentDetailPage extends StatelessWidget {
             AppointmentDetailCard(
               title: 'Cost',
               icon: Icons.money,
-              content: '\$${appointment.cost ?? 0.0}',
+              content: '\$${appointment.dermatologist.hourlyRate}',
             ),
             SizedBox(height: 16.0),
             AppointmentDetailCard(
-              title: 'Extra Information',
-              icon: Icons.info,
-              content: '${appointment.extraInfo}',
+              onTap: () {
+                if (appointment.diagnosis != null)
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => DiagnosisPage(diagnosis: appointment.diagnosis!),
+                  ));
+              },
+              title: 'Diagnosis',
+              icon: Icons.local_hospital,
+              content: appointment.diagnosis?.predictions[0].disease.name.toUpperCase() ?? 'N/A',
             ),
           ],
         ),
@@ -68,48 +79,52 @@ class AppointmentDetailCard extends StatelessWidget {
   final String title;
   final IconData? icon;
   final String content;
+  final Null Function()? onTap;
 
   AppointmentDetailCard({
     required this.title,
     this.icon,
-    required this.content,
+    required this.content, this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      //color: Colors.blue[50],
-      elevation: 4.0,
-      child: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 8.0),
-            if (icon != null)
-              Row(
-                children: [
-                  Icon(icon, size: 24),
-                  SizedBox(width: 8.0),
-                  Text(
-                    content,
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
-              ),
-            if (icon == null)
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        //color: Colors.blue[50],
+        elevation: 4.0,
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
               Text(
-                content,
-                style: TextStyle(fontSize: 16),
+                title,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-          ],
+              SizedBox(height: 8.0),
+              if (icon != null)
+                Row(
+                  children: [
+                    Icon(icon, size: 24),
+                    SizedBox(width: 8.0),
+                    Text(
+                      content,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
+              if (icon == null)
+                Text(
+                  content,
+                  style: TextStyle(fontSize: 16),
+                ),
+            ],
+          ),
         ),
       ),
     );

@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:khungulanga_app/blocs/auth_bloc/auth_bloc.dart';
 import 'package:khungulanga_app/blocs/home_navigation_bloc/home_navigation_bloc.dart';
+import 'package:khungulanga_app/repositories/user_repository.dart';
 import 'package:khungulanga_app/widgets/appointment/appointment_chats.dart';
 import 'package:khungulanga_app/widgets/appointment/appointments_page.dart';
 import 'package:khungulanga_app/widgets/dermatologists/dermatologists_list.dart';
 import 'package:khungulanga_app/widgets/diseases/diseases_page.dart';
 import 'package:khungulanga_app/widgets/history/history_page.dart';
+import '../profile/patient_profile.dart';
 import '../scan/scan_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -72,6 +74,9 @@ class _HomePageState extends State<HomePage> {
             leading: Icon(Icons.person),
             onTap: () {
               // Navigate to the profile screen
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => PatientProfilePage(patient: RepositoryProvider.of<UserRepository>(context).patient!),
+              ));
             },
           ),
           ExpansionTile(

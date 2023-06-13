@@ -20,10 +20,10 @@ def get_model(name):
 
 models = {
     "Itchy Face": get_model("Itchy Face"),
-    # "Non Itchy Face": get_model("Non Itchy Face"),
-    # "Itchy Cranium": get_model("Itchy Cranium"),
-    # "Itchy Arms Hands": get_model("Itchy Arms Hands"),
-    # "Itchy Upper Body": get_model("Itchy Upper Body"),
+    "Non Itchy Face": get_model("Non Itchy Face"),
+    "Itchy Cranium": get_model("Itchy Cranium"),
+    "Itchy Arms Hands": get_model("Itchy Arms Hands"),
+    "Itchy Upper Body": get_model("Itchy Upper Body"),
 }
 
 labels = {

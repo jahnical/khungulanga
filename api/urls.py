@@ -6,6 +6,7 @@ from api.views.chat_message import ChatMessageView
 from api.views.dermatologist import DermatologistDetail, DermatologistView
 from api.views.disease import DiseaseDetail, DiseaseView
 from api.views.patient import PatientDetail, PatientView
+from api.views.slot import SlotAPIView, SlotDetailAPIView
 from .views.user_record import UserRecordView
 from .views.diagnosis import DiagnosisView
 
@@ -34,5 +35,8 @@ urlpatterns = [
     path('chat_messages/', ChatMessageView.as_view(), name='chat_messages'),  
     
     path('appointments/<int:pk>/', AppointmentView.as_view(), name='appointments'),
-    path('appointments/', AppointmentView.as_view(), name='appointments')
+    path('appointments/', AppointmentView.as_view(), name='appointments'),
+    
+    path('slots/', SlotAPIView.as_view(), name='slots'),   
+    path("slots/<int:pk>/", SlotDetailAPIView.as_view(), name="slot_detail"),
 ]

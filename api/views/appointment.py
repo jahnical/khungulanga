@@ -5,6 +5,7 @@ from rest_framework import status
 from api.models.appointment import Appointment
 from api.models.diagnosis import Diagnosis
 from api.models.patient import Patient
+from api.models.slot import Slot
 from api.serializers.appointment import AppointmentSerializer
 from api.serializers.dermatologist import DermatologistSerializer
 from api.serializers.diagnosis import DiagnosisSerializer
@@ -13,20 +14,54 @@ from api.serializers.patient import PatientSerializer
 class AppointmentView(APIView):
     def get(self, request):
         is_patient = Patient.objects.all().filter(user=request.user).count() > 0
-        appointments = (Appointment.objects.all().filter(patient_id=request.user.patient.id) if is_patient else Appointment.objects.all().filter(dermatologist_id=request.user.dermatologist.id)).exclude(
-            patient_approved=None).exclude(
-                dermatologist_approved=None).filter(
+        appointments = (Appointment.objects.all().filter(patient_id=request.user.patient.id) if is_patient else Appointment.objects.all().filter(dermatologist_id=request.user.dermatologist.id)).filter(
             done= True if request.GET.get('done', False) == 'true' else False)
         serializer = AppointmentSerializer(appointments, many=True)
         return Response(serializer.data)
     
     def post(self, request):
-        serializer = AppointmentSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        data = request.data
 
+        # Extract the relevant fields from the request data
+        dermatologist_id = data.get('dermatologist_id')
+        patient_id = data.get('patient_id')
+        book_date = data.get('book_date')
+        appo_date = data.get('appo_date')
+        done = data.get('done')
+        duration = data.get('duration')
+        cost = data.get('cost')
+        extra_info = data.get('extra_info')
+        patient_approved = data.get('patient_approved')
+        dermatologist_approved = data.get('dermatologist_approved')
+        patient_rejected = data.get('patient_rejected')
+        dermatologist_rejected = data.get('dermatologist_rejected')
+        diagnosis_id = data.get('diagnosis_id')
+        slot_id = data.get('slot_id')
+
+        # Create the Appointment object
+        appointment = Appointment.objects.create(
+            dermatologist_id=dermatologist_id,
+            patient_id=patient_id,
+            book_date=book_date,
+            appo_date=appo_date,
+            done=False,
+            duration=duration,
+            cost=cost,
+            extra_info=extra_info,
+            patient_approved=patient_approved,
+            dermatologist_approved=dermatologist_approved,
+            patient_rejected=patient_rejected,
+            dermatologist_rejected=dermatologist_rejected,
+            diagnosis_id=diagnosis_id,
+            slot_id=slot_id
+        )
+        
+        slot = Slot.objects.get(pk=slot_id)
+        slot.schedule = True
+        slot.save()
+
+        return Response(AppointmentSerializer(appointment).data, status=status.HTTP_201_CREATED)
+    
     # Implement other methods such as PUT, DELETE, etc.
     # Example:
     def put(self, request, pk):
@@ -37,6 +72,11 @@ class AppointmentView(APIView):
         app_id = request.data['diagnosis_id']
         sd = DiagnosisSerializer(appointment.diagnosis).data if appointment.diagnosis else None
         request.data['diagnosis'] = DiagnosisSerializer(Diagnosis.objects.get(pk=app_id)).data if app_id else sd
+        if (request.data['done'] == 'true'):
+            slot = Slot.objects.get(pk=appointment.slot.id)
+            slot.scheduled = False
+            slot.save()
+
         serializer = AppointmentSerializer(appointment, data=request.data)
         print(request.data)
         if serializer.is_valid():

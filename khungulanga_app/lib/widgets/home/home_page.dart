@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
               title: Text(_titles[_getCurrentIndex()]),
               actions: [
                 IconButton(
-                  icon: Icon(Icons.message),
+                  icon: Icon(Icons.notifications),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => AppointmentChats(),

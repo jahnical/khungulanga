@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:khungulanga_app/models/appointment.dart';
 import 'package:khungulanga_app/repositories/appointment_repository.dart';
 import 'package:khungulanga_app/widgets/appointment/appointment_detail_page.dart';
@@ -72,7 +73,7 @@ class _BookSlotPageState extends State<BookSlotPage> {
                   children: [
                     SizedBox(height: 4),
                     Text(
-                      'Start Time: ${formatStartTime(slot.startTime)}',
+                      'Time: ${DateFormat('MMM d, yyyy h:mm').format(calculateNextSlotDate(slot))}',
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.grey[600],

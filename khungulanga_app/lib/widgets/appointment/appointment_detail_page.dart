@@ -45,12 +45,12 @@ class AppointmentDetailPage extends StatelessWidget {
               appointment: appointment,
             ),
             SizedBox(height: 16.0),
-            AppointmentDetailCard(
+            /*AppointmentDetailCard(
               title: 'Duration',
               icon: Icons.timer,
               content: '${appointment.duration?.inHours ?? 0} hours',
             ),
-            SizedBox(height: 16.0),
+            SizedBox(height: 16.0),*/
             AppointmentDetailCard(
               title: 'Cost',
               icon: Icons.money,

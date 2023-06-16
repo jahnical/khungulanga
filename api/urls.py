@@ -8,7 +8,7 @@ from api.views.disease import DiseaseDetail, DiseaseView
 from api.views.patient import PatientDetail, PatientView
 from api.views.slot import SlotAPIView, SlotDetailAPIView
 from .views.user_record import UserRecordView
-from .views.diagnosis import DiagnosisView
+from .views.diagnosis import DiagnosisDetailView, DiagnosisView
 
 app_name = 'api'
 urlpatterns = [
@@ -18,7 +18,7 @@ urlpatterns = [
     path('users/dermatologist/register/', DermatologistView.as_view(), name='derm.register'),
     
     path('diagnosis/', DiagnosisView.as_view(), name='diagnosis'),
-    path('diagnosis/<int:pk>', DiagnosisView.as_view(), name='diagnosis.delete'),
+    path('diagnosis/<int:pk>', DiagnosisDetailView.as_view(), name='diagnosis.detail'),
     
     path('dermatologists/nearby', DermatologistView.as_view(), name='dermatologist'),
     path("dermatologists/<username>/", DermatologistDetail.as_view(), name="dermatologist_detail"),

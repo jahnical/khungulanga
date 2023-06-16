@@ -8,7 +8,7 @@ class PredictionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Prediction
-        fields = ('disease', 'probability')
+        fields = ('disease', 'probability', 'approved', 'treatment')
         
     def get_queryset(self):
         queryset = super().get_queryset()

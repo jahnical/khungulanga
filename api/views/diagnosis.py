@@ -1,3 +1,4 @@
+import traceback
 import numpy as np
 import api.models.prediction
 from django.http import JsonResponse
@@ -27,9 +28,9 @@ class DiagnosisView(APIView):
     #permission_classes = [IsAuthenticated]
     
     def get(self, request, format=None):
-        if not request.user == None and request.user.is_staff:
-            diagnoses = request.user.patient.diagnosis_set.all()
-            return JsonResponse(DiagnosisSerializer(diagnoses, many=True), safe=False)
+        if (not request.user == None) and request.user.is_staff:
+            diagnoses = request.user.dermatologist.diagnosis_set.all()
+            return JsonResponse(DiagnosisSerializer(diagnoses, many=True).data, safe=False)
         if not request.user == None:
             diagnoses = request.user.patient.diagnosis_set.all()
             return JsonResponse(DiagnosisSerializer(diagnoses, many=True).data, safe=False)
@@ -68,6 +69,35 @@ class DiagnosisView(APIView):
             print(e)
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
+
+class DiagnosisDetailView(APIView):
+    
+    def put(self, request, pk):
+        diagnosis = Diagnosis.objects.get(pk=pk)
+        print(request.headers)
+        print(request.content_type)
+        if diagnosis is None:
+            print("Diagnosis not found")
+            return Response({'error': 'Diagnosis not found'}, status=status.HTTP_404_NOT_FOUND)
+        try:
+            print(request.data)
+        except Exception as e:
+            traceback.print_exc()
+        # Update the diagnosis fields from the request data
+        dermatologist_id = request.data.get('dermatologist_id')
+        extra_derm_info = request.data.get('extra_derm_info', diagnosis.extra_derm_info)
+        approved = request.data.get('approved', diagnosis.approved)
+        action = request.data.get('action', diagnosis.action)
+        
+        # Update the diagnosis object with the new values
+        diagnosis.dermatologist_id = dermatologist_id
+        diagnosis.extra_derm_info = extra_derm_info
+        diagnosis.approved = approved
+        diagnosis.action = action
+        diagnosis.save()
+        
+        return JsonResponse(DiagnosisSerializer(diagnosis).data, status=status.HTTP_200_OK)
+    
     def delete(self, request, pk):
         diagnosis = Diagnosis.objects.get(pk=pk)
         diagnosis.delete()

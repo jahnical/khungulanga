@@ -8,7 +8,7 @@ class Notification(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     message = models.TextField()
-    timestamp = models.DateTimeField()
+    timestamp = models.DateTimeField(default=datetime.now)
     is_read = models.BooleanField(default=False)
     route = models.CharField(max_length=255)
     related_id = models.IntegerField(null=True)
@@ -25,7 +25,7 @@ class Notification(models.Model):
             'timestamp': self.timestamp.isoformat(),
             'isRead': self.is_read,
             'route': self.route,
-            'user': UserSerializer(self.user).data,
+            'user_id': self.user.id,
             'related_id': self.related_id,
             'related_name': self.related_name,
         }

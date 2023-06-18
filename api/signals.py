@@ -15,6 +15,6 @@ def send_notification(sender, instance, created, **kwargs):
             'title': instance.title,
             'message': instance.message,
             'timestamp': instance.timestamp.isoformat(),
-            'isRead': instance.isRead,
+            'isRead': instance.is_read,
             'route': instance.route,
         }

@@ -1,14 +1,23 @@
-from django.urls import path
+from django.urls import include, path
 from api.views.appointment import AppointmentView
 from api.views.appointment_chat import AppointmentChatDetail, AppointmentChatView
 from api.views.chat_message import ChatMessageView
 
 from api.views.dermatologist import DermatologistDetail, DermatologistView
 from api.views.disease import DiseaseDetail, DiseaseView
+from api.views.notification import NotificationAPIView
 from api.views.patient import PatientDetail, PatientView
+from api.views.prediction import PredictionAPIView
 from api.views.slot import SlotAPIView, SlotDetailAPIView
 from .views.user_record import UserRecordView
 from .views.diagnosis import DiagnosisDetailView, DiagnosisView
+
+from fcm_django.api.rest_framework import FCMDeviceAuthorizedViewSet
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+
+router.register('devices', FCMDeviceAuthorizedViewSet)
 
 app_name = 'api'
 urlpatterns = [
@@ -39,4 +48,12 @@ urlpatterns = [
     
     path('slots/', SlotAPIView.as_view(), name='slots'),   
     path("slots/<int:pk>/", SlotDetailAPIView.as_view(), name="slot_detail"),
+    
+    path('notifications/', NotificationAPIView.as_view(), name='notifications'),
+    path("notifications/<int:pk>/", NotificationAPIView.as_view(), name="notifications_detail"),
+    
+    path("predictions/<int:pk>/", PredictionAPIView.as_view(), name="predictions_detail"),
+    path("predictions/", PredictionAPIView.as_view(), name="predictions"),
+    
+    path('', include(router.urls)),
 ]

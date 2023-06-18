@@ -1,5 +1,6 @@
 import traceback
 import numpy as np
+from api.models.dermatologist import Dermatologist
 import api.models.prediction
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
@@ -16,7 +17,7 @@ import json
 from api.models.diagnosis import Diagnosis
 from PIL import Image
 
-
+from api.util.notifications import notify_diagnosis_to_confirm, notify_diagnosis_feedback
 
 class DiagnosisView(APIView):
     """
@@ -29,7 +30,7 @@ class DiagnosisView(APIView):
     
     def get(self, request, format=None):
         if (not request.user == None) and request.user.is_staff:
-            diagnoses = request.user.dermatologist.diagnosis_set.all()
+            diagnoses = request.user.dermatologist.diagnosis_set.all().filter(action='Pending')
             return JsonResponse(DiagnosisSerializer(diagnoses, many=True).data, safe=False)
         if not request.user == None:
             diagnoses = request.user.patient.diagnosis_set.all()
@@ -88,6 +89,13 @@ class DiagnosisDetailView(APIView):
         extra_derm_info = request.data.get('extra_derm_info', diagnosis.extra_derm_info)
         approved = request.data.get('approved', diagnosis.approved)
         action = request.data.get('action', diagnosis.action)
+        
+        if (not diagnosis.dermatologist_id == dermatologist_id) and (dermatologist_id is not None):
+            dermatologist = get_object_or_404(Dermatologist, pk=dermatologist_id)
+            notify_diagnosis_to_confirm(diagnosis, dermatologist)
+            
+        if (not diagnosis.approved == approved) or (not diagnosis.action == action):
+            notify_diagnosis_feedback(diagnosis)
         
         # Update the diagnosis object with the new values
         diagnosis.dermatologist_id = dermatologist_id

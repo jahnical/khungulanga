@@ -19,15 +19,15 @@ class Notification(models.Model):
 
     def to_json(self):
         return {
-            'id': self.id,
-            'title': self.title,
-            'message': self.message,
-            'timestamp': self.timestamp.isoformat(),
-            'isRead': self.is_read,
-            'route': self.route,
-            'user_id': self.user.id,
-            'related_id': self.related_id,
-            'related_name': self.related_name,
+            'id': str(self.id),
+            'title': str(self.title),
+            'message': str(self.message),
+            'timestamp': str(self.timestamp.isoformat()),
+            'isRead': str(self.is_read),
+            'route': str(self.route),
+            'user_id': str(self.user.id),
+            'related_id': str(self.related_id),
+            'related_name': str(self.related_name),
         }
 
     @classmethod

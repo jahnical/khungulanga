@@ -43,8 +43,8 @@ def skin_segmentation(image):
     # Convert the image to YCbCr color space
     ycbcr = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
     # Define range of skin color in YCbCr
-    lower_skin = np.array([0, 130, 80], dtype=np.uint8)
-    upper_skin = np.array([255, 185, 135], dtype=np.uint8)
+    lower_skin = np.array([0, 132, 80], dtype=np.uint8)
+    upper_skin = np.array([255, 183, 135], dtype=np.uint8)
     # Create a mask of skin pixels using YCbCr color space
     skin_mask = cv2.inRange(ycbcr, lower_skin, upper_skin)
     # Apply morphological operations to remove noise and refine the mask

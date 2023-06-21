@@ -38,12 +38,10 @@ class PredictionAPIView(APIView):
         serializer_data['disease'] = disease.id
         
         serializer = PredictionSerializer(prediction, data=serializer_data)
-        serializer.save()
-        return Response(serializer.data)
-        # if serializer.is_valid():
-        #     serializer.save()
-        #     return Response(serializer.data)
-        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def patch(self, request, pk, *args, **kwargs):
         try:

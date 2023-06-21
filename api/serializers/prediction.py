@@ -4,7 +4,7 @@ from api.models.prediction import Prediction
 from api.serializers.disease import DiseaseSerializer
 
 class PredictionSerializer(serializers.ModelSerializer):
-    disease = DiseaseSerializer()
+    disease = DiseaseSerializer(read_only=True)
 
     class Meta:
         model = Prediction

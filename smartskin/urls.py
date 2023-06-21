@@ -25,3 +25,5 @@ urlpatterns = [
     path('api/', include('api.urls', namespace='api')),
     path('api/api-token-auth/', views.obtain_auth_token, name='api-token-auth'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

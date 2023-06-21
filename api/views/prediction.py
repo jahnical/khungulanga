@@ -26,10 +26,12 @@ class PredictionAPIView(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
         serializer = PredictionSerializer(prediction, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        serializer.save()
+        return Response(serializer.data)
+        # if serializer.is_valid():
+        #     serializer.save()
+        #     return Response(serializer.data)
+        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def patch(self, request, pk, *args, **kwargs):
         try:
@@ -38,13 +40,10 @@ class PredictionAPIView(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
         serializer = PredictionSerializer(prediction, data=request.data, partial=True)
-        serializer.save()
-        return Response(serializer.data)
-        # if serializer.is_valid():
-        #     serializer.save()
-        #     return Response(serializer.data)
-        
-        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk, *args, **kwargs):
         try:

@@ -64,7 +64,7 @@ class AppointmentView(APIView):
         )
         
         slot = Slot.objects.get(pk=slot_id)
-        slot.schedule = True
+        slot.scheduled = True
         slot.save()
         
         notify_appointment_booked(appointment)

@@ -75,12 +75,15 @@ class AppointmentView(APIView):
     # Example:
     def put(self, request, pk):
         appointment = Appointment.objects.get(pk=pk)
-        request.data['patient'] = PatientSerializer(appointment.patient).data
-        request.data['patient']['gender'] = {"Male": "M",  "Female": "F", "Other": "O"}[request.data['patient']['gender']]
-        request.data['dermatologist'] = DermatologistSerializer(appointment.dermatologist).data
-        app_id = request.data['diagnosis_id']
-        sd = DiagnosisSerializer(appointment.diagnosis).data if appointment.diagnosis else None
-        request.data['diagnosis'] = DiagnosisSerializer(Diagnosis.objects.get(pk=app_id)).data if app_id else sd
+
+        
+        # request.data['patient'] = PatientSerializer(appointment.patient).data
+        # request.data['patient']['gender'] = {"Male": "M",  "Female": "F", "Other": "O"}[request.data['patient']['gender']]
+        # request.data['dermatologist'] = DermatologistSerializer(appointment.dermatologist).data
+        # dg_id = request.data['diagnosis_id']
+        # sd = DiagnosisSerializer(appointment.diagnosis).data if appointment.diagnosis else None
+        # request.data['diagnosis'] = DiagnosisSerializer(Diagnosis.objects.get(pk=dg_id)).data if dg_id else sd
+        
         if appointment.slot and (request.data['done'] == 'true' or request.data['slot_id'] != appointment.slot.id):
             slot = Slot.objects.get(pk=appointment.slot.id)
             slot.scheduled = False
@@ -93,9 +96,16 @@ class AppointmentView(APIView):
             slot.scheduled = True
             slot.save()
         
+        appointment.patient_removed = request.data['patient_removed'] if request.data['patient_removed'] else appointment.patient_removed
+        appointment.dermatologist_removed = request.data['dermatologist_removed'] if request.data['dermatologist_removed'] else appointment.dermatologist_removed
+        appointment.patient_cancelled = request.data['patient_cancelled'] if request.data['patient_cancelled'] else appointment.patient_cancelled
+        appointment.dermatologist_cancelled = request.data['dermatologist_cancelled'] if request.data['dermatologist_cancelled'] else appointment.dermatologist_cancelled
+        appointment.done = request.data['done'] == "true" if request.data['done'] else appointment.done
+        appointment.slot_id = request.data['slot_id'] if request.data['slot_id'] else appointment.slot_id
+        
             
-        serializer = AppointmentSerializer(appointment, data=request.data)
-        print(request.data)
+        serializer = AppointmentSerializer(appointment)
+        # print(request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

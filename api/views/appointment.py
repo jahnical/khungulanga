@@ -73,8 +73,13 @@ class AppointmentView(APIView):
         
         return Response(AppointmentSerializer(appointment).data, status=status.HTTP_201_CREATED)
     
-    # Implement other methods such as PUT, DELETE, etc.
-    # Example:
+    
+class AppointmentDetailView(APIView):
+    def get(self, request, pk):
+        appointment = Appointment.objects.get(pk=pk)
+        serializer = AppointmentSerializer(appointment)
+        return Response(serializer.data)
+    
     def put(self, request, pk):
         appointment = Appointment.objects.get(pk=pk)
 
@@ -120,3 +125,9 @@ class AppointmentView(APIView):
         #     return Response(serializer.data)
         # print(serializer.errors)
         # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    
+    def delete(self, request, pk):
+        appointment = Appointment.objects.get(pk=pk)
+        appointment.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

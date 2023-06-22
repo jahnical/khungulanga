@@ -1,5 +1,5 @@
 from django.urls import include, path
-from api.views.appointment import AppointmentView
+from api.views.appointment import AppointmentDetailView, AppointmentView
 from api.views.appointment_chat import AppointmentChatDetail, AppointmentChatView
 from api.views.chat_message import ChatMessageView
 
@@ -43,7 +43,7 @@ urlpatterns = [
     
     path('chat_messages/', ChatMessageView.as_view(), name='chat_messages'),  
     
-    path('appointments/<int:pk>/', AppointmentView.as_view(), name='appointments'),
+    path('appointments/<int:pk>/', AppointmentDetailView.as_view(), name='appointments_detail'),
     path('appointments/', AppointmentView.as_view(), name='appointments'),
     
     path('slots/', SlotAPIView.as_view(), name='slots'),   

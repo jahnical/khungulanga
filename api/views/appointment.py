@@ -23,6 +23,8 @@ class AppointmentView(APIView):
             appointments = appointments.filter(dermatologist_removed=None)
         if (request.GET.get('cancelled', False) == 'true'):
             appointments = appointments.filter(patient_cancelled=True if is_patient else False).filter(dermatologist_cancelled=False if is_patient else True)
+        else:
+            appointments = appointments.exclude(patient_cancelled=True if is_patient else False).exclude(dermatologist_cancelled=False if is_patient else True)
         serializer = AppointmentSerializer(appointments, many=True)
         return Response(serializer.data)
     

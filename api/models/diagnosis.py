@@ -10,3 +10,7 @@ class Diagnosis(models.Model):
     body_part = models.CharField(max_length=100)
     itchy = models.BooleanField(default=False)
     date = models.DateTimeField(auto_now_add=True)
+    
+    
+    def __str__(self):
+        return str(self.id) + ' ' + str(self.image) + ' ' + str(self.patient) + ' ' + str(self.dermatologist) + ' ' + str(self.extra_derm_info) + ' ' + str(self.approved) + ' ' + str(self.action) + ' ' + str(self.body_part) + ' ' + str(self.itchy) + ' ' + str(self.date)

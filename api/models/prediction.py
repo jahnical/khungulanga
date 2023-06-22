@@ -6,3 +6,6 @@ class Prediction(models.Model):
     probability = models.FloatField(default=0.0)
     approved = models.BooleanField(default=False)
     treatment = models.TextField(max_length=500, null=True)
+    
+    def __str__(self):
+        return str(self.id) + ' ' + str(self.disease) + ' ' + str(self.diagnosis) + ' ' + str(self.probability) + ' ' + str(self.approved) + ' ' + str(self.treatment)

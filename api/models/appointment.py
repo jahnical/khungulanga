@@ -20,3 +20,6 @@ class Appointment(models.Model):
     dermatologist_cancelled = models.DateTimeField(null=True)
     diagnosis = models.ForeignKey(Diagnosis, on_delete=models.SET_NULL, null=True)
     slot = models.ForeignKey(Slot, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return str(self.id) + ' ' + self.patient.user.first_name + ' ' + self.dermatologist.user.first_name + ' ' + str(self.appo_date) + ' ' + str(self.done) + ' ' + str(self.duration) + ' ' + str(self.cost) + ' ' + str(self.extra_info) + ' ' + str(self.patient_removed) + ' ' + str(self.dermatologist_removed) + ' ' + str(self.patient_cancelled) + ' ' + str(self.dermatologist_cancelled) + ' ' + str(self.diagnosis) + ' ' + str(self.slot)

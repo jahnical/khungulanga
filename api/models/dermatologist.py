@@ -13,3 +13,5 @@ class Dermatologist(models.Model):
     hourly_rate = models.FloatField()
     status = models.CharField(max_length=100, default="PENDING", choices=[("APPROVED", "Approved"), ("PENDING", "Pending"), ("REJECTED", "Rejected")])
     
+    def __str__(self):
+        return str(self.id) + ' ' + str(self.user) + ' ' + str(self.qualification) + ' ' + str(self.specialization) + ' ' + str(self.email) + ' ' + str(self.phone_number) + ' ' + str(self.clinic) + ' ' + str(self.hourly_rate) + ' ' + str(self.status)

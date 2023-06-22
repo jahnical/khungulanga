@@ -38,10 +38,10 @@ class AppointmentView(APIView):
         duration = data.get('duration')
         cost = data.get('cost')
         extra_info = data.get('extra_info')
-        patient_approved = data.get('patient_approved')
-        dermatologist_approved = data.get('dermatologist_approved')
-        patient_rejected = data.get('patient_rejected')
-        dermatologist_rejected = data.get('dermatologist_rejected')
+        patient_removed = data.get('patient_removed')
+        dermatologist_removed = data.get('dermatologist_removed')
+        patient_cancelled = data.get('patient_cancelled')
+        dermatologist_cancelled = data.get('dermatologist_cancelled')
         diagnosis_id = data.get('diagnosis_id')
         slot_id = data.get('slot_id')
 
@@ -55,10 +55,10 @@ class AppointmentView(APIView):
             duration=duration,
             cost=cost,
             extra_info=extra_info,
-            patient_approved=patient_approved,
-            dermatologist_approved=dermatologist_approved,
-            patient_rejected=patient_rejected,
-            dermatologist_rejected=dermatologist_rejected,
+            patient_removed=patient_removed,
+            dermatologist_removed=dermatologist_removed,
+            patient_cancelled=patient_cancelled,
+            dermatologist_cancelled=dermatologist_cancelled,
             diagnosis_id=diagnosis_id,
             slot_id=slot_id
         )

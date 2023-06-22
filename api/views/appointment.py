@@ -105,9 +105,14 @@ class AppointmentView(APIView):
         
             
         serializer = AppointmentSerializer(appointment)
-        # print(request.data)
-        if serializer.is_valid():
-            serializer.save()
+        try:
+            appointment.save()
             return Response(serializer.data)
-        print(serializer.errors)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response(e, status=status.HTTP_400_BAD_REQUEST)
+        # print(request.data)
+        # if serializer.is_valid():
+        #     serializer.save()
+        #     return Response(serializer.data)
+        # print(serializer.errors)
+        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

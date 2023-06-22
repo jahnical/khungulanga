@@ -48,6 +48,7 @@ urlpatterns = [
     
     path('slots/', SlotAPIView.as_view(), name='slots'),   
     path("slots/<int:pk>/", SlotDetailAPIView.as_view(), name="slot_detail"),
+    path("slots/of/<int:derm_id>/", SlotAPIView.as_view(), name="slot_detail_of"),
     
     path('notifications/', NotificationAPIView.as_view(), name='notifications'),
     path("notifications/<int:pk>/", NotificationAPIView.as_view(), name="notifications_detail"),

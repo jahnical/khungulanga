@@ -7,8 +7,8 @@ from api.models.slot import Slot
 from api.serializers.slot import SlotSerializer
 
 class SlotAPIView(APIView):
-    def get(self, request):
-        slots = Slot.objects.all()
+    def get(self, request, derm_id):
+        slots = Slot.objects.filter(dermatologist_id=derm_id)
         serializer = SlotSerializer(slots, many=True)
         return Response(serializer.data)
 

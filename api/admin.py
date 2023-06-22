@@ -13,4 +13,7 @@ from api.models.treatment import Treatment
 
 # Register your models here.
 admin.site.site_header = 'Khungulanga Admin'
+admin.site.site_title = 'Khungulanga Admin'
+admin.site.index_title = 'Khungulanga Admin'
+admin.site.site_url = 'https://ict7.pythonanywhere.com/'
 admin.site.register([Patient, Dermatologist, Clinic, Disease, Prediction, Treatment, Appointment, Slot, Diagnosis, Notification])

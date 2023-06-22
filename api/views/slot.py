@@ -2,6 +2,7 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from api.models.dermatologist import Dermatologist
 from api.models.slot import Slot
 from api.serializers.slot import SlotSerializer
 
@@ -37,7 +38,7 @@ class SlotDetailAPIView(APIView):
         return Response(serializer.data)
 
     def put(self, request, pk):
-        slot = self.get_object(pk)
+        slot = self.get_object(pk)        
         serializer = SlotSerializer(slot, data=request.data)
         if serializer.is_valid():
             serializer.save()

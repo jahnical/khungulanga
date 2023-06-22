@@ -40,6 +40,12 @@ def center_skin(skin, image):
 
 def skin_segmentation(image):
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+    
+    # Equalization
+    hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    hsv_image[:, :, 2] = cv2.equalizeHist(hsv_image[:, :, 2])
+    image = cv2.cvtColor(hsv_image, cv2.COLOR_HSV2BGR)
+    
     # Convert the image to YCbCr color space
     ycbcr = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
     # Define range of skin color in YCbCr
@@ -50,8 +56,8 @@ def skin_segmentation(image):
     # Apply morphological operations to remove noise and refine the mask
     kernel = np.ones((3, 3), np.uint8)
     skin_mask = cv2.morphologyEx(skin_mask, cv2.MORPH_OPEN, kernel, iterations=4)
-    skin_mask = cv2.dilate(skin_mask, kernel, iterations=1)
-    skin_mask = cv2.erode(skin_mask, kernel, iterations=1)
+    skin_mask = cv2.dilate(skin_mask, kernel, iterations=3)
+    skin_mask = cv2.erode(skin_mask, kernel, iterations=3)
 
     # Apply the mask to the original image
     img_skin = cv2.bitwise_and(image, image, mask=skin_mask)

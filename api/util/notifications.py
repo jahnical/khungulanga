@@ -73,3 +73,16 @@ def notify_appointment_cancelled(appointment):
     notification.save()
     
     return send_notification(notification)
+
+def notify_appointment_done(appointment, user_to_notify, user_marked):
+    notification = NotificationModel.objects.create(
+        user=user_to_notify,
+        title="Appointment Done",
+        message="Your appointment with " + user_marked.first_name + " " + user_marked.last_name + " has been marked as done.",
+        route="appointment",
+        related_id=appointment.id,
+        related_name="Appointment"
+    )
+    notification.save()
+    
+    return send_notification(notification)

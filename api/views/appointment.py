@@ -92,7 +92,7 @@ class AppointmentView(APIView):
             slot.save()
             if not request.data['done'] == 'true' and (request.data['patient_cancelled'] == 'true' or request.data['dermatologist_cancelled'] == 'true'):
                 notify_appointment_cancelled(appointment)
-            if request.data['done'] == 'true':
+            if request.data['done'] == 'true' and not appointment.done:
                 notify_appointment_done(appointment, appointment.patient.user if request.user.is_staff else appointment.dermatologist.user, appointment.dermatologist.user if request.user.is_staff else appointment.patient.user)
         
         if request.data['slot_id']:

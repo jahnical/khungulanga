@@ -10,6 +10,7 @@ from api.serializers.appointment import AppointmentSerializer
 from api.serializers.dermatologist import DermatologistSerializer
 from api.serializers.diagnosis import DiagnosisSerializer
 from api.serializers.patient import PatientSerializer
+from api.util.notifications import notify_appointment_booked, notify_appointment_cancelled
 
 class AppointmentView(APIView):
     def get(self, request):
@@ -65,7 +66,9 @@ class AppointmentView(APIView):
         slot = Slot.objects.get(pk=slot_id)
         slot.schedule = True
         slot.save()
-
+        
+        notify_appointment_booked(appointment)
+        
         return Response(AppointmentSerializer(appointment).data, status=status.HTTP_201_CREATED)
     
     # Implement other methods such as PUT, DELETE, etc.
@@ -82,10 +85,14 @@ class AppointmentView(APIView):
             slot = Slot.objects.get(pk=appointment.slot.id)
             slot.scheduled = False
             slot.save()
+            if not request.data['done'] == 'true' and (request.data['patient_cancelled'] == 'true' or request.data['dermatologist_cancelled'] == 'true'):
+                notify_appointment_cancelled(appointment)
+        
         if request.data['slot_id']:
             slot = Slot.objects.get(pk=request.data['slot_id'])
             slot.scheduled = True
             slot.save()
+        
             
         serializer = AppointmentSerializer(appointment, data=request.data)
         print(request.data)

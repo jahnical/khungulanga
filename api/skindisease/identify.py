@@ -28,9 +28,9 @@ models = {
 
 labels = {
     "Face": {'acne vulgaris': 0, 'basal cell carcinoma': 1, 'rosacea': 2, 'squamous cell carcinoma': 3, 'urticaria': 4, 'zed': 5},
-    "Upper Body": {'acne vulgaris': 0, 'basal cell carcinoma': 1, 'folliculitis': 2, 'lichen planus': 3, 'melanoma': 4, 'psoriasis': 5, 'rosacea': 6, 'squamous cell carcinoma': 7},
+    "Upper Body": {'acne vulgaris': 0, 'basal cell carcinoma': 1, 'folliculitis': 2, 'lichen planus': 3, 'melanoma': 4, 'psoriasis': 5, 'rosacea': 6, 'scabies': 7, 'zed': 8},
     "Legs Feet": {'basal cell carcinoma': 0, 'folliculitis': 1, 'melanoma': 2, 'psoriasis': 3, 'scabies': 4, 'squamous cell carcinoma': 5, 'zed': 6},
-    "Arms Hands": {'actinic keratosis': 0, 'allergic contact dermatitis': 1, 'basal cell carcinoma': 2, 'lichen planus': 3, 'psoriasis': 4, 'scabies': 5, 'urticaria': 6}
+    "Arms Hands": {'actinic keratosis': 0, 'allergic contact dermatitis': 1, 'basal cell carcinoma': 2, 'lichen planus': 3, 'psoriasis': 4, 'scabies': 5, 'urticaria': 6, 'zed': 7}
 }
 
 diseases = Disease.objects.all()

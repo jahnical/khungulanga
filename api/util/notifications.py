@@ -45,3 +45,31 @@ def notify_diagnosis_feedback(diagnosis):
     notification.save()
     
     return send_notification(notification)
+
+def notify_appointment_booked(appointment):
+    notification = NotificationModel.objects.create(
+        user=appointment.dermatologist.user,
+        title="Appointment Booked",
+        message="You have a new appointment booked by " + appointment.patient.user.first_name + " " + appointment.patient.user.last_name + ".",
+        route="appointment",
+        related_id=appointment.id,
+        related_name="Appointment"
+    )
+    notification.save()
+    
+    return send_notification(notification)
+
+def notify_appointment_cancelled(appointment):
+    cancelled_by = appointment.patient.user if appointment.patient_cancelled else appointment.dermatologist.user
+    notify = appointment.dermatologist.user if appointment.patient_cancelled else appointment.patient.user
+    notification = NotificationModel.objects.create(
+        user=notify,
+        title="Appointment Cancelled",
+        message="Your appointment with " + cancelled_by.first_name + " " + cancelled_by.last_name + " has been cancelled.",
+        route="appointment",
+        related_id=appointment.id,
+        related_name="Appointment"
+    )
+    notification.save()
+    
+    return send_notification(notification)

@@ -15,5 +15,5 @@ class DermatologistSerializer(serializers.ModelSerializer):
         fields = ['id', 'status', 'slots', 'qualification', 'email', 'phone_number', 'clinic', 'user', 'hourly_rate', 'specialization']
     
     def get_queryset(self):
-        queryset = super().get_queryset()
+        queryset = super().get_queryset().select_related('slot_set')
         return queryset.select_related('user')

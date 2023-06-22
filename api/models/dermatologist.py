@@ -11,4 +11,5 @@ class Dermatologist(models.Model):
     phone_number = models.CharField(max_length=13)
     clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE)
     hourly_rate = models.FloatField()
+    status = models.CharField(max_length=100, default="PENDING", choices=[("APPROVED", "Approved"), ("PENDING", "Pending"), ("REJECTED", "Rejected")])
     

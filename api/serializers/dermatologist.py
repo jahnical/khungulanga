@@ -12,7 +12,7 @@ class DermatologistSerializer(serializers.ModelSerializer):
     slots = SlotSerializer(many=True, read_only=True, source="slot_set")
     class Meta:
         model = Dermatologist
-        fields = ['id', 'slots', 'qualification', 'email', 'phone_number', 'clinic', 'user', 'hourly_rate', 'specialization']
+        fields = ['id', 'status', 'slots', 'qualification', 'email', 'phone_number', 'clinic', 'user', 'hourly_rate', 'specialization']
     
     def get_queryset(self):
         queryset = super().get_queryset()

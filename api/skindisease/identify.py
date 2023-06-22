@@ -20,10 +20,10 @@ def get_model(name):
     return model
 
 models = {
-    "Face": get_model("Face"),
-    "Upper Body": get_model("Upper Body"),
-    "Legs Feet": get_model("Legs Feet"),
-    "Arms Hands": get_model("Arms Hands")
+    # "Face": get_model("Face"),
+    # "Upper Body": get_model("Upper Body"),
+    # "Legs Feet": get_model("Legs Feet"),
+    # "Arms Hands": get_model("Arms Hands")
 }
 
 labels = {

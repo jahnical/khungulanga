@@ -14,4 +14,4 @@ class AppointmentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Appointment
-        fields = ['id', 'diagnosis', 'dermatologist', 'patient', 'book_date', 'appo_date', 'done', 'extra_info', 'duration', 'cost', 'patient_approved', 'dermatologist_approved', 'patient_rejected', 'dermatologist_rejected', 'slot']
+        fields = ['id', 'diagnosis', 'dermatologist', 'patient', 'book_date', 'appo_date', 'done', 'extra_info', 'duration', 'cost', 'patient_removed', 'dermatologist_removed', 'patient_cancelled', 'dermatologist_cancelled', 'slot']

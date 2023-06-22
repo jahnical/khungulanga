@@ -16,6 +16,12 @@ class AppointmentView(APIView):
         is_patient = Patient.objects.all().filter(user=request.user).count() > 0
         appointments = (Appointment.objects.all().filter(patient_id=request.user.patient.id) if is_patient else Appointment.objects.all().filter(dermatologist_id=request.user.dermatologist.id)).filter(
             done= True if request.GET.get('done', False) == 'true' else False)
+        if is_patient:
+            appointments = appointments.filter(patient_removed=None)
+        else:
+            appointments = appointments.filter(dermatologist_removed=None)
+        if (request.GET.get('cancelled', False) == 'true'):
+            appointments = appointments.filter(patient_cancelled=True if is_patient else False).filter(dermatologist_cancelled=False if is_patient else True)
         serializer = AppointmentSerializer(appointments, many=True)
         return Response(serializer.data)
     
@@ -72,11 +78,15 @@ class AppointmentView(APIView):
         app_id = request.data['diagnosis_id']
         sd = DiagnosisSerializer(appointment.diagnosis).data if appointment.diagnosis else None
         request.data['diagnosis'] = DiagnosisSerializer(Diagnosis.objects.get(pk=app_id)).data if app_id else sd
-        if (request.data['done'] == 'true'):
+        if appointment.slot and (request.data['done'] == 'true' or request.data['slot_id'] != appointment.slot.id):
             slot = Slot.objects.get(pk=appointment.slot.id)
             slot.scheduled = False
             slot.save()
-
+        if request.data['slot_id']:
+            slot = Slot.objects.get(pk=request.data['slot_id'])
+            slot.scheduled = True
+            slot.save()
+            
         serializer = AppointmentSerializer(appointment, data=request.data)
         print(request.data)
         if serializer.is_valid():

@@ -2,6 +2,7 @@ from django.urls import include, path
 from api.views.appointment import AppointmentDetailView, AppointmentView
 from api.views.appointment_chat import AppointmentChatDetail, AppointmentChatView
 from api.views.chat_message import ChatMessageView
+from api.views.clinic import ClinicAPIView, ClinicDetailAPIView
 
 from api.views.dermatologist import DermatologistDetail, DermatologistView
 from api.views.disease import DiseaseDetail, DiseaseView
@@ -55,6 +56,9 @@ urlpatterns = [
     
     path("predictions/<int:pk>/", PredictionAPIView.as_view(), name="predictions_detail"),
     path("predictions/", PredictionAPIView.as_view(), name="predictions"),
+    
+    path("clinics/", ClinicAPIView.as_view(), name="clinics"),
+    path("clinics/<int:pk>/", ClinicDetailAPIView.as_view(), name="clinics_detail"),
     
     path('', include(router.urls)),
 ]

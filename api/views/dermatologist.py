@@ -84,11 +84,17 @@ class DermatologistDetail(APIView):
 
     def put(self, request, pk):
         dermatologist = self.get_object(pk)
-        serializer = DermatologistSerializer(dermatologist, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
+        dermatologist.phone_number = request.data.get('phone_number', dermatologist.phone_number)
+        dermatologist.email = request.data.get('email', dermatologist.email)
+        dermatologist.hourly_rate = request.data.get('hourly_rate', dermatologist.hourly_rate)
+        dermatologist.clinic_id = request.data.get('clinic_id', dermatologist.clinic_id)
+        serializer = DermatologistSerializer(dermatologist)
+        
+        try:
+            dermatologist.save()
             return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk):
         dermatologist = self.get_object(pk)

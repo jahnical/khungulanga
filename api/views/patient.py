@@ -1,3 +1,4 @@
+import datetime
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -35,11 +36,21 @@ class PatientDetail(APIView):
 
     def put(self, request, pk):
         patient = self.get_object(pk)
-        serializer = PatientSerializer(patient, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
+        patient.dob = datetime.datetime.strptime(request.data['dob'], '%Y-%m-%dT%H:%M:%S.%f') if request.data['dob'] else patient.dob
+        patient.gender = request.data['gender'] if request.data['gender'] else patient.dob
+        
+        user = patient.user
+        user.first_name = request.data['first_name'] if request.data['first_name'] else user.first_name
+        user.last_name = request.data['last_name'] if request.data['last_name'] else user.last_name
+        user.email = request.data['email'] if request.data['email'] else user.email
+        
+        serializer = PatientSerializer(patient)
+        try:
+            user.save()
+            patient.save()
             return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk):
         patient = self.get_object(pk)

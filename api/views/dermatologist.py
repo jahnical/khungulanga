@@ -82,8 +82,8 @@ class DermatologistDetail(APIView):
         serializer = DermatologistSerializer(dermatologist)
         return Response(serializer.data)
 
-    def put(self, request, pk):
-        dermatologist = self.get_object(pk)
+    def put(self, request, username):
+        dermatologist = self.get_object(username)
         dermatologist.phone_number = request.data.get('phone_number', dermatologist.phone_number)
         dermatologist.email = request.data.get('email', dermatologist.email)
         dermatologist.hourly_rate = request.data.get('hourly_rate', dermatologist.hourly_rate)

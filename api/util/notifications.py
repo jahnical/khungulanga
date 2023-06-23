@@ -59,9 +59,7 @@ def notify_appointment_booked(appointment):
     
     return send_notification(notification)
 
-def notify_appointment_cancelled(appointment):
-    cancelled_by = appointment.patient.user if appointment.patient_cancelled else appointment.dermatologist.user
-    notify = appointment.dermatologist.user if appointment.patient_cancelled else appointment.patient.user
+def notify_appointment_cancelled(appointment, notify, cancelled_by):
     notification = NotificationModel.objects.create(
         user=notify,
         title="Appointment Cancelled",

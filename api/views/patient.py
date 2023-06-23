@@ -34,8 +34,8 @@ class PatientDetail(APIView):
         serializer = PatientSerializer(patient)
         return Response(serializer.data)
 
-    def put(self, request, pk):
-        patient = self.get_object(pk)
+    def put(self, request, username):
+        patient = self.get_object(username)
         patient.dob = datetime.datetime.strptime(request.data['dob'], '%Y-%m-%dT%H:%M:%S.%f') if request.data['dob'] else patient.dob
         patient.gender = request.data['gender'] if request.data['gender'] else patient.dob
         
@@ -52,7 +52,7 @@ class PatientDetail(APIView):
         except:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request, pk):
-        patient = self.get_object(pk)
+    def delete(self, request, username):
+        patient = self.get_object(username)
         patient.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

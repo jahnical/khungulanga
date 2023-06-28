@@ -48,7 +48,6 @@ class AppointmentView(APIView):
                 appointment.slot.scheduled = False
                 appointment.slot.save()
                 appointment.done = True
-                appointment.slot = None
                 appointment.save()
 
         if request.GET.get('cancelled', False) == 'false':

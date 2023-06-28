@@ -2,9 +2,11 @@ from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
 
-from api.serializers.user import UserSerializer
-
 class Notification(models.Model):
+    """
+    Model representing a notification.
+    """
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     message = models.TextField()
@@ -15,9 +17,15 @@ class Notification(models.Model):
     related_name = models.CharField(max_length=255, null=True)
 
     def __str__(self):
+        """
+        Returns the string representation of the notification.
+        """
         return self.title
 
     def to_json(self):
+        """
+        Converts the notification object to a JSON-compatible dictionary.
+        """
         return {
             'id': str(self.id),
             'title': str(self.title),
@@ -32,6 +40,9 @@ class Notification(models.Model):
 
     @classmethod
     def from_json(cls, json_data):
+        """
+        Creates a notification object from a JSON-compatible dictionary.
+        """
         return cls(
             id=json_data['id'],
             title=json_data['title'],

@@ -1,4 +1,3 @@
-import json
 from django.http import Http404, JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -10,15 +9,23 @@ from api.serializers.dermatologist import DermatologistSerializer
 from django.core import serializers
 
 class DermatologistView(APIView):
-    
+    """
+    API view for listing dermatologists and creating new dermatologists.
+    """
     permission_classes = []
     
     def get(self, request):
+        """
+        Retrieve a list of all dermatologists.
+        """
         dermatologists = Dermatologist.objects.all()
         serializer = DermatologistSerializer(dermatologists, many=True)
         return Response(serializer.data)
 
     def post(self, request):
+        """
+        Create a new dermatologist.
+        """
         data = request.data
         qualification = data.get('qualification', None)
         email = data.get('email', None)
@@ -70,6 +77,9 @@ class DermatologistView(APIView):
         )
 
 class DermatologistDetail(APIView):
+    """
+    API view for retrieving, updating, and deleting individual dermatologists.
+    """
     def get_object(self, username):
         try:
             user = User.objects.get(username=username)
@@ -78,11 +88,17 @@ class DermatologistDetail(APIView):
             raise Http404
 
     def get(self, request, username):
+        """
+        Retrieve a specific dermatologist.
+        """
         dermatologist = self.get_object(username)
         serializer = DermatologistSerializer(dermatologist)
         return Response(serializer.data)
 
     def put(self, request, username):
+        """
+        Update a specific dermatologist.
+        """
         dermatologist = self.get_object(username)
         dermatologist.phone_number = request.data.get('phone_number', dermatologist.phone_number)
         dermatologist.email = request.data.get('email', dermatologist.email)
@@ -97,6 +113,9 @@ class DermatologistDetail(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk):
+        """
+        Delete a specific dermatologist.
+        """
         dermatologist = self.get_object(pk)
         dermatologist.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

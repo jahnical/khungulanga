@@ -1,7 +1,11 @@
 from rest_framework import serializers
 from api.models.notification import Notification
 
+
 class NotificationSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Notification model.
+    """
     timestamp = serializers.DateTimeField(format='%Y-%m-%dT%H:%M:%S')
 
     class Meta:

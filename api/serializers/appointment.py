@@ -1,12 +1,14 @@
 from rest_framework import serializers
 from api.models.appointment import Appointment
-
 from api.serializers.dermatologist import DermatologistSerializer
 from api.serializers.diagnosis import DiagnosisSerializer
 from api.serializers.patient import PatientSerializer
 from api.serializers.slot import SlotSerializer
 
 class AppointmentSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Appointment model.
+    """
     dermatologist = DermatologistSerializer(read_only=True)
     patient = PatientSerializer(read_only=True)
     diagnosis = DiagnosisSerializer(allow_null=True)

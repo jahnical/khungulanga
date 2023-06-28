@@ -1,11 +1,14 @@
 from django.db import models
 from api.models.diagnosis import Diagnosis
-
 from api.models.patient import Patient
 from api.models.dermatologist import Dermatologist
 from api.models.slot import Slot
 
 class Appointment(models.Model):
+    """
+    Model representing an appointment.
+    """
+
     dermatologist = models.ForeignKey(Dermatologist, on_delete=models.CASCADE)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     book_date = models.DateField(null=True)
@@ -22,4 +25,7 @@ class Appointment(models.Model):
     slot = models.ForeignKey(Slot, on_delete=models.CASCADE)
     
     def __str__(self):
+        """
+        Returns the string representation of the appointment.
+        """
         return str(self.id) + ' ' + self.patient.user.first_name + ' ' + self.dermatologist.user.first_name + ' ' + str(self.appo_date) + ' ' + str(self.done) + ' ' + str(self.duration) + ' ' + str(self.cost) + ' ' + str(self.extra_info) + ' ' + str(self.patient_removed) + ' ' + str(self.dermatologist_removed) + ' ' + str(self.patient_cancelled) + ' ' + str(self.dermatologist_cancelled) + ' ' + str(self.diagnosis) + ' ' + str(self.slot)

@@ -44,7 +44,7 @@ class AppointmentView(APIView):
         )
         
         for appointment in appointments:
-            if appointment.appo_date < datetime.date.today():
+            if appointment.appo_date.date() < datetime.date.today():
                 appointment.slot.scheduled = False
                 appointment.slot.save()
                 appointment.done = True

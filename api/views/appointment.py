@@ -1,3 +1,4 @@
+import datetime
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -41,6 +42,14 @@ class AppointmentView(APIView):
             if is_patient
             else Appointment.objects.filter(dermatologist_id=request.user.dermatologist.id)
         )
+        
+        for appointment in appointments:
+            if appointment.appo_date < datetime.date.today():
+                appointment.slot.scheduled = False
+                appointment.slot.save()
+                appointment.done = True
+                appointment.slot = None
+                appointment.save()
 
         if request.GET.get('cancelled', False) == 'false':
             appointments = appointments.filter(

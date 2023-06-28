@@ -27,7 +27,7 @@ class DiagnosisView(APIView):
     def get(self, request, format=None):
         # If the user is a staff member, retrieve pending diagnoses associated with the dermatologist
         if (not request.user == None) and request.user.is_staff:
-            diagnoses = request.user.dermatologist.diagnosis_set.all().filter(action='Pending')
+            diagnoses = request.user.dermatologist.diagnosis_set.all()#.filter(action='Pending')
             return JsonResponse(DiagnosisSerializer(diagnoses, many=True).data, safe=False)
         # If the user is a patient, retrieve their diagnoses
         if not request.user == None:

@@ -18,6 +18,7 @@ from api.util.notifications import (
 )
 
 
+
 class AppointmentView(APIView):
     """
     API endpoint for managing appointments.
@@ -47,7 +48,7 @@ class AppointmentView(APIView):
             )
 
         if is_patient:
-            appointments = appointments.filter(patient_removed=None)
+            appointments = appointments.exclude(patient_removed__isnull=False)
         else:
             appointments = appointments.filter(dermatologist_removed=None)
 
@@ -93,7 +94,7 @@ class AppointmentView(APIView):
         patient_id = data.get('patient_id')
         book_date = data.get('book_date')
         appo_date = data.get('appo_date')
-        done = data.get('done')
+        done = data.get('done', False)
         duration = data.get('duration')
         cost = data.get('cost')
         extra_info = data.get('extra_info')
@@ -110,7 +111,7 @@ class AppointmentView(APIView):
             patient_id=patient_id,
             book_date=book_date,
             appo_date=appo_date,
-            done=False,
+            done=done,
             duration=duration,
             cost=cost,
             extra_info=extra_info,

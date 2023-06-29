@@ -10,6 +10,7 @@ class Prediction(models.Model):
     probability = models.FloatField(default=0.0)
     approved = models.BooleanField(default=False)
     treatment = models.TextField(max_length=500, null=True)
+    treatment_id = models.IntegerField(null=True)
     
     def __str__(self):
         """

@@ -72,6 +72,8 @@ class PredictionAPIView(APIView):
         serializer_data = request.data.copy()
         serializer_data['disease'] = disease.id
         
+        print(serializer_data)
+        
         serializer = PredictionSerializer(prediction, data=serializer_data)
         if serializer.is_valid():
             serializer.save()

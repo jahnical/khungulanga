@@ -7,4 +7,4 @@ class TreatmentSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Treatment
-        fields = ('title', 'description')
+        fields = ('title', 'description', 'id')

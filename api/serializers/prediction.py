@@ -11,7 +11,7 @@ class PredictionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Prediction
-        fields = ('id', 'disease', 'probability', 'approved', 'treatment')
+        fields = ('id', 'disease', 'probability', 'approved', 'treatment', 'treatment_id')
         
     def get_queryset(self):
         """

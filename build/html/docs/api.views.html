@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>api.views package &#8212; Khungulanga 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Khungulanga</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">api.views package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-api.views.appointment">api.views.appointment module</a><ul>
+<li><a class="reference internal" href="#api.views.appointment.AppointmentDetailView"><code class="docutils literal notranslate"><span class="pre">AppointmentDetailView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.appointment.AppointmentDetailView.delete"><code class="docutils literal notranslate"><span class="pre">AppointmentDetailView.delete()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.appointment.AppointmentDetailView.get"><code class="docutils literal notranslate"><span class="pre">AppointmentDetailView.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.appointment.AppointmentDetailView.put"><code class="docutils literal notranslate"><span class="pre">AppointmentDetailView.put()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api.views.appointment.AppointmentView"><code class="docutils literal notranslate"><span class="pre">AppointmentView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.appointment.AppointmentView.get"><code class="docutils literal notranslate"><span class="pre">AppointmentView.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.appointment.AppointmentView.post"><code class="docutils literal notranslate"><span class="pre">AppointmentView.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.views.appointment_chat">api.views.appointment_chat module</a><ul>
+<li><a class="reference internal" href="#api.views.appointment_chat.AppointmentChatDetail"><code class="docutils literal notranslate"><span class="pre">AppointmentChatDetail</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.appointment_chat.AppointmentChatDetail.delete"><code class="docutils literal notranslate"><span class="pre">AppointmentChatDetail.delete()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.appointment_chat.AppointmentChatDetail.get"><code class="docutils literal notranslate"><span class="pre">AppointmentChatDetail.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.appointment_chat.AppointmentChatDetail.get_object"><code class="docutils literal notranslate"><span class="pre">AppointmentChatDetail.get_object()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.appointment_chat.AppointmentChatDetail.put"><code class="docutils literal notranslate"><span class="pre">AppointmentChatDetail.put()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api.views.appointment_chat.AppointmentChatView"><code class="docutils literal notranslate"><span class="pre">AppointmentChatView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.appointment_chat.AppointmentChatView.get"><code class="docutils literal notranslate"><span class="pre">AppointmentChatView.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.appointment_chat.AppointmentChatView.post"><code class="docutils literal notranslate"><span class="pre">AppointmentChatView.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.views.chat_message">api.views.chat_message module</a><ul>
+<li><a class="reference internal" href="#api.views.chat_message.ChatMessageView"><code class="docutils literal notranslate"><span class="pre">ChatMessageView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.chat_message.ChatMessageView.delete"><code class="docutils literal notranslate"><span class="pre">ChatMessageView.delete()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.chat_message.ChatMessageView.get"><code class="docutils literal notranslate"><span class="pre">ChatMessageView.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.chat_message.ChatMessageView.get_object"><code class="docutils literal notranslate"><span class="pre">ChatMessageView.get_object()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.chat_message.ChatMessageView.post"><code class="docutils literal notranslate"><span class="pre">ChatMessageView.post()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.chat_message.ChatMessageView.put"><code class="docutils literal notranslate"><span class="pre">ChatMessageView.put()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.views.clinic">api.views.clinic module</a><ul>
+<li><a class="reference internal" href="#api.views.clinic.ClinicAPIView"><code class="docutils literal notranslate"><span class="pre">ClinicAPIView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.clinic.ClinicAPIView.queryset"><code class="docutils literal notranslate"><span class="pre">ClinicAPIView.queryset</span></code></a></li>
+<li><a class="reference internal" href="#api.views.clinic.ClinicAPIView.serializer_class"><code class="docutils literal notranslate"><span class="pre">ClinicAPIView.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api.views.clinic.ClinicDetailAPIView"><code class="docutils literal notranslate"><span class="pre">ClinicDetailAPIView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.clinic.ClinicDetailAPIView.queryset"><code class="docutils literal notranslate"><span class="pre">ClinicDetailAPIView.queryset</span></code></a></li>
+<li><a class="reference internal" href="#api.views.clinic.ClinicDetailAPIView.serializer_class"><code class="docutils literal notranslate"><span class="pre">ClinicDetailAPIView.serializer_class</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.views.dermatologist">api.views.dermatologist module</a><ul>
+<li><a class="reference internal" href="#api.views.dermatologist.DermatologistDetail"><code class="docutils literal notranslate"><span class="pre">DermatologistDetail</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.dermatologist.DermatologistDetail.delete"><code class="docutils literal notranslate"><span class="pre">DermatologistDetail.delete()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.dermatologist.DermatologistDetail.get"><code class="docutils literal notranslate"><span class="pre">DermatologistDetail.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.dermatologist.DermatologistDetail.get_object"><code class="docutils literal notranslate"><span class="pre">DermatologistDetail.get_object()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.dermatologist.DermatologistDetail.put"><code class="docutils literal notranslate"><span class="pre">DermatologistDetail.put()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api.views.dermatologist.DermatologistView"><code class="docutils literal notranslate"><span class="pre">DermatologistView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.dermatologist.DermatologistView.get"><code class="docutils literal notranslate"><span class="pre">DermatologistView.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.dermatologist.DermatologistView.permission_classes"><code class="docutils literal notranslate"><span class="pre">DermatologistView.permission_classes</span></code></a></li>
+<li><a class="reference internal" href="#api.views.dermatologist.DermatologistView.post"><code class="docutils literal notranslate"><span class="pre">DermatologistView.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.views.diagnosis">api.views.diagnosis module</a><ul>
+<li><a class="reference internal" href="#api.views.diagnosis.DiagnosisDetailView"><code class="docutils literal notranslate"><span class="pre">DiagnosisDetailView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.diagnosis.DiagnosisDetailView.delete"><code class="docutils literal notranslate"><span class="pre">DiagnosisDetailView.delete()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.diagnosis.DiagnosisDetailView.put"><code class="docutils literal notranslate"><span class="pre">DiagnosisDetailView.put()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api.views.diagnosis.DiagnosisView"><code class="docutils literal notranslate"><span class="pre">DiagnosisView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.diagnosis.DiagnosisView.get"><code class="docutils literal notranslate"><span class="pre">DiagnosisView.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.diagnosis.DiagnosisView.parser_classes"><code class="docutils literal notranslate"><span class="pre">DiagnosisView.parser_classes</span></code></a></li>
+<li><a class="reference internal" href="#api.views.diagnosis.DiagnosisView.post"><code class="docutils literal notranslate"><span class="pre">DiagnosisView.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.views.disease">api.views.disease module</a><ul>
+<li><a class="reference internal" href="#api.views.disease.DiseaseDetail"><code class="docutils literal notranslate"><span class="pre">DiseaseDetail</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.disease.DiseaseDetail.get"><code class="docutils literal notranslate"><span class="pre">DiseaseDetail.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.disease.DiseaseDetail.get_object"><code class="docutils literal notranslate"><span class="pre">DiseaseDetail.get_object()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api.views.disease.DiseaseView"><code class="docutils literal notranslate"><span class="pre">DiseaseView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.disease.DiseaseView.delete"><code class="docutils literal notranslate"><span class="pre">DiseaseView.delete()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.disease.DiseaseView.get"><code class="docutils literal notranslate"><span class="pre">DiseaseView.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.disease.DiseaseView.post"><code class="docutils literal notranslate"><span class="pre">DiseaseView.post()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.disease.DiseaseView.put"><code class="docutils literal notranslate"><span class="pre">DiseaseView.put()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.views.notification">api.views.notification module</a><ul>
+<li><a class="reference internal" href="#api.views.notification.NotificationAPIView"><code class="docutils literal notranslate"><span class="pre">NotificationAPIView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.notification.NotificationAPIView.get"><code class="docutils literal notranslate"><span class="pre">NotificationAPIView.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.notification.NotificationAPIView.post"><code class="docutils literal notranslate"><span class="pre">NotificationAPIView.post()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.notification.NotificationAPIView.put"><code class="docutils literal notranslate"><span class="pre">NotificationAPIView.put()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.views.patient">api.views.patient module</a><ul>
+<li><a class="reference internal" href="#api.views.patient.PatientDetail"><code class="docutils literal notranslate"><span class="pre">PatientDetail</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.patient.PatientDetail.delete"><code class="docutils literal notranslate"><span class="pre">PatientDetail.delete()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.patient.PatientDetail.get"><code class="docutils literal notranslate"><span class="pre">PatientDetail.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.patient.PatientDetail.get_object"><code class="docutils literal notranslate"><span class="pre">PatientDetail.get_object()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.patient.PatientDetail.put"><code class="docutils literal notranslate"><span class="pre">PatientDetail.put()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api.views.patient.PatientView"><code class="docutils literal notranslate"><span class="pre">PatientView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.patient.PatientView.get"><code class="docutils literal notranslate"><span class="pre">PatientView.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.patient.PatientView.post"><code class="docutils literal notranslate"><span class="pre">PatientView.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.views.prediction">api.views.prediction module</a><ul>
+<li><a class="reference internal" href="#api.views.prediction.PredictionAPIView"><code class="docutils literal notranslate"><span class="pre">PredictionAPIView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.prediction.PredictionAPIView.delete"><code class="docutils literal notranslate"><span class="pre">PredictionAPIView.delete()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.prediction.PredictionAPIView.get"><code class="docutils literal notranslate"><span class="pre">PredictionAPIView.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.prediction.PredictionAPIView.patch"><code class="docutils literal notranslate"><span class="pre">PredictionAPIView.patch()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.prediction.PredictionAPIView.post"><code class="docutils literal notranslate"><span class="pre">PredictionAPIView.post()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.prediction.PredictionAPIView.put"><code class="docutils literal notranslate"><span class="pre">PredictionAPIView.put()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.views.slot">api.views.slot module</a><ul>
+<li><a class="reference internal" href="#api.views.slot.SlotAPIView"><code class="docutils literal notranslate"><span class="pre">SlotAPIView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.slot.SlotAPIView.get"><code class="docutils literal notranslate"><span class="pre">SlotAPIView.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.slot.SlotAPIView.post"><code class="docutils literal notranslate"><span class="pre">SlotAPIView.post()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api.views.slot.SlotDetailAPIView"><code class="docutils literal notranslate"><span class="pre">SlotDetailAPIView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.slot.SlotDetailAPIView.delete"><code class="docutils literal notranslate"><span class="pre">SlotDetailAPIView.delete()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.slot.SlotDetailAPIView.get"><code class="docutils literal notranslate"><span class="pre">SlotDetailAPIView.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.slot.SlotDetailAPIView.get_object"><code class="docutils literal notranslate"><span class="pre">SlotDetailAPIView.get_object()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.slot.SlotDetailAPIView.put"><code class="docutils literal notranslate"><span class="pre">SlotDetailAPIView.put()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.views.user_record">api.views.user_record module</a><ul>
+<li><a class="reference internal" href="#api.views.user_record.UserRecordView"><code class="docutils literal notranslate"><span class="pre">UserRecordView</span></code></a><ul>
+<li><a class="reference internal" href="#api.views.user_record.UserRecordView.get"><code class="docutils literal notranslate"><span class="pre">UserRecordView.get()</span></code></a></li>
+<li><a class="reference internal" href="#api.views.user_record.UserRecordView.permission_classes"><code class="docutils literal notranslate"><span class="pre">UserRecordView.permission_classes</span></code></a></li>
+<li><a class="reference internal" href="#api.views.user_record.UserRecordView.post"><code class="docutils literal notranslate"><span class="pre">UserRecordView.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.views">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/docs/api.views.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="api-views-package">
+<h1>api.views package<a class="headerlink" href="#api-views-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-api.views.appointment">
+<span id="api-views-appointment-module"></span><h2>api.views.appointment module<a class="headerlink" href="#module-api.views.appointment" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.appointment.AppointmentDetailView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.appointment.</span></span><span class="sig-name descname"><span class="pre">AppointmentDetailView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment.AppointmentDetailView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API endpoint for managing individual appointments.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.appointment.AppointmentDetailView.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment.AppointmentDetailView.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete an appointment by ID.</p>
+<p>Args:
+- pk: ID of the appointment</p>
+<p>Returns:
+- Empty response with status code 204 (No Content).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.appointment.AppointmentDetailView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment.AppointmentDetailView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve an appointment by ID.</p>
+<p>Args:
+- pk: ID of the appointment</p>
+<p>Returns:
+- Retrieved appointment in the response body.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.appointment.AppointmentDetailView.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment.AppointmentDetailView.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update an appointment by ID.</p>
+<p>Args:
+- pk: ID of the appointment</p>
+<p>Request body can contain the following fields to update:
+- done: Completion status (‘true’ or ‘false’)
+- slot_id: ID of the time slot
+- patient_removed: Date and time when the patient was removed from the appointment
+- dermatologist_removed: Date and time when the dermatologist was removed from the appointment
+- patient_cancelled: Date and time when the patient cancelled the appointment
+- dermatologist_cancelled: Date and time when the dermatologist cancelled the appointment</p>
+<p>Returns:
+- Updated appointment in the response body.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.appointment.AppointmentView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.appointment.</span></span><span class="sig-name descname"><span class="pre">AppointmentView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment.AppointmentView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API endpoint for managing appointments.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.appointment.AppointmentView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment.AppointmentView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a list of appointments.</p>
+<p>Optional query parameters:
+- cancelled: Filter appointments by cancellation status (‘true’ or ‘false’)
+- done: Filter appointments by completion status (‘true’ or ‘false’)</p>
+<p>Returns:
+- List of appointments in the response body.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.appointment.AppointmentView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment.AppointmentView.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new appointment.</p>
+<p>Request body should contain the following fields:
+- dermatologist_id: ID of the dermatologist
+- patient_id: ID of the patient
+- book_date: Booking date
+- appo_date: Appointment date
+- done: Completion status (‘true’ or ‘false’)
+- duration: Duration of the appointment
+- cost: Cost of the appointment
+- extra_info: Additional information about the appointment
+- patient_removed: Date and time when the patient was removed from the appointment
+- dermatologist_removed: Date and time when the dermatologist was removed from the appointment
+- patient_cancelled: Date and time when the patient cancelled the appointment
+- dermatologist_cancelled: Date and time when the dermatologist cancelled the appointment
+- diagnosis_id: ID of the diagnosis (optional)
+- slot_id: ID of the time slot</p>
+<p>Returns:
+- Created appointment in the response body.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.views.appointment_chat">
+<span id="api-views-appointment-chat-module"></span><h2>api.views.appointment_chat module<a class="headerlink" href="#module-api.views.appointment_chat" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.appointment_chat.AppointmentChatDetail">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.appointment_chat.</span></span><span class="sig-name descname"><span class="pre">AppointmentChatDetail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment_chat.AppointmentChatDetail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API view for managing individual appointment chats.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.appointment_chat.AppointmentChatDetail.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment_chat.AppointmentChatDetail.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete an appointment chat.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (rest_framework.request.Request): The request object.
+pk (int): The ID of the appointment chat.</p>
+</dd>
+<dt>Returns:</dt><dd><p>rest_framework.response.Response: The response with a success status.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.appointment_chat.AppointmentChatDetail.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment_chat.AppointmentChatDetail.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the details of an appointment chat.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (rest_framework.request.Request): The request object.
+pk (int): The ID of the appointment chat.</p>
+</dd>
+<dt>Returns:</dt><dd><p>rest_framework.response.Response: The response containing the serialized appointment chat.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.appointment_chat.AppointmentChatDetail.get_object">
+<span class="sig-name descname"><span class="pre">get_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment_chat.AppointmentChatDetail.get_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the appointment chat object with the specified ID.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>pk (int): The ID of the appointment chat.</p>
+</dd>
+<dt>Returns:</dt><dd><p>api.models.appointment_chat.AppointmentChat: The appointment chat object.</p>
+</dd>
+<dt>Raises:</dt><dd><p>Http404: If the appointment chat does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.appointment_chat.AppointmentChatDetail.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment_chat.AppointmentChatDetail.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update an appointment chat.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (rest_framework.request.Request): The request object.
+pk (int): The ID of the appointment chat.</p>
+</dd>
+<dt>Returns:</dt><dd><p>rest_framework.response.Response: The response containing the serialized updated appointment chat.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.appointment_chat.AppointmentChatView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.appointment_chat.</span></span><span class="sig-name descname"><span class="pre">AppointmentChatView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment_chat.AppointmentChatView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API view for managing appointment chats.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.appointment_chat.AppointmentChatView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment_chat.AppointmentChatView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of appointment chats.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (rest_framework.request.Request): The request object.</p>
+</dd>
+<dt>Returns:</dt><dd><p>rest_framework.response.Response: The response containing the serialized appointment chats.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.appointment_chat.AppointmentChatView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.appointment_chat.AppointmentChatView.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new appointment chat.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (rest_framework.request.Request): The request object.</p>
+</dd>
+<dt>Returns:</dt><dd><p>rest_framework.response.Response: The response containing the serialized appointment chat.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.views.chat_message">
+<span id="api-views-chat-message-module"></span><h2>api.views.chat_message module<a class="headerlink" href="#module-api.views.chat_message" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.chat_message.ChatMessageView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.chat_message.</span></span><span class="sig-name descname"><span class="pre">ChatMessageView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.chat_message.ChatMessageView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API View to retrieve, create, update, or delete a chat message.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.chat_message.ChatMessageView.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.chat_message.ChatMessageView.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a chat message.</p>
+<p>Parameters:
+- pk (int): The primary key of the chat message.</p>
+<p>Returns:
+- Response: Empty response with status HTTP_204_NO_CONTENT.</p>
+<p>Raises:
+- status.HTTP_404_NOT_FOUND: If the chat message with the given primary key does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.chat_message.ChatMessageView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.chat_message.ChatMessageView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a chat message.</p>
+<p>Parameters:
+- pk (int): The primary key of the chat message.</p>
+<p>Returns:
+- Response: Response containing the serialized data of the chat message.</p>
+<p>Raises:
+- status.HTTP_404_NOT_FOUND: If the chat message with the given primary key does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.chat_message.ChatMessageView.get_object">
+<span class="sig-name descname"><span class="pre">get_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.chat_message.ChatMessageView.get_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a chat message object by its primary key.</p>
+<p>Parameters:
+- pk (int): The primary key of the chat message.</p>
+<p>Returns:
+- ChatMessage: The chat message object.</p>
+<p>Raises:
+- Http404: If the chat message with the given primary key does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.chat_message.ChatMessageView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.chat_message.ChatMessageView.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new chat message.</p>
+<p>Parameters:
+- request.data:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>sender_id (int): The ID of the sender.</p></li>
+<li><p>text (str): The text of the chat message.</p></li>
+<li><p>chat_id (int): The ID of the chat.</p></li>
+<li><p>time (str): The timestamp of the chat message.</p></li>
+<li><p>diagnosis_id (optional, str): The ID of the associated diagnosis (if applicable).</p></li>
+<li><p>appointment_id (optional, str): The ID of the associated appointment (if applicable).</p></li>
+</ul>
+</div></blockquote>
+<p>Returns:
+- Response: Response containing the serialized data of the created chat message.</p>
+<p>Raises:
+- status.HTTP_500_INTERNAL_SERVER_ERROR: If an error occurs while creating the chat message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.chat_message.ChatMessageView.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.chat_message.ChatMessageView.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a chat message.</p>
+<p>Parameters:
+- request.data: The updated data of the chat message.</p>
+<p>Returns:
+- Response: Response containing the serialized data of the updated chat message.</p>
+<p>Raises:
+- status.HTTP_400_BAD_REQUEST: If the request data is invalid.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.views.clinic">
+<span id="api-views-clinic-module"></span><h2>api.views.clinic module<a class="headerlink" href="#module-api.views.clinic" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.clinic.ClinicAPIView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.clinic.</span></span><span class="sig-name descname"><span class="pre">ClinicAPIView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.clinic.ClinicAPIView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ListCreateAPIView</span></code></p>
+<p>API view for listing and creating clinics.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.views.clinic.ClinicAPIView.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">QuerySet</span></em><a class="headerlink" href="#api.views.clinic.ClinicAPIView.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.views.clinic.ClinicAPIView.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#api.views.clinic.ClinicAPIView.serializer_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="api.serializers.html#api.serializers.clinic.ClinicSerializer" title="api.serializers.clinic.ClinicSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClinicSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.clinic.ClinicDetailAPIView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.clinic.</span></span><span class="sig-name descname"><span class="pre">ClinicDetailAPIView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.clinic.ClinicDetailAPIView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">RetrieveUpdateDestroyAPIView</span></code></p>
+<p>API view for retrieving, updating, and deleting individual clinics.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.views.clinic.ClinicDetailAPIView.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">QuerySet</span></em><a class="headerlink" href="#api.views.clinic.ClinicDetailAPIView.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.views.clinic.ClinicDetailAPIView.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#api.views.clinic.ClinicDetailAPIView.serializer_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="api.serializers.html#api.serializers.clinic.ClinicSerializer" title="api.serializers.clinic.ClinicSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClinicSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.views.dermatologist">
+<span id="api-views-dermatologist-module"></span><h2>api.views.dermatologist module<a class="headerlink" href="#module-api.views.dermatologist" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.dermatologist.DermatologistDetail">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.dermatologist.</span></span><span class="sig-name descname"><span class="pre">DermatologistDetail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.dermatologist.DermatologistDetail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API view for retrieving, updating, and deleting individual dermatologists.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.dermatologist.DermatologistDetail.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.dermatologist.DermatologistDetail.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a specific dermatologist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.dermatologist.DermatologistDetail.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.dermatologist.DermatologistDetail.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a specific dermatologist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.dermatologist.DermatologistDetail.get_object">
+<span class="sig-name descname"><span class="pre">get_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.dermatologist.DermatologistDetail.get_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.dermatologist.DermatologistDetail.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.dermatologist.DermatologistDetail.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a specific dermatologist.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.dermatologist.DermatologistView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.dermatologist.</span></span><span class="sig-name descname"><span class="pre">DermatologistView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.dermatologist.DermatologistView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API view for listing dermatologists and creating new dermatologists.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.dermatologist.DermatologistView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.dermatologist.DermatologistView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a list of all dermatologists.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.views.dermatologist.DermatologistView.permission_classes">
+<span class="sig-name descname"><span class="pre">permission_classes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#api.views.dermatologist.DermatologistView.permission_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.dermatologist.DermatologistView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.dermatologist.DermatologistView.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new dermatologist.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.views.diagnosis">
+<span id="api-views-diagnosis-module"></span><h2>api.views.diagnosis module<a class="headerlink" href="#module-api.views.diagnosis" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.diagnosis.DiagnosisDetailView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.diagnosis.</span></span><span class="sig-name descname"><span class="pre">DiagnosisDetailView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.diagnosis.DiagnosisDetailView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API View to update or delete a specific diagnosis.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.diagnosis.DiagnosisDetailView.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.diagnosis.DiagnosisDetailView.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a diagnosis.</p>
+<p>Parameters:
+- pk (int): Primary key of the diagnosis.</p>
+<p>Returns:
+- Response: HTTP response indicating successful deletion.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.diagnosis.DiagnosisDetailView.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.diagnosis.DiagnosisDetailView.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a diagnosis.</p>
+<p>Parameters:
+- pk (int): Primary key of the diagnosis.</p>
+<p>Returns:
+- JsonResponse: JSON response containing the serialized diagnosis object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.diagnosis.DiagnosisView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.diagnosis.</span></span><span class="sig-name descname"><span class="pre">DiagnosisView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.diagnosis.DiagnosisView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API View to create or get a list of all the diagnoses of users.
+GET request returns the user’s diagnoses, whereas a POST request allows creating a new diagnosis.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.diagnosis.DiagnosisView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.diagnosis.DiagnosisView.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.views.diagnosis.DiagnosisView.parser_classes">
+<span class="sig-name descname"><span class="pre">parser_classes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;class</span> <span class="pre">'rest_framework.parsers.MultiPartParser'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'rest_framework.parsers.FormParser'&gt;]</span></em><a class="headerlink" href="#api.views.diagnosis.DiagnosisView.parser_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.diagnosis.DiagnosisView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.diagnosis.DiagnosisView.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new diagnosis.</p>
+<p>Parameters:
+- image_path (str): Path to the image file.
+- user (User): User object representing the patient.
+- body_part (str): Body part associated with the diagnosis.
+- itchy (bool): Indicates if the condition is itchy or not.</p>
+<p>Returns:
+- JsonResponse: JSON response containing the serialized diagnosis object.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.views.disease">
+<span id="api-views-disease-module"></span><h2>api.views.disease module<a class="headerlink" href="#module-api.views.disease" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.disease.DiseaseDetail">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.disease.</span></span><span class="sig-name descname"><span class="pre">DiseaseDetail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.disease.DiseaseDetail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API View to retrieve details of a specific disease.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.disease.DiseaseDetail.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.disease.DiseaseDetail.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve details of a specific disease.</p>
+<p>Parameters:
+- pk (int): Primary key of the disease.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the disease.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.disease.DiseaseDetail.get_object">
+<span class="sig-name descname"><span class="pre">get_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.disease.DiseaseDetail.get_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a disease object based on its primary key.</p>
+<p>Parameters:
+- pk (int): Primary key of the disease.</p>
+<p>Returns:
+- Disease: Disease object with the given primary key.</p>
+<p>Raises:
+- Http404: If the disease does not exist.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.disease.DiseaseView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.disease.</span></span><span class="sig-name descname"><span class="pre">DiseaseView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.disease.DiseaseView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API View to retrieve a list of diseases, create a new disease, update an existing disease, or delete a disease.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.disease.DiseaseView.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.disease.DiseaseView.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a disease.</p>
+<p>Parameters:
+- pk (int): Primary key of the disease.</p>
+<p>Returns:
+- Response: HTTP response indicating successful deletion.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.disease.DiseaseView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.disease.DiseaseView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a list of diseases.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of all diseases.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.disease.DiseaseView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.disease.DiseaseView.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new disease.</p>
+<p>Parameters:
+- request.data: JSON data containing the disease information.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the created disease.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.disease.DiseaseView.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.disease.DiseaseView.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update an existing disease.</p>
+<p>Parameters:
+- pk (int): Primary key of the disease.
+- request.data: JSON data containing the updated disease information.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the updated disease.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.views.notification">
+<span id="api-views-notification-module"></span><h2>api.views.notification module<a class="headerlink" href="#module-api.views.notification" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.notification.NotificationAPIView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.notification.</span></span><span class="sig-name descname"><span class="pre">NotificationAPIView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.notification.NotificationAPIView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API View to retrieve, create, and update notifications.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.notification.NotificationAPIView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.notification.NotificationAPIView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve notifications for the authenticated user.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the user’s notifications.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.notification.NotificationAPIView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.notification.NotificationAPIView.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new notification for the authenticated user.</p>
+<p>Parameters:
+- request.data: JSON data containing the notification information.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the created notification.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.notification.NotificationAPIView.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.notification.NotificationAPIView.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update an existing notification.</p>
+<p>Parameters:
+- pk (int): Primary key of the notification.
+- request.data: JSON data containing the updated notification information.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the updated notification.</p>
+<p>Raises:
+- status.HTTP_404_NOT_FOUND: If the notification does not exist.
+- status.HTTP_400_BAD_REQUEST: If the request data is invalid.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.views.patient">
+<span id="api-views-patient-module"></span><h2>api.views.patient module<a class="headerlink" href="#module-api.views.patient" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.patient.PatientDetail">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.patient.</span></span><span class="sig-name descname"><span class="pre">PatientDetail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.patient.PatientDetail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API View to retrieve, update, and delete a specific patient.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.patient.PatientDetail.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.patient.PatientDetail.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a specific patient.</p>
+<p>Parameters:
+- username (str): Username of the patient.</p>
+<p>Returns:
+- Response: Empty response with HTTP status code 204 (No Content).</p>
+<p>Raises:
+- Http404: If the patient does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.patient.PatientDetail.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.patient.PatientDetail.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the details of a specific patient.</p>
+<p>Parameters:
+- username (str): Username of the patient.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the patient.</p>
+<p>Raises:
+- Http404: If the patient does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.patient.PatientDetail.get_object">
+<span class="sig-name descname"><span class="pre">get_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.patient.PatientDetail.get_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the patient object with the specified username.</p>
+<p>Parameters:
+- username (str): Username of the patient.</p>
+<p>Returns:
+- Patient: The patient object.</p>
+<p>Raises:
+- Http404: If the patient does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.patient.PatientDetail.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.patient.PatientDetail.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the details of a specific patient.</p>
+<p>Parameters:
+- username (str): Username of the patient.
+- request.data: JSON data containing the updated patient information.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the updated patient.</p>
+<p>Raises:
+- status.HTTP_400_BAD_REQUEST: If the request data is invalid.
+- Http404: If the patient does not exist.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.patient.PatientView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.patient.</span></span><span class="sig-name descname"><span class="pre">PatientView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.patient.PatientView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API View to retrieve a list of all patients and create a new patient.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.patient.PatientView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.patient.PatientView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a list of all patients.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of all patients.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.patient.PatientView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.patient.PatientView.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new patient.</p>
+<p>Parameters:
+- request.data: JSON data containing the patient information.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the created patient.</p>
+<p>Raises:
+- status.HTTP_400_BAD_REQUEST: If the request data is invalid.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.views.prediction">
+<span id="api-views-prediction-module"></span><h2>api.views.prediction module<a class="headerlink" href="#module-api.views.prediction" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.prediction.PredictionAPIView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.prediction.</span></span><span class="sig-name descname"><span class="pre">PredictionAPIView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.prediction.PredictionAPIView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API View to retrieve, create, update, and delete predictions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.prediction.PredictionAPIView.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.prediction.PredictionAPIView.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete an existing prediction.</p>
+<p>Parameters:
+- pk (int): The primary key of the prediction.</p>
+<p>Returns:
+- Response: Empty response with HTTP status code 204 (No Content).</p>
+<p>Raises:
+- status.HTTP_404_NOT_FOUND: If the prediction does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.prediction.PredictionAPIView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.prediction.PredictionAPIView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve all predictions.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of all predictions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.prediction.PredictionAPIView.patch">
+<span class="sig-name descname"><span class="pre">patch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.prediction.PredictionAPIView.patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partially update an existing prediction.</p>
+<p>Parameters:
+- pk (int): The primary key of the prediction.
+- request.data: JSON data containing the updated prediction information.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the updated prediction.</p>
+<p>Raises:
+- status.HTTP_404_NOT_FOUND: If the prediction does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.prediction.PredictionAPIView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.prediction.PredictionAPIView.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new prediction.</p>
+<p>Parameters:
+- request.data: JSON data containing the prediction information.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the created prediction.</p>
+<p>Raises:
+- status.HTTP_400_BAD_REQUEST: If the request data is invalid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.prediction.PredictionAPIView.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.prediction.PredictionAPIView.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update an existing prediction.</p>
+<p>Parameters:
+- pk (int): The primary key of the prediction.
+- request.data: JSON data containing the updated prediction information.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the updated prediction.</p>
+<p>Raises:
+- status.HTTP_404_NOT_FOUND: If the prediction does not exist.
+- status.HTTP_400_BAD_REQUEST: If the disease_id is invalid.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.views.slot">
+<span id="api-views-slot-module"></span><h2>api.views.slot module<a class="headerlink" href="#module-api.views.slot" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.slot.SlotAPIView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.slot.</span></span><span class="sig-name descname"><span class="pre">SlotAPIView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.slot.SlotAPIView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API View to retrieve slots, create a new slot.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.slot.SlotAPIView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derm_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.slot.SlotAPIView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve all slots for a dermatologist.</p>
+<p>Parameters:
+- derm_id (int): The primary key of the dermatologist.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the slots.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.slot.SlotAPIView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.slot.SlotAPIView.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new slot.</p>
+<p>Parameters:
+- request.data: JSON data containing the slot information.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>start_time (datetime): The start time of the slot.</p></li>
+<li><p>dermatologist_id (int): The primary key of the dermatologist associated with the slot.</p></li>
+<li><p>scheduled (bool): Indicates whether the slot is scheduled or not (default is False).</p></li>
+<li><p>day_of_week (str): The day of the week for the slot.</p></li>
+</ul>
+</div></blockquote>
+<p>Returns:
+- Response: JSON response containing serialized data of the created slot.</p>
+<p>Raises:
+- status.HTTP_400_BAD_REQUEST: If the request data is invalid.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.slot.SlotDetailAPIView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.slot.</span></span><span class="sig-name descname"><span class="pre">SlotDetailAPIView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.slot.SlotDetailAPIView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API View to retrieve, update, and delete a specific slot.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.slot.SlotDetailAPIView.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.slot.SlotDetailAPIView.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a specific slot.</p>
+<p>Parameters:
+- pk (int): The primary key of the slot.</p>
+<p>Returns:
+- Response: Empty response with status HTTP_204_NO_CONTENT.</p>
+<p>Raises:
+- Http404: If the slot does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.slot.SlotDetailAPIView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.slot.SlotDetailAPIView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve a specific slot.</p>
+<p>Parameters:
+- pk (int): The primary key of the slot.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the slot.</p>
+<p>Raises:
+- Http404: If the slot does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.slot.SlotDetailAPIView.get_object">
+<span class="sig-name descname"><span class="pre">get_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.slot.SlotDetailAPIView.get_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the slot object based on the primary key.</p>
+<p>Parameters:
+- pk (int): The primary key of the slot.</p>
+<p>Returns:
+- Slot: The slot object.</p>
+<p>Raises:
+- Http404: If the slot does not exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.slot.SlotDetailAPIView.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.slot.SlotDetailAPIView.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a specific slot.</p>
+<p>Parameters:
+- pk (int): The primary key of the slot.
+- request.data: JSON data containing the updated slot information.</p>
+<p>Returns:
+- Response: JSON response containing serialized data of the updated slot.</p>
+<p>Raises:
+- status.HTTP_400_BAD_REQUEST: If the request data is invalid.
+- Http404: If the slot does not exist.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.views.user_record">
+<span id="api-views-user-record-module"></span><h2>api.views.user_record module<a class="headerlink" href="#module-api.views.user_record" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.views.user_record.UserRecordView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.views.user_record.</span></span><span class="sig-name descname"><span class="pre">UserRecordView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.user_record.UserRecordView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">APIView</span></code></p>
+<p>API View to create or get a list of all the registered users.
+GET request returns the registered users, whereas a POST request allows creating a new user.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.user_record.UserRecordView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.user_record.UserRecordView.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of all registered users.</p>
+<p>Returns:
+- JsonResponse: JSON response containing serialized data of all users.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.views.user_record.UserRecordView.permission_classes">
+<span class="sig-name descname"><span class="pre">permission_classes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#api.views.user_record.UserRecordView.permission_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.views.user_record.UserRecordView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.views.user_record.UserRecordView.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new user.</p>
+<p>Parameters:
+- request.body: JSON data containing the user information.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>username (str): The username of the user.</p></li>
+<li><p>password (str): The password of the user.</p></li>
+<li><p>dob (str): The date of birth of the user in the format ‘YYYY-MM-DDTHH:MM:SS.ssssss’.</p></li>
+<li><p>gender (str): The gender of the user.</p></li>
+</ul>
+</div></blockquote>
+<p>Returns:
+- JsonResponse: JSON response containing serialized data of the created user and associated patient.</p>
+<p>Raises:
+- status.HTTP_400_BAD_REQUEST: If the request data is invalid.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.views">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-api.views" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2023, ICT GROUP 7.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.0.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

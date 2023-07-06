@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>api.skindisease package &#8212; Khungulanga 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Khungulanga</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">api.skindisease package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-api.skindisease.detect_skin">api.skindisease.detect_skin module</a><ul>
+<li><a class="reference internal" href="#api.skindisease.detect_skin.center_skin"><code class="docutils literal notranslate"><span class="pre">center_skin()</span></code></a></li>
+<li><a class="reference internal" href="#api.skindisease.detect_skin.detect_skin"><code class="docutils literal notranslate"><span class="pre">detect_skin()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.skindisease.identify">api.skindisease.identify module</a><ul>
+<li><a class="reference internal" href="#api.skindisease.identify.get_model"><code class="docutils literal notranslate"><span class="pre">get_model()</span></code></a></li>
+<li><a class="reference internal" href="#api.skindisease.identify.map_predictions"><code class="docutils literal notranslate"><span class="pre">map_predictions()</span></code></a></li>
+<li><a class="reference internal" href="#api.skindisease.identify.predict_disease"><code class="docutils literal notranslate"><span class="pre">predict_disease()</span></code></a></li>
+<li><a class="reference internal" href="#api.skindisease.identify.prepare_image"><code class="docutils literal notranslate"><span class="pre">prepare_image()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.skindisease.preprocess">api.skindisease.preprocess module</a><ul>
+<li><a class="reference internal" href="#api.skindisease.preprocess.center_skin"><code class="docutils literal notranslate"><span class="pre">center_skin()</span></code></a></li>
+<li><a class="reference internal" href="#api.skindisease.preprocess.preprocess_image"><code class="docutils literal notranslate"><span class="pre">preprocess_image()</span></code></a></li>
+<li><a class="reference internal" href="#api.skindisease.preprocess.skin_segmentation"><code class="docutils literal notranslate"><span class="pre">skin_segmentation()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.skindisease">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/docs/api.skindisease.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="api-skindisease-package">
+<h1>api.skindisease package<a class="headerlink" href="#api-skindisease-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-api.skindisease.detect_skin">
+<span id="api-skindisease-detect-skin-module"></span><h2>api.skindisease.detect_skin module<a class="headerlink" href="#module-api.skindisease.detect_skin" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="api.skindisease.detect_skin.center_skin">
+<span class="sig-prename descclassname"><span class="pre">api.skindisease.detect_skin.</span></span><span class="sig-name descname"><span class="pre">center_skin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">skin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.skindisease.detect_skin.center_skin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Centers the skin region within the image.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>skin (numpy.ndarray): Binary mask representing the skin region.
+image (numpy.ndarray): Input image.</p>
+</dd>
+<dt>Returns:</dt><dd><p>numpy.ndarray: Centered image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="api.skindisease.detect_skin.detect_skin">
+<span class="sig-prename descclassname"><span class="pre">api.skindisease.detect_skin.</span></span><span class="sig-name descname"><span class="pre">detect_skin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.skindisease.detect_skin.detect_skin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detects the presence of skin in an image.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>image (numpy.ndarray): Input image.</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if skin is present, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-api.skindisease.identify">
+<span id="api-skindisease-identify-module"></span><h2>api.skindisease.identify module<a class="headerlink" href="#module-api.skindisease.identify" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="api.skindisease.identify.get_model">
+<span class="sig-prename descclassname"><span class="pre">api.skindisease.identify.</span></span><span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.skindisease.identify.get_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the model for the given body part.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): Name of the body part.</p>
+</dd>
+<dt>Returns:</dt><dd><p>tf.keras.Model: Loaded model for the specified body part.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="api.skindisease.identify.map_predictions">
+<span class="sig-prename descclassname"><span class="pre">api.skindisease.identify.</span></span><span class="sig-name descname"><span class="pre">map_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diagnosis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.skindisease.identify.map_predictions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maps the predictions to diseases and calculates probabilities.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>diagnosis (Diagnosis): The diagnosis instance.
+predictions (list): Predictions obtained from the model.
+labels (dict): Labels for different diseases.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of Prediction instances sorted by probability.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="api.skindisease.identify.predict_disease">
+<span class="sig-prename descclassname"><span class="pre">api.skindisease.identify.</span></span><span class="sig-name descname"><span class="pre">predict_disease</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diagnosis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.skindisease.identify.predict_disease" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identifies the skin disease in the image.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>diagnosis (Diagnosis): The diagnosis instance.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: List of Prediction instances.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="api.skindisease.identify.prepare_image">
+<span class="sig-prename descclassname"><span class="pre">api.skindisease.identify.</span></span><span class="sig-name descname"><span class="pre">prepare_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.skindisease.identify.prepare_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Preprocesses the input image for model prediction.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>img (PIL.Image.Image): Input image.</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.ndarray: Preprocessed image as numpy array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-api.skindisease.preprocess">
+<span id="api-skindisease-preprocess-module"></span><h2>api.skindisease.preprocess module<a class="headerlink" href="#module-api.skindisease.preprocess" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="api.skindisease.preprocess.center_skin">
+<span class="sig-prename descclassname"><span class="pre">api.skindisease.preprocess.</span></span><span class="sig-name descname"><span class="pre">center_skin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">skin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.skindisease.preprocess.center_skin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Centers the skin region within the image.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>skin (numpy.ndarray): Binary mask representing the skin region.
+image (numpy.ndarray): Input image.</p>
+</dd>
+<dt>Returns:</dt><dd><p>numpy.ndarray: Centered image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="api.skindisease.preprocess.preprocess_image">
+<span class="sig-prename descclassname"><span class="pre">api.skindisease.preprocess.</span></span><span class="sig-name descname"><span class="pre">preprocess_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(299,</span> <span class="pre">299)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.skindisease.preprocess.preprocess_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Preprocesses the input image for further analysis.</p>
+<p>Denoising, Equalization, Skin Segmentation, Skin Centering, 
+Contrast Enhancement, Resizing and Normalization</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>img (PIL.Image.Image): Input image.
+target_size (tuple): Target size for resizing the image.</p>
+</dd>
+<dt>Returns:</dt><dd><p>numpy.ndarray: Preprocessed image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="api.skindisease.preprocess.skin_segmentation">
+<span class="sig-prename descclassname"><span class="pre">api.skindisease.preprocess.</span></span><span class="sig-name descname"><span class="pre">skin_segmentation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.skindisease.preprocess.skin_segmentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs skin segmentation on the input image.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>image (numpy.ndarray): Input image.</p>
+</dd>
+<dt>Returns:</dt><dd><p>tuple: A tuple containing the centered image and the skin mask.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-api.skindisease">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-api.skindisease" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2023, ICT GROUP 7.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.0.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

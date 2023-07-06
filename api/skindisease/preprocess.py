@@ -66,6 +66,9 @@ def skin_segmentation(image):
 def preprocess_image(img, target_size=(299, 299)):
     """
     Preprocesses the input image for further analysis.
+    
+    Denoising, Equalization, Skin Segmentation, Skin Centering, 
+    Contrast Enhancement, Resizing and Normalization
 
     Args:
         img (PIL.Image.Image): Input image.

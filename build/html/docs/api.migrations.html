@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>api.migrations package &#8212; Khungulanga 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Khungulanga</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">api.migrations package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-api.migrations.0001_initial">api.migrations.0001_initial module</a><ul>
+<li><a class="reference internal" href="#api.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#api.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#api.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li><a class="reference internal" href="#api.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate">api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate module</a><ul>
+<li><a class="reference internal" href="#api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.migrations.0003_alter_slot_day_of_week">api.migrations.0003_alter_slot_day_of_week module</a><ul>
+<li><a class="reference internal" href="#api.migrations.0003_alter_slot_day_of_week.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#api.migrations.0003_alter_slot_day_of_week.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#api.migrations.0003_alter_slot_day_of_week.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.migrations.0004_alter_slot_start_time">api.migrations.0004_alter_slot_start_time module</a><ul>
+<li><a class="reference internal" href="#api.migrations.0004_alter_slot_start_time.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#api.migrations.0004_alter_slot_start_time.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#api.migrations.0004_alter_slot_start_time.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.migrations.0005_diagnosis_action_diagnosis_approved_and_more">api.migrations.0005_diagnosis_action_diagnosis_approved_and_more module</a><ul>
+<li><a class="reference internal" href="#api.migrations.0005_diagnosis_action_diagnosis_approved_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#api.migrations.0005_diagnosis_action_diagnosis_approved_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#api.migrations.0005_diagnosis_action_diagnosis_approved_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.migrations.0006_diagnosis_extra_derm_info">api.migrations.0006_diagnosis_extra_derm_info module</a><ul>
+<li><a class="reference internal" href="#api.migrations.0006_diagnosis_extra_derm_info.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#api.migrations.0006_diagnosis_extra_derm_info.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#api.migrations.0006_diagnosis_extra_derm_info.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.migrations.0007_alter_notification_timestamp">api.migrations.0007_alter_notification_timestamp module</a><ul>
+<li><a class="reference internal" href="#api.migrations.0007_alter_notification_timestamp.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#api.migrations.0007_alter_notification_timestamp.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#api.migrations.0007_alter_notification_timestamp.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more">api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more module</a><ul>
+<li><a class="reference internal" href="#api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.migrations.0009_prediction_treatment_id">api.migrations.0009_prediction_treatment_id module</a><ul>
+<li><a class="reference internal" href="#api.migrations.0009_prediction_treatment_id.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#api.migrations.0009_prediction_treatment_id.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#api.migrations.0009_prediction_treatment_id.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/docs/api.migrations.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="api-migrations-package">
+<h1>api.migrations package<a class="headerlink" href="#api-migrations-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-api.migrations.0001_initial">
+<span id="api-migrations-0001-initial-module"></span><h2>api.migrations.0001_initial module<a class="headerlink" href="#module-api.migrations.0001_initial" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.migrations.0001_initial.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.migrations.0001_initial.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.migrations.0001_initial.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0001_initial.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('auth',</span> <span class="pre">'__first__')]</span></em><a class="headerlink" href="#api.migrations.0001_initial.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0001_initial.Migration.initial">
+<span class="sig-name descname"><span class="pre">initial</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#api.migrations.0001_initial.Migration.initial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0001_initial.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Appointment',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('book_date',</span> <span class="pre">&lt;django.db.models.DateField&gt;),</span> <span class="pre">('appo_date',</span> <span class="pre">&lt;django.db.models.DateTimeField&gt;),</span> <span class="pre">('done',</span> <span class="pre">&lt;django.db.models.BooleanField&gt;),</span> <span class="pre">('duration',</span> <span class="pre">&lt;django.db.models.IntegerField&gt;),</span> <span class="pre">('cost',</span> <span class="pre">&lt;django.db.models.FloatField&gt;),</span> <span class="pre">('extra_info',</span> <span class="pre">&lt;django.db.models.TextField&gt;),</span> <span class="pre">('patient_approved',</span> <span class="pre">&lt;django.db.models.DateTimeField&gt;),</span> <span class="pre">('dermatologist_approved',</span> <span class="pre">&lt;django.db.models.DateTimeField&gt;),</span> <span class="pre">('patient_rejected',</span> <span class="pre">&lt;django.db.models.DateTimeField&gt;),</span> <span class="pre">('dermatologist_rejected',</span> <span class="pre">&lt;django.db.models.DateTimeField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='AppointmentChat',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('appointment',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Clinic',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('name',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('latitude',</span> <span class="pre">&lt;django.db.models.FloatField&gt;),</span> <span class="pre">('longitude',</span> <span class="pre">&lt;django.db.models.FloatField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Dermatologist',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('qualification',</span> <span class="pre">&lt;django.db.models.ImageField&gt;),</span> <span class="pre">('specialization',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('email',</span> <span class="pre">&lt;django.db.models.EmailField&gt;),</span> <span class="pre">('phone_number',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('houry_rate',</span> <span class="pre">&lt;django.db.models.FloatField&gt;),</span> <span class="pre">('clinic',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;),</span> <span class="pre">('user',</span> <span class="pre">&lt;django.db.models.OneToOneField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Diagnosis',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('image',</span> <span class="pre">&lt;django.db.models.ImageField&gt;),</span> <span class="pre">('body_part',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('itchy',</span> <span class="pre">&lt;django.db.models.BooleanField&gt;),</span> <span class="pre">('date',</span> <span class="pre">&lt;django.db.models.DateTimeField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Disease',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('name',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('description',</span> <span class="pre">&lt;django.db.models.TextField&gt;),</span> <span class="pre">('severity',</span> <span class="pre">&lt;django.db.models.IntegerField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Treatment',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('description',</span> <span class="pre">&lt;django.db.models.TextField&gt;),</span> <span class="pre">('title',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('disease',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Slot',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('start_time',</span> <span class="pre">&lt;django.db.models.IntegerField&gt;),</span> <span class="pre">('scheduled',</span> <span class="pre">&lt;django.db.models.BooleanField&gt;),</span> <span class="pre">('day_of_week',</span> <span class="pre">&lt;django.db.models.IntegerField&gt;),</span> <span class="pre">('dermatologist',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Prediction',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('probability',</span> <span class="pre">&lt;django.db.models.FloatField&gt;),</span> <span class="pre">('diagnosis',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;),</span> <span class="pre">('disease',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Patient',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('dob',</span> <span class="pre">&lt;django.db.models.DateTimeField&gt;),</span> <span class="pre">('gender',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('user',</span> <span class="pre">&lt;django.db.models.OneToOneField&gt;)]&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='diagnosis',</span> <span class="pre">name='patient',</span> <span class="pre">field=&lt;django.db.models.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='ChatMessage',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('text',</span> <span class="pre">&lt;django.db.models.TextField&gt;),</span> <span class="pre">('time',</span> <span class="pre">&lt;django.db.models.DateTimeField&gt;),</span> <span class="pre">('seen',</span> <span class="pre">&lt;django.db.models.BooleanField&gt;),</span> <span class="pre">('appointment',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;),</span> <span class="pre">('chat',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;),</span> <span class="pre">('diagnosis',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;),</span> <span class="pre">('sender',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='appointmentchat',</span> <span class="pre">name='dermatologist',</span> <span class="pre">field=&lt;django.db.models.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='appointmentchat',</span> <span class="pre">name='patient',</span> <span class="pre">field=&lt;django.db.models.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='appointment',</span> <span class="pre">name='dermatologist',</span> <span class="pre">field=&lt;django.db.models.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='appointment',</span> <span class="pre">name='diagnosis',</span> <span class="pre">field=&lt;django.db.models.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='appointment',</span> <span class="pre">name='patient',</span> <span class="pre">field=&lt;django.db.models.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='appointment',</span> <span class="pre">name='slot',</span> <span class="pre">field=&lt;django.db.models.ForeignKey&gt;&gt;]</span></em><a class="headerlink" href="#api.migrations.0001_initial.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate">
+<span id="api-migrations-0002-rename-houry-rate-dermatologist-hourly-rate-module"></span><h2>api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate module<a class="headerlink" href="#module-api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('api',</span> <span class="pre">'0001_initial')]</span></em><a class="headerlink" href="#api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RenameField</span>&#160; <span class="pre">model_name='dermatologist',</span> <span class="pre">old_name='houry_rate',</span> <span class="pre">new_name='hourly_rate'&gt;]</span></em><a class="headerlink" href="#api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.migrations.0003_alter_slot_day_of_week">
+<span id="api-migrations-0003-alter-slot-day-of-week-module"></span><h2>api.migrations.0003_alter_slot_day_of_week module<a class="headerlink" href="#module-api.migrations.0003_alter_slot_day_of_week" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.migrations.0003_alter_slot_day_of_week.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.migrations.0003_alter_slot_day_of_week.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.migrations.0003_alter_slot_day_of_week.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0003_alter_slot_day_of_week.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('api',</span> <span class="pre">'0002_rename_houry_rate_dermatologist_hourly_rate')]</span></em><a class="headerlink" href="#api.migrations.0003_alter_slot_day_of_week.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0003_alter_slot_day_of_week.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='slot',</span> <span class="pre">name='day_of_week',</span> <span class="pre">field=&lt;django.db.models.CharField&gt;&gt;]</span></em><a class="headerlink" href="#api.migrations.0003_alter_slot_day_of_week.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.migrations.0004_alter_slot_start_time">
+<span id="api-migrations-0004-alter-slot-start-time-module"></span><h2>api.migrations.0004_alter_slot_start_time module<a class="headerlink" href="#module-api.migrations.0004_alter_slot_start_time" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.migrations.0004_alter_slot_start_time.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.migrations.0004_alter_slot_start_time.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.migrations.0004_alter_slot_start_time.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0004_alter_slot_start_time.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('api',</span> <span class="pre">'0003_alter_slot_day_of_week')]</span></em><a class="headerlink" href="#api.migrations.0004_alter_slot_start_time.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0004_alter_slot_start_time.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='slot',</span> <span class="pre">name='start_time',</span> <span class="pre">field=&lt;django.db.models.TimeField&gt;&gt;]</span></em><a class="headerlink" href="#api.migrations.0004_alter_slot_start_time.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.migrations.0005_diagnosis_action_diagnosis_approved_and_more">
+<span id="api-migrations-0005-diagnosis-action-diagnosis-approved-and-more-module"></span><h2>api.migrations.0005_diagnosis_action_diagnosis_approved_and_more module<a class="headerlink" href="#module-api.migrations.0005_diagnosis_action_diagnosis_approved_and_more" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.migrations.0005_diagnosis_action_diagnosis_approved_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.migrations.0005_diagnosis_action_diagnosis_approved_and_more.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.migrations.0005_diagnosis_action_diagnosis_approved_and_more.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0005_diagnosis_action_diagnosis_approved_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('auth',</span> <span class="pre">'__first__'),</span> <span class="pre">('api',</span> <span class="pre">'0004_alter_slot_start_time')]</span></em><a class="headerlink" href="#api.migrations.0005_diagnosis_action_diagnosis_approved_and_more.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0005_diagnosis_action_diagnosis_approved_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='diagnosis',</span> <span class="pre">name='action',</span> <span class="pre">field=&lt;django.db.models.CharField&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='diagnosis',</span> <span class="pre">name='approved',</span> <span class="pre">field=&lt;django.db.models.BooleanField&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='diagnosis',</span> <span class="pre">name='dermatologist',</span> <span class="pre">field=&lt;django.db.models.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='prediction',</span> <span class="pre">name='approved',</span> <span class="pre">field=&lt;django.db.models.BooleanField&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='prediction',</span> <span class="pre">name='treatment',</span> <span class="pre">field=&lt;django.db.models.TextField&gt;&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Notification',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('title',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('message',</span> <span class="pre">&lt;django.db.models.TextField&gt;),</span> <span class="pre">('timestamp',</span> <span class="pre">&lt;django.db.models.DateTimeField&gt;),</span> <span class="pre">('is_read',</span> <span class="pre">&lt;django.db.models.BooleanField&gt;),</span> <span class="pre">('route',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('related_id',</span> <span class="pre">&lt;django.db.models.IntegerField&gt;),</span> <span class="pre">('related_name',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('user',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;)]&gt;]</span></em><a class="headerlink" href="#api.migrations.0005_diagnosis_action_diagnosis_approved_and_more.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.migrations.0006_diagnosis_extra_derm_info">
+<span id="api-migrations-0006-diagnosis-extra-derm-info-module"></span><h2>api.migrations.0006_diagnosis_extra_derm_info module<a class="headerlink" href="#module-api.migrations.0006_diagnosis_extra_derm_info" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.migrations.0006_diagnosis_extra_derm_info.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.migrations.0006_diagnosis_extra_derm_info.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.migrations.0006_diagnosis_extra_derm_info.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0006_diagnosis_extra_derm_info.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('api',</span> <span class="pre">'0005_diagnosis_action_diagnosis_approved_and_more')]</span></em><a class="headerlink" href="#api.migrations.0006_diagnosis_extra_derm_info.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0006_diagnosis_extra_derm_info.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='diagnosis',</span> <span class="pre">name='extra_derm_info',</span> <span class="pre">field=&lt;django.db.models.TextField&gt;&gt;]</span></em><a class="headerlink" href="#api.migrations.0006_diagnosis_extra_derm_info.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.migrations.0007_alter_notification_timestamp">
+<span id="api-migrations-0007-alter-notification-timestamp-module"></span><h2>api.migrations.0007_alter_notification_timestamp module<a class="headerlink" href="#module-api.migrations.0007_alter_notification_timestamp" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.migrations.0007_alter_notification_timestamp.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.migrations.0007_alter_notification_timestamp.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.migrations.0007_alter_notification_timestamp.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0007_alter_notification_timestamp.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('api',</span> <span class="pre">'0006_diagnosis_extra_derm_info')]</span></em><a class="headerlink" href="#api.migrations.0007_alter_notification_timestamp.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0007_alter_notification_timestamp.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='notification',</span> <span class="pre">name='timestamp',</span> <span class="pre">field=&lt;django.db.models.DateTimeField&gt;&gt;]</span></em><a class="headerlink" href="#api.migrations.0007_alter_notification_timestamp.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more">
+<span id="api-migrations-0008-rename-dermatologist-approved-appointment-dermatologist-cancelled-and-more-module"></span><h2>api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more module<a class="headerlink" href="#module-api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('api',</span> <span class="pre">'0007_alter_notification_timestamp')]</span></em><a class="headerlink" href="#api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RenameField</span>&#160; <span class="pre">model_name='appointment',</span> <span class="pre">old_name='dermatologist_approved',</span> <span class="pre">new_name='dermatologist_cancelled'&gt;,</span> <span class="pre">&lt;RenameField</span>&#160; <span class="pre">model_name='appointment',</span> <span class="pre">old_name='dermatologist_rejected',</span> <span class="pre">new_name='dermatologist_removed'&gt;,</span> <span class="pre">&lt;RenameField</span>&#160; <span class="pre">model_name='appointment',</span> <span class="pre">old_name='patient_approved',</span> <span class="pre">new_name='patient_cancelled'&gt;,</span> <span class="pre">&lt;RenameField</span>&#160; <span class="pre">model_name='appointment',</span> <span class="pre">old_name='patient_rejected',</span> <span class="pre">new_name='patient_removed'&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='dermatologist',</span> <span class="pre">name='status',</span> <span class="pre">field=&lt;django.db.models.CharField&gt;&gt;]</span></em><a class="headerlink" href="#api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.migrations.0009_prediction_treatment_id">
+<span id="api-migrations-0009-prediction-treatment-id-module"></span><h2>api.migrations.0009_prediction_treatment_id module<a class="headerlink" href="#module-api.migrations.0009_prediction_treatment_id" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.migrations.0009_prediction_treatment_id.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.migrations.0009_prediction_treatment_id.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.migrations.0009_prediction_treatment_id.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0009_prediction_treatment_id.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('api',</span> <span class="pre">'0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more')]</span></em><a class="headerlink" href="#api.migrations.0009_prediction_treatment_id.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.migrations.0009_prediction_treatment_id.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='prediction',</span> <span class="pre">name='treatment_id',</span> <span class="pre">field=&lt;django.db.models.IntegerField&gt;&gt;]</span></em><a class="headerlink" href="#api.migrations.0009_prediction_treatment_id.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.migrations">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-api.migrations" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2023, ICT GROUP 7.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.0.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

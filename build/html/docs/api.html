@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>api package &#8212; Khungulanga 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Khungulanga</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">api package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-api.admin">api.admin module</a></li>
+<li><a class="reference internal" href="#module-api.apps">api.apps module</a><ul>
+<li><a class="reference internal" href="#api.apps.ApiConfig"><code class="docutils literal notranslate"><span class="pre">ApiConfig</span></code></a><ul>
+<li><a class="reference internal" href="#api.apps.ApiConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">ApiConfig.default_auto_field</span></code></a></li>
+<li><a class="reference internal" href="#api.apps.ApiConfig.name"><code class="docutils literal notranslate"><span class="pre">ApiConfig.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.signals">api.signals module</a><ul>
+<li><a class="reference internal" href="#api.signals.send_notification"><code class="docutils literal notranslate"><span class="pre">send_notification()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.tests">api.tests module</a></li>
+<li><a class="reference internal" href="#module-api.urls">api.urls module</a></li>
+<li><a class="reference internal" href="#module-api.util">api.util module</a></li>
+<li><a class="reference internal" href="#module-api">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/docs/api.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <section id="api-package">
+<h1>api package<a class="headerlink" href="#api-package" title="Permalink to this heading">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.migrations.html">api.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.migrations.html#module-api.migrations.0001_initial">api.migrations.0001_initial module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.migrations.html#api.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.migrations.html#module-api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate">api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.migrations.html#api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0002_rename_houry_rate_dermatologist_hourly_rate.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.migrations.html#module-api.migrations.0003_alter_slot_day_of_week">api.migrations.0003_alter_slot_day_of_week module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.migrations.html#api.migrations.0003_alter_slot_day_of_week.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0003_alter_slot_day_of_week.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0003_alter_slot_day_of_week.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.migrations.html#module-api.migrations.0004_alter_slot_start_time">api.migrations.0004_alter_slot_start_time module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.migrations.html#api.migrations.0004_alter_slot_start_time.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0004_alter_slot_start_time.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0004_alter_slot_start_time.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.migrations.html#module-api.migrations.0005_diagnosis_action_diagnosis_approved_and_more">api.migrations.0005_diagnosis_action_diagnosis_approved_and_more module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.migrations.html#api.migrations.0005_diagnosis_action_diagnosis_approved_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0005_diagnosis_action_diagnosis_approved_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0005_diagnosis_action_diagnosis_approved_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.migrations.html#module-api.migrations.0006_diagnosis_extra_derm_info">api.migrations.0006_diagnosis_extra_derm_info module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.migrations.html#api.migrations.0006_diagnosis_extra_derm_info.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0006_diagnosis_extra_derm_info.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0006_diagnosis_extra_derm_info.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.migrations.html#module-api.migrations.0007_alter_notification_timestamp">api.migrations.0007_alter_notification_timestamp module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.migrations.html#api.migrations.0007_alter_notification_timestamp.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0007_alter_notification_timestamp.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0007_alter_notification_timestamp.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.migrations.html#module-api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more">api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.migrations.html#api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0008_rename_dermatologist_approved_appointment_dermatologist_cancelled_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.migrations.html#module-api.migrations.0009_prediction_treatment_id">api.migrations.0009_prediction_treatment_id module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.migrations.html#api.migrations.0009_prediction_treatment_id.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0009_prediction_treatment_id.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.migrations.html#api.migrations.0009_prediction_treatment_id.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.migrations.html#module-api.migrations">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.models.html">api.models package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#module-api.models.appointment">api.models.appointment module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment"><code class="docutils literal notranslate"><span class="pre">Appointment</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Appointment.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Appointment.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.appo_date"><code class="docutils literal notranslate"><span class="pre">Appointment.appo_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.appointmentchat_set"><code class="docutils literal notranslate"><span class="pre">Appointment.appointmentchat_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.book_date"><code class="docutils literal notranslate"><span class="pre">Appointment.book_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.chatmessage_set"><code class="docutils literal notranslate"><span class="pre">Appointment.chatmessage_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.cost"><code class="docutils literal notranslate"><span class="pre">Appointment.cost</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.dermatologist"><code class="docutils literal notranslate"><span class="pre">Appointment.dermatologist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.dermatologist_cancelled"><code class="docutils literal notranslate"><span class="pre">Appointment.dermatologist_cancelled</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.dermatologist_id"><code class="docutils literal notranslate"><span class="pre">Appointment.dermatologist_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.dermatologist_removed"><code class="docutils literal notranslate"><span class="pre">Appointment.dermatologist_removed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.diagnosis"><code class="docutils literal notranslate"><span class="pre">Appointment.diagnosis</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.diagnosis_id"><code class="docutils literal notranslate"><span class="pre">Appointment.diagnosis_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.done"><code class="docutils literal notranslate"><span class="pre">Appointment.done</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.duration"><code class="docutils literal notranslate"><span class="pre">Appointment.duration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.extra_info"><code class="docutils literal notranslate"><span class="pre">Appointment.extra_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.id"><code class="docutils literal notranslate"><span class="pre">Appointment.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.objects"><code class="docutils literal notranslate"><span class="pre">Appointment.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.patient"><code class="docutils literal notranslate"><span class="pre">Appointment.patient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.patient_cancelled"><code class="docutils literal notranslate"><span class="pre">Appointment.patient_cancelled</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.patient_id"><code class="docutils literal notranslate"><span class="pre">Appointment.patient_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.patient_removed"><code class="docutils literal notranslate"><span class="pre">Appointment.patient_removed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.slot"><code class="docutils literal notranslate"><span class="pre">Appointment.slot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment.Appointment.slot_id"><code class="docutils literal notranslate"><span class="pre">Appointment.slot_id</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#module-api.models.appointment_chat">api.models.appointment_chat module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.models.html#api.models.appointment_chat.AppointmentChat"><code class="docutils literal notranslate"><span class="pre">AppointmentChat</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment_chat.AppointmentChat.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">AppointmentChat.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment_chat.AppointmentChat.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">AppointmentChat.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment_chat.AppointmentChat.appointment"><code class="docutils literal notranslate"><span class="pre">AppointmentChat.appointment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment_chat.AppointmentChat.appointment_id"><code class="docutils literal notranslate"><span class="pre">AppointmentChat.appointment_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment_chat.AppointmentChat.chatmessage_set"><code class="docutils literal notranslate"><span class="pre">AppointmentChat.chatmessage_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment_chat.AppointmentChat.dermatologist"><code class="docutils literal notranslate"><span class="pre">AppointmentChat.dermatologist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment_chat.AppointmentChat.dermatologist_id"><code class="docutils literal notranslate"><span class="pre">AppointmentChat.dermatologist_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment_chat.AppointmentChat.id"><code class="docutils literal notranslate"><span class="pre">AppointmentChat.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment_chat.AppointmentChat.objects"><code class="docutils literal notranslate"><span class="pre">AppointmentChat.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment_chat.AppointmentChat.patient"><code class="docutils literal notranslate"><span class="pre">AppointmentChat.patient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.appointment_chat.AppointmentChat.patient_id"><code class="docutils literal notranslate"><span class="pre">AppointmentChat.patient_id</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#module-api.models.chat_message">api.models.chat_message module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage"><code class="docutils literal notranslate"><span class="pre">ChatMessage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">ChatMessage.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">ChatMessage.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.appointment"><code class="docutils literal notranslate"><span class="pre">ChatMessage.appointment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.appointment_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.appointment_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.chat"><code class="docutils literal notranslate"><span class="pre">ChatMessage.chat</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.chat_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.chat_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.diagnosis"><code class="docutils literal notranslate"><span class="pre">ChatMessage.diagnosis</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.diagnosis_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.diagnosis_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.get_next_by_time"><code class="docutils literal notranslate"><span class="pre">ChatMessage.get_next_by_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.get_previous_by_time"><code class="docutils literal notranslate"><span class="pre">ChatMessage.get_previous_by_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.objects"><code class="docutils literal notranslate"><span class="pre">ChatMessage.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.seen"><code class="docutils literal notranslate"><span class="pre">ChatMessage.seen</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.sender"><code class="docutils literal notranslate"><span class="pre">ChatMessage.sender</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.sender_id"><code class="docutils literal notranslate"><span class="pre">ChatMessage.sender_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.text"><code class="docutils literal notranslate"><span class="pre">ChatMessage.text</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.chat_message.ChatMessage.time"><code class="docutils literal notranslate"><span class="pre">ChatMessage.time</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#module-api.models.clinic">api.models.clinic module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.models.html#api.models.clinic.Clinic"><code class="docutils literal notranslate"><span class="pre">Clinic</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.clinic.Clinic.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Clinic.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.clinic.Clinic.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Clinic.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.clinic.Clinic.dermatologist_set"><code class="docutils literal notranslate"><span class="pre">Clinic.dermatologist_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.clinic.Clinic.id"><code class="docutils literal notranslate"><span class="pre">Clinic.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.clinic.Clinic.latitude"><code class="docutils literal notranslate"><span class="pre">Clinic.latitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.clinic.Clinic.longitude"><code class="docutils literal notranslate"><span class="pre">Clinic.longitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.clinic.Clinic.name"><code class="docutils literal notranslate"><span class="pre">Clinic.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.clinic.Clinic.objects"><code class="docutils literal notranslate"><span class="pre">Clinic.objects</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#module-api.models.dermatologist">api.models.dermatologist module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist"><code class="docutils literal notranslate"><span class="pre">Dermatologist</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Dermatologist.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Dermatologist.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.appointment_set"><code class="docutils literal notranslate"><span class="pre">Dermatologist.appointment_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.appointmentchat_set"><code class="docutils literal notranslate"><span class="pre">Dermatologist.appointmentchat_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.clinic"><code class="docutils literal notranslate"><span class="pre">Dermatologist.clinic</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.clinic_id"><code class="docutils literal notranslate"><span class="pre">Dermatologist.clinic_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.diagnosis_set"><code class="docutils literal notranslate"><span class="pre">Dermatologist.diagnosis_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.email"><code class="docutils literal notranslate"><span class="pre">Dermatologist.email</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.get_specialization_display"><code class="docutils literal notranslate"><span class="pre">Dermatologist.get_specialization_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.get_status_display"><code class="docutils literal notranslate"><span class="pre">Dermatologist.get_status_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.hourly_rate"><code class="docutils literal notranslate"><span class="pre">Dermatologist.hourly_rate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.id"><code class="docutils literal notranslate"><span class="pre">Dermatologist.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.objects"><code class="docutils literal notranslate"><span class="pre">Dermatologist.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.phone_number"><code class="docutils literal notranslate"><span class="pre">Dermatologist.phone_number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.qualification"><code class="docutils literal notranslate"><span class="pre">Dermatologist.qualification</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.slot_set"><code class="docutils literal notranslate"><span class="pre">Dermatologist.slot_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.specialization"><code class="docutils literal notranslate"><span class="pre">Dermatologist.specialization</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.status"><code class="docutils literal notranslate"><span class="pre">Dermatologist.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.user"><code class="docutils literal notranslate"><span class="pre">Dermatologist.user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.dermatologist.Dermatologist.user_id"><code class="docutils literal notranslate"><span class="pre">Dermatologist.user_id</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#module-api.models.diagnosis">api.models.diagnosis module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis"><code class="docutils literal notranslate"><span class="pre">Diagnosis</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Diagnosis.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Diagnosis.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.action"><code class="docutils literal notranslate"><span class="pre">Diagnosis.action</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.appointment_set"><code class="docutils literal notranslate"><span class="pre">Diagnosis.appointment_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.approved"><code class="docutils literal notranslate"><span class="pre">Diagnosis.approved</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.body_part"><code class="docutils literal notranslate"><span class="pre">Diagnosis.body_part</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.chatmessage_set"><code class="docutils literal notranslate"><span class="pre">Diagnosis.chatmessage_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.date"><code class="docutils literal notranslate"><span class="pre">Diagnosis.date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.dermatologist"><code class="docutils literal notranslate"><span class="pre">Diagnosis.dermatologist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.dermatologist_id"><code class="docutils literal notranslate"><span class="pre">Diagnosis.dermatologist_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.extra_derm_info"><code class="docutils literal notranslate"><span class="pre">Diagnosis.extra_derm_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.get_action_display"><code class="docutils literal notranslate"><span class="pre">Diagnosis.get_action_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.get_next_by_date"><code class="docutils literal notranslate"><span class="pre">Diagnosis.get_next_by_date()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.get_previous_by_date"><code class="docutils literal notranslate"><span class="pre">Diagnosis.get_previous_by_date()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.id"><code class="docutils literal notranslate"><span class="pre">Diagnosis.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.image"><code class="docutils literal notranslate"><span class="pre">Diagnosis.image</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.itchy"><code class="docutils literal notranslate"><span class="pre">Diagnosis.itchy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.objects"><code class="docutils literal notranslate"><span class="pre">Diagnosis.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.patient"><code class="docutils literal notranslate"><span class="pre">Diagnosis.patient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.patient_id"><code class="docutils literal notranslate"><span class="pre">Diagnosis.patient_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.diagnosis.Diagnosis.prediction_set"><code class="docutils literal notranslate"><span class="pre">Diagnosis.prediction_set</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#module-api.models.disease">api.models.disease module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.models.html#api.models.disease.Disease"><code class="docutils literal notranslate"><span class="pre">Disease</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.disease.Disease.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Disease.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.disease.Disease.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Disease.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.disease.Disease.description"><code class="docutils literal notranslate"><span class="pre">Disease.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.disease.Disease.get_severity_display"><code class="docutils literal notranslate"><span class="pre">Disease.get_severity_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.disease.Disease.id"><code class="docutils literal notranslate"><span class="pre">Disease.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.disease.Disease.name"><code class="docutils literal notranslate"><span class="pre">Disease.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.disease.Disease.objects"><code class="docutils literal notranslate"><span class="pre">Disease.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.disease.Disease.prediction_set"><code class="docutils literal notranslate"><span class="pre">Disease.prediction_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.disease.Disease.severity"><code class="docutils literal notranslate"><span class="pre">Disease.severity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.disease.Disease.treatment_set"><code class="docutils literal notranslate"><span class="pre">Disease.treatment_set</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#module-api.models.notification">api.models.notification module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.models.html#api.models.notification.Notification"><code class="docutils literal notranslate"><span class="pre">Notification</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Notification.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Notification.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.from_json"><code class="docutils literal notranslate"><span class="pre">Notification.from_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.get_next_by_timestamp"><code class="docutils literal notranslate"><span class="pre">Notification.get_next_by_timestamp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.get_previous_by_timestamp"><code class="docutils literal notranslate"><span class="pre">Notification.get_previous_by_timestamp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.id"><code class="docutils literal notranslate"><span class="pre">Notification.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.is_read"><code class="docutils literal notranslate"><span class="pre">Notification.is_read</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.message"><code class="docutils literal notranslate"><span class="pre">Notification.message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.objects"><code class="docutils literal notranslate"><span class="pre">Notification.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.related_id"><code class="docutils literal notranslate"><span class="pre">Notification.related_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.related_name"><code class="docutils literal notranslate"><span class="pre">Notification.related_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.route"><code class="docutils literal notranslate"><span class="pre">Notification.route</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.timestamp"><code class="docutils literal notranslate"><span class="pre">Notification.timestamp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.title"><code class="docutils literal notranslate"><span class="pre">Notification.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.to_json"><code class="docutils literal notranslate"><span class="pre">Notification.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.user"><code class="docutils literal notranslate"><span class="pre">Notification.user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.notification.Notification.user_id"><code class="docutils literal notranslate"><span class="pre">Notification.user_id</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#module-api.models.patient">api.models.patient module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.models.html#api.models.patient.Patient"><code class="docutils literal notranslate"><span class="pre">Patient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Patient.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Patient.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.appointment_set"><code class="docutils literal notranslate"><span class="pre">Patient.appointment_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.appointmentchat_set"><code class="docutils literal notranslate"><span class="pre">Patient.appointmentchat_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.diagnosis_set"><code class="docutils literal notranslate"><span class="pre">Patient.diagnosis_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.dob"><code class="docutils literal notranslate"><span class="pre">Patient.dob</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.gender"><code class="docutils literal notranslate"><span class="pre">Patient.gender</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.get_gender_display"><code class="docutils literal notranslate"><span class="pre">Patient.get_gender_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.get_next_by_dob"><code class="docutils literal notranslate"><span class="pre">Patient.get_next_by_dob()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.get_previous_by_dob"><code class="docutils literal notranslate"><span class="pre">Patient.get_previous_by_dob()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.id"><code class="docutils literal notranslate"><span class="pre">Patient.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.objects"><code class="docutils literal notranslate"><span class="pre">Patient.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.user"><code class="docutils literal notranslate"><span class="pre">Patient.user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.patient.Patient.user_id"><code class="docutils literal notranslate"><span class="pre">Patient.user_id</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#module-api.models.prediction">api.models.prediction module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.models.html#api.models.prediction.Prediction"><code class="docutils literal notranslate"><span class="pre">Prediction</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.prediction.Prediction.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Prediction.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.prediction.Prediction.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Prediction.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.prediction.Prediction.approved"><code class="docutils literal notranslate"><span class="pre">Prediction.approved</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.prediction.Prediction.diagnosis"><code class="docutils literal notranslate"><span class="pre">Prediction.diagnosis</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.prediction.Prediction.diagnosis_id"><code class="docutils literal notranslate"><span class="pre">Prediction.diagnosis_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.prediction.Prediction.disease"><code class="docutils literal notranslate"><span class="pre">Prediction.disease</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.prediction.Prediction.disease_id"><code class="docutils literal notranslate"><span class="pre">Prediction.disease_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.prediction.Prediction.id"><code class="docutils literal notranslate"><span class="pre">Prediction.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.prediction.Prediction.objects"><code class="docutils literal notranslate"><span class="pre">Prediction.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.prediction.Prediction.probability"><code class="docutils literal notranslate"><span class="pre">Prediction.probability</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.prediction.Prediction.treatment"><code class="docutils literal notranslate"><span class="pre">Prediction.treatment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.prediction.Prediction.treatment_id"><code class="docutils literal notranslate"><span class="pre">Prediction.treatment_id</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#module-api.models.slot">api.models.slot module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.models.html#api.models.slot.Slot"><code class="docutils literal notranslate"><span class="pre">Slot</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.slot.Slot.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Slot.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.slot.Slot.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Slot.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.slot.Slot.appointment_set"><code class="docutils literal notranslate"><span class="pre">Slot.appointment_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.slot.Slot.day_of_week"><code class="docutils literal notranslate"><span class="pre">Slot.day_of_week</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.slot.Slot.dermatologist"><code class="docutils literal notranslate"><span class="pre">Slot.dermatologist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.slot.Slot.dermatologist_id"><code class="docutils literal notranslate"><span class="pre">Slot.dermatologist_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.slot.Slot.id"><code class="docutils literal notranslate"><span class="pre">Slot.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.slot.Slot.objects"><code class="docutils literal notranslate"><span class="pre">Slot.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.slot.Slot.scheduled"><code class="docutils literal notranslate"><span class="pre">Slot.scheduled</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.slot.Slot.start_time"><code class="docutils literal notranslate"><span class="pre">Slot.start_time</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#module-api.models.treatment">api.models.treatment module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.models.html#api.models.treatment.Treatment"><code class="docutils literal notranslate"><span class="pre">Treatment</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.treatment.Treatment.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Treatment.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.treatment.Treatment.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Treatment.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.treatment.Treatment.description"><code class="docutils literal notranslate"><span class="pre">Treatment.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.treatment.Treatment.disease"><code class="docutils literal notranslate"><span class="pre">Treatment.disease</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.treatment.Treatment.disease_id"><code class="docutils literal notranslate"><span class="pre">Treatment.disease_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.treatment.Treatment.id"><code class="docutils literal notranslate"><span class="pre">Treatment.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.treatment.Treatment.objects"><code class="docutils literal notranslate"><span class="pre">Treatment.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.models.html#api.models.treatment.Treatment.title"><code class="docutils literal notranslate"><span class="pre">Treatment.title</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.models.html#module-api.models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.serializers.html">api.serializers package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers.appointment">api.serializers.appointment module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.serializers.html#api.serializers.appointment.AppointmentSerializer"><code class="docutils literal notranslate"><span class="pre">AppointmentSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers.appointment_chat">api.serializers.appointment_chat module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.serializers.html#api.serializers.appointment_chat.AppointmentChatSerializer"><code class="docutils literal notranslate"><span class="pre">AppointmentChatSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.serializers.html#api.serializers.appointment_chat.AppointmentChatSerializer.get_queryset"><code class="docutils literal notranslate"><span class="pre">AppointmentChatSerializer.get_queryset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers.chat_message">api.serializers.chat_message module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.serializers.html#api.serializers.chat_message.ChatMessageSerializer"><code class="docutils literal notranslate"><span class="pre">ChatMessageSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers.clinic">api.serializers.clinic module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.serializers.html#api.serializers.clinic.ClinicSerializer"><code class="docutils literal notranslate"><span class="pre">ClinicSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers.dermatologist">api.serializers.dermatologist module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.serializers.html#api.serializers.dermatologist.DermatologistSerializer"><code class="docutils literal notranslate"><span class="pre">DermatologistSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.serializers.html#api.serializers.dermatologist.DermatologistSerializer.get_queryset"><code class="docutils literal notranslate"><span class="pre">DermatologistSerializer.get_queryset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers.diagnosis">api.serializers.diagnosis module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.serializers.html#api.serializers.diagnosis.DiagnosisSerializer"><code class="docutils literal notranslate"><span class="pre">DiagnosisSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.serializers.html#api.serializers.diagnosis.DiagnosisSerializer.get_queryset"><code class="docutils literal notranslate"><span class="pre">DiagnosisSerializer.get_queryset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers.disease">api.serializers.disease module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.serializers.html#api.serializers.disease.DiseaseSerializer"><code class="docutils literal notranslate"><span class="pre">DiseaseSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.serializers.html#api.serializers.disease.DiseaseSerializer.get_queryset"><code class="docutils literal notranslate"><span class="pre">DiseaseSerializer.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.serializers.html#api.serializers.disease.DiseaseSerializer.get_severity_display"><code class="docutils literal notranslate"><span class="pre">DiseaseSerializer.get_severity_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.serializers.html#api.serializers.disease.DiseaseSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">DiseaseSerializer.to_representation()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers.notification">api.serializers.notification module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.serializers.html#api.serializers.notification.NotificationSerializer"><code class="docutils literal notranslate"><span class="pre">NotificationSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers.patient">api.serializers.patient module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.serializers.html#api.serializers.patient.PatientSerializer"><code class="docutils literal notranslate"><span class="pre">PatientSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.serializers.html#api.serializers.patient.PatientSerializer.get_gender_display"><code class="docutils literal notranslate"><span class="pre">PatientSerializer.get_gender_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.serializers.html#api.serializers.patient.PatientSerializer.get_queryset"><code class="docutils literal notranslate"><span class="pre">PatientSerializer.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.serializers.html#api.serializers.patient.PatientSerializer.to_representation"><code class="docutils literal notranslate"><span class="pre">PatientSerializer.to_representation()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers.prediction">api.serializers.prediction module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.serializers.html#api.serializers.prediction.PredictionSerializer"><code class="docutils literal notranslate"><span class="pre">PredictionSerializer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.serializers.html#api.serializers.prediction.PredictionSerializer.get_queryset"><code class="docutils literal notranslate"><span class="pre">PredictionSerializer.get_queryset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers.slot">api.serializers.slot module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.serializers.html#api.serializers.slot.SlotSerializer"><code class="docutils literal notranslate"><span class="pre">SlotSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers.treatment">api.serializers.treatment module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.serializers.html#api.serializers.treatment.TreatmentSerializer"><code class="docutils literal notranslate"><span class="pre">TreatmentSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers.user">api.serializers.user module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.serializers.html#api.serializers.user.UserSerializer"><code class="docutils literal notranslate"><span class="pre">UserSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.serializers.html#module-api.serializers">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.skindisease.html">api.skindisease package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.skindisease.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.skindisease.html#module-api.skindisease.detect_skin">api.skindisease.detect_skin module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.skindisease.html#api.skindisease.detect_skin.center_skin"><code class="docutils literal notranslate"><span class="pre">center_skin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.skindisease.html#api.skindisease.detect_skin.detect_skin"><code class="docutils literal notranslate"><span class="pre">detect_skin()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.skindisease.html#module-api.skindisease.identify">api.skindisease.identify module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.skindisease.html#api.skindisease.identify.get_model"><code class="docutils literal notranslate"><span class="pre">get_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.skindisease.html#api.skindisease.identify.map_predictions"><code class="docutils literal notranslate"><span class="pre">map_predictions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.skindisease.html#api.skindisease.identify.predict_disease"><code class="docutils literal notranslate"><span class="pre">predict_disease()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.skindisease.html#api.skindisease.identify.prepare_image"><code class="docutils literal notranslate"><span class="pre">prepare_image()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.skindisease.html#module-api.skindisease.preprocess">api.skindisease.preprocess module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.skindisease.html#api.skindisease.preprocess.center_skin"><code class="docutils literal notranslate"><span class="pre">center_skin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.skindisease.html#api.skindisease.preprocess.preprocess_image"><code class="docutils literal notranslate"><span class="pre">preprocess_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.skindisease.html#api.skindisease.preprocess.skin_segmentation"><code class="docutils literal notranslate"><span class="pre">skin_segmentation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.skindisease.html#module-api.skindisease">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.util.html">api.util package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.util.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.util.html#module-api.util.notifications">api.util.notifications module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.util.html#api.util.notifications.notify_appointment_booked"><code class="docutils literal notranslate"><span class="pre">notify_appointment_booked()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.util.html#api.util.notifications.notify_appointment_cancelled"><code class="docutils literal notranslate"><span class="pre">notify_appointment_cancelled()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.util.html#api.util.notifications.notify_appointment_done"><code class="docutils literal notranslate"><span class="pre">notify_appointment_done()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.util.html#api.util.notifications.notify_diagnosis_feedback"><code class="docutils literal notranslate"><span class="pre">notify_diagnosis_feedback()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.util.html#api.util.notifications.notify_diagnosis_to_confirm"><code class="docutils literal notranslate"><span class="pre">notify_diagnosis_to_confirm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.util.html#api.util.notifications.send_notification"><code class="docutils literal notranslate"><span class="pre">send_notification()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.util.html#module-api.util">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.views.html">api.views package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#module-api.views.appointment">api.views.appointment module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.appointment.AppointmentDetailView"><code class="docutils literal notranslate"><span class="pre">AppointmentDetailView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.appointment.AppointmentDetailView.delete"><code class="docutils literal notranslate"><span class="pre">AppointmentDetailView.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.appointment.AppointmentDetailView.get"><code class="docutils literal notranslate"><span class="pre">AppointmentDetailView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.appointment.AppointmentDetailView.put"><code class="docutils literal notranslate"><span class="pre">AppointmentDetailView.put()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.appointment.AppointmentView"><code class="docutils literal notranslate"><span class="pre">AppointmentView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.appointment.AppointmentView.get"><code class="docutils literal notranslate"><span class="pre">AppointmentView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.appointment.AppointmentView.post"><code class="docutils literal notranslate"><span class="pre">AppointmentView.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#module-api.views.appointment_chat">api.views.appointment_chat module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.appointment_chat.AppointmentChatDetail"><code class="docutils literal notranslate"><span class="pre">AppointmentChatDetail</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.appointment_chat.AppointmentChatDetail.delete"><code class="docutils literal notranslate"><span class="pre">AppointmentChatDetail.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.appointment_chat.AppointmentChatDetail.get"><code class="docutils literal notranslate"><span class="pre">AppointmentChatDetail.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.appointment_chat.AppointmentChatDetail.get_object"><code class="docutils literal notranslate"><span class="pre">AppointmentChatDetail.get_object()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.appointment_chat.AppointmentChatDetail.put"><code class="docutils literal notranslate"><span class="pre">AppointmentChatDetail.put()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.appointment_chat.AppointmentChatView"><code class="docutils literal notranslate"><span class="pre">AppointmentChatView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.appointment_chat.AppointmentChatView.get"><code class="docutils literal notranslate"><span class="pre">AppointmentChatView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.appointment_chat.AppointmentChatView.post"><code class="docutils literal notranslate"><span class="pre">AppointmentChatView.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#module-api.views.chat_message">api.views.chat_message module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.chat_message.ChatMessageView"><code class="docutils literal notranslate"><span class="pre">ChatMessageView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.chat_message.ChatMessageView.delete"><code class="docutils literal notranslate"><span class="pre">ChatMessageView.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.chat_message.ChatMessageView.get"><code class="docutils literal notranslate"><span class="pre">ChatMessageView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.chat_message.ChatMessageView.get_object"><code class="docutils literal notranslate"><span class="pre">ChatMessageView.get_object()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.chat_message.ChatMessageView.post"><code class="docutils literal notranslate"><span class="pre">ChatMessageView.post()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.chat_message.ChatMessageView.put"><code class="docutils literal notranslate"><span class="pre">ChatMessageView.put()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#module-api.views.clinic">api.views.clinic module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.clinic.ClinicAPIView"><code class="docutils literal notranslate"><span class="pre">ClinicAPIView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.clinic.ClinicAPIView.queryset"><code class="docutils literal notranslate"><span class="pre">ClinicAPIView.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.clinic.ClinicAPIView.serializer_class"><code class="docutils literal notranslate"><span class="pre">ClinicAPIView.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.clinic.ClinicDetailAPIView"><code class="docutils literal notranslate"><span class="pre">ClinicDetailAPIView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.clinic.ClinicDetailAPIView.queryset"><code class="docutils literal notranslate"><span class="pre">ClinicDetailAPIView.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.clinic.ClinicDetailAPIView.serializer_class"><code class="docutils literal notranslate"><span class="pre">ClinicDetailAPIView.serializer_class</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#module-api.views.dermatologist">api.views.dermatologist module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.dermatologist.DermatologistDetail"><code class="docutils literal notranslate"><span class="pre">DermatologistDetail</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.dermatologist.DermatologistDetail.delete"><code class="docutils literal notranslate"><span class="pre">DermatologistDetail.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.dermatologist.DermatologistDetail.get"><code class="docutils literal notranslate"><span class="pre">DermatologistDetail.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.dermatologist.DermatologistDetail.get_object"><code class="docutils literal notranslate"><span class="pre">DermatologistDetail.get_object()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.dermatologist.DermatologistDetail.put"><code class="docutils literal notranslate"><span class="pre">DermatologistDetail.put()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.dermatologist.DermatologistView"><code class="docutils literal notranslate"><span class="pre">DermatologistView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.dermatologist.DermatologistView.get"><code class="docutils literal notranslate"><span class="pre">DermatologistView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.dermatologist.DermatologistView.permission_classes"><code class="docutils literal notranslate"><span class="pre">DermatologistView.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.dermatologist.DermatologistView.post"><code class="docutils literal notranslate"><span class="pre">DermatologistView.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#module-api.views.diagnosis">api.views.diagnosis module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.diagnosis.DiagnosisDetailView"><code class="docutils literal notranslate"><span class="pre">DiagnosisDetailView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.diagnosis.DiagnosisDetailView.delete"><code class="docutils literal notranslate"><span class="pre">DiagnosisDetailView.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.diagnosis.DiagnosisDetailView.put"><code class="docutils literal notranslate"><span class="pre">DiagnosisDetailView.put()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.diagnosis.DiagnosisView"><code class="docutils literal notranslate"><span class="pre">DiagnosisView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.diagnosis.DiagnosisView.get"><code class="docutils literal notranslate"><span class="pre">DiagnosisView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.diagnosis.DiagnosisView.parser_classes"><code class="docutils literal notranslate"><span class="pre">DiagnosisView.parser_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.diagnosis.DiagnosisView.post"><code class="docutils literal notranslate"><span class="pre">DiagnosisView.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#module-api.views.disease">api.views.disease module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.disease.DiseaseDetail"><code class="docutils literal notranslate"><span class="pre">DiseaseDetail</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.disease.DiseaseDetail.get"><code class="docutils literal notranslate"><span class="pre">DiseaseDetail.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.disease.DiseaseDetail.get_object"><code class="docutils literal notranslate"><span class="pre">DiseaseDetail.get_object()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.disease.DiseaseView"><code class="docutils literal notranslate"><span class="pre">DiseaseView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.disease.DiseaseView.delete"><code class="docutils literal notranslate"><span class="pre">DiseaseView.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.disease.DiseaseView.get"><code class="docutils literal notranslate"><span class="pre">DiseaseView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.disease.DiseaseView.post"><code class="docutils literal notranslate"><span class="pre">DiseaseView.post()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.disease.DiseaseView.put"><code class="docutils literal notranslate"><span class="pre">DiseaseView.put()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#module-api.views.notification">api.views.notification module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.notification.NotificationAPIView"><code class="docutils literal notranslate"><span class="pre">NotificationAPIView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.notification.NotificationAPIView.get"><code class="docutils literal notranslate"><span class="pre">NotificationAPIView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.notification.NotificationAPIView.post"><code class="docutils literal notranslate"><span class="pre">NotificationAPIView.post()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.notification.NotificationAPIView.put"><code class="docutils literal notranslate"><span class="pre">NotificationAPIView.put()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#module-api.views.patient">api.views.patient module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.patient.PatientDetail"><code class="docutils literal notranslate"><span class="pre">PatientDetail</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.patient.PatientDetail.delete"><code class="docutils literal notranslate"><span class="pre">PatientDetail.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.patient.PatientDetail.get"><code class="docutils literal notranslate"><span class="pre">PatientDetail.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.patient.PatientDetail.get_object"><code class="docutils literal notranslate"><span class="pre">PatientDetail.get_object()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.patient.PatientDetail.put"><code class="docutils literal notranslate"><span class="pre">PatientDetail.put()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.patient.PatientView"><code class="docutils literal notranslate"><span class="pre">PatientView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.patient.PatientView.get"><code class="docutils literal notranslate"><span class="pre">PatientView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.patient.PatientView.post"><code class="docutils literal notranslate"><span class="pre">PatientView.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#module-api.views.prediction">api.views.prediction module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.prediction.PredictionAPIView"><code class="docutils literal notranslate"><span class="pre">PredictionAPIView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.prediction.PredictionAPIView.delete"><code class="docutils literal notranslate"><span class="pre">PredictionAPIView.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.prediction.PredictionAPIView.get"><code class="docutils literal notranslate"><span class="pre">PredictionAPIView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.prediction.PredictionAPIView.patch"><code class="docutils literal notranslate"><span class="pre">PredictionAPIView.patch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.prediction.PredictionAPIView.post"><code class="docutils literal notranslate"><span class="pre">PredictionAPIView.post()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.prediction.PredictionAPIView.put"><code class="docutils literal notranslate"><span class="pre">PredictionAPIView.put()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#module-api.views.slot">api.views.slot module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.slot.SlotAPIView"><code class="docutils literal notranslate"><span class="pre">SlotAPIView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.slot.SlotAPIView.get"><code class="docutils literal notranslate"><span class="pre">SlotAPIView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.slot.SlotAPIView.post"><code class="docutils literal notranslate"><span class="pre">SlotAPIView.post()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.slot.SlotDetailAPIView"><code class="docutils literal notranslate"><span class="pre">SlotDetailAPIView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.slot.SlotDetailAPIView.delete"><code class="docutils literal notranslate"><span class="pre">SlotDetailAPIView.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.slot.SlotDetailAPIView.get"><code class="docutils literal notranslate"><span class="pre">SlotDetailAPIView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.slot.SlotDetailAPIView.get_object"><code class="docutils literal notranslate"><span class="pre">SlotDetailAPIView.get_object()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.slot.SlotDetailAPIView.put"><code class="docutils literal notranslate"><span class="pre">SlotDetailAPIView.put()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#module-api.views.user_record">api.views.user_record module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.views.html#api.views.user_record.UserRecordView"><code class="docutils literal notranslate"><span class="pre">UserRecordView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.user_record.UserRecordView.get"><code class="docutils literal notranslate"><span class="pre">UserRecordView.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.user_record.UserRecordView.permission_classes"><code class="docutils literal notranslate"><span class="pre">UserRecordView.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.views.html#api.views.user_record.UserRecordView.post"><code class="docutils literal notranslate"><span class="pre">UserRecordView.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.views.html#module-api.views">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-api.admin">
+<span id="api-admin-module"></span><h2>api.admin module<a class="headerlink" href="#module-api.admin" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-api.apps">
+<span id="api-apps-module"></span><h2>api.apps module<a class="headerlink" href="#module-api.apps" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="api.apps.ApiConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.apps.</span></span><span class="sig-name descname"><span class="pre">ApiConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.apps.ApiConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/applications/#django.apps.AppConfig" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.apps.ApiConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#api.apps.ApiConfig.default_auto_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="api.apps.ApiConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'api'</span></em><a class="headerlink" href="#api.apps.ApiConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-api.signals">
+<span id="api-signals-module"></span><h2>api.signals module<a class="headerlink" href="#module-api.signals" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="api.signals.send_notification">
+<span class="sig-prename descclassname"><span class="pre">api.signals.</span></span><span class="sig-name descname"><span class="pre">send_notification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sender</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.signals.send_notification" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-api.tests">
+<span id="api-tests-module"></span><h2>api.tests module<a class="headerlink" href="#module-api.tests" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-api.urls">
+<span id="api-urls-module"></span><h2>api.urls module<a class="headerlink" href="#module-api.urls" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-api.util">
+<span id="api-util-module"></span><h2>api.util module<a class="headerlink" href="#module-api.util" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-api">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-api" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2023, ICT GROUP 7.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.0.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

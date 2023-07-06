@@ -1,4 +1,4 @@
-# SmartSkin
+# Khungulanga
 
 AI powered mobile application for skin disease detection.
 

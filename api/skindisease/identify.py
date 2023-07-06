@@ -31,10 +31,10 @@ def get_model(name):
 
 # Dictionary of models for different body parts
 models = {
-    "Face": get_model("Face"),
-    "Upper Body": get_model("Upper Body"),
-    "Legs Feet": get_model("Legs Feet"),
-    "Arms Hands": get_model("Arms Hands")
+    # "Face": get_model("Face"),
+    # "Upper Body": get_model("Upper Body"),
+    # "Legs Feet": get_model("Legs Feet"),
+    # "Arms Hands": get_model("Arms Hands")
 }
 
 # Labels for different body parts
